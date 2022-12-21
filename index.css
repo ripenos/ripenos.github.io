@@ -1,0 +1,643 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("Assets/bg.png");
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+body button {
+  color: white;
+  background-color: rgb(255, 123, 0);
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  transition: all 0.5s;
+}
+body img {
+  -webkit-user-drag: none;
+}
+body p {
+  color: white;
+  font-weight: 550;
+  font-size: 12px;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: white;
+  letter-spacing: 0.5px;
+  padding-bottom: 5px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 140, 0, 0.55) 0%, rgba(133, 53, 0, 0.55) 100%);
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(255, 140, 0, 0.75) 0%, rgba(133, 53, 0, 0.75) 100%);
+  border-radius: 50px;
+}
+
+.welcome {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(45px) contrast(200%);
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s;
+  z-index: 999999999999;
+}
+
+.welcome-content {
+  position: absolute;
+  left: 35%;
+  top: 23%;
+  width: 59%;
+  -webkit-transform: translate(-35%, -50%);
+          transform: translate(-35%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+  scale: 0.75;
+}
+
+.welcome-content img {
+  position: absolute;
+  width: 12.5vw;
+  border-radius: 25px;
+  top: 35px;
+  padding: 0;
+}
+
+.welcome-content h1 {
+  font-size: 10vw;
+  color: azure;
+}
+
+.welcome .selection {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.welcome .selection button{
+  width: 200px;
+  margin: 5px;
+  font-size: 22px;
+  padding: 15px;
+}
+
+.welcome .selection button:hover{
+  transform: scale(1.1);
+  background-color: rgba(94, 94, 94, 0.15);
+  border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.welcome .selection button:active{
+scale: 0.85;
+}
+
+.welcome-content h2 {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  width: max-content;
+  -webkit-transform: translate(-41%, 37.5%);
+  transform: translate(-41%, 37.5%);
+  font-size: 2.5vw;
+  color: orange;
+}
+
+.desktopsready {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.85s;
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  width: max-content;
+  color:azure;
+  user-select: none;
+
+}
+
+.copyright {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.85s;
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  width: max-content;
+  color:azure;
+  user-select: none;
+}
+
+
+.popup {
+  position: relative;
+  float: right;
+  padding: 10px;
+  margin: 7px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
+  -webkit-backdrop-filter: blur(25px) contrast(250%);
+          backdrop-filter: blur(25px) contrast(250%);
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.popup .close {
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 2.5px;
+}
+.popup .close:hover {
+  filter: drop-shadow(0px 0px 2px rgb(136, 136, 136));
+}
+
+.actionbarM {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.ripebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 27vw;
+  height: 45px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(25px) contrast(250%);
+          backdrop-filter: blur(25px) contrast(250%);
+  border-top-right-radius: 5px;
+  transition: all 0.3s;
+  z-index: 200;
+
+}
+.ripebar img {
+  width: 31px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.ripebar img:active {
+  scale: 0.75;
+}
+
+.StartSearch {
+  position: absolute;
+  padding-left: 45px;
+  padding-top: 15px;
+  font-size: 22px;
+  width: max-content;
+}
+
+
+.responsive-iframe {
+  position: absolute;
+  width: 67vw;
+  height: 500px;
+  left: 55px;
+  border-radius: 7.5px;
+  z-index: 2;
+}
+
+.actionbarR {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 27vw;
+  height: 45px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.3s;
+  -webkit-backdrop-filter: blur(25px) contrast(250%);
+          backdrop-filter: blur(25px) contrast(250%);
+  border-top-left-radius: 5px;
+  transition: all 0.3s;
+  z-index: 200;
+}
+.actionbarR img {
+  width: 25px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.controlBtn {
+  position: absolute;
+  transition: all 0.3s;
+  padding: 0;
+  border: none;
+  right: 15px;
+  bottom: 1px;
+  width: 127.5px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-top: 1px;
+}
+
+.controlBtn:hover {
+  background-color: rgba(170, 170, 170, 0.25);
+}
+
+.controlBtn:active {
+  scale: 0.90;
+}
+
+.controlBtn img {
+  box-sizing:unset;
+  user-select: all;
+  width: 27px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.notybutton {
+  float: right;
+  filter: 0px 0px 7.5px rgb(0, 0, 0);
+  transform: translateX(-2px);
+  margin-top: 2.5px;
+  margin-right: 5px;
+}
+
+.tD {
+  color: azure;
+  text-align: right;
+  margin-top: 1px;
+  transform: translateX(-10px);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+}
+
+.tY {
+  color: azure;
+  text-align: right;
+  transform: translateX(-10px);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+}
+
+
+.actionbarC {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45.5vw;
+  height: 45px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(25px) contrast(250%);
+          backdrop-filter: blur(25px) contrast(250%);
+  z-index: 201;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s;
+}
+.actionbarC img {
+  width: 32px;
+  border-radius: 5px;
+  margin: -4px;
+  margin-left: 1px;
+  margin-right: 1px;
+  transition: all 0.3s;
+}
+.actionbarC img:hover {
+  transition: all 0.5s;
+  transform: scale(1.3);
+  margin-left: 10px;
+  margin-right: 10px;
+  filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
+}
+.actionbarC img:active {
+  scale: 0.75;
+}
+
+.actionbarC .dockApps {
+  position: absolute;
+  margin-top: -22.5px;
+  transition: all 0.3s;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 5px;
+  background: none;
+  margin-left: 12.5px;
+  transform: scale(1);
+  transition: all 0.3s;
+  padding: 0;
+  border: none;
+}
+
+.borderLeft {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 35px;
+  left: -5px;
+  background-color: transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.75);
+  border-top-left-radius: 80px 80px;
+  transform: rotateX(180deg);
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.borderRight {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 35px;
+  right: 0.1px;
+  margin-right: -5px;
+  background-color: transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.75);
+  border-top-right-radius: 80px 80px;
+  transform: rotateX(180deg);
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+#ControlToggles {
+  position: absolute;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+  bottom: 47px;
+}
+
+.ControlToggle {
+  padding: 10px;
+  background-color: rgba(240, 240, 240, 0.15);
+  width: 8.20vw;
+  border-radius: 5px;
+  transition: all 0.3s;
+  height: 42.5px;
+  z-index: 2;
+}
+
+.ControlToggle:hover {
+  background-color: rgba(240, 240, 240, 0.25);
+}
+
+.ControlToggle:active {
+  scale: 0.90;
+}
+
+.ControlToggle p {
+  position:absolute;
+  margin-left: 6px;
+}
+
+#RipenPanel {
+  position: absolute;
+  padding-top: 10px;
+  top: 5px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#wifiPanel {
+  position: relative;
+  padding-top: 5px;
+  padding-left: 10px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#audioPanel {
+  position: absolute;
+  padding-top: 5px;
+  top: 5px;
+  padding-left: 10px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#batteryPanel {
+  position: absolute;
+  padding-top: 5px;
+  padding-left: 10px;
+  top: 5px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#SearchApps {
+  position: absolute;
+  padding-top: 5px;
+  padding-left: 10px;
+  top: 5px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#AllApps {
+  padding: 2px; background-color: white;
+}
+
+.AllApps {
+  padding: 10px;
+  width: 100%;
+}
+.AllApps .Appimg {
+  padding: 10px;
+  display: inline-table;
+}
+.AllApps .Appimg img {
+  border-radius: 7.5px;
+  width: 35px;
+}
+.AllApps .Appimg img:hover {
+  transform: scale(1.2);
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.AllApps .Appimg img:active {
+  scale: 0.75;
+}
+
+.slider {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 95%;
+  height: 7px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+/* Ranger Styling */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff9100;
+  border: 3px solid white;
+  cursor: pointer;
+  -webkit-transition: border 0.05s, scale 0.3s;
+  transition: border 0.05s, scale 0.3s;
+  scale: 1;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border: 2px solid white;
+  scale: 1.1;
+  background: rgb(255, 166, 0);
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.searchT {
+  width: 22vw;
+  height: 30px;
+  border-right: none;
+  border-left: none;
+  border-top: 0.25px solid rgba(241, 241, 241, 0.1176470588);
+  border-bottom: none;
+  border-radius: 5px;
+  background-color: rgba(241, 241, 241, 0.095);
+  padding: 10px;
+  font-size: 13.5px;
+  color: white;
+  text-align: left;
+  transition: all 0.5s;
+}
+
+.searchTA {
+  width: 40vw;
+  height: 35px;
+  border-right: none;
+  border-left: none;
+  border-top: 0.25px solid rgba(241, 241, 241, 0.1176470588);
+  border-bottom: none;
+  border-radius: 5px;
+  background-color: rgba(241, 241, 241, 0.095);
+  padding: 10px;
+  font-size: 13.5px;
+  color: white;
+  text-align: left;
+  transition: all 1.3s;
+  position: absolute;
+  margin-left: 35px;
+  margin-top: -47.5px;
+}
+
+/* Style the tab */
+.tab {
+  float: left;
+  width: 20%;
+  height:fit-content;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: #ccc;
+  padding: 15px;
+  width: 45px;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgba(240, 240, 240, 0.15);
+}
+
+.tab button:active {
+  scale: 0.90;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: rgba(240, 240, 240, 0.15);
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  height: 300px;
+}

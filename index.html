@@ -1,0 +1,280 @@
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="Assets/ripenOs.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0" />
+
+    <title>Ripen OS</title>
+
+</head>
+<body onload="showDesktop(), startTime(),  StartDate()">
+
+    <!-- Welcome board -->
+    <div class="welcome">
+        <div class="welcome-content">
+            <img src="Assets/ripenOs.jpg" alt="logo" style="float: left;">
+            <h1  style="float: right;" id="header">RIPEN OS</h1>
+            <h2>Feel new like something Ripen</h2>
+        </div>
+
+        <h5 class="copyright">MIT License ● Copyright (c) 2022 RipenOS</h5>
+        <h5 class="desktopsready">Your Desktop is getting ready...</h5>
+
+        <div class="selection"><center>
+            <button id="intoRipen" onclick="IntoRipen()">Ripen OS</button>
+            <a href="https://ripenos.github.io/WinRipen/"><button id="intoWinRIpen" >Windows Ripen</button></a>
+        </center></div>
+    </div>
+    
+    <!-- Wallpaper info -->
+    <div class="popup">
+        <span class="close" onclick="this.parentElement.style.scale='0.1'; this.parentElement.style.opacity='0';">&times;</span> 
+        <h4>Wallpaper information</h4><p>Creator: Veronaa | Credit: Getty Images/iStockphoto</p>
+    </div>
+
+    <!-- Actionbar -->
+    <div class="actionbarM">
+        <!-- Ripebar -->
+        <div class="ripebar" id="myripebar">
+            <button class="logo" id="ripeBtn" style="margin-top: 2.5px;" 
+                onmouseover="this.style.scale= '1.15'" onmouseleave="this.style.scale= '1'">
+                <img src="Assets/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white;">
+            </button>
+
+            <div style="position: absolute; bottom: 5px; margin-left: 50px;">
+                <input type="text" placeholder="Search the web" class="searchT" onclick="disp_prompt()" id="adrsbr" oninput="opacityM()" onfocus="disp_prompt()">
+
+                <img src="Assets/windows11-search-button-S.png" alt="search" 
+                style="width: 18px; margin-left: -30px; transform: translateY(3.5px);" id="SearchInput2">
+            </div>
+
+            <div id="RipenPanel">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen" onmouseup="exitSearchMenu()">
+                        <span class="material-symbols-rounded" style="margin-left: -4px">
+                            home
+                        </span>
+                    </button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')" id="searchmenu" onmouseup="enterSearchMenu()">
+                        <span class="material-symbols-rounded" style="margin-left: -4px">
+                            search
+                        </span>
+                    </button>
+                  </div>
+                  
+                  <div id="London" class="tabcontent">
+                    <div style="display:inline-block; position: absolute; padding: 5px; top: 15px;">
+                        <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; margin-left: 30px; font-size: 18px; width: max-content;"></p>
+                    </div>
+                  </div>
+                  
+                  <div id="Paris" class="tabcontent">
+                    <iframe src="https://www.bing.com/webhp" frameborder="0" class="responsive-iframe"  id="msg" ></iframe>
+                    <p class="StartSearch">Start searching the Web!</p>
+                  </div>
+            </div>
+        </div>
+
+        <!-- Dockbar -->
+        <div class="actionbarC" id="dock" onmouseover="dockZoomIn()" onmouseleave="dockZoomOut()">
+            <img src="Assets/icons8-android-app-drawer-48.png"
+                onmouseover="this.style.transform= 'scale(1)'; this.style.marginLeft= '0'; " 
+                onmouseleave="this.style.transform= 'scale(1)'; this.style.marginLeft= '0'; " id="AllApps"
+                onclick="this.style.marginTop= '-2.5px'">
+
+            <center><div class="DockApps">
+                <img src="Assets/chrome.webp">
+                <img src="Assets/Files.png">
+                <img src="Assets/icons8-envelope-96.png">
+                <img src="Assets/Spotify.png">
+                <img src="Assets/netflix.jpg">
+                <img src="Assets/Adobe6.webp">
+            </div></center>
+
+            <div id="SearchApps" style="padding-top: 15px;">
+                <br><br>
+                <img src="Assets/icons8-apps-tab-48.png" alt="" 
+                    style="position: absolute; width: 23px; margin-left: 42.5px; margin-top: -42.5px;">
+                <input type="text" placeholder="Search all Apps" class="searchTA" style="padding-left: 37.5px;"><br>
+
+                <div style="position: absolute;">
+                    <div style="float: right; padding: 7.5px; padding-top: 9.5px; border-radius: 5px; margin-right: 45px; margin-top: -7.5px; width: 75px;" 
+                        onmouseover="this.style.backgroundColor= 'rgba(240, 240, 240, 0.15)'; " 
+                        onmouseleave="this.style.backgroundColor= 'rgba(0,0,0,0)';">
+                        <center>
+                            <img src="Assets/moreControls.png" style=" width: 25px; display: inline-block;" 
+                                onmouseover="this.style.transform= 'scale(1)'; this.style.margin= '0'; " 
+                                onmouseleave="this.style.transform= 'scale(1)'; this.style.margin= '0'; ">
+                            <p style="display: inline-block; transform: translateY(-5px); font-size: 15px;">sort</p>
+                        </center>
+                    </div>
+
+                    <h3 style="width: 43vw;  top: 0px; margin-left: 16px;">All Apps</h3>
+                    <hr style="width: 100%; margin-top: 412.5px; margin-left: -15px; 
+                            border:0.5px solid rgba(240, 240, 240, 0.15);">
+                </div>
+                    <CENTER 
+                    style="position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 44vw; margin-left: -20px; margin-top: 30px;">
+                        <div class="AllApps">
+                            <div class="Appimg"><img src="Assets/Adobe1.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe2.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe3.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe4.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe5.png"></div>
+                            <div class="Appimg"><img src="Assets/Adobe6.webp"></div>
+                            <div class="Appimg"><img src="Assets/adobe7.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe8.png"></div>
+                            <div class="Appimg"><img src="Assets/adobe9.png"></div>
+                        </div><br>
+                        <div class="AllApps">
+                            <div class="Appimg"><img src="Assets/calculator.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-calendar-96.png"></div>
+                            <div class="Appimg"><img src="Assets/canva.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-clock-96.png"></div>
+                            <div class="Appimg"><img src="Assets/chrome.webp"></div>
+                            <div class="Appimg"><img src="Assets/discord.png"></div>
+                            <div class="Appimg"><img src="Assets/drawboard.png"></div>
+                            <div class="Appimg"><img src="Assets/dolby.png"></div>
+                            <div class="Appimg"><img src="Assets/excel.png"></div>
+                        </div><br>
+                        <div class="AllApps" >
+                            <div class="Appimg"><img src="Assets/epicgames.png" 
+                                style="width: 40px; margin-bottom: -7.5px;"></div>
+                            <div class="Appimg"><img src="Assets/Files.png"></div>
+                            <div class="Appimg"><img src="Assets/facebook.png"></div>
+                            <div class="Appimg"><img src="Assets/figma.png"></div>
+                            <div class="Appimg"><img src="Assets/github.png"></div>
+                            <div class="Appimg"><img src="Assets/drive.png"></div>
+                            <div class="Appimg"><img src="Assets/inkscape.png" 
+                                style="background-color: white;"></div>
+                            <div class="Appimg"><img src="Assets/instagram.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-envelope-96.png"></div>
+                        </div><br>
+                        <div class="AllApps" >
+                            <div class="Appimg"><img src="Assets/icons8-place-marker-96.png"></div>
+                            <div class="Appimg"><img src="Assets/messenger.png"></div>
+                            <div class="Appimg"><img src="Assets/teams.png"></div>
+                            <div class="Appimg"><img src="Assets/todo.png"></div>
+                            <div class="Appimg"><img src="Assets/mc.png"></div>
+                            <div class="Appimg"><img src="Assets/office.jpg"></div>
+                            <div class="Appimg"><img src="Assets/icons8-notepad-96.png"></div>
+                            <div class="Appimg"><img src="Assets/netflix.jpg"></div>
+                            <div class="Appimg"><img src="Assets/noty.png" 
+                                style="background-color: white; width: 31px; padding: 1px;"></div>
+                        </div><br>
+                        <div class="AllApps" >
+                            <div class="Appimg"><img src="Assets/obs.png"></div>
+                            <div class="Appimg"><img src="Assets/onenote.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-paint-palette-with-brush-96.png"></div>
+                            <div class="Appimg"><img src="Assets/prime.png"></div>
+                            <div class="Appimg"><img src="Assets/pinterest.png"></div>
+                            <div class="Appimg"><img src="Assets/picsart.png"></div>
+                            <div class="Appimg"><img src="Assets/rar.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-read-96.png"></div>
+                            <div class="Appimg"><img src="Assets/ripenOs.jpg"></div>
+                        </div><br>
+                        <div class="AllApps" >
+                            <div class="Appimg"><img src="Assets/Spotify.png"></div>
+                            <div class="Appimg"><img src="Assets/settings.png"></div>
+                            <div class="Appimg"><img src="Assets/tiktok.png"></div>
+                            <div class="Appimg"><img src="Assets/icons8-microphone-96.png"></div>
+                            <div class="Appimg"><img src="Assets/vs.png" style="background-color: white;"></div>
+                            <div class="Appimg"><img src="Assets/whatsApp.png"></div>
+                            <div class="Appimg"><img src="Assets/wps.png"></div>
+                            <div class="Appimg"><img src="Assets/filmora.png"></div>
+                            <div class="Appimg"><img src="Assets/youtube.webp"></div>
+                        </div><br>
+                    </CENTER>
+                <br>
+            </div>
+        </div>
+
+        <!-- Feedbar -->
+        <div class="actionbarR" id="feedbar">
+            <div class="controlBtn" id="Calbtn">
+                <img src="Assets/noty.png" width="22px" class="notybutton" 
+                style="padding: 2px; background-color: white;">
+                <div id="txt" class="tD"></div>
+                <div id="txtdty"class="tY"></div>
+            </div>
+
+            <div class="controlBtn" style="width: 35px; right: 145px;" id="controlButtonB">
+                <center style="margin-top: 5px;"><img src="Assets/icons8-adjust-48.png" alt="controls" id="controlShowBtn"></center>
+            </div>
+
+            <div id="ControlToggles">
+                <div class="ControlToggle" style="display: inline-block;" id="wifiBtn">
+                    <img src="Assets/icons8-wi-fi-48.png" alt="wifiIcon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Wi-Fi</p>
+                </div>
+            
+                <div class="ControlToggle" style="display: inline-block;" id="audioBtn">
+                    <img src="Assets/icons8-audio-48.png" alt="audiocon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Audio</p>
+                </div>
+                
+                <div class="ControlToggle" style="display: inline-block;" id="batteryBtn">
+                    <img src="Assets/icons8-battery-level-48.png" alt="batteryIcon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Battery</p>
+                </div>
+            </div>
+            
+            <div id="wifiPanel">   
+                <h3 style="padding: 5px;">Network</h3>
+                    <div style="padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 8px;">
+            
+                        <img src="Assets/wifiSecured.png" width="25px" style="float: right;">
+                        <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 7px;">Secured</h6>
+            
+                        <img src="Assets/wifiConnected.png" width="42px" style="margin-right: 5px; margin-bottom: -5px;">
+            
+                        <p style="display: inline-block;font-size: 17px; ">Network 5G</p><br>
+                        <h5  style="display: inline-block;margin-left: 30px;">Connected, </h5>
+                        <a href="#info" style="display: inline-block; text-decoration: none; color: white;margin-bottom: 10px;"><h5><u>Info</u></h5></a>
+                        <button style="float: right; padding: 10px; background-color: #f1f1f11a; border-radius: 8px; border: none;width: 150px; color: white; font-weight: 700;">Disconnect</button><br><br><br>
+                    </div>
+                    
+                    <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05); margin-top: 220px">
+                    <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px;">More Network Settings</h5>
+            </div>
+            
+            <div id="audioPanel">
+                <h3 style="padding: 5px;">Volume</h3>
+                <br>
+                <input type="range" min="1" max="100" value="100" class="slider" style="width: 82%; margin-left: 35px;">
+                <img src="Assets/volume.png" alt="volume"
+                style="margin-left: 2px; translate: 0px -14px;margin-bottom: 12px; width: 30px;">
+                <h5 style="display: inline-block; color: #ccc;  margin-left: -25px; cursor: pointer; ">Volume Settings</h5>
+                <h5 style="float: right; color: #ccc;margin-right: 15px; margin-top: 25px;">Mixer</h5>
+            </div>
+            
+            <div id="batteryPanel" >
+                <h3 style="padding: 5px; margin-bottom: 5px;">Battery</h3>
+            
+                <img src="Assets/icons8-battery-level-48.png" style="transform: translate(2.5px, 5px);">
+            
+                <h2 style="margin-left: 2px; display: inline-block; font-size: 20px;">70%</h2> 
+            
+            
+                <input type="range" min="1" max="100" value="50" class="slider" style=" margin-left: 5px; margin-top: 15px;">
+            
+                <img src="Assets/performance.png" width="25px" style="float: right; margin-right: 13px; margin-top: 5px;">
+                <h5 style="float: right;color: #ccc;margin-right: -20px; margin-top: 32px;">Better Performance</h5>
+            
+                <img src="Assets/power.png" width="25px" style="margin-left: 1px; margin-top: 5px;">
+                <h5 style="color: #ccc;margin-left: 5px; margin-top: 7px;">Better Battery</h5>
+            </div>
+        </div>
+    </div>
+    <div class="borderLeft" id="borderLeft"></div>
+    <div class="borderRight" id="borderRight"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
