@@ -41,7 +41,7 @@
         <div class="ripebar" id="myripebar">
             <button class="logo" id="ripeBtn" style="margin-top: 2.5px;" 
                 onmouseover="this.style.scale= '1.15'" onmouseleave="this.style.scale= '1'">
-                <img src="Assets/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white;">
+                <img src="Assets/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white; border-radius: 5px; transition: all 0.5s;" id="RipeLogoM">
             </button>
 
             <div style="position: absolute; bottom: 5px; margin-left: 50px;">
@@ -53,12 +53,16 @@
 
             <div id="RipenPanel">
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen" onmouseup="exitSearchMenu()">
+                    <button class="tablinks" onclick="openCity(event, 'London'),   
+                    document.getElementById('RipeLogoM').src= 'Assets/ripenOs.jpg';
+                    document.getElementById('RipeLogoM').style.backgroundColor= 'white';
+                    document.getElementById('RipeLogoM').style.width= '31px';
+                    document.getElementById('RipeLogoM').style.marginLeft= '0px';" id="defaultOpen" onmouseup="exitSearchMenu()">
                         <span class="material-symbols-rounded" style="margin-left: -4px">
                             home
                         </span>
                     </button>
-                    <button class="tablinks" onclick="openCity(event, 'Paris')" id="searchmenu" onmouseup="enterSearchMenu()">
+                    <button class="tablinks" onclick="openCity(event, 'Paris')" id="searchmenu" onmouseup="enterSearchMenu()" style="display: none">
                         <span class="material-symbols-rounded" style="margin-left: -4px">
                             search
                         </span>
