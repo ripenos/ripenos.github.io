@@ -240,9 +240,9 @@ scale: 0.85;
 
 .responsive-iframe {
   position: absolute;
-  width: 67vw;
+  width: 70.5vw;
   height: 500px;
-  left: 55px;
+  left: 50px;
   border-radius: 7.5px;
   z-index: 2;
 }
