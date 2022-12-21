@@ -270,6 +270,13 @@ function enterSearchMenu() {
     document.getElementById("dock").style.transition = "all 1s";
     document.getElementsByClassName("searchT")[0].style.width = "67.5vw";
     document.getElementById("adrsbr").focus();
+    document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
+    document.getElementById("RipeLogoM").style.backgroundColor= "white";
+    document.getElementById("RipeLogoM").style.width= "31px";
+    document.getElementById("RipeLogoM").style.marginLeft= "0px";
+    document.getElementById("defaultOpen").style.transform= "translateY(0px)";
+    document.getElementById("defaultOpen").style.opacity= "1";
+    
 }
 
 function opacityM() {
@@ -295,6 +302,13 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
         document.getElementById("myripebar").style.width = "27vw";
         document.getElementById("RipenPanel").style.visibility = "hidden";
         document.getElementById("RipenPanel").style.opacity = "0";
+        document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
+        document.getElementById("RipeLogoM").style.width= "31px";
+        document.getElementById("RipeLogoM").style.marginLeft= "0px";
+        document.getElementById("defaultOpen").style.transform= "translateY(0px)";
+        document.getElementById("defaultOpen").style.opacity= "1";
+        document.getElementById("defaultOpen").style.display= "block";
     }
     else {
         document.getElementById("myripebar").style.height = "500px";
@@ -303,7 +317,14 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
         document.getElementById("RipenPanel").style.opacity = "1";
         document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
+        document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
+        document.getElementById("RipeLogoM").style.width= "31px";
+        document.getElementById("RipeLogoM").style.marginLeft= "0px";
         document.getElementById("defaultOpen").click();
+        document.getElementById("defaultOpen").style.transform= "translateY(0px)";
+        document.getElementById("defaultOpen").style.opacity= "1";
+        document.getElementById("defaultOpen").style.display= "block";
     }
 })
 
@@ -317,6 +338,14 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
         document.getElementById("RipenPanel").style.visibility = "hidden";
         document.getElementById("RipenPanel").style.opacity = "0";
         document.getElementById("defaultOpen").click();
+        document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
+        document.getElementById("RipeLogoM").style.backgroundColor= "white";
+        document.getElementById("defaultOpen").style.transform= "translateY(0px)";
+        document.getElementById("defaultOpen").style.opacity= "1";
+        document.getElementById("defaultOpen").style.display= "block";
+        document.getElementById("RipeLogoM").style.width= "31px";
+        document.getElementById("RipeLogoM").style.marginLeft= "0px";
+        document.getElementById("Paris").style.transform= "translate(0px, 0px)";
     }
     else {
         document.getElementById("myripebar").style.height = "560px";
@@ -327,7 +356,18 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
         document.getElementById("RipenPanel").style.visibility = "visible";
         document.getElementById("RipenPanel").style.opacity = "1";
         document.getElementById("searchmenu").click();
-
+        document.getElementById("RipeLogoM").src= "Assets/icons8-home-96.png";
+        document.getElementById("RipeLogoM").style.backgroundColor= "rgba(0,0,0,0)";
+        document.getElementById("defaultOpen").style.transform= "translateY(500px)";
+        setTimeout(() => {
+            document.getElementById("defaultOpen").style.opacity= "1";
+        }, 100)
+        setTimeout(() => {
+            document.getElementById("defaultOpen").style.display= "none";
+        }, 200)
+        document.getElementById("RipeLogoM").style.width= "33px";
+        document.getElementById("RipeLogoM").style.marginLeft= "-5px";
+        document.getElementById("Paris").style.transform= "translate(-45px, -7.5px)";
     }
 })
 
@@ -344,7 +384,11 @@ window.onclick = function(event) {
         document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementById("defaultOpen").click();
-
+        document.getElementById("defaultOpen").style.transform= "translateY(0px)";
+        document.getElementById("defaultOpen").style.opacity= "1";
+        document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
+        document.getElementById("RipeLogoM").style.width= "31px";
+        document.getElementById("RipeLogoM").style.marginLeft= "0px";
         document.getElementById("RipenPanel").style.visibility = "hidden";
         document.getElementById("RipenPanel").style.opacity = "0";
         document.getElementById("ControlToggles").style.visibility = "hidden";
