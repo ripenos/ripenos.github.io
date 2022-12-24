@@ -3,7 +3,7 @@
 # The Ripen OS
 ### Feel new like something Ripen
 
-> Check out the family members: 
+> **Check out:**
 > * [The Ripen OS](https://ripenos.github.io/)
 > * [The Windows Ripen](https://ripenos.github.io/)
 
