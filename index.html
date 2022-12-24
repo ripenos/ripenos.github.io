@@ -1,6 +1,5 @@
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="Assets/ripenOs.png" type="image/x-icon">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0" />
 
     <title>Ripen OS</title>
-
 </head>
 <body onload="showDesktop(), startTime(),  StartDate()">
 
@@ -28,12 +26,6 @@
             <a href="https://ripenos.github.io/WinRipen/"><button id="intoWinRIpen" >Windows Ripen</button></a>
         </center></div>
     </div>
-    
-    <!-- Wallpaper info -->
-    <div class="popup">
-        <span class="close" onclick="this.parentElement.style.scale='0.1'; this.parentElement.style.opacity='0';">&times;</span> 
-        <h4>Wallpaper information</h4><p>Creator: Veronaa | Credit: Getty Images/iStockphoto</p>
-    </div>
 
     <!-- Actionbar -->
     <div class="actionbarM">
@@ -44,40 +36,71 @@
                 <img src="Assets/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white; border-radius: 5px; transition: all 0.5s;" id="RipeLogoM">
             </button>
 
-            <div style="position: absolute; bottom: 5px; margin-left: 50px;">
+            <div style="position: absolute; bottom: 5px; margin-left: 47.5px;">
                 <input type="text" placeholder="Search the web" class="searchT" onclick="disp_prompt()" id="adrsbr" oninput="opacityM()" onfocus="disp_prompt()">
 
                 <img src="Assets/windows11-search-button-S.png" alt="search" 
-                style="width: 18px; margin-left: -30px; transform: translateY(3.5px);" id="SearchInput2">
+                style="width: 18px; margin-left: -30px;-webkit-transform: translateY(3.5px); transform: translateY(3.5px);" id="SearchInput2">
             </div>
 
             <div id="RipenPanel">
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London'),   
-                    document.getElementById('RipeLogoM').src= 'Assets/ripenOs.jpg';
-                    document.getElementById('RipeLogoM').style.backgroundColor= 'white';
-                    document.getElementById('RipeLogoM').style.width= '31px';
-                    document.getElementById('RipeLogoM').style.marginLeft= '0px';" id="defaultOpen" onmouseup="exitSearchMenu()">
-                        <span class="material-symbols-rounded" style="margin-left: -4px">
-                            home
-                        </span>
-                    </button>
-                    <button class="tablinks" onclick="openCity(event, 'Paris')" id="searchmenu" onmouseup="enterSearchMenu()" style="display: none">
-                        <span class="material-symbols-rounded" style="margin-left: -4px">
-                            search
-                        </span>
-                    </button>
+                    <CENTER>
+                        <button class="tablinks" onclick="openCity(event, 'London'),   
+                        document.getElementById('RipeLogoM').src= 'Assets/ripenOs.jpg';
+                        document.getElementById('RipeLogoM').style.backgroundColor= 'white';
+                        document.getElementById('RipeLogoM').style.width= '31px';
+                        document.getElementById('RipeLogoM').style.marginLeft= '0px';" id="defaultOpen" onmouseup="exitSearchMenu()">
+                            <span class="material-symbols-rounded" style="margin-left: -7.5px">
+                                home
+                            </span>
+                            <p class="MenuTxt">Home</p>
+                        </button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')" id="searchmenu" onmouseup="enterSearchMenu()" style="display: none">
+                            <span class="material-symbols-rounded">
+                                search
+                            </span>
+                        </button>
+                        <button id="ripenExpandMenuBtn" class="tablinks">
+                            <span class="material-symbols-rounded" >
+                                menu
+                            </span>
+                            <p class="MenuTxt2">Menu</p>
+                        </button>
+                    </CENTER>
+                    <div id="RipeTogglesL">
+                        <div class="userIconR">
+                            <img src="Assets/icons8-male-user-96.png" alt="">
+                            <p class="MenuTxt3">Admin</p>
+                        </div>
+                        <div class="folderIconR">
+                            <img src="Assets/icons8-folder-96.png" alt="">
+                            <p class="MenuTxt4">Files</p>
+                        </div>
+                        <div class="SettingsIconR">
+                            <img src="Assets/icons8-gear-96.png" alt="">
+                            <p class="MenuTxt5">Settings</p>
+                        </div>
+                        <div class="shutDownIconR">
+                            <img src="Assets/icons8-shutdown-52.png" alt="">
+                            <p class="MenuTxt6">Power</p>
+                        </div>
+                        <hr class="RipenPanelHR">
+                        <div class="vl"></div>
+                    </div>
                   </div>
-                  
                   <div id="London" class="tabcontent">
                     <div style="display:inline-block; position: absolute; padding: 5px; top: 15px;">
-                        <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; margin-left: 30px; font-size: 18px; width: max-content;"></p>
+                        <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; font-size: 18px; width: max-content;"></p>
+                        <br>
+
                     </div>
                   </div>
                   
                   <div id="Paris" class="tabcontent">
                     <iframe src="https://www.bing.com/webhp" frameborder="0" class="responsive-iframe"  id="msg" ></iframe>
                     <p class="StartSearch">Start searching the Web!</p>
+                    <br>
                   </div>
             </div>
         </div>
@@ -261,7 +284,7 @@
             <div id="batteryPanel" >
                 <h3 style="padding: 5px; margin-bottom: 5px;">Battery</h3>
             
-                <img src="Assets/icons8-battery-level-48.png" style="transform: translate(2.5px, 5px);">
+                <img src="Assets/icons8-battery-level-48.png" style="-webkit-transform: translate(2.5px, 5px);transform: translate(2.5px, 5px);">
             
                 <h2 style="margin-left: 2px; display: inline-block; font-size: 20px;">70%</h2> 
             
@@ -276,8 +299,6 @@
             </div>
         </div>
     </div>
-    <div class="borderLeft" id="borderLeft"></div>
-    <div class="borderRight" id="borderRight"></div>
 
     <script src="script.js"></script>
 </body>
