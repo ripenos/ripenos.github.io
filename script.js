@@ -55,8 +55,6 @@ function dockZoomIn() {
             dockApps.style.transform= "translateX(-50%)";
             document.getElementById("myripebar").style.bottom = "0px";
             document.getElementById("feedbar").style.bottom = "0px";
-            document.getElementById("borderLeft").style.bottom = "35px";
-            document.getElementById("borderRight").style.bottom = "35px";
         }
         else {
             document.getElementById("dock").style.paddingBottom = "65px";
@@ -66,8 +64,6 @@ function dockZoomIn() {
             document.getElementById("AllApps").style.marginTop= "12px";
             document.getElementById("myripebar").style.bottom = "-15px";
             document.getElementById("feedbar").style.bottom = "-15px";
-            document.getElementById("borderLeft").style.bottom = "15px";
-            document.getElementById("borderRight").style.bottom = "15px";
         }
   }
 
@@ -79,8 +75,6 @@ function dockZoomIn() {
     document.getElementById("AllApps").style.marginTop= "-2.5px";
     document.getElementById("myripebar").style.bottom = "0px";
     document.getElementById("feedbar").style.bottom = "0px";
-    document.getElementById("borderLeft").style.bottom = "35px";
-    document.getElementById("borderRight").style.bottom = "35px";
   }
 
   document.getElementById("AllApps").addEventListener("click", ()=>{
@@ -293,7 +287,7 @@ greet = 'Good Afternoon';
 else if (hrs >= 17 && hrs <= 24)
 greet = 'Good Evening';
 
-document.getElementById('greetings').innerHTML ='<b>' + greet + ',  Admin' + '</b>';
+document.getElementById('greetings').innerHTML ='<b>' + greet + ', Admin' + '</b>';
 
 
 document.getElementById("ripeBtn").addEventListener("click", ()=>{
@@ -303,12 +297,17 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
         document.getElementById("RipenPanel").style.visibility = "hidden";
         document.getElementById("RipenPanel").style.opacity = "0";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementsByClassName("searchT")[0].style.marginBottom = "1px";
+        document.getElementsByClassName("logo")[0].style.bottom = "5px";
+        document.getElementsByClassName("tabcontent")[0].style.marginLeft = "0px";
+        document.getElementById("ripenExpandMenuBtn").style.opacity= "1";
         document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
         document.getElementById("RipeLogoM").style.width= "31px";
         document.getElementById("RipeLogoM").style.marginLeft= "0px";
         document.getElementById("defaultOpen").style.transform= "translateY(0px)";
         document.getElementById("defaultOpen").style.opacity= "1";
         document.getElementById("defaultOpen").style.display= "block";
+
     }
     else {
         document.getElementById("myripebar").style.height = "500px";
@@ -318,6 +317,11 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
         document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementsByClassName("searchT")[0].style.marginBottom = "3px";
+        document.getElementsByClassName("logo")[0].style.bottom = "7.5px";
+        document.getElementById("RipeTogglesL").style.display= "block";
+        document.getElementsByClassName("tabcontent")[0].style.marginLeft = "55px";
+        document.getElementById("ripenExpandMenuBtn").style.opacity= "1";
         document.getElementById("RipeLogoM").src= "Assets/ripenOs.jpg";
         document.getElementById("RipeLogoM").style.width= "31px";
         document.getElementById("RipeLogoM").style.marginLeft= "0px";
@@ -335,6 +339,8 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
         document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementsByClassName("tabcontent")[0].style.marginLeft = "55px";
+
         document.getElementById("RipenPanel").style.visibility = "hidden";
         document.getElementById("RipenPanel").style.opacity = "0";
         document.getElementById("defaultOpen").click();
@@ -342,6 +348,7 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
         document.getElementById("RipeLogoM").style.backgroundColor= "white";
         document.getElementById("defaultOpen").style.transform= "translateY(0px)";
         document.getElementById("defaultOpen").style.opacity= "1";
+        document.getElementById("ripenExpandMenuBtn").style.opacity= "1";
         document.getElementById("defaultOpen").style.display= "block";
         document.getElementById("RipeLogoM").style.width= "31px";
         document.getElementById("RipeLogoM").style.marginLeft= "0px";
@@ -353,12 +360,17 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
         document.getElementById("dock").style.bottom= "-655px";
         document.getElementById("dock").style.transition = "all 1s";
         document.getElementsByClassName("searchT")[0].style.width = "67.5vw";
+        document.getElementsByClassName("tabcontent")[0].style.marginLeft = "0px";
+        document.getElementById("ripenExpandMenuBtn").style.opacity= "0";
+
         document.getElementById("RipenPanel").style.visibility = "visible";
         document.getElementById("RipenPanel").style.opacity = "1";
         document.getElementById("searchmenu").click();
         document.getElementById("RipeLogoM").src= "Assets/icons8-home-96.png";
         document.getElementById("RipeLogoM").style.backgroundColor= "rgba(0,0,0,0)";
         document.getElementById("defaultOpen").style.transform= "translateY(500px)";
+        document.getElementById("RipeTogglesL").style.display= "none";
+
         setTimeout(() => {
             document.getElementById("defaultOpen").style.opacity= "1";
         }, 100)
@@ -371,6 +383,45 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
     }
 })
 
+document.getElementById("ripenExpandMenuBtn").addEventListener("click", ()=>{
+    if(document.getElementsByClassName("tabcontent")[0].style.transform == "translateX(60px)"){
+        document.getElementsByClassName("tabcontent")[0].style.transform= "translateX(0)";
+        document.getElementsByClassName("vl")[0].style.transform= "translateX(0)";
+        document.getElementsByClassName("tablinks")[0].style.width= "40px";
+        document.getElementById("ripenExpandMenuBtn").style.width= "40px";
+        document.getElementsByClassName("MenuTxt")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt")[0].style.opacity= "0";
+        document.getElementsByClassName("MenuTxt2")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt2")[0].style.opacity= "0";
+        document.getElementsByClassName("MenuTxt3")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt3")[0].style.opacity= "0";
+        document.getElementsByClassName("MenuTxt4")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt4")[0].style.opacity= "0";
+        document.getElementsByClassName("MenuTxt5")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt5")[0].style.opacity= "0";
+        document.getElementsByClassName("MenuTxt6")[0].style.visibility= "hidden";
+        document.getElementsByClassName("MenuTxt6")[0].style.opacity= "0";
+    }
+    else{
+        document.getElementsByClassName("tabcontent")[0].style.transform= "translateX(60px)";
+        document.getElementsByClassName("vl")[0].style.transform= "translateX(60px)";
+        document.getElementsByClassName("tablinks")[0].style.width= "100px";
+        document.getElementById("ripenExpandMenuBtn").style.width= "100px";
+        document.getElementsByClassName("MenuTxt")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt")[0].style.opacity= "1";
+        document.getElementsByClassName("MenuTxt2")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt2")[0].style.opacity= "1";
+        document.getElementsByClassName("MenuTxt3")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt3")[0].style.opacity= "1";
+        document.getElementsByClassName("MenuTxt4")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt4")[0].style.opacity= "1";
+        document.getElementsByClassName("MenuTxt5")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt5")[0].style.opacity= "1";
+        document.getElementsByClassName("MenuTxt6")[0].style.visibility= "visible";
+        document.getElementsByClassName("MenuTxt6")[0].style.opacity= "1";
+    }
+})
+
 window.onclick = function(event) {
     if (event.target == document.body) {
         document.getElementById("feedbar").style.height = "45px";
@@ -380,6 +431,8 @@ window.onclick = function(event) {
         document.getElementById("dock").style.paddingLeft = "10px";
         document.getElementById("AllApps").style.marginTop= "-2.5px";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
+        document.getElementsByClassName("searchT")[0].style.marginBottom = "1px";
+        document.getElementsByClassName("logo")[0].style.bottom = "5px";
         document.getElementById("myripebar").style.width = "27vw";
         document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
