@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("Assets/bg.png");
+  background-image: url("https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096");
   background-size: cover;
   height: 100vh;
   color: white;
@@ -83,7 +83,7 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   position: absolute;
   left: 35%;
   top: 23%;
-  width: 59%;
+  width: 60%;
   -webkit-transform: translate(-35%, -50%);
           transform: translate(-35%, -50%);
   visibility: hidden;
@@ -93,11 +93,11 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
 }
 
 .welcome-content img {
-  position: absolute;
   width: 12.5vw;
   border-radius: 25px;
-  top: 35px;
+  margin: 0;
   padding: 0;
+  transform: translateY(20%);
 }
 
 .welcome-content h1 {
@@ -109,21 +109,23 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   position: absolute;
   bottom: 10%;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   visibility: hidden;
   opacity: 0;
   transition: all 1s;
 }
 
 .welcome .selection button{
-  width: 200px;
+  width: 250px;
   margin: 5px;
-  font-size: 22px;
+  font-size: 2vw;
   padding: 15px;
 }
 
 .welcome .selection button:hover{
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   background-color: rgba(94, 94, 94, 0.15);
   border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
   margin-left: 10px;
@@ -141,7 +143,7 @@ scale: 0.85;
   top: 70%;
   width: max-content;
   -webkit-transform: translate(-41%, 37.5%);
-  transform: translate(-41%, 37.5%);
+          transform: translate(-41%, 37.5%);
   font-size: 2.5vw;
   color: orange;
 }
@@ -171,33 +173,6 @@ scale: 0.85;
   user-select: none;
 }
 
-
-.popup {
-  position: relative;
-  float: right;
-  padding: 10px;
-  margin: 7px;
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
-  -webkit-backdrop-filter: blur(25px) contrast(250%);
-          backdrop-filter: blur(25px) contrast(250%);
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-.popup .close {
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  padding: 2.5px;
-}
-.popup .close:hover {
-  filter: drop-shadow(0px 0px 2px rgb(136, 136, 136));
-}
-
 .actionbarM {
   position: absolute;
   bottom: 0;
@@ -212,12 +187,16 @@ scale: 0.85;
   width: 27vw;
   height: 45px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.75);
-  -webkit-backdrop-filter: blur(25px) contrast(250%);
-          backdrop-filter: blur(25px) contrast(250%);
+  background-color:  rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(35px) contrast(200%);
+          backdrop-filter: blur(35px) contrast(200%);
+  border-top:  1px solid #f1f1f138;
+  border-right:  1px solid #f1f1f138;
   border-top-right-radius: 5px;
   transition: all 0.3s;
   z-index: 200;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
 }
 .ripebar img {
@@ -240,9 +219,10 @@ scale: 0.85;
 
 .responsive-iframe {
   position: absolute;
-  width: 70.5vw;
+  width: 71vw;
   height: 500px;
-  left: 50px;
+  left: 45px;
+  top: 15px;
   border-radius: 7.5px;
   z-index: 2;
 }
@@ -254,10 +234,12 @@ scale: 0.85;
   width: 27vw;
   height: 45px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.75);
   transition: all 0.3s;
-  -webkit-backdrop-filter: blur(25px) contrast(250%);
-          backdrop-filter: blur(25px) contrast(250%);
+  background-color:  rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(35px) contrast(200%);
+          backdrop-filter: blur(35px) contrast(200%);
+  border-top:  1px solid #f1f1f138;
+  border-left:  1px solid #f1f1f138;
   border-top-left-radius: 5px;
   transition: all 0.3s;
   z-index: 200;
@@ -304,7 +286,8 @@ scale: 0.85;
 .notybutton {
   float: right;
   filter: 0px 0px 7.5px rgb(0, 0, 0);
-  transform: translateX(-2px);
+  -webkit-transform: translateX(-2px);
+          transform: translateX(-2px);
   margin-top: 2.5px;
   margin-right: 5px;
 }
@@ -313,7 +296,8 @@ scale: 0.85;
   color: azure;
   text-align: right;
   margin-top: 1px;
-  transform: translateX(-10px);
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 13px;
 }
@@ -321,7 +305,8 @@ scale: 0.85;
 .tY {
   color: azure;
   text-align: right;
-  transform: translateX(-10px);
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 13px;
 }
@@ -331,14 +316,18 @@ scale: 0.85;
   position: fixed;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 45.5vw;
   height: 45px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.75);
-  transition: all 0.3s ease-in-out;
-  -webkit-backdrop-filter: blur(25px) contrast(250%);
-          backdrop-filter: blur(25px) contrast(250%);
+ transition: all 0.3s ease-in-out;
+ background-color:  rgba(0, 0, 0, 0.65);
+ -webkit-backdrop-filter: blur(35px) contrast(100%);
+         backdrop-filter: blur(35px) contrast(100%);
+ border-top:  1px solid #f1f1f138;
+ border-left:  1px solid #f1f1f138;
+ border-right:  1px solid #f1f1f138;
   z-index: 201;
   border-radius: 5px 5px 0 0;
   transition: all 0.3s;
@@ -353,7 +342,8 @@ scale: 0.85;
 }
 .actionbarC img:hover {
   transition: all 0.5s;
-  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
   margin-left: 10px;
   margin-right: 10px;
   filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
@@ -367,48 +357,22 @@ scale: 0.85;
   margin-top: -22.5px;
   transition: all 0.3s;
   margin-left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   bottom: 5px;
+  width: max-content;
 }
 
 .logo {
   position: absolute;
   bottom: 5px;
   background: none;
-  margin-left: 12.5px;
-  transform: scale(1);
+  margin-left: 6px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   transition: all 0.3s;
   padding: 0;
   border: none;
-}
-
-.borderLeft {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  bottom: 35px;
-  left: -5px;
-  background-color: transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.75);
-  border-top-left-radius: 80px 80px;
-  transform: rotateX(180deg);
-  z-index: 1;
-  transition: all 0.3s;
-}
-
-.borderRight {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  bottom: 35px;
-  right: 0.1px;
-  margin-right: -5px;
-  background-color: transparent;
-  border-top: 10px solid rgba(0, 0, 0, 0.75);
-  border-top-right-radius: 80px 80px;
-  transform: rotateX(180deg);
-  z-index: 1;
-  transition: all 0.3s;
 }
 
 #ControlToggles {
@@ -508,7 +472,8 @@ scale: 0.85;
   width: 35px;
 }
 .AllApps .Appimg img:hover {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -576,6 +541,7 @@ scale: 0.85;
   color: white;
   text-align: left;
   transition: all 0.5s;
+  margin-bottom: 1px;
 }
 
 .searchTA {
@@ -601,16 +567,16 @@ scale: 0.85;
 .tab {
   float: left;
   width: 20%;
-  height:fit-content;
+  height: 435px;
 }
 
 /* Style the buttons inside the tab */
-.tab button {
+.tab .tablinks {
   display: block;
   background-color: inherit;
   color: #ccc;
   padding: 15px;
-  width: 45px;
+  width: 40px;
   border: none;
   outline: none;
   text-align: left;
@@ -621,23 +587,178 @@ scale: 0.85;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tab .tablinks:hover {
   background-color: rgba(240, 240, 240, 0.15);
 }
 
-.tab button:active {
+.tab .tablinks:active {
   scale: 0.90;
 }
 
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab .tablinks.active {
   background-color: rgba(240, 240, 240, 0.15);
 }
 
 /* Style the tab content */
 .tabcontent {
+  position: absolute;
   float: left;
-  padding: 0px 12px;
+  margin-top: -13px;
   width: 70%;
-  height: 300px;
+  height: 448px;
+  transform: translateX(0);
+  transition: all 0.3s;
+}
+
+.vl {
+  position: absolute;
+  border:0.25px solid rgba(240, 240, 240, 0.15);
+  height: 449px;
+  top: -4px;
+  left: 42.5px;
+  transform: translateX(0);
+  transition: all 0.3s;
+}
+
+.MoreBtn {
+	float: right; 
+	background-color: rgba(124, 124, 124, 0.25); border-radius: 5px; 
+	box-shadow: 0px -0.5px 1px rgba(95, 95, 95, 0.5);
+	padding: 5px; padding-left: 10px; padding-right: 10px; padding-top: 0px;
+	backdrop-filter:  contrast(70%);
+	-webkit-backdrop-filter: contrast(70%);
+}
+
+.shutDownIconR {
+  position:absolute;
+  left: 7px;
+  bottom: 20px;
+
+}
+
+.shutDownIconR img {
+  padding: 0;
+  width: 17px;
+}
+
+.SettingsIconR {
+  position:absolute;
+  left: 4px;
+  bottom: 60px;
+}
+
+.SettingsIconR img {
+  width: 24px;
+}
+
+.folderIconR {
+  position:absolute;
+  left: 4px;
+  bottom: 100px;
+}
+
+.folderIconR img {
+  width: 25px;
+}
+
+.userIconR {
+  position:absolute;
+  left: 5px;
+  bottom: 140px;
+}
+
+.userIconR img {
+  width: 22px;
+}
+
+.RipenPanelHR {
+  position:absolute;
+  left: -0.75vw;
+  bottom: -2px;
+  width: 27vw;
+  border:0.25px solid rgba(240, 240, 240, 0.15);
+}
+
+#defaultOpen {
+  margin-left: -4px;
+}
+
+#defaultOpen span {
+  margin-left: -7.5px
+}
+
+#ripenExpandMenuBtn {
+  margin-left: -3px;
+}
+
+#ripenExpandMenuBtn span {
+  margin-left: -7.5px
+}
+
+.MenuTxt {
+  position: absolute;
+  display: inline;
+  font-size: 15px;
+  top: 20px;
+  left: 37.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.MenuTxt2{
+  position: absolute;
+  display: inline-block;
+  font-size: 15px;
+  padding-top: 2.5px;
+  padding-left: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.MenuTxt3{
+  position: absolute;
+  display: inline-block;
+  font-size: 13.5px;
+  padding-top: 1px;
+  padding-left: 7.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+
+.MenuTxt4{
+  position: absolute;
+  display: inline-block;
+  font-size: 13.5px;
+  padding-top: 2.5px;
+  padding-left: 7.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.MenuTxt5{
+  position: absolute;
+  display: inline-block;
+  font-size: 13.5px;
+  padding-top: 1px;
+  padding-left: 7.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.MenuTxt6{
+  position: absolute;
+  display: inline-block;
+  font-size: 13.5px;
+  padding-top: 0px;
+  padding-left: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
 }
