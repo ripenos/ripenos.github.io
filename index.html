@@ -61,7 +61,7 @@
                                 search
                             </span>
                         </button>
-                        <button id="ripenExpandMenuBtn" class="tablinks">
+                        <button id="ripenExpandMenuBtn" class="tablinks" onmouseover="ExpandMenuR()" onmouseleave="ReExpandMenuR()">
                             <span class="material-symbols-rounded" >
                                 menu
                             </span>
@@ -139,12 +139,12 @@
                         </center>
                     </div>
 
-                    <h3 style="width: 43vw;  top: 0px; margin-left: 16px;">All Apps</h3>
+                    <h3 style="width: 43vw;  top: 0px; margin-left: 16px;  transition: all 0.3s;" id="AllAppsName">All Apps</h3>
                     <hr style="width: 100%; margin-top: 412.5px; margin-left: -15px; 
-                            border:0.5px solid rgba(240, 240, 240, 0.15);">
+                            border:0.5px solid rgba(240, 240, 240, 0.15); transition: all 0.3s;" id="AllAppsHR">
                 </div>
                     <CENTER 
-                    style="position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 44vw; margin-left: -20px; margin-top: 30px;">
+                    style="position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 44vw; margin-left: -20px; margin-top: 30px; transition: all 0.3s;" id="AllAppsList">
                         <div class="AllApps">
                             <div class="Appimg"><img src="Assets/Adobe1.png"></div>
                             <div class="Appimg"><img src="Assets/adobe2.png"></div>
@@ -230,6 +230,38 @@
 
             <div class="controlBtn" style="width: 35px; right: 145px;" id="controlButtonB">
                 <center style="margin-top: 5px;"><img src="Assets/icons8-adjust-48.png" alt="controls" id="controlShowBtn"></center>
+            </div>
+            <div class="controlBtn" style="width: 35px; right: 185px;" id="personalize">
+                <center style="margin-top: 5px;"><img src="Assets/icons8-windows-10-personalization-96.png" alt="personalize" id="personalizeShowBtn"></center>
+            </div>
+
+            <div id="personalizePanel">
+                <h3>personalization</h3>
+                <img src="Assets/icons8-change-theme-96.png" alt="themes" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Theme</h4>
+                <div class="Theme">
+                    <button class="DarkThemeBtn" id="Darktheme">Dark</button>
+                    <button class="LightThemeBtn" id="LightTheme">Light</button>
+                </div>
+                <br>
+                <img src="Assets/icons8-taskbar-96.png" alt="actionbar" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Actionbar Mode</h4>
+                <div class="Theme">
+                    <button class="DarkThemeBtn" id="Acbars">Bars</button>
+                    <button class="DarkThemeBtn" id="AcDocks">Docks</button>
+                </div>
+                <br>
+                <img src="Assets/icons8-picture-96.png" alt="picture" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Wallpaper</h4>
+                <div class="Walls">
+                    <img src="https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096" alt="RipenWaves" id="RipenWaves">
+                    <img src="Assets/bg.png" alt="RipenFLow" id="RipenFLow">
+                    <img src="https://9to5mac.com/wp-content/uploads/sites/6/2022/06/macOS-Ventura-wallpaper-1-1.jpg?quality=82&strip=all" alt="Ventura" id="Ventura">
+                    <img src="https://wallpapercave.com/wp/wp11233324.jpg" alt="VenturaDark" id="VenturaDark">
+                </div>
             </div>
 
             <div id="ControlToggles">
