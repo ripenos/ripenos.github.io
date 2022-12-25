@@ -53,8 +53,6 @@ function dockZoomIn() {
             dockApps.style.marginBottom= "0px";
             dockApps.style.scale= "1";
             dockApps.style.transform= "translateX(-50%)";
-            document.getElementById("myripebar").style.bottom = "0px";
-            document.getElementById("feedbar").style.bottom = "0px";
         }
         else {
             document.getElementById("dock").style.paddingBottom = "65px";
@@ -62,8 +60,6 @@ function dockZoomIn() {
             dockApps.style.scale= "1.3";
             dockApps.style.transform= "translateX(-40%)";
             document.getElementById("AllApps").style.marginTop= "12px";
-            document.getElementById("myripebar").style.bottom = "-15px";
-            document.getElementById("feedbar").style.bottom = "-15px";
         }
   }
 
@@ -73,8 +69,6 @@ function dockZoomIn() {
     dockApps.style.scale= "1";
     dockApps.style.transform= "translateX(-50%)";
     document.getElementById("AllApps").style.marginTop= "-2.5px";
-    document.getElementById("myripebar").style.bottom = "0px";
-    document.getElementById("feedbar").style.bottom = "0px";
   }
 
   document.getElementById("AllApps").addEventListener("click", ()=>{
@@ -94,6 +88,27 @@ function dockZoomIn() {
         document.getElementById("SearchApps").style.visibility = "visible";
         document.getElementById("SearchApps").style.opacity = "1";
 
+    }
+})
+
+document.getElementById("personalizeShowBtn").addEventListener("click", ()=>{
+    if (document.getElementById("feedbar").style.height == "545px"){
+        document.getElementById("feedbar").style.height = "45px";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
+    }
+    else {
+        document.getElementById("feedbar").style.height = "545px";
+        document.getElementById("ControlToggles").style.visibility = "hidden";
+        document.getElementById("ControlToggles").style.opacity = "0";
+        document.getElementById("wifiPanel").style.visibility = "hidden";
+        document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("audioPanel").style.visibility = "hidden";
+        document.getElementById("audioPanel").style.opacity = "0";
+        document.getElementById("batteryPanel").style.visibility = "hidden";
+        document.getElementById("batteryPanel").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "visible";
+        document.getElementById("personalizePanel").style.opacity = "1";
     }
 })
 
@@ -118,6 +133,9 @@ document.getElementById("controlShowBtn").addEventListener("click", ()=>{
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
         document.getElementById("batteryPanel").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
+
     }
 })
 
@@ -135,6 +153,8 @@ document.getElementById("wifiBtn").addEventListener("click", ()=>{
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
         document.getElementById("batteryPanel").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
     }
 })
 
@@ -152,6 +172,8 @@ document.getElementById("audioBtn").addEventListener("click", ()=>{
         document.getElementById("wifiPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
         document.getElementById("batteryPanel").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
     }
 })
 
@@ -169,6 +191,8 @@ document.getElementById("batteryBtn").addEventListener("click", ()=>{
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "visible";
         document.getElementById("batteryPanel").style.opacity = "1";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
     }
 })
 
@@ -252,7 +276,6 @@ function validate(e) {
 function exitSearchMenu() {
     document.getElementById("myripebar").style.height = "500px";
     document.getElementById("myripebar").style.width = "27vw";
-    document.getElementById("dock").style.bottom= "0";
     document.getElementById("dock").style.transition = "all 0.3s";
     document.getElementsByClassName("searchT")[0].style.width = "22vw";
 }
@@ -260,7 +283,6 @@ function exitSearchMenu() {
 function enterSearchMenu() {
     document.getElementById("myripebar").style.height = "560px";
     document.getElementById("myripebar").style.width = "72.75vw";
-    document.getElementById("dock").style.bottom= "-655px";
     document.getElementById("dock").style.transition = "all 1s";
     document.getElementsByClassName("searchT")[0].style.width = "67.5vw";
     document.getElementById("adrsbr").focus();
@@ -314,7 +336,6 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
         document.getElementById("myripebar").style.width = "27vw";
         document.getElementById("RipenPanel").style.visibility = "visible";
         document.getElementById("RipenPanel").style.opacity = "1";
-        document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
         document.getElementsByClassName("searchT")[0].style.marginBottom = "3px";
@@ -336,7 +357,6 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
     if (document.getElementById("myripebar").style.height == "560px"){
         document.getElementById("myripebar").style.height = "45px";
         document.getElementById("myripebar").style.width = "27vw";
-        document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementsByClassName("searchT")[0].style.width = "22vw";
         document.getElementsByClassName("tabcontent")[0].style.marginLeft = "55px";
@@ -357,7 +377,6 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
     else {
         document.getElementById("myripebar").style.height = "560px";
         document.getElementById("myripebar").style.width = "72.75vw";
-        document.getElementById("dock").style.bottom= "-655px";
         document.getElementById("dock").style.transition = "all 1s";
         document.getElementsByClassName("searchT")[0].style.width = "67.5vw";
         document.getElementsByClassName("tabcontent")[0].style.marginLeft = "0px";
@@ -383,8 +402,7 @@ document.getElementById("adrsbr").addEventListener("click", ()=>{
     }
 })
 
-document.getElementById("ripenExpandMenuBtn").addEventListener("click", ()=>{
-    if(document.getElementsByClassName("tabcontent")[0].style.transform == "translateX(60px)"){
+    function ReExpandMenuR(){
         document.getElementsByClassName("tabcontent")[0].style.transform= "translateX(0)";
         document.getElementsByClassName("vl")[0].style.transform= "translateX(0)";
         document.getElementsByClassName("tablinks")[0].style.width= "40px";
@@ -402,7 +420,7 @@ document.getElementById("ripenExpandMenuBtn").addEventListener("click", ()=>{
         document.getElementsByClassName("MenuTxt6")[0].style.visibility= "hidden";
         document.getElementsByClassName("MenuTxt6")[0].style.opacity= "0";
     }
-    else{
+    function ExpandMenuR(){
         document.getElementsByClassName("tabcontent")[0].style.transform= "translateX(60px)";
         document.getElementsByClassName("vl")[0].style.transform= "translateX(60px)";
         document.getElementsByClassName("tablinks")[0].style.width= "100px";
@@ -420,6 +438,88 @@ document.getElementById("ripenExpandMenuBtn").addEventListener("click", ()=>{
         document.getElementsByClassName("MenuTxt6")[0].style.visibility= "visible";
         document.getElementsByClassName("MenuTxt6")[0].style.opacity= "1";
     }
+document.getElementById("Acbars").addEventListener("click", ()=>{
+    document.getElementById("myripebar").style.bottom= "0%";
+    document.getElementById("myripebar").style.left= "0%";
+    document.getElementById("myripebar").style.borderTop= "1px solid #f1f1f138";
+    document.getElementById("myripebar").style.borderRight= "1px solid #f1f1f138";
+    document.getElementById("myripebar").style.borderRadius= "0 5px 0 0";
+
+    document.getElementById("feedbar").style.bottom= "0%";
+    document.getElementById("feedbar").style.right= "0%";
+    document.getElementById("feedbar").style.borderTop= "1px solid #f1f1f138";
+    document.getElementById("feedbar").style.borderLeft= "1px solid #f1f1f138";
+    document.getElementById("feedbar").style.borderRadius= "5px 0 0 0";
+    document.getElementsByClassName("searchTA")[0].style.width= "40vw";
+    document.getElementById("AllAppsList").style.marginLeft= "-20px";
+    document.getElementById("AllAppsName").style.marginLeft= "16px";
+    document.getElementById("AllAppsHR").style.transform= "translateX(0px)";
+
+    document.getElementById("dock").style.bottom= "0%";
+    document.getElementById("dock").style.width= "45.5vw";
+    document.getElementById("dock").style.borderTop= "1px solid #f1f1f138";
+    document.getElementById("myripebar").style.borderRight= "1px solid #f1f1f138";
+    document.getElementById("feedbar").style.borderLeft= "1px solid #f1f1f138";
+    document.getElementById("dock").style.borderRadius= "5px 5px 0 0";
+})
+
+document.getElementById("AcDocks").addEventListener("click", ()=>{
+    document.getElementById("myripebar").style.bottom= "1.5%";
+    document.getElementById("myripebar").style.left= "0.5%";
+    document.getElementById("myripebar").style.border= "1px solid #f1f1f138";
+    document.getElementById("myripebar").style.borderRadius= "7.5px";
+
+    document.getElementById("feedbar").style.bottom= "1.5%";
+    document.getElementById("feedbar").style.right= "0.5%";
+    document.getElementById("feedbar").style.border= "1px solid #f1f1f138";
+    document.getElementById("feedbar").style.borderRadius= "7.5px";
+    document.getElementsByClassName("searchTA")[0].style.width= "39vw";
+    document.getElementById("AllAppsList").style.marginLeft= "-30px";
+    document.getElementById("AllAppsName").style.marginLeft= "11px";
+    document.getElementById("AllAppsHR").style.transform= "translateX(-5px)";
+
+    document.getElementById("dock").style.bottom= "1.5%";
+    document.getElementById("dock").style.width= "44.5vw";
+    document.getElementById("dock").style.border= "1px solid #f1f1f138";
+    document.getElementById("dock").style.borderRadius= "7.5px";
+})
+
+document.getElementById("Darktheme").addEventListener("click", ()=>{
+    document.getElementById("myripebar").style.backgroundColor= "rgba(0, 0, 0, 0.65)";
+    document.getElementById("myripebar").style.backdropFilter= "blur(35px) contrast(200%)";
+    document.getElementById("feedbar").style.backgroundColor= "rgba(0, 0, 0, 0.65)";
+    document.getElementById("feedbar").style.backdropFilter= "blur(35px) contrast(200%)";
+    document.getElementById("dock").style.backgroundColor= "rgba(0, 0, 0, 0.65)";
+    document.getElementById("dock").style.backdropFilter= "blur(35px) contrast(100%)";
+    document.body.style.color= "white";
+})
+
+document.getElementById("LightTheme").addEventListener("click", ()=>{
+    document.getElementById("myripebar").style.backgroundColor= "rgba(240, 240, 240, 0.15)";
+    document.getElementById("myripebar").style.backdropFilter= "blur(35px)";
+    document.getElementById("feedbar").style.backgroundColor= "rgba(240, 240, 240, 0.15)";
+    document.getElementById("feedbar").style.backdropFilter= "blur(35px)";
+    document.getElementById("dock").style.backgroundColor= "rgba(240, 240, 240, 0.15)";
+    document.getElementById("dock").style.backdropFilter= "blur(35px)";
+    document.body.style.color= "black";
+})
+
+document.getElementById("RipenWaves").addEventListener("click", ()=>{
+    document.body.style.backgroundImage= "url('https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096')"
+})
+
+document.getElementById("RipenFLow").addEventListener("click", ()=>{
+    document.body.style.backgroundImage= "url('Assets/bg.png')"
+})
+
+document.getElementById("Ventura").addEventListener("click", ()=>{
+    document.body.style.backgroundImage= "url('https://9to5mac.com/wp-content/uploads/sites/6/2022/06/macOS-Ventura-wallpaper-1-1.jpg?quality=82&strip=all')";
+    document.body.style.backgroundPosition= "center";
+})
+
+document.getElementById("VenturaDark").addEventListener("click", ()=>{
+    document.body.style.backgroundImage= "url('https://wallpapercave.com/wp/wp11233324.jpg')"
+    document.body.style.backgroundPosition= "center";
 })
 
 window.onclick = function(event) {
@@ -434,7 +534,6 @@ window.onclick = function(event) {
         document.getElementsByClassName("searchT")[0].style.marginBottom = "1px";
         document.getElementsByClassName("logo")[0].style.bottom = "5px";
         document.getElementById("myripebar").style.width = "27vw";
-        document.getElementById("dock").style.bottom= "0";
         document.getElementById("dock").style.transition = "all 0.3s";
         document.getElementById("defaultOpen").click();
         document.getElementById("defaultOpen").style.transform= "translateY(0px)";
@@ -446,6 +545,8 @@ window.onclick = function(event) {
         document.getElementById("RipenPanel").style.opacity = "0";
         document.getElementById("ControlToggles").style.visibility = "hidden";
         document.getElementById("ControlToggles").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
