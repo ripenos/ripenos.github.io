@@ -121,6 +121,8 @@
             margin-top: 7.5vh;
             width: 85%;
             font-size: 20px;
+            visibility: hidden;
+            opacity: 0;
             transition: all 1s;
             }
 
@@ -238,6 +240,8 @@
                     welcomeContent.style.opacity= "1";
                     selection.style.visibility= "visible";
                     selection.style.opacity= "1";
+                    document.getElementById("info").style.visibility= "visible";
+                    document.getElementById("info").style.opacity= "1";
                 }, 100); 
 
             }
