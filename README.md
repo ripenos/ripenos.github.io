@@ -5,7 +5,7 @@
 #### Ripen OS is an open-sourced, web based OS Family built with just Vanilla HTML-CSS-JS.
 #### **Check out:**
 > * [The Ripen OS](https://ripenos.github.io/)
-> * [The Windows Ripen](https://ripenos.github.io/)
+> * [The Windows Ripen](https://ripenos.github.io/WinRipen)
 
 ## 🚧 This project is still in progress
 
