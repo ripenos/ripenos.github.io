@@ -12,3 +12,25 @@ This project owes many creators for their wonderful assets and contents where we
 
 ## 🧿 Icons
 ### Majority - [icons8](https://icons8.com/)
+> List of icons by [icons8.com](https://icons8.com/):
+> 1. [calculator](../Assets/calculator.png)
+> 2. [icons8-adjust-48](../Assets/icons8-adjust-48.png)
+> 3. [icons8-android-app-drawer-48](../Assets/icons8-android-app-drawer-48.png)
+> 4. [icons8-apps-tab-48](../Assets/icons8-apps-tab-48.png)
+> 5. [icons8-audio-48](../Assets/icons8-audio-48.png)
+> 6. [icons8-battery-level-48](../Assets/icons8-battery-level-48.png)
+> 7. [icons8-calendar-96](../Assets/icons8-calendar-96.png)
+> 8. [icons8-change-theme-96](../Assets/icons8-change-theme-96.png)
+> 9. [icons8-clock-96](../Assets/icons8-clock-96.png)
+> 10. [icons8-collapse-arrow-96](../Assets/icons8-collapse-arrow-96.png)
+> 11. [icons8-envelope-96](../Assets/icons8-envelope-96.png)
+> 12. [icons8-folder-96](../Assets/icons8-folder-96.png)
+> 13. [icons8-gear-96](../Assets/icons8-gear-96.png)
+> 14. [icons8-home-96](../Assets/icons8-home-96.png)
+> 15. [icons8-male-user-96](../Assets/icons8-male-user-96.png)
+> 16. [icons8-microphone-96](../Assets/icons8-microphone-96.png)
+> 17. [icons8-notepad-96](../Assets/icons8-notepad-96.png)
+> 18. [icons8-paint-palette-with-brush-96](../Assets/icons8-paint-palette-with-brush-96.png)
+> 19. [icons8-picture-96](../Assets/icons8-picture-96.png)
+> 20. [icons8-male-user-96](../Assets/icons8-male-user-96.png)
+
