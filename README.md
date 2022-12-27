@@ -4,7 +4,7 @@
 
 ![Banner - 2](https://user-images.githubusercontent.com/120778877/209421296-1af41921-fb46-4895-8dac-9746d4655e71.png)
 
- [LICENSE](LICENSE) | [What's Happening](Changelog.md) | [credits we are thanking for](Credits.md) | [A walkthough of our OSs](Gallery.md) | [FAQ](questions.md)
+ [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [A walkthough of our OSs](Docs/Gallery.md) | [FAQ](Docs/questions.md)
 
 ## About
  Ripen OS is an open-sourced, web based OS Family built with just Vanilla HTML-CSS-JS. This project and its members are not fully functional operating systems but a concept resembling a GUI. 
