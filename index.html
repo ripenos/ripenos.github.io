@@ -5,7 +5,7 @@
         <link rel="shortcut icon" href="Assets/ripenOs.png" type="image/x-icon">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-        <title>Ripen OS</title>
+        <title>RGOS | RipenOS</title>
 
         <style>
             *
@@ -26,6 +26,16 @@
                 -ms-user-select: none;
                 user-select: none;
                 color: white;
+            }
+
+            body a{
+                color: rgb(255, 123, 0);
+                text-decoration: none;
+            }
+
+            body a :hover {
+                cursor: pointer;
+                text-decoration: underline;
             }
 
             body button {
@@ -108,18 +118,22 @@
             }
 
             .welcome-content h2 {
-            position: absolute;
-            left: 50%;
-            top: 70%;
+                position: absolute;
+                left: 90%;
+                top: 72.5%;
             width: max-content;
-            -webkit-transform: translate(-41%, 37.5%);
-                    transform: translate(-41%, 37.5%);
-            font-size: 2.5vw;
+            -webkit-transform: translate(-90%, 37.5%);
+                    transform: translate(-90%, 37.5%);
+            font-size: 2vw;
             color: orange;
             }
 
             #info {
-            margin-top: 7.5vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
             width: 85%;
             font-size: 20px;
             visibility: hidden;
@@ -162,8 +176,8 @@
             .logoRipen .LogoName {
                 display: inline-block;
                 margin-left: 10px;
-                -webkit-transform: translateY(-20px);
-                        transform: translateY(-20px);
+                -webkit-transform: translateY(-10%);
+                        transform: translateY(-10%);
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
             
@@ -179,12 +193,14 @@
                 <div class="welcome-content" id="mywelcome">
                     <div class="logoRipen">
                         <img src="https://raw.githubusercontent.com/ripenos/ripenos.github.io/main/Assets/ripenOs.jpg" alt="">
-                        <h1 class="LogoName">RIPEN OS</h1>
-                        <h2>Feel new like something Ripen</h2>
+                        <h1 class="LogoName">RIPEN</h1>
+                        <h2>Group of Operating Systems</h2>
                     </div>
                 </div>
 
-                <h2 id="info">Ripen OS is an open-sourced, web based OS Family concept built with just Vanilla HTML-CSS-JS.
+                <h2 id="info">RGOS is an open-sourced, web based OS Family built with just Vanilla HTML-CSS-JS.
+                    <br>
+                    Developed by <a href="https://github.com/navaneet239">Navaneet</a> | Maintained by <a href="https://github.com/ripenos">RGOS</a>
                     <br>
                     <font color="#aaa">🚧 This project is still in progress</font>
                 </h2>
