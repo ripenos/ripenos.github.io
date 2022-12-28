@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://ripenos.github.io/Assets/ripenOs.png" type="image/x-icon">
+    <link rel="stylesheet" href="ripen.css">
+    <link rel="stylesheet" href="styleFW.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>RGOS | Ripen framework</title>
+</head>
+<body>
+    <div class="sidebar">
+        <p>Welcome</p>
+        <a href="#Intro">Intro</a>
+        <a href="#install">Installation</a>
+        <p>Components</p>
+        <a href="#Basic">Basic</a>
+        <a href="#Input">Input</a>
+        <a href="#Media">Media</a>
+        <a href="#Extra">Extra</a>
+    </div>
+    <div class="content">
+            <div class="surface" style="position: fixed; z-index: 4; right: 0; margin-right: 10px; width: 300px;" id="bgChanger"><CENTER>
+                <button style="display: block;" onclick="bg()" id="bgC">toggle Background image</button>
+                <button style="display: none;" onclick="cl()" id="ClC">toggle Background color</button>
+            </CENTER></div>
+            <br>
+        <div id="Intro">
+            <h5>RIPEN.CSS</h5>
+            <h1 style="margin-bottom: 0; padding-bottom: 0;">RGOS FRAMEWORK</h1>
+            <h5  style="margin-top: 0; padding-top: 0; margin-left: 10px;">An initiative of the RGOS</h5>
+            <br>
+            <h3>ripen.css is a CSS framework for building interface components that look like the <a href="https://ripenos.github.io/">RGOS</a><br></h3>
+            
+            <p class="surface">This framework relies on the usage of semantic HTML. Certain elements can be directy used and others would be provided with a CSS class. For example, to make a button, you'll need to use a &lt; button &gt; ...., This page will guide you through that process, but for more info, you can <a href="https://github.com/ripenos/ripen.css/blob/main/usage.md">check here</a>.
+            <br><br>
+            You can override many of the styles of your elements while maintaining the appearance provided by this framework. This framework does not contain any JavaScript, it merely styles your HTML with some CSS. This means ripen.css is compatible with your frontend framework of choice.</p>
+        </div>
+
+        <div id="install">
+            <h1>Installation</h1>
+            <p class="surface">The current way for installation is you can download the framework file from github releases. <font color="grey">Soon we would implement other ways like npm and UNPKG.</font>
+                <br><br>
+            For downloading the framework, please head to: <a href="https://github.com/ripenos/ripen.css/releases">The Releases</a>
+            <br><br> and make sure to download the latest-stable version and <font color="green">enjoy!</font></p>
+        </div>
+            
+        <div id="Basic">
+            <div class="surface">
+                <a href="#">Link 1</a> | <a href="#">Link 2</a> | <a href="#">Link 3</a>
+                <pre><code>&lt;div class="surface"&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt; | &lt;a href="#"&gt;Link 2&lt;/a&gt; | &lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/div&gt;</code></pre>
+            </div>
+            <br>
+            <div class="surface">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio condimentum, lobortis risus in, fermentum diam. Sed et leo lorem. Suspendisse ultricies velit enim, sit amet egestas mauris placerat vel. Nunc mollis, orci id consectetur luctus, nisl risus pharetra elit, nec fermentum magna neque vel massa. Nam gravida, justo in vulputate euismod, justo lectus maximus ipsum, eget auctor quam augue nec lacus. Nunc finibus ullamcorper eros, quis pulvinar tellus pellentesque at. Suspendisse tincidunt vehicula tortor ac mattis. Cras tempor nisl vel lectus vestibulum, non rhoncus urna laoreet. Sed tincidunt, neque in consectetur varius, orci neque sagittis erat, eu sagittis arcu sapien in nunc. Nunc a scelerisque eros, eu varius odio. In sit amet purus ac leo vehicula euismod. Cras dictum pharetra lectus, at posuere velit tincidunt ac. Pellentesque id finibus arcu. Duis ante arcu, euismod in lorem vel, dictum hendrerit eros.</p>
+                <pre><code>&lt;div class="surface"&gt;&lt;p&gt; Lorem ipsum..... hendrerit eros &lt;/p&gt;&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+        <div id="Input">
+            <div class="surface">
+                <button style="display: inline-block; margin: 5px;">button type 1</button>
+                <pre><code>&lt;button&gt; button type 1 &lt;/button&gt;</code></pre>
+                <button class="button2" style="display: inline-block; margin: 5px;">button type 2</button>
+                <pre><code>&lt;button class="button2"&gt; button type 2 &lt;/button&gt;</code></pre>
+                <button class="button3" style="display: inline-block; margin: 5px;">button type 3</button>
+                <pre><code>&lt;button class="button3"&gt; button type 3 &lt;/button&gt;</code></pre>
+                <input type="text" placeholder="Searchbox" class="searchbox" style="display: inline-block; margin: 5px;">
+                <pre><code>&lt;input type="text" placeholder="Searchbox" class="searchbox"&gt;</code></pre>
+                <input type="range" min="1" max="100" value="50" class="slider" style="display: inline-block; margin: 5px;">
+                <pre><code>&lt;input type="range" min="1" max="100" value="50" class="slider"&gt;</code></pre>
+                <input type="file" name="Gimme" id="Primary" class="FileInsert">
+                <pre><code>&lt;input type="file" name="Gimme" id="Primary" class="FileInsert"&gt;</code></pre>
+            </div>
+        </div>
+        <br><br>
+        <div id="Media">
+            <img src="https://raw.githubusercontent.com/ripenos/ripenos.github.io/main/Assets/ripenOs.jpg" alt="ripenlogo" width="150px" style="margin-right: 10px;">
+            <pre><code>&lt;img src="https://raw.githubusercontent.com/......./ripenOs.jpg"&gt; </code></pre>
+            <span class="imgHover"><img src="https://raw.githubusercontent.com/ripenos/ripenos.github.io/main/Assets/ripenOs.jpg" alt="ripenlogo" width="150px" ></span>
+            <pre><code>&lt;span class="imgHover"&gt;&lt;img src="https://raw.githubusercontent.com/......./ripenOs.jpg"&gt; &lt;/span&gt;</code></pre>
+
+        </div>
+        <br><br>
+        <div id="Extra">
+            <hr>
+            <pre><code>&lt;hr&gt;</code></pre>
+            <br>
+            <iframe src="https://example.com" frameborder="0"></iframe>
+            <pre><code>&lt;iframe src="https://example.com" frameborder="0"&gt;&lt;/iframe&gt;</code></pre>
+        </div>
+        <br>
+        <h3>MIT license | Copyright (c) 2022 RGOS</h3>
+    </div>
+    <script>
+
+    </script>
+    <script src="scriptFW.js"></script>
+</body>
+</html>
