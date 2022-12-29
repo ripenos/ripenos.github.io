@@ -11,10 +11,14 @@
 ## OS Members
 ### [The Ripen OS](https://ripenos.github.io/)
 The Head of the family
-  
+
 ### [The Windows Ripen](https://ripenos.github.io/WinRipen)
 An open-sourced concept based on the Windows Operating System.
  > **❗ This concept is not in any way affiliated with Microsoft and should not be confused with Microsoft's Operating System or Products. Microsoft, Windows and Other demonstrated Products in this project are trademarks of the Microsoft group of companies.**
+
+## Resources
+### [Ripen.css framework](https://ripenos.github.io/Docs/frameworks/frameworks.html)
+RGOS Framework are the set of stylesheets for building interface components that look like the RGOS
 
 <hr>
 
