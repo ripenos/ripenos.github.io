@@ -13,7 +13,7 @@ The Head of the family
 
 ### [The Windows Ripen](https://ripenos.github.io/WinRipen)
 An open-sourced concept based on the Windows Operating System.
- > **❗ TThis project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.**
+ > **❗ This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.**
 
 ## Resources
 ### [Ripen.css framework](https://ripenos.github.io/Docs/frameworks/frameworks.html)
