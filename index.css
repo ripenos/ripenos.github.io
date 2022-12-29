@@ -229,6 +229,8 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   z-index: 201;
   border-radius: 5px 5px 0 0;
   transition: all 0.3s;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .actionbarC img {
   width: 32px;
@@ -372,21 +374,23 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   width: 100%;
 }
 .AllApps .Appimg {
-  padding: 10px;
-  display: inline-table;
+  padding: 25px;  background-color: rgba(122, 122, 122, 0.25);
+  display: inline-table;   border-radius: 7.5px; margin-bottom: 5px;
 }
+
 .AllApps .Appimg img {
   border-radius: 7.5px;
-  width: 35px;
 }
 .AllApps .Appimg img:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  margin-left: 0px;
-  margin-right: 0px;
 }
 .AllApps .Appimg img:active {
   scale: 0.75;
+}
+
+#AllAppsList{
+  position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 42.5vw; margin-left: -10px; margin-top: 30px; transition: all 0.3s; 
 }
 
 .slider {
@@ -622,8 +626,9 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   position: absolute;
   display: inline-block;
   font-size: 15px;
+  top: 82.5px;
   padding-top: 2.5px;
-  padding-left: 5px;
+  padding-left: 12.5px;
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
@@ -713,9 +718,13 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
           transform: scale(0.90);
 }
 
+.Walls{
+  margin: 0;
+}
+
 .Walls img{
   display: inline;
-  width: 157.5px;
+  width: 45%;
   margin: 5px;
   height: 90px;
 }
@@ -767,3 +776,95 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
+
+
+.card1 {
+  background:linear-gradient(90deg, rgba(255, 123, 0, 0.5) 0%, rgba(158, 76, 0, 0.75) 100%);
+  padding: 12.5px; margin: 5px; width: 275px; margin-top: 10px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.card1 .calendar-Today {
+  margin-top: 5px; text-decoration: none; box-shadow: none; font-size: 14px;
+  background: rgba(161, 135, 115, 0.3); padding: 7.5px; border-radius: 5px; font-weight: 500;
+}
+
+.card2{float: left;}
+
+.card3 {
+  float: right;
+  background:linear-gradient(145deg, rgba(255, 187, 0, 0.5) 0%, rgba(255, 123, 0, 0.5) 100%);
+  margin: 5px; height: 145px; padding: 5px;width: 132px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.card3 h6 {font-size: 12px; margin: 5px;}
+.card3 img{width: 25px; padding: 5px; margin-top: -2px; margin-bottom: 3px;}
+.card3 img:hover{scale: 1.1}
+.card3 .AlbumArtNoMusicPlayed{ padding: 10px; background: rgb(143, 143, 143); margin: 5px; border-radius: 5px;
+ filter: drop-shadow(0px 0px 0px black);}
+#news {padding: 0; margin: 0; position: absolute;  margin-left: -10px; margin-top: 195px;}
+#news iframe{width: 300px; }
+
+.StartPinnedW2 {
+margin: 12.5px;  margin-top: 117.5px;
+padding: 11px;  position: absolute;
+background-color: rgba(0, 0, 0, 0.20);
+border-radius: 8px; width: 275px; margin-left: 5px;
+font-family: Arial, Helvetica, sans-serif;
+border: 0.5px solid #f1f1f12a;
+}
+
+.StartPinnedW2 #QNHeader{
+  font-size: 12px;
+}
+
+.SearchQ {
+  width: 82.5%;
+  margin-right: 5px;
+  border-right: none;
+  border-radius: 4px;
+  border-left: 0.25px solid #f1f1f11e;
+  border-top: 0.25px solid #f1f1f11e;
+  border-right: 0.25px solid #f1f1f11e;
+  border-bottom: 2px solid rgb(255, 136, 0);
+  background-color: rgba(44, 42, 35, 0.35);
+  padding: 5px;
+  font-size: 12px;
+  display: inline-block;
+  color: white;
+}
+
+.StartPinnedW2 .Savebtn {
+  display: inline-block;
+  margin-right: -15px;
+  margin-bottom: -11px;
+  filter: invert(100%);
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.09);
+  border: 0.5px solid #0000001f;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.myDIV {
+	position: absolute;
+	width: 85px; 	  padding: 7px; transition: all 0.3s;
+}
+ 
+  .myDIV img, .myDIV p{
+	  filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));background: transparent; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px;
+	}
+
+  .myDIV:hover { 	background-color: rgba(107, 107, 107, 0.25);
+	  backdrop-filter: blur(15px);
+	  -webkit-backdrop-filter: blur(15px);
+	  border-radius: 10px;
+	  box-shadow: 0px 0px 7.5px rgb(0, 0, 0);
+    scale: 1.1;
+  }
+
+  .myDIV:active {scale: 0.95; }
