@@ -8,18 +8,18 @@
 
     <title>Ripen OS</title>
 </head>
-<body onload="startTime(),  StartDate()">
+<body onload="startTime(),  StartDate(), startTimeH(),  StartDateH()" class="bg">
 
     <!-- Actionbar -->
     <div class="actionbarM">
         <!-- Ripebar -->
         <div class="ripebar" id="myripebar">
-            <button class="logo" id="ripeBtn" style="margin-top: 2.5px;" 
+            <button class="logo" id="ripeBtn" style="margin-top: 2.5px; z-index: 2;" 
                 onmouseover="this.style.scale= '1.15'" onmouseleave="this.style.scale= '1'">
                 <img src="Assets/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white; border-radius: 5px; transition: all 0.5s;" id="RipeLogoM">
             </button>
 
-            <div style="position: absolute; bottom: 5px; margin-left: 47.5px;">
+            <div style="position: absolute; bottom: 5px; margin-left: 47.5px; z-index: 5;">
                 <input type="text" placeholder="Search the web" class="searchT" onclick="disp_prompt()" id="adrsbr" oninput="opacityM()" onfocus="disp_prompt()">
 
                 <img src="Assets/windows11-search-button-S.png" alt="search" 
@@ -48,8 +48,8 @@
                             <span class="material-symbols-rounded" >
                                 menu
                             </span>
-                            <p class="MenuTxt2">Menu</p>
                         </button>
+                        <p class="MenuTxt2">Menu</p>
                     </CENTER>
                     <div id="RipeTogglesL">
                         <div class="userIconR">
@@ -72,14 +72,40 @@
                         <div class="vl"></div>
                     </div>
                   </div>
-                  <div id="London" class="tabcontent">
-                    <div style="display:inline-block; position: absolute; padding: 5px; top: 15px;">
+                  <div id="London" class="tabcontent" style="overflow-y: scroll; width: 350px;">
+                    <div style="display:inline-block; position: absolute; padding: 5px; top: 15px; overflow-y: scroll; overflow-x: hidden; height: 448px;">
                         <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; font-size: 18px; width: max-content;"></p>
                         <br>
-
+                        <p style="font-size: 15px; font-weight: 700; margin-top: -4px;  -webkit-transform: translate(7.5px, -10px);
+                            transform: translate(7.5px, -10px); color: #ccc;">What's today for you?</p>
+                        <div class="card1">
+                            <div style="margin-top: -2.5px;">Your Calendar</div>
+                            <div class="calendar-Today">Meeting  ZuVu at 4:30pm</div>
+                            <div class="calendar-Today">Presentation F.R.U. at 8pm</div>
+                        </div>
+                           <span class="card2"> <div id="ww_3005933c55876" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}' 
+                            style="width: 132px; margin: 5px; border-radius: 5px;"><a href="https://weatherwidget.org/tr/" id="ww_3005933c55876_u" target="_blank">Web Sitesi için Ücretsiz HTML Hava Durumu Widget</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_3005933c55876"></script></span>
+                            <div class="card3">
+                                <CENTER>
+                                    <h6>No Music Played</h6>
+                                    <h1 class="AlbumArtNoMusicPlayed">♫</h1>
+                                    <center style="-webkit-transform: translateX(-20px);transform: translateX(-20px);">
+                                        <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png"  style="filter: invert(100%); cursor: pointer; float: right; ">
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png"  style="filter: invert(100%); cursor: pointer; float: right; ">							
+                                        <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" style="filter: invert(100%); cursor: pointer; float: right; ">
+                                    </center>
+                                    <br>
+                                    <input type="range" min="1" max="100" value="0" class="slider" id="musicRanger">
+                                </CENTER>
+                            </div><br><br>
+                            <div class="StartPinnedW2">
+                                <div style="margin-top: -3px; margin-bottom: 5px;" id="QNHeader">Quick Note</div>
+                                <input type="text" class="SearchQ" placeholder="Add a Quick Note" title="Quick note"> 		
+                                <img src="https://img.icons8.com/fluency-systems-regular/344/save.png" alt="save" width="20px" class="Savebtn">
+                            </div>
+                            <div  id="news"><iframe width="275px" height="1600" src="https://rss.app/embed/v1/wall/tzVeKHduz7g5joHa" frameborder="0"></iframe></div>
                     </div>
                   </div>
-                  
                   <div id="Paris" class="tabcontent">
                     <iframe src="https://www.bing.com/webhp" frameborder="0" class="responsive-iframe"  id="msg" ></iframe>
                     <p class="StartSearch">Start searching the Web!</p>
@@ -87,7 +113,6 @@
                   </div>
             </div>
         </div>
-
         <!-- Dockbar -->
         <div class="actionbarC" id="dock" onmouseover="dockZoomIn()" onmouseleave="dockZoomOut()">
             <img src="Assets/icons8-android-app-drawer-48.png"
@@ -126,8 +151,7 @@
                     <hr style="width: 100%; margin-top: 412.5px; margin-left: -15px; 
                             border:0.5px solid rgba(240, 240, 240, 0.15); transition: all 0.3s;" id="AllAppsHR">
                 </div>
-                    <CENTER 
-                    style="position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 44vw; margin-left: -20px; margin-top: 30px; transition: all 0.3s;" id="AllAppsList">
+                    <CENTER  id="AllAppsList">
                         <div class="AllApps">
                             <div class="Appimg"><img src="Assets/Adobe1.png"></div>
                             <div class="Appimg"><img src="Assets/adobe2.png"></div>
@@ -135,65 +159,46 @@
                             <div class="Appimg"><img src="Assets/adobe4.png"></div>
                             <div class="Appimg"><img src="Assets/adobe5.png"></div>
                             <div class="Appimg"><img src="Assets/Adobe6.webp"></div>
-                            <div class="Appimg"><img src="Assets/adobe7.png"></div>
-                            <div class="Appimg"><img src="Assets/adobe8.png"></div>
-                            <div class="Appimg"><img src="Assets/adobe9.png"></div>
-                        </div><br>
+                        </div>
                         <div class="AllApps">
                             <div class="Appimg"><img src="Assets/calculator.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-calendar-96.png"></div>
-                            <div class="Appimg"><img src="Assets/canva.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-clock-96.png"></div>
                             <div class="Appimg"><img src="Assets/chrome.webp"></div>
                             <div class="Appimg"><img src="Assets/discord.png"></div>
-                            <div class="Appimg"><img src="Assets/drawboard.png"></div>
-                            <div class="Appimg"><img src="Assets/dolby.png"></div>
                             <div class="Appimg"><img src="Assets/excel.png"></div>
-                        </div><br>
+                        </div>
                         <div class="AllApps" >
                             <div class="Appimg"><img src="Assets/epicgames.png" 
                                 style="width: 40px; margin-bottom: -7.5px;"></div>
                             <div class="Appimg"><img src="Assets/Files.png"></div>
                             <div class="Appimg"><img src="Assets/facebook.png"></div>
-                            <div class="Appimg"><img src="Assets/figma.png"></div>
                             <div class="Appimg"><img src="Assets/github.png"></div>
                             <div class="Appimg"><img src="Assets/drive.png"></div>
-                            <div class="Appimg"><img src="Assets/inkscape.png" 
-                                style="background-color: white;"></div>
-                            <div class="Appimg"><img src="Assets/instagram.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-envelope-96.png"></div>
-                        </div><br>
+                        </div>
                         <div class="AllApps" >
                             <div class="Appimg"><img src="Assets/icons8-place-marker-96.png"></div>
-                            <div class="Appimg"><img src="Assets/messenger.png"></div>
-                            <div class="Appimg"><img src="Assets/teams.png"></div>
                             <div class="Appimg"><img src="Assets/todo.png"></div>
                             <div class="Appimg"><img src="Assets/mc.png"></div>
-                            <div class="Appimg"><img src="Assets/office.jpg"></div>
                             <div class="Appimg"><img src="Assets/icons8-notepad-96.png"></div>
                             <div class="Appimg"><img src="Assets/netflix.jpg"></div>
                             <div class="Appimg"><img src="Assets/noty.png" 
-                                style="background-color: white; width: 31px; padding: 1px;"></div>
-                        </div><br>
+                                style="background-color: white; width: 33px; padding: 1px;"></div>
+                        </div>
                         <div class="AllApps" >
-                            <div class="Appimg"><img src="Assets/obs.png"></div>
-                            <div class="Appimg"><img src="Assets/onenote.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-paint-palette-with-brush-96.png"></div>
                             <div class="Appimg"><img src="Assets/prime.png"></div>
                             <div class="Appimg"><img src="Assets/pinterest.png"></div>
-                            <div class="Appimg"><img src="Assets/picsart.png"></div>
                             <div class="Appimg"><img src="Assets/rar.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-read-96.png"></div>
                             <div class="Appimg"><img src="Assets/ripenOs.jpg"></div>
-                        </div><br>
+                        </div>
                         <div class="AllApps" >
                             <div class="Appimg"><img src="Assets/Spotify.png"></div>
                             <div class="Appimg"><img src="Assets/settings.png"></div>
-                            <div class="Appimg"><img src="Assets/tiktok.png"></div>
                             <div class="Appimg"><img src="Assets/icons8-microphone-96.png"></div>
-                            <div class="Appimg"><img src="Assets/vs.png" style="background-color: white;"></div>
                             <div class="Appimg"><img src="Assets/whatsApp.png"></div>
-                            <div class="Appimg"><img src="Assets/wps.png"></div>
                             <div class="Appimg"><img src="Assets/filmora.png"></div>
                             <div class="Appimg"><img src="Assets/youtube.webp"></div>
                         </div><br>
@@ -314,6 +319,34 @@
             </div>
         </div>
     </div>
+
+
+        <!--Time Widget-->
+        <div style="float: right; text-align: right; margin-top: -10px; padding: 10px;">
+            <div style="margin-right: 10px;">
+            <div id="txtH" style="color: azure; font-weight:900; font-size: 65px"></div>
+
+            <div id="txtdtyH" style="color: azure; font-weight:900; font-size: 15px; margin-top: -12.5px; margin-right: 10px;"></div>
+            </div>
+        </div>
+        <div style="padding: 17px;" class="DesktopShow">
+                <div class="ThisPc">
+                <div class="myDIV" id="bin">
+                    <CENTER>
+                        <img src="https://ripenos.github.io/WinRipen/Assets/bin.png" width="65px">
+                        <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recycle Bin</p>
+                    </CENTER>
+                </div>
+                </div><br>
+            <div class="ThisPc">
+                <div class="myDIV" id="myPc" style="top: 125px;">
+                    <CENTER>
+                        <img src="data:image/png;base64,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" width="65px">
+                        <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">This Pc</p>
+                    </CENTER>
+                </div>
+            </div><br>
+        </div>
 
     <script src="script.js"></script>
 </body>
