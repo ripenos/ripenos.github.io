@@ -404,7 +404,7 @@ document.getElementById("Acbars").addEventListener("click", ()=>{
     document.getElementById("feedbar").style.borderLeft= "1px solid #f1f1f138";
     document.getElementById("feedbar").style.borderRadius= "5px 0 0 0";
     document.getElementsByClassName("searchTA")[0].style.width= "40vw";
-    document.getElementById("AllAppsList").style.marginLeft= "-20px";
+    document.getElementById("AllAppsList").style.marginLeft= "-10px";
     document.getElementById("AllAppsName").style.marginLeft= "16px";
     document.getElementById("AllAppsHR").style.transform= "translateX(0px)";
 
@@ -427,7 +427,7 @@ document.getElementById("AcDocks").addEventListener("click", ()=>{
     document.getElementById("feedbar").style.border= "1px solid #f1f1f138";
     document.getElementById("feedbar").style.borderRadius= "7.5px";
     document.getElementsByClassName("searchTA")[0].style.width= "39vw";
-    document.getElementById("AllAppsList").style.marginLeft= "-30px";
+    document.getElementById("AllAppsList").style.marginLeft= "-15px";
     document.getElementById("AllAppsName").style.marginLeft= "11px";
     document.getElementById("AllAppsHR").style.transform= "translateX(-5px)";
 
@@ -474,6 +474,45 @@ document.getElementById("VenturaDark").addEventListener("click", ()=>{
     document.body.style.backgroundImage= "url('https://wallpapercave.com/wp/wp11233324.jpg')"
     document.body.style.backgroundPosition= "center";
 })
+
+function startTimeH() {
+    const today2 = new Date();
+    let h2 = today2.getHours();
+    let m2 = today2.getMinutes();
+    m2 = checkTime2(m2);
+    document.getElementById('txtH').innerHTML =  h2 + ":" + m2;
+    setTimeout(startTimeH, 1000);
+    }
+    
+    function checkTime2(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+    }
+    
+    function StartDateH(){
+    const dToday2 = new Date();
+    let dt2 = dToday2.getDate();
+    
+    var myDate2 = new Date();
+    var myDate2M = new Date();
+    
+    var myDay2 = myDate2.getDay();
+    var myMonth2 = myDate2M.getMonth();
+    
+    
+    // Array of days.
+    var weekday2 = ['Sunday', 'Monday', 'Tuesday',
+    'Wednesday', 'Thursday', 'Friday', 'Saturday'
+    ];
+    
+    // Array of Months.
+    var Months2 = ['January', 'February', 'March',
+    'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    
+    document.getElementById('txtdtyH').innerHTML = weekday2[myDay2] + ', ' + Months2[myMonth2] + ' ' + dt2;
+    setTimeout(startTimeH, 1000);
+    }    
 
 window.onclick = function(event) {
     if (event.target == document.body) {
