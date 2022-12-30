@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Windows Ripen</title>
+	<link rel="shortcut icon" href="Assets/windows11-logo.png" type="image/x-icon">
+
+	<!-- Linking the CSS stylesheet -->
+	<link rel="stylesheet" href="Styles/style.css">
+    <style>
+                    body, html {
+                background-image: url("https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096");
+                background-size: cover;
+                height: 100vh;
+                font-size: 15px;
+                overflow: hidden;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+    </style>
+</head>
+
+<body bgcolor="black" onload="Ls(), startTime(), StartDate()">
+
+    <CENTER>
+        <div id="txt" class="lockS-time"  style="opacity: 0; transition: all 1s;"></div>
+        
+    </CENTER>
+
+    <div class="welcome" style="translate:0 -141px;"></div>
+
+
+    <CENTER>
+        <div id="txtdty" class="lockS-date"  style="opacity: 0; transition: all 1s;"></div>
+    </CENTER>
+
+    <CENTER>
+        <button class="loginBtn" onclick="DesktopDirect()" id="myLB">login</button>
+    </CENTER>
+
+    <div style="position: absolute;
+	            right: 20px;
+	            bottom: 20px; z-index: 6;">
+        <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="wifiIco" 
+            style="margin-right: 10px; opacity: 0; transition: all 1s;">
+        <img src="Assets/windows11-actions - battery.png" width="19.5px" id="batteryIco" 
+            style="opacity: 0; transition: all 1s;">
+    </div>
+    <script>
+
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            m = checkTime(m);
+            document.getElementById('txt').innerHTML =  h + ":" + m;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+
+        function StartDate(){
+            const dToday = new Date();
+            let dt = dToday.getDate();
+
+            var myDate = new Date();
+            var myDay = myDate.getDay();
+
+            // Array of days.
+            var weekday = ['Sunday', 'Monday', 'Tuesday',
+                'Wednesday', 'Thursday', 'Friday', 'Saturday'
+            ];
+            document.getElementById('txtdty').innerHTML =  dt + 'th ' + dToday.getFullYear() + ' ' + weekday[myDay];
+            setTimeout(startTime, 1000);
+        }
+
+        function Ls(){
+
+            setTimeout(() => {
+                document.getElementById("myLB").style.opacity = '1';
+                document.getElementById("txt").style.opacity = '1';
+                document.getElementById("txtdty").style.opacity = '1';
+                document.getElementById("wifiIco").style.opacity = '1';
+                document.getElementById("batteryIco").style.opacity = '1';
+            }, 250);
+
+            document.getElementsByClassName("welcome")[0].style.backdropFilter = "blur(35px)";
+        }
+
+        function DesktopDirect(){
+
+                setTimeout(() => {
+                    document.getElementById("myLB").style.opacity = '0';
+                    document.getElementById("txt").style.opacity = '0';
+                    document.getElementById("txtdty").style.opacity = '0';
+                    document.getElementById("wifiIco").style.opacity = '0';
+                    document.getElementById("batteryIco").style.opacity = '0';
+                 }, 250);
+
+            setTimeout(() => {
+                window.open("Desktop1.html", '_self');
+            }, 2000);
+        }
+
+    </script>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector("#myLB"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.15,
+        });
+        
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll("#myLB"));
+    </script>
+</body></html>

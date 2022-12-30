@@ -1,0 +1,492 @@
+
+	.FileExplr{
+		position: absolute;
+		background-color: rgba(31, 31, 31, 0.85);
+		backdrop-filter: blur(35px) contrast(200%);
+		-webkit-backdrop-filter: blur(35px)  contrast(200%);
+		margin: auto;
+		padding: 0;
+		border-radius: 8px;
+		border: 1px solid rgb(136, 136, 136);
+		width: 80%;
+		height: 80%;
+		top: 50%;
+		left: 50%; overflow-y: hidden;
+		transform: translate(-50%, -50%) scale(0.5);
+		z-index: 10000; /* Sit on top */
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		color: rgb(255, 255, 255);
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		opacity: 0;
+		transition: all 0.2s ease-out;
+        overflow: hidden;
+      }
+      
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect3 {
+        0% {transform:translate(-50%, -50%) scale(0); opacity:0;  }
+        50% {transform:translate(-50%, -50%) scale(1.02) ; opacity:1;  }
+          100% {transform:translate(-50%, -50%) scale(1); opacity:1;  }
+      }
+      
+      @keyframes fadeEffect3 {
+        0% {transform:translate(-50%, -50%) scale(0); opacity:0;  }
+        50% {transform:translate(-50%, -50%) scale(1.02) ; opacity:1;  }
+          100% {transform:translate(-50%, -50%) scale(1); opacity:1;  }
+      }
+
+      
+	  
+	  /* The Close Button */
+	  .close2 {
+		color: white;
+		font-size: 20px;
+		font-weight: bold;
+	  }
+	  
+	  .close2:hover,
+	  .close2:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	  }
+	  
+	  .FileExplr-header {
+		padding: 15px 16px;
+		background-color: rgba(124, 124, 124, 0.15);
+		color: white;
+		border-radius: 8px 8px 0 0 ;
+		border-bottom:  0.5px solid #f1f1f144;
+
+	  }
+	  
+	  .FileExplr-body {padding: 2px 0px;}
+	  
+	  .FileExplr-footer {
+		position: absolute;
+		padding: 8.75px 16px;
+		background-color: rgba(124, 124, 124, 0.15);
+		border:  0.5px solid #f1f1f144;
+		color: white;
+		border-radius: 8px;
+		width: 77%;
+		bottom: 2%; left: 19.25%
+	  }
+	
+	  .FileExplr-btn {
+		position: absolute;
+		color: white; background-color:transparent; 
+		border: none; cursor: pointer; font-size: 16px; font-weight: bold; 
+		margin-top: -40px; margin-left: -10px;
+	  }
+
+	  .FileETab{
+		width: 207px; 
+		position: absolute;
+		background-color: rgba(27, 27, 27, 0.5);
+		height: 30px;
+		border-radius: 8px;
+		margin-top: -25px; margin-left: 100px;
+		transition: all 0.5s;
+		border:  0.5px solid #f1f1f12a;
+	  }
+
+	  .CLoseBar{
+		width: 75px;
+		position: absolute;
+		background-color: red;
+		height: 5px;
+		border-radius: 100px;
+		margin-top: 17px; margin-left: -60px;
+		transition: all 0.3s;
+
+	  }
+
+	  .MaxBar{
+		width: 75px;
+		position: absolute;
+		background-color: rgba(100, 100, 100, 0.85);
+		height: 5px;
+		border-radius: 100px;
+		cursor: pointer;
+		margin-top: -23px; margin-left: -155px;
+		transition: all 0.5s;
+	  }  
+
+	  .MinBar{
+		width: 75px;
+		position: absolute;
+		background-color: rgba(100, 100, 100, 0.85);
+		height: 5px;
+		border-radius: 100px;
+		cursor: pointer;
+		margin-top: -23px; margin-left: -240px;
+		transition: all 0.5s;
+
+	  }
+
+	  .FileNav {
+		height: 100%;
+		width: 17%;
+		position: fixed;
+		z-index: 1;
+		top: 110px;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.20);
+		overflow-x: hidden;
+		padding-top: 16px;
+		border-radius: 8px;
+		font-family: Arial, Helvetica, sans-serif;
+		border:  0.5px solid #f1f1f12a;
+		transition: all 0.5s; padding-right: 10px; padding-bottom: -100px;
+	}
+
+		/* Style the buttons inside the tab */
+		.FileNav button {
+			display: block;
+			background-color: inherit;
+			color: #ccc;
+			padding: 5px 10px;
+			width: 95%; margin-left: 10px;
+			border: none; border-radius: 5px;
+			outline: none; margin-bottom: 5px;
+			text-align: left;
+			cursor: pointer;
+			transition: 0.3s;
+			font-size: 15px;
+		}
+		
+		/* Change background color of buttons on hover */
+		.FileNav button:hover {
+			color: white;
+			background-color: rgba(221, 221, 221, 0.15);
+		}
+		
+		/* Create an active/current "tab button" class */
+		.FileNav button.active2 {
+			color: white;
+			background-color: rgba(221, 221, 221, 0.15);
+		}
+
+	 .icoF {
+		color: #cccccc;
+	}
+
+	 .icoF :hover {
+		color: white;
+		background: #f1f1f12a;  border-radius: 5px;
+	}
+
+    .tabcontent2 {
+        display: none;
+        -webkit-animation: fadeEffect2 1s;
+        animation: fadeEffect2 1s;
+      }
+      
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect2 {
+        0% {transform: scale(1); opacity:0;  }
+        50% {transform: scale(1.02) ; opacity:1;  }
+          100% {transform: scale(1); opacity:1;  }
+      }
+      
+      @keyframes fadeEffect2 {
+        0% {transform: scale(1); opacity:0;  }
+        50% {transform: scale(1.02) ; opacity:1;  }
+          100% {transform: scale(1); opacity:1;  }
+      }
+
+.FIleFolders {
+	align-items: center;
+	display:inline-block; padding: 10px; 
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px; width: 100px;
+	font-family: Arial, Helvetica, sans-serif; margin-right: 5px;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.DriveSpace {
+	height: 12px; margin-left: 65px; margin-top: -50px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px; width: 130px;
+	font-family: Arial, Helvetica, sans-serif; margin-right: 5px;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.DriveSpace .Occupied {
+	height: 12px; float: left;
+	background-color: rgb(255, 81, 0);
+	border-radius: 8px; width: 50px;
+	font-family: Arial, Helvetica, sans-serif; margin-right: 5px;
+}
+
+.Browser{
+	position: absolute;
+	background-color: rgba(31, 31, 31, 0.85);
+	backdrop-filter: blur(35px) contrast(200%);
+	-webkit-backdrop-filter: blur(35px)  contrast(200%);
+	margin: auto;
+	padding: 0;
+	border-radius: 0px;
+	border: 1px solid rgb(136, 136, 136);
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%; overflow-y: hidden;
+	transform: translate(-50%, -50%) scale(0.5);
+	z-index: 10000; /* Sit on top */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: rgb(255, 255, 255);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	opacity: 0;
+	transition: all 0.2s ease-out;
+  }
+  
+  /* The Close Button */
+  .close3 {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  .close3:hover,
+  .close3:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .Browser-header {
+	padding: 15px 16px;
+	background-color: rgba(124, 124, 124, 0.15);
+	color: white;
+	border-radius: 8px 8px 0 0 ;
+	border-bottom:  0.5px solid #f1f1f144;
+
+  }
+  
+  .Browser-body {padding: 0px 0px; margin-top: -20px;}
+  
+  .Browser-footer {
+	position: absolute;
+	padding: 8.75px 16px;
+	background-color: rgba(124, 124, 124, 0.15);
+	border:  0.5px solid #f1f1f144;
+	color: white;
+	border-radius: 8px;
+	width: 77%;
+	bottom: 2%; left: 19.25%
+  }
+
+  .BrowserTab{
+	width: 207px; 
+	position: absolute;
+	background-color: rgba(27, 27, 27, 0.5);
+	height: 30px;
+	border-radius: 8px;
+	margin-top: -25px; margin-left: 100px;
+	transition: all 0.5s;
+	border:  0.5px solid #f1f1f12a;
+  }
+
+  .CLoseBar2{
+	width: 75px;
+	position: absolute;
+	background-color: red;
+	height: 5px;
+	border-radius: 100px;
+	margin-top: 17px; margin-left: -60px;
+	transition: all 0.3s;
+
+  }
+
+  .MaxBar2{
+	width: 75px;
+	position: absolute;
+	background-color: rgba(100, 100, 100, 0.85);
+	height: 5px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-top: -23px; margin-left: -155px;
+	transition: all 0.5s;
+  }  
+
+  .MinBar2{
+	width: 75px;
+	position: absolute;
+	background-color: rgba(100, 100, 100, 0.85);
+	height: 5px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-top: -23px; margin-left: -240px;
+	transition: all 0.5s;
+
+  }
+
+  .Paint{
+	position: absolute;
+	background-color: rgba(31, 31, 31, 0.85);
+	backdrop-filter: blur(35px) contrast(200%);
+	-webkit-backdrop-filter: blur(35px)  contrast(200%);
+	margin: auto;
+	padding: 0;
+	border-radius: 0px;
+	border: 1px solid rgb(136, 136, 136);
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%; overflow-y: hidden;
+	transform: translate(-50%, -50%) scale(0.5);
+	z-index: 10000; /* Sit on top */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: rgb(255, 255, 255);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	opacity: 0; 	
+	transition: all 0.2s ease-out;
+  }
+  
+  /* The Close Button */
+  .close4 {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  .close4:hover,
+  .close4:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .Paint-header {
+	padding: 15px 16px;
+	background-color: rgba(124, 124, 124, 0.15);
+	color: white;
+	border-radius: 8px 8px 0 0 ;
+	border-bottom:  0.5px solid #f1f1f144;
+
+  }
+  
+  .Paint-body {padding: 0px;
+  }
+  
+  .Paint-footer {
+	position: fixed;
+	padding: 8.75px 16px;
+	background-color: rgba(37, 37, 37, 0.95);
+	-webkit-backdrop-filter: blur(35px) contrast(200%);
+	backdrop-filter: blur(35px) contrast(200%);
+	border: 0.5px solid #f1f1f12a; color: white;
+	box-shadow: 0px 0px 7.5px rgb(0, 0, 0);  
+	border-radius: 7px 7px 0 0;
+	width: 96%;
+	bottom: 0%; left: 0.5%
+  }
+  .CLoseBar3{
+	width: 75px;
+	position: absolute;
+	background-color: red;
+	height: 5px;
+	border-radius: 100px;
+	margin-top: 17px; margin-left: -60px;
+	transition: all 0.3s;
+
+  }
+
+  .MaxBar3{
+	width: 75px;
+	position: absolute;
+	background-color: rgba(100, 100, 100, 0.85);
+	height: 5px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-top: -23px; margin-left: -155px;
+	transition: all 0.5s;
+  }  
+
+  .MinBar3{
+	width: 75px;
+	position: absolute;
+	background-color: rgba(100, 100, 100, 0.85);
+	height: 5px;
+	border-radius: 100px;
+	cursor: pointer;
+	margin-top: -23px; margin-left: -240px;
+	transition: all 0.5s;
+
+  }
+
+  
+.SearchFl {
+	display: inline-block; position: absolute;
+	width: 54%; height: 15px;
+	border-radius: 5px;
+	border:0.25px solid #f1f1f11e;
+	background: rgba(23, 26, 37, 0.185);
+	padding: 5px;
+	font-size: 12px; 
+	color: white; margin-left: 7px; margin-top: 2.5px;
+	right: 19.5%;
+	transform: translateX(-19%);
+}
+
+.SearchFl2 {
+	float: right; position: fixed;
+	width: 22.75%; height: 15px;
+	border-radius: 5px;
+	border:0.25px solid #f1f1f11e;
+	background: rgba(23, 26, 37, 0.185);
+	padding: 5px;
+	font-size: 12px;
+	color: white; margin-left: 7px; margin-top: 2.5px;
+	right: 2%;
+	transform: translateX(-2%);
+}
+
+.SearchF3 {
+	display: inline-block; position: absolute;
+	width: 70%; height: 19px;
+	border-radius: 5px;
+	border:0.25px solid #f1f1f11e;
+	background: rgba(23, 26, 37, 0.185);
+	padding: 5px;
+	font-size: 12px; 
+	color: white; margin-left: 7px; margin-top: 2.5px;
+	right: 3%;
+	transform: translateX(-19%); padding-left: 10px;
+}
+
+
+
+.alert {
+    position: absolute;
+    width: 17.5%;
+    padding: 20px;
+    scale: 1; opacity: 1;
+    background-color: rgba(31, 31, 31, 0.5);
+    backdrop-filter: blur(35px) contrast(120%);
+    -webkit-backdrop-filter: blur(35px) contrast(120%);
+    color: white;
+    bottom: 2.75%; right: 2.75%; border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 1px solid rgb(136, 136, 136);
+    scale: 1;
+    transition: all 0.5s ;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+      -webkit-filter: drop-shadow(0px 0px 2px rgb(136, 136, 136));
+      filter: drop-shadow(0px 0px 2px rgb(136, 136, 136));
+  }
