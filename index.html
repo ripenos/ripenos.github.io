@@ -95,28 +95,6 @@
             transition: all 1s;
             }
 
-            .welcome .selection button{
-            width: 255px;
-            margin: 5px;
-            font-size: 22px;
-            padding: 15px;
-            }
-
-            .welcome .selection button:hover{
-            width: 275px;
-            -webkit-transform: scale(1.1);
-                    transform: scale(1.1);
-            background-color: rgba(94, 94, 94, 0.15);
-            border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
-            margin-left: 10px;
-            margin-right: 10px;
-
-            }
-
-            .welcome .selection button:active{
-            scale: 0.85;
-            }
-
             .welcome-content h2 {
                 position: absolute;
                 left: 90%;
@@ -180,6 +158,45 @@
                         transform: translateY(-10%);
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
+
+            .button3 {
+                padding: 10px; margin: 0; font-size: 20px;
+                background-color: rgba(240, 240, 240, 0.15);
+                border-radius: 5px;transition: all 0.3s;height: 42.5px; 
+                font-weight:normal;border: none;
+            }
+            .button3:hover {
+                background-color: rgba(240, 240, 240, 0.25);
+                 -webkit-transform: scale(1);transform: scale(1);
+                 border: none
+            } 
+            .button3:active {border: none;scale: 0.90;}
+
+            
+            .welcome .selection .button2{
+            width: 255px;
+            margin: 5px;
+            font-size: 22px;
+            padding: 15px;
+            }
+
+            .welcome .selection .button2:hover{
+            width: 275px;
+            -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+            background-color: rgba(94, 94, 94, 0.15);
+            border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
+            margin-left: 10px;
+            margin-right: 10px;
+
+            }
+
+            .welcome .selection .button2:active{
+            scale: 0.85;
+            }
+
+            .Members{display: block; visibility: visible; opacity: 1; transition: all 1s;}
+            .Resources{display: none; visibility: hidden; opacity: 0; transition: all 1s;}
             
         </style>
     </head>
@@ -209,9 +226,16 @@
                 <h5 class="desktopsready">Your Desktop is getting ready...</h5>
         
                 <div class="selection" id="selection"><center>
-                    <h1 style="margin-bottom: 5px;">Members</h1>
-                    <button id="intoRipen"  onclick="intoLockScreen()">RipenOS</button>
-                    <a href="https://ripenos.github.io/WinRipen/"><button id="intoWinRIpen" >Windows Ripen</button></a>
+                    <button class="button3" onclick="member()">Members</button>
+                    <button class="button3" style="margin-left: 5px;" onclick="resourse()">Resources</button>
+                    <br><br>
+                    <div class="Members" id="myMembers">
+                        <button id="intoRipen"  onclick="intoLockScreen()" class="button2">RipenOS</button>
+                        <a href="https://ripenos.github.io/WinRipen/"><button id="intoWinRIpen" class="button2">Windows Ripen</button></a>
+                    </div>
+                    <div class="Resources" id="myResources">
+                    <a href="https://ripenos.github.io/Docs/frameworks/frameworks.html"><button class="button2" style="width: max-content;">Ripen.css Framework</button></a>
+                    </div>
                 </center></div>
 
                 <CENTER>
@@ -224,6 +248,31 @@
         </CENTER>
     
         <script>
+            
+            function member(){
+                document.getElementById("myMembers").style.display= "block";
+                document.getElementById("myResources").style.display= "none";
+
+                setTimeout(() => {
+                document.getElementById("myMembers").style.visibility= "visible";
+                document.getElementById("myMembers").style.opacity= "1";
+                document.getElementById("myResources").style.visibility= "hidden";
+                document.getElementById("myResources").style.opacity= "0";
+                }, 1);
+            }
+
+            function resourse(){
+                document.getElementById("myResources").style.display= "block";
+                document.getElementById("myMembers").style.display= "none";
+
+                setTimeout(() => {
+                    document.getElementById("myResources").style.visibility= "visible";
+                document.getElementById("myResources").style.opacity= "1";
+                document.getElementById("myMembers").style.visibility= "hidden";
+                document.getElementById("myMembers").style.opacity= "0";
+                }, 1);
+            }
+
             var GreetDate = new Date();
             var hrs = GreetDate.getHours();
             var greet;
@@ -288,6 +337,14 @@
                     window.open("lockscreen.html", '_self');
                 }, 3500);
 
+            }
+
+              if (screen.width <= 699) {
+                document.location = "PhoneDue.html";
+            }
+
+              if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+                location.replace("PhoneDue.html");
             }
 
         </script>
