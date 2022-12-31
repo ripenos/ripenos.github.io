@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="Assets/windows11-logo.png" type="image/x-icon">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+        <title>RGOS | Windows Ripen</title>
+
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body, html {
+                background-image: url("https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096");
+                background-size: cover;
+                height: 100vh;
+                font-size: 15px;
+                overflow: hidden; 
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .darkmode
+            {
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 10px;
+                overflow: hidden;
+                border: 1.95px solid rgba(225, 225, 225, 0.25);
+                color: white;
+                backdrop-filter: blur(35px);
+
+            }
+
+            .lightmode
+            {
+                border-bottom: 1px solid rgba(209, 209, 209, 0.329);
+                background-color: rgba(240, 240, 240, 0.15);
+                backdrop-filter: blur(35px);
+                color: rgb(255, 255, 255);
+                filter: drop-shadow(0px 0px 2px black);
+            }
+
+
+            .welcome {
+                position: relative;
+                width: 100%; 
+                backdrop-filter: blur(35px);
+                height:fit-content; 
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgb(255, 255, 255);
+                transition: 0.5s;
+                text-align: left;
+                height: 100vh;
+            }
+            
+            /* welcome Content */
+            .welcome-content {
+                margin: 0;
+                width: 67.5%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                scale: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.5s;
+            }
+
+            @media (max-width:700px) {
+                .welcome-content {
+                 width: 85%;
+                }
+            }
+
+            .welcome-content a {
+                text-decoration: none; color: white;
+            }
+            
+            .welcome-header {
+                padding: 15px 20px;
+                background-color: rgba(124, 124, 124, 0.15);
+                border-radius: 8px 8px 0 0 ;
+            }
+            
+            .welcome-body {padding: 2px 16px;}
+            
+            .welcome-footer {
+                padding: 10px 16px;
+                background-color: rgba(124, 124, 124, 0.15);
+                color: white;
+                border-radius: 0 0 8px 8px;
+
+            }
+
+            .welcome-btn {
+                color: white; background-color:rgb(255, 123, 0); border: none; border-radius: 8px; padding: 10px; cursor: pointer; font-size: 20px; font-weight: bold; border: 1px solid #ccc; transition: all 0.5s; box-shadow: 0px 0px 5px black;
+            }
+
+
+            .logoRipen{
+                position: absolute;
+                margin: 10px;
+            }
+
+            .logoRipen img {
+                width: 40px;
+                border-radius: 8px;
+            }
+
+            .logoRipen .LogoName {
+                display: inline-block;
+                margin-left: 1px;
+                -webkit-transform: translateY(-10px);
+                        transform: translateY(-10px);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            }
+        </style>
+    </head>
+
+    <body onload="displayWelcome()">
+        
+        <CENTER>
+			<!-- welcome content -->
+            <div class="welcome">
+
+                <div class="logoRipen">
+                    <img src="https://raw.githubusercontent.com/ripenos/ripenos.github.io/main/Assets/ripenOs.jpg" alt="">
+                    <h1 class="LogoName">RGOS</h1>
+                </div>
+                <button onclick="myFunction()" style="float: right; margin: 10px; z-index: 300000;" class="welcome-btn">Toggle theme</button>
+
+                <div class="welcome-content" id="mywelcome">
+                        <div class="darkmode" id="theme" style="transition: all 0.5s;">
+                            <div class="welcome-header">
+                                <h2 style="display: inline-block;">Ripen OS for Phone is coming soon!</h2>
+                            </div>
+                            <br>
+                            <div class="welcome-body">
+                                <p>
+                                    Ripen OS for phone is still in progress and will be shortyl implemented.
+                                </p>
+                                <br>
+                                <font color="#ccc">Meanwhile, Windows Ripen for Phone is available, so take up ca chance and visit the Windows Ripen on your Mobile!!</p>
+                                <br>
+                                <font color="#fff"><b>Copyright (c) 2022 RipenOS</b></font><br><br>
+                            </div>
+                            <div class="welcome-footer">
+                                <button class="welcome-btn" style="font-size: 16px;">
+                                    <a href="https://ripenos.github.io/WinRipen/">Check out</a>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </CENTER>
+        <script>
+
+            function displayWelcome(){
+                var welc = document.getElementsByClassName("welcome-content")[0];
+
+                welc.style.transition= "all 0.5s"
+                welc.style.visibility= "visible";
+                welc.style.opacity= "1";
+                welc.style.scale= "1.1";
+
+                setTimeout(() => {
+                    welc.style.transition= "all 1s";
+                    welc.style.scale= "1";
+                }, 700);
+
+            }
+
+            function myFunction() {
+            var element = document.getElementById("theme");
+            element.classList.toggle("lightmode");
+            }
+
+
+          </script>
+
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelector("#mywelcome"), {
+                max: 5,
+                speed: 400,
+            });
+            
+            //It also supports NodeList
+            VanillaTilt.init(document.querySelectorAll("#mywelcome"));
+        </script>
+    </body>
+</html>
