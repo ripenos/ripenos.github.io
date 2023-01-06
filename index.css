@@ -118,10 +118,9 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 
 .responsive-iframe {
   position: absolute;
-  width: 71vw;
-  height: 500px;
-  left: 45px;
-  top: 15px;
+  left: 3vw;
+  width: 71.5vw;
+  height: 480px;
   border-radius: 7.5px;
   z-index: 2;
 }
@@ -332,8 +331,11 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   padding-left: 10px;
   transition: all 0.3s;
   visibility: hidden;
-  opacity: 0;
+  opacity: 0; 
 }
+
+.wifibtn{position: absolute; top: 125px; right: 10px;
+  background-color: #f1f1f11a; border-radius: 8px; border: none;width: 150px; color: white; font-weight: 700;}
 
 #audioPanel {
   position: absolute;
@@ -343,6 +345,21 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   transition: all 0.3s;
   visibility: hidden;
   opacity: 0;
+  width: 27vw;
+}
+
+.volimg {
+  position: absolute; top: 55px; left: 10px;
+   width: 32px;}
+
+.volstgPanel {
+  position: absolute; top: 100px; left: 10px;
+  display: inline-block; color: #ccc;  cursor: pointer;
+}
+
+.volmixer { 
+  position: absolute; top: 100px; right: 30px;
+  display: inline-block; color: #ccc;  cursor: pointer;
 }
 
 #batteryPanel {
@@ -352,7 +369,7 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   top: 5px;
   transition: all 0.3s;
   visibility: hidden;
-  opacity: 0;
+  opacity: 0; width: 98%;
 }
 
 #SearchApps {
@@ -365,32 +382,56 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   opacity: 0;
 }
 
+.AllAppBtnM{  float: left;
+  border-radius: 7.5px;  border: none;
+  transition: all 0.3s; background: transparent;
+  transform: translateY(-7.5px);
+}
+
+.AllAppBtnM:hover{background-color: rgba(122, 122, 122, 0.25);}
+
+.sortBtn{
+  float: right;
+  border-radius: 7.5px;  border: none;
+  transition: all 0.3s; background: transparent;
+  transform: translate(-25px, -10px);
+}
+
+.sortBtn:hover{background-color: rgba(122, 122, 122, 0.25);}
+.sortBtn img{width: 20px;}
+.sortBtn img:hover{
+  transform: scale(1);
+  margin-left: 1px; margin-right: 1px;
+}
+
 #AllApps {
   padding: 2px; background-color: white;
 }
 
-.AllApps {
-  padding: 10px;
-  width: 100%;
-}
-.AllApps .Appimg {
-  padding: 25px;  background-color: rgba(122, 122, 122, 0.25);
-  display: inline-table;   border-radius: 7.5px; margin-bottom: 5px;
+.Appimg {
+  padding: 25px;  background-color:transparent; width: 5vw; 
+  display: inline-table;   border-radius: 7.5px; margin-bottom: 5px; transition: all 0.2s;
+  width: 100px; height: 50px;
 }
 
-.AllApps .Appimg img {
-  border-radius: 7.5px;
+ .Appimg:hover{background-color: rgba(122, 122, 122, 0.25);}
+ .Appimg:active {scale: 0.90;}
+ .Appimg img {
+  border-radius: 7.5px; width: 35px; margin-bottom: 5px;
 }
-.AllApps .Appimg img:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+ .Appimg img:hover {
+  -webkit-transform: scale(1); 
+          transform: scale(1);
+          margin-left: 0px;
+          margin-right:0px;
 }
-.AllApps .Appimg img:active {
-  scale: 0.75;
+
+ .Appimg p{
+  width: 150%; margin-left: -25%;
 }
 
 #AllAppsList{
-  position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 405px; width: 42.5vw; margin-left: -10px; margin-top: 30px; transition: all 0.3s; 
+  position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 425px; width: 42.5vw; margin-left: -10px; margin-top: 40px; transition: all 0.3s;
 }
 
 .slider {
@@ -482,7 +523,7 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 .tab {
   float: left;
   width: 42.5px;
-  height: 435px;
+  height: 457.5px;
 }
 
 /* Style the buttons inside the tab */
@@ -518,18 +559,27 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 /* Style the tab content */
 .tabcontent {
   position: absolute;
-  float: left;
-  margin-top: -13px;
-  width: 70%;
-  height: 448px;
+  height: 445px;
   transform: translateX(0);
   transition: all 0.3s;
+  display:inline-block; 
+  padding: 5px; top: 15px;
+   overflow-y: scroll; 
+   overflow-x: hidden;
+}
+
+
+#Paris{
+  width: 74.5vw;
+  height: 500px;
+  overflow: hidden;
+  
 }
 
 .vl {
   position: absolute;
   border:0.25px solid rgba(240, 240, 240, 0.15);
-  height: 449px;
+  height: 472px;
   top: -4px;
   left: 42.5px;
   transform: translateX(0);
@@ -780,7 +830,7 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 
 .card1 {
   background:linear-gradient(90deg, rgba(255, 123, 0, 0.5) 0%, rgba(158, 76, 0, 0.75) 100%);
-  padding: 12.5px; margin: 5px; width: 275px; margin-top: 10px;
+  padding: 12.5px; margin: 5px; width: 20vw; margin-top: 10px;
   border-radius: 5px;
   font-weight: 700;
   font-size: 14px;
@@ -796,7 +846,7 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 .card3 {
   float: right;
   background:linear-gradient(145deg, rgba(255, 187, 0, 0.5) 0%, rgba(255, 123, 0, 0.5) 100%);
-  margin: 5px; height: 145px; padding: 5px;width: 132px;
+  margin: 5px; height:160px; padding: 5px;width: 9.5vw; padding-bottom: 17.5px;
   border-radius: 5px;
   font-weight: 700;
   font-size: 14px;
@@ -804,16 +854,19 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 .card3 h6 {font-size: 12px; margin: 5px;}
 .card3 img{width: 25px; padding: 5px; margin-top: -2px; margin-bottom: 3px;}
 .card3 img:hover{scale: 1.1}
-.card3 .AlbumArtNoMusicPlayed{ padding: 10px; background: rgb(143, 143, 143); margin: 5px; border-radius: 5px;
+.card3 .AlbumArtNoMusicPlayed{ padding: 16px; background: rgb(143, 143, 143); margin: 5px; border-radius: 5px;
  filter: drop-shadow(0px 0px 0px black);}
-#news {padding: 0; margin: 0; position: absolute;  margin-left: -10px; margin-top: 195px;}
-#news iframe{width: 300px; }
+#news {padding: 0; margin: 0; position: absolute;  margin-left: -10px; top: 455px;}
+#news iframe{width: 21.5vw; }
 
 .StartPinnedW2 {
-margin: 12.5px;  margin-top: 117.5px;
-padding: 11px;  position: absolute;
+  position: absolute;
+  top: 375px;
+padding: 11px; margin: 0;
 background-color: rgba(0, 0, 0, 0.20);
-border-radius: 8px; width: 275px; margin-left: 5px;
+border-radius: 8px; 
+width: 20vw;  height: max-content;
+margin-left: 5px;
 font-family: Arial, Helvetica, sans-serif;
 border: 0.5px solid #f1f1f12a;
 }
@@ -868,3 +921,57 @@ border: 0.5px solid #f1f1f12a;
   }
 
   .myDIV:active {scale: 0.95; }
+
+.sidebar{
+  position:absolute;
+  bottom: 20vh;
+  left: -94px;
+  padding: 7.5px;
+  font-size: 20px;
+  background-color:  rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: blur(35px) contrast(200%);
+          backdrop-filter: blur(35px) contrast(200%);
+  border-radius: 5px;
+  border: 1px solid #f1f1f138;
+  visibility: hidden; opacity: 0;
+  transition: all 0.3s;
+  
+}
+
+.sidebar:hover{left: 2.5px; cursor: pointer;}
+.sidebar:active{scale: 0.90;}
+
+.FeedbackBg{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+ width: 100%; height: 100vh;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 203;
+  display: none;
+  -webkit-backdrop-filter: blur(45px);
+          backdrop-filter: blur(45px);
+}
+.Feedback{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px; margin:0;
+  font-size: 20px;
+  width: 80%; height: 70vh;
+  background-color:  rgba(0, 0, 0, 0.65);
+  border-radius: 10px ; z-index: 205;
+  border: 1px solid #f1f1f138;
+  transition: all 0.3s;
+}
+
+.Feedback h3{
+  color:rgba(240, 240, 240, 0.35);
+  letter-spacing: 2px;
+}
+
+.Feedback .closeFeedBack{
+  position:absolute;
+  right: 15px; top: 15px; cursor: pointer;
+}
