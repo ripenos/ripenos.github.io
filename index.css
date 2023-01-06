@@ -315,6 +315,16 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
   opacity: 0;
 }
 
+#CalPanel {
+  position: absolute;
+  padding-top: 5px;
+  padding-left: 10px;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  width: 98%;
+}
+
 #personalizePanel {
   position: absolute;
   padding-top: 5px;
@@ -433,6 +443,8 @@ body h1, body h2, body h3, body h4, body h5, body h6, body a {
 #AllAppsList{
   position: absolute;  overflow-x: hidden;overflow-y: scroll; max-height: 425px; width: 42.5vw; margin-left: -10px; margin-top: 40px; transition: all 0.3s;
 }
+
+#AllAppsList li {  display: inline-table;}
 
 .slider {
   -moz-appearance: none;
@@ -975,3 +987,148 @@ border: 0.5px solid #f1f1f12a;
   position:absolute;
   right: 15px; top: 15px; cursor: pointer;
 }
+
+.darktheme {
+	background-color: rgba(31, 31, 31, 0.70);
+	-webkit-backdrop-filter: blur(35px) contrast(200%);
+	  backdrop-filter: blur(35px) contrast(200%);
+	  color: white;
+	  border: 0.5px solid #f1f1f12a;
+	  box-shadow: 0px 0px 7.5px rgb(0, 0, 0);
+	  border-radius: 9px;
+	  width: inherit;
+	  height: inherit;
+	  padding: inherit;
+	  overflow: inherit;
+	  transition: all 0.3s;
+}
+
+#Desktop{
+  position:absolute;
+  width: 100vw; bottom: 0; height: 94vh; margin-bottom: 45px;
+}
+
+#context-menu {
+	position: fixed;
+	z-index: 50;
+	width: 300px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0px;
+	transform: scale(0);
+	transform-origin: top left;
+	filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.75));
+	border-radius: 9px;
+	backdrop-filter: blur(35px);
+}
+
+#context-menu.visible {transform: scale(1); transition: transform 200ms ease-in-out;}
+
+#context-menu .item {
+	padding: 8px 10px;
+	font-size: 15px;
+	color: #eee;
+	cursor: pointer;
+	border-radius: inherit;
+	margin: -1px; margin-bottom: 0;
+}
+
+#context-menu .item:hover {
+	background-color: inherit;
+	color: #ccc;
+	border: none; border-radius: 7px;
+	cursor: pointer;
+	transition: 0.3s;
+	color: white;
+	background-color: rgba(221, 221, 221, 0.15);
+}
+
+  /* Import Google font - Poppins */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+  .CalPanel header{
+	display: flex;
+	align-items: center;
+	padding: 25px 30px 10px;
+	justify-content: space-between;
+  }
+  
+  header .icons{
+	position: absolute; top: 5px; right: 20px;
+  }
+  header .icons span{
+	height: 38px;
+	width: 38px;
+	margin: 0 1px;
+	cursor: pointer;
+	color: #878787;
+	text-align: center;
+	line-height: 38px;
+	font-size: 1.9rem;
+	user-select: none;
+	border-radius: 50%;
+  }
+  .icons span:last-child{
+	margin-right: -10px;
+  }
+  header .icons span:hover{
+	background: #f2f2f2;
+  }
+  header .current-date{
+	font-size: 1.45rem;
+	font-weight: 500;
+  }
+  .calendar{
+  transform: translateX(-7.5px); height: 325px; overflow-y: scroll;
+	padding: 10px; margin: 0; background: rgba(0, 0, 0, 0.35); border-radius: 7.5px;
+  }
+  .calendar ul{
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	text-align: center;
+  }
+  .calendar .days{
+	margin-bottom: 20px;
+  }
+  .calendar li{
+	color: #acc;
+	width: calc(100% / 7);
+	font-size: 1.07rem;
+  transition: all 0.3s;
+  }
+  
+  .calendar .weeks li{
+	font-weight: 500;
+	cursor: default;
+  }
+  .calendar .days li{
+	z-index: 1;
+	cursor: pointer;
+	position: relative;
+	margin-top: 30px;
+  }
+  .days li.inactive{
+	color: #aaa;
+  }
+  .days li:active{
+	color: #fff;
+  scale: 0.90;
+  }
+
+  .days li::before{
+	position: absolute;
+	content: "";
+	left: 50%;
+	top: 50%;
+	height: 40px;
+	width: 40px;
+	z-index: -1;
+	border-radius: 7.5px;
+	transform: translate(-50%, -50%);
+  }
+  .days li.active::before{
+	background: rgb(255, 145, 0);
+  }
+  .days li:not(.active):hover::before{
+	background: rgba(0, 0, 0, 0.35);
+  }
