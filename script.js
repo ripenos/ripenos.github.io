@@ -57,6 +57,8 @@ document.getElementById("personalizeShowBtn").addEventListener("click", ()=>{
         document.getElementById("ControlToggles").style.opacity = "0";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
@@ -83,6 +85,8 @@ document.getElementById("controlShowBtn").addEventListener("click", ()=>{
         document.getElementById("ControlToggles").style.opacity = "1";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
@@ -103,6 +107,8 @@ document.getElementById("wifiBtn").addEventListener("click", ()=>{
         document.getElementById("feedbar").style.height = "540px";
         document.getElementById("wifiPanel").style.visibility = "visible";
         document.getElementById("wifiPanel").style.opacity = "1";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
@@ -124,6 +130,8 @@ document.getElementById("audioBtn").addEventListener("click", ()=>{
         document.getElementById("audioPanel").style.opacity = "1";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
         document.getElementById("batteryPanel").style.opacity = "0";
         document.getElementById("personalizePanel").style.visibility = "hidden";
@@ -141,6 +149,8 @@ document.getElementById("batteryBtn").addEventListener("click", ()=>{
         document.getElementById("feedbar").style.height = "290px";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "visible";
@@ -511,10 +521,92 @@ function startTimeH() {
     
     document.getElementById('txtdtyH').innerHTML = weekday2[myDay2] + ', ' + Months2[myMonth2] + ' ' + dt2;
     setTimeout(startTimeH, 1000);
-    }    
+    }
+
+    
+    const daysTag = document.querySelector(".days"),
+    currentDate = document.querySelector(".current-date"),
+    prevNextIcon = document.querySelectorAll(".icons span");
+    
+    // getting new date, current year and month
+    let date = new Date(),
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
+    
+    // storing full name of all months in array
+    const months = ["January", "February", "March", "April", "May", "June", "July",
+                  "August", "September", "October", "November", "December"];
+    
+    const renderCalendar = () => {
+        let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+        lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
+        lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+        let liTag = "";
+    
+        for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
+            liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+        }
+    
+        for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
+            // adding active class to li if the current day, month, and year matched
+            let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+                         && currYear === new Date().getFullYear() ? "active" : "";
+            liTag += `<li class="${isToday}">${i}</li>`;
+        }
+    
+        for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
+            liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
+        }
+        currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+        daysTag.innerHTML = liTag;
+    }
+    renderCalendar();
+    
+    prevNextIcon.forEach(icon => { // getting prev and next icons
+        icon.addEventListener("click", () => { // adding click event on both icons
+            // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+            currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+    
+            if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
+                // creating a new date of current year & month and pass it as date value
+                date = new Date(currYear, currMonth);
+                currYear = date.getFullYear(); // updating current year with new date year
+                currMonth = date.getMonth(); // updating current month with new date month
+            } else {
+                date = new Date(); // pass the current date as date value
+            }
+            renderCalendar(); // calling renderCalendar function
+        });
+    });
+
+function calendarSH(){
+    if (document.getElementById("feedbar").style.height == "440px"){
+        document.getElementById("feedbar").style.height = "45px";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
+    }
+    else {
+        document.getElementById("feedbar").style.height = "440px";
+        document.getElementById("CalPanel").style.visibility = "visible";
+        document.getElementById("CalPanel").style.opacity = "1";
+        document.getElementById("wifiPanel").style.visibility = "hidden";
+        document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("audioPanel").style.visibility = "hidden";
+        document.getElementById("audioPanel").style.opacity = "0";
+        document.getElementById("batteryPanel").style.visibility = "hidden";
+        document.getElementById("batteryPanel").style.opacity = "0";
+        document.getElementById("personalizePanel").style.visibility = "hidden";
+        document.getElementById("personalizePanel").style.opacity = "0";
+        document.getElementById("ControlToggles").style.visibility = "hidden";
+        document.getElementById("ControlToggles").style.opacity = "0";
+    }
+  
+  }
+
 
 window.onclick = function(event) {
-    if (event.target == document.body) {
+    if (event.target == document.getElementById("Desktop")) {
         document.getElementById("feedbar").style.height = "45px";
         document.getElementById("dock").style.height = "45px";
         document.getElementById("myripebar").style.height = "45px";
@@ -540,6 +632,8 @@ window.onclick = function(event) {
         document.getElementById("personalizePanel").style.opacity = "0";
         document.getElementById("wifiPanel").style.visibility = "hidden";
         document.getElementById("wifiPanel").style.opacity = "0";
+        document.getElementById("CalPanel").style.visibility = "hidden";
+        document.getElementById("CalPanel").style.opacity = "0";
         document.getElementById("audioPanel").style.visibility = "hidden";
         document.getElementById("audioPanel").style.opacity = "0";
         document.getElementById("batteryPanel").style.visibility = "hidden";
@@ -555,3 +649,56 @@ function showFeedbtn(){setTimeout(() => {
     document.getElementsByClassName("sidebar")[0].style.visibility= "visible";
     document.getElementsByClassName("sidebar")[0].style.opacity= "1";
 }, 5000);}
+
+const contextMenu = document.getElementById("context-menu");
+const scope = document.querySelector("#Desktop");
+const normalizePozition = (mouseX, mouseY) => {
+  // ? compute what is the mouse position relative to the container element (scope)
+  let { left: scopeOffsetX, top: scopeOffsetY, } = scope.getBoundingClientRect();
+  
+  scopeOffsetX = scopeOffsetX < 0 ? 0 : scopeOffsetX;
+  scopeOffsetY = scopeOffsetY < 0 ? 0 : scopeOffsetY;
+  
+  const scopeX = mouseX - scopeOffsetX;
+  const scopeY = mouseY - scopeOffsetY;
+
+  // ? check if the element will go out of bounds
+  const outOfBoundsOnX = scopeX + contextMenu.clientWidth > scope.clientWidth;
+
+  const outOfBoundsOnY = scopeY + contextMenu.clientHeight > scope.clientHeight;
+
+  let normalizedX = mouseX;
+  let normalizedY = mouseY;
+
+  // ? normalize on X
+  if (outOfBoundsOnX) {
+    normalizedX = scopeOffsetX + scope.clientWidth - contextMenu.clientWidth;
+  }
+
+  // ? normalize on Y
+  if (outOfBoundsOnY) {
+    normalizedY = scopeOffsetY  + scope.clientHeight - contextMenu.clientHeight ;
+  }
+
+  return { normalizedX, normalizedY };
+};
+
+scope.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+
+  const { clientX: mouseX, clientY: mouseY } = event;
+  const { normalizedX, normalizedY } = normalizePozition(mouseX, mouseY);
+
+  contextMenu.classList.remove("visible");
+  contextMenu.style.top = `${normalizedY}px`;
+  contextMenu.style.left = `${normalizedX}px`;
+
+  setTimeout(() => {contextMenu.classList.add("visible");});
+});
+
+scope.addEventListener("click", (e) => {
+  // ? close the menu if the user clicks outside of it
+  if (e.target.offsetParent != contextMenu) {
+    contextMenu.classList.remove("visible");
+  }
+});
