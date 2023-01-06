@@ -1,7 +1,7 @@
 var dockApps = document.body.getElementsByClassName("dockApps")[0];
 
 function dockZoomIn() {
-        if (document.getElementById("dock").style.height == "575px"){
+        if (document.getElementById("dock").style.height == "600px"){
             document.getElementById("dock").style.paddingBottom = "35px";
             dockApps.style.marginBottom= "0px";
             dockApps.style.scale= "1";
@@ -25,7 +25,7 @@ function dockZoomIn() {
   }
 
   document.getElementById("AllApps").addEventListener("click", ()=>{
-    if (document.getElementById("dock").style.height == "575px"){
+    if (document.getElementById("dock").style.height == "600px"){
         document.getElementById("dock").style.height = "45px";
         document.getElementById("dock").style.paddingTop = "10px";
         document.getElementById("dock").style.paddingLeft = "10px";
@@ -35,9 +35,10 @@ function dockZoomIn() {
 
     }
     else {
-        document.getElementById("dock").style.height = "575px";
+        document.getElementById("dock").style.height = "600px";
         document.getElementById("dock").style.paddingTop = "20px";
         document.getElementById("dock").style.paddingLeft = "15px";
+        document.getElementById("dock").style.paddingBottom = "65px";
         document.getElementById("SearchApps").style.visibility = "visible";
         document.getElementById("SearchApps").style.opacity = "1";
 
@@ -227,7 +228,7 @@ function validate(e) {
 }
 
 function exitSearchMenu() {
-    document.getElementById("myripebar").style.height = "500px";
+    document.getElementById("myripebar").style.height = "520px";
     document.getElementById("myripebar").style.width = "27vw";
     document.getElementById("dock").style.transition = "all 0.3s";
     document.getElementsByClassName("searchT")[0].style.width = "22vw";
@@ -266,7 +267,7 @@ document.getElementById('greetings').innerHTML ='<b>' + greet + ', Admin' + '</b
 
 
 document.getElementById("ripeBtn").addEventListener("click", ()=>{
-    if (document.getElementById("myripebar").style.height == "500px"){
+    if (document.getElementById("myripebar").style.height == "520px"){
         document.getElementById("myripebar").style.height = "45px";
         document.getElementById("myripebar").style.width = "27vw";
         document.getElementById("RipenPanel").style.visibility = "hidden";
@@ -285,7 +286,7 @@ document.getElementById("ripeBtn").addEventListener("click", ()=>{
 
     }
     else {
-        document.getElementById("myripebar").style.height = "500px";
+        document.getElementById("myripebar").style.height = "520px";
         document.getElementById("myripebar").style.width = "27vw";
         document.getElementById("RipenPanel").style.visibility = "visible";
         document.getElementById("RipenPanel").style.opacity = "1";
@@ -405,7 +406,6 @@ document.getElementById("Acbars").addEventListener("click", ()=>{
     document.getElementById("feedbar").style.borderRadius= "5px 0 0 0";
     document.getElementsByClassName("searchTA")[0].style.width= "40vw";
     document.getElementById("AllAppsList").style.marginLeft= "-10px";
-    document.getElementById("AllAppsName").style.marginLeft= "16px";
     document.getElementById("AllAppsHR").style.transform= "translateX(0px)";
 
     document.getElementById("dock").style.bottom= "0%";
@@ -428,7 +428,6 @@ document.getElementById("AcDocks").addEventListener("click", ()=>{
     document.getElementById("feedbar").style.borderRadius= "7.5px";
     document.getElementsByClassName("searchTA")[0].style.width= "39vw";
     document.getElementById("AllAppsList").style.marginLeft= "-15px";
-    document.getElementById("AllAppsName").style.marginLeft= "11px";
     document.getElementById("AllAppsHR").style.transform= "translateX(-5px)";
 
     document.getElementById("dock").style.bottom= "1.5%";
@@ -549,3 +548,10 @@ window.onclick = function(event) {
         document.getElementById("SearchApps").style.opacity = "0";
     }
 }
+
+function showFeedback(){document.getElementsByClassName("FeedbackBg")[0].style.display= "block";}
+function closeFeedback(){document.getElementsByClassName("FeedbackBg")[0].style.display= "none";}
+function showFeedbtn(){setTimeout(() => {
+    document.getElementsByClassName("sidebar")[0].style.visibility= "visible";
+    document.getElementsByClassName("sidebar")[0].style.opacity= "1";
+}, 5000);}
