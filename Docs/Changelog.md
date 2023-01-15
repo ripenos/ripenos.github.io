@@ -15,6 +15,18 @@ A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
     - Personalization Panel: Light/Dark theme, Actionbar bar and dock mode and Wallpapers
     - Dedicated All Apps Search
 
-## v2.0 **(2nd Prime Update)** - coming soon
+## v2.0 **(2nd Prime Update)**
+1. Boot Screen
+2. Responsive OS (for Desktop, tab, and Phone)
+3. 1st Native App testing (Files)
+4. New Native Wallpaper
+5. Bugs and UI problems patched
+6. Notification Panel
+7. Features (updated and Added)
+    - Refreshed Lockscreen
+    - Refreshed Actionbar Panels
+    - Custom Wallpaper
+    - Auto Hide Actionbar
+    - Search engine: changed from Bing to Wikipedia
 
 MIT License • Copyright (c) 2023 RipenOS
