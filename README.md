@@ -23,18 +23,14 @@ RGOS Framework are the set of stylesheets for building interface components that
 
 ### Ripen OS
 
-![image](https://user-images.githubusercontent.com/120778877/209984431-4711d46e-629e-4de9-9f3b-dc8fc88599e7.png)
-![image](https://user-images.githubusercontent.com/120778877/209984501-5b7757ab-6c5d-4602-8dbd-e5a53c6288d1.png)
-![image](https://user-images.githubusercontent.com/120778877/209984541-79b368cc-4e4c-4aa6-89b2-15f0a9bdf5c4.png)
-![image](https://user-images.githubusercontent.com/120778877/209984576-00f545d3-7b20-4e4e-8bfa-93b1807e78f2.png)
+![Screenshot 2023-01-15 195118](https://user-images.githubusercontent.com/120778877/212546380-dce461d6-f89e-4288-ad19-1c92b48aaabe.png)
+![Screenshot 2023-01-15 195216](https://user-images.githubusercontent.com/120778877/212546384-29cb3f9c-07be-460a-814c-907d1ed8b074.jpg)
+![Screenshot 2023-01-15 195229](https://user-images.githubusercontent.com/120778877/212546387-5482b7db-7fb9-48b4-b645-7c0963b8abd7.png)
 
 ### Windows Ripen
 
-![image](https://user-images.githubusercontent.com/120778877/209984719-34726c1d-cb86-4dd7-ba5f-92e7f22c5c12.png)
-![image](https://user-images.githubusercontent.com/120778877/209984738-fc5924b3-64b4-41b3-adcd-baafc2aebc86.png)
-![image](https://user-images.githubusercontent.com/120778877/209984776-edc118e0-c1ac-425b-ae55-ab86230b2d05.png)
-![image](https://user-images.githubusercontent.com/120778877/209984839-4e819a92-ab57-45c9-814c-b0efdce04930.png)
-![image](https://user-images.githubusercontent.com/120778877/209984869-8502af6d-be34-4e76-8d2d-e3f75ee5dd8f.png)
+![Screenshot 2023-01-15 195548](https://user-images.githubusercontent.com/120778877/212546538-0db40afc-81b7-41a4-8aab-7a2eafc31f37.png)
+![Screenshot 2023-01-15 195617](https://user-images.githubusercontent.com/120778877/212546545-9e8ff862-d937-4531-a24c-f6a626649447.png)
 
 ## Questions
 
