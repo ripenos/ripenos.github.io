@@ -1,0 +1,300 @@
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,rgba(255, 140, 0, 0.55) 0%, rgba(133, 53, 0, 0.55) 100%);
+    border-radius: 2px; transition: all 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,rgba(255, 140, 0, 0.75) 0%, rgba(133, 53, 0, 0.75) 100%);
+    border-radius: 50px;
+}
+
+/* Ranger Styling */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;  appearance: none;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: #ff9100;
+    border: 3px solid white;
+    cursor: pointer;
+    transition: border 0.05s, scale 0.3s;
+    scale: 1;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    border: 2px solid white;
+    scale: 1.1;
+    background: rgb(255, 166, 0);
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.searchT {
+    width: 135px;
+    height: 17px;
+    margin-top: 7.5px;
+    border-right:  none;
+    border-left: none;
+    border-top:  0.25px solid #f1f1f11e;
+    border-bottom:  none;
+    border-radius: 15px;
+    background-color: rgba(241, 241, 241, 0.06);
+    padding: 7px;
+    font-size: 13.5px;
+    color: white;
+    text-align: left;
+    transition: all 1.3s;
+  }
+
+  .searchTM {
+    width: 125px;
+    height: 17px;
+    margin-top: 7.5px;
+    border-right:  none;
+    border-left: none;
+    border-top:  0.25px solid #f1f1f11e;
+    border-bottom:  none;
+    border-radius: 15px;
+    background-color: rgba(241, 241, 241, 0.06);
+    padding: 7px;
+    font-size: 13.5px;
+    color: white;
+    text-align: center;
+    transition: all 1.3s;
+  }
+
+  ::-webkit-input-placeholder { /* Edge */
+    color: rgb(216, 216, 216);
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(216, 216, 216);
+  }
+  
+  ::placeholder {
+    color: rgb(216, 216, 216);
+  }
+
+  .searchS {
+	width: 77%;
+	height: 15px;
+	margin-top: 10px;
+	border-right:  0.5px solid #f1f1f12a;
+	border-left:  0.5px solid #f1f1f12a;
+	border-top:  0.5px solid #f1f1f12a;
+	border-radius: 5px;
+	border-bottom: 2px solid rgb(255, 136, 0);
+	background-color: rgba(44, 42, 35, 0.35);
+	padding: 7px;
+	padding-left: 27px;
+	font-size: 13.5px;
+	color: white;
+}
+
+.SearchQ {
+	width: 76%;margin-left: -15px; margin-right: 5px; 
+	border-right: none;
+	border-radius: 4px; 
+	border-left: 0.25px solid #f1f1f11e; 
+	border-top: 0.25px solid #f1f1f11e;
+	border-right: 0.25px solid #f1f1f11e;;
+	border-bottom: 2px solid rgb(255, 136, 0);
+	background-color: rgba(44, 42, 35, 0.35);
+	padding: 5px;
+	font-size: 12px; display: inline-block;
+	color: white;
+}
+
+.searchSL {
+	width: 77%;
+	height: 15px;
+	margin-top: 10px;
+	border-right:  0.5px solid rgba(209, 209, 209, 0.329);
+	border-left:  0.5px solid rgba(209, 209, 209, 0.329);
+	border-top:  0.5px solid rgba(209, 209, 209, 0.329);
+	border-radius: 5px;
+	border-bottom: 2px solid rgb(255, 136, 0);
+	background-color: rgba(240, 240, 240, 0.15);
+	filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.75));
+	padding: 7px;
+	padding-left: 27px;
+	font-size: 13.5px;
+	color: white;
+}
+
+.SearchQL {
+	width: 76%;margin-left: -15px; margin-right: 5px; 
+	border-right: none;
+	border-radius: 4px; 
+	border-left: 0.25px solid rgba(209, 209, 209, 0.329);
+	border-top: 0.25px solid rgba(209, 209, 209, 0.329);
+	border-right: 0.25px solid rgba(209, 209, 209, 0.329);
+	border-bottom: 2px solid rgb(255, 136, 0);
+	background-color: rgba(240, 240, 240, 0.15);
+	padding: 5px;
+	filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.75));
+
+	font-size: 12px; display: inline-block;
+	color: white;
+}
+
+.myDIV {
+	position: absolute;
+	width: 75px;
+}
+ 
+  .myDIV img, .myDIV p{
+	  filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));background: transparent; 
+	}
+
+  .myDIV:hover { 	background-color: rgba(107, 107, 107, 0.25);
+	  backdrop-filter: blur(15px);
+	  -webkit-backdrop-filter: blur(15px);
+	  border: 0.15px solid rgba(100, 100, 100, 0.45);
+	  border-radius: 10px;
+	  padding: 7px;
+	  translate: -8px -8px;
+	  box-shadow: 0px 0px 7.5px rgb(0, 0, 0);
+	}
+	  
+  #context-menu {
+	position: fixed;
+	z-index: 50;
+	width: 270px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding:0px;
+	transform: scale(0);
+	transform-origin: top left;
+	filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+	border-radius: 9px;
+	backdrop-filter: blur(35px);
+}
+
+#context-menu.visible {transform: scale(1); transition: transform 200ms ease-in-out;}
+
+#context-menu .item {
+	padding: 8px 10px;
+	font-size: 15px;
+	color: #eee;
+	cursor: pointer;
+	border-radius: inherit;
+	margin: -1px; margin-bottom: 0;
+}
+
+#context-menu .item:hover {
+	background-color: inherit;
+	color: #ccc;
+	border: none; border-radius: 7px;
+	cursor: pointer;
+	transition: 0.3s;
+	color: white;
+	background-color: rgba(221, 221, 221, 0.15);
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 45px;
+	height: 24px;
+	margin-right: 10px;
+	transform: translateY(-2px);
+  }
+  
+  .switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  .slider2 {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	border: 1px solid #ccc ;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider2:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 4px;
+	bottom: 3px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider2 {
+	background-color: #f38021;
+	border: none;
+  }
+  
+  input:focus + .slider2 {
+	box-shadow: 0 0 1px #f38021;
+  }
+  
+  input:checked + .slider2:before {
+	-webkit-transform: translateX(22px);
+	-ms-transform: translateX(22px);
+	transform: translateX(22px);
+	bottom: 4px;
+  }
+  
+  /* Rounded sliders */
+  .slider2.round {
+	border-radius: 34px;
+  }
+  
+  .slider2.round:before {
+	border-radius: 50%;
+  }
+
+
+  .responsive-iframe {
+	position: absolute;
+	top: 95px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.responsive-iframe2 {
+	position: absolute;
+	top: 82.5px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 90%;
+}
+
+#Desktop{
+	position:absolute;
+	width: 100vw; bottom: 0; height: 94vh; margin-bottom: 60px;
+  }

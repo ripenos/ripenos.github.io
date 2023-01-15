@@ -1,0 +1,304 @@
+/* START MENU COMPs */
+
+.StartPinned {
+	display: block;
+	float: right;	
+	margin-right: 20px;
+	padding: 11px;
+	width: max-content;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.StartPinnedApps {
+	padding: 10px; 
+   background-color: rgba(0, 0, 0, 0.20);
+   border-radius: 8px;
+   font-family: Arial, Helvetica, sans-serif;
+   border:  0.5px solid #f1f1f12a; margin-right: 2.5px;
+}
+
+.StartPinnedApps :hover {
+   cursor: pointer;
+}
+
+.StartPinnedA {
+	display: block;
+	float: right;	
+	padding: 5px;
+	padding-right: 30px;
+	width: 7px;
+	height: 135px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a;
+
+}
+
+.StartPinnedW {
+	display: block;
+	float: left;	
+	padding: 11px;
+	padding-bottom: 15px;
+	width: 175px;
+	margin-bottom: 7px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.musicThumbNailD{
+	float: left; background: rgb(189, 189, 189); padding: 12px; border-radius: 5px;
+}
+
+.StartPinnedW2 {
+	display: block;
+	float: left;	
+	padding: 11px;
+	
+	width: 175px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.StartPinnedW2 .Savebtn {
+	display:inline-block; margin-right: -15px; 
+	margin-bottom: -10px;filter: invert(100%); 
+	padding: 3px; background-color: rgba(0, 0, 0, 0.09); 	
+	border:  0.5px solid #0000001f; border-radius: 5px; cursor: pointer;
+}
+
+.StartPinnedW3 {
+	display: block;
+	float: right;	
+	padding: 11px;
+	width: 60px;
+	height: 122.5px;
+	margin-left: 4px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a; overflow: hidden;
+}
+
+.StartPinnedL {
+	display: block;
+	float: right;	
+	margin-right: 20px;
+	padding: 11px;
+	width: max-content;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+}
+
+.StartPinnedAppsL {
+	padding: 10px; 
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+}
+
+.StartPinnedAppsL :hover {
+   cursor: pointer;
+}
+
+.StartPinnedAL {
+	display: block;
+	float: right;	
+	padding: 5px;
+	padding-right: 30px;
+	width: 7px;
+	height: 135px;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+
+}
+
+.StartPinnedWL {
+	display: block;
+	float: left;	
+	padding: 11px;
+	padding-bottom: 15px;
+	width: 175px;
+	margin-bottom: 7px;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+
+}
+
+.StartPinnedW2L {
+	display: block;
+	float: left;	
+	padding: 11px;
+	
+	width: 175px;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+}
+
+.StartPinnedW3L {
+	display: block;
+	float: right;	
+	padding: 11px;
+	width: 60px;
+	height: 122.5px;
+	margin-left: 4px;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-radius: 8px;
+}
+
+
+.slidecontainer {
+	width: 100%;
+  }
+  
+  .slider {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 95%;
+	height: 7px;
+	border-radius: 5px;
+	background: #d3d3d3;
+
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	
+  }
+
+  .slider:hover {
+	opacity: 1;
+  }
+  
+.startApps {
+	padding: 11px;
+	padding-top: 15px;
+	width: 170px; height: 352px;
+	backdrop-filter: none;
+	text-align: justify; overflow-y: scroll; overflow-x: hidden; margin-right: 2px;
+}
+
+		.startAppsbutton {
+			display: block;
+			background-color: inherit;
+			color: #ccc;
+			padding: 5px 10px;
+			width: 96%; margin-left: 5px;
+			border: none; border-radius: 5px;
+			outline: none; margin-bottom: 5px;
+			text-align: left;
+			cursor: pointer;
+			transition: 0.3s;
+			font-size: 13.25px;
+		}
+		
+		.startAppsbutton:hover {
+			color: white;
+			background-color: rgba(221, 221, 221, 0.15);
+		}
+
+		.startAppsbuttonH {
+			display: block;
+			background-color: inherit;
+			color: #ccc;
+			padding: 5px 10px;
+			width: 96%; margin-left: 5px;
+			border: none; border-radius: 5px;
+			outline: none; margin-bottom: 5px;
+			text-align: left;
+			cursor: pointer;
+			transition: 0.3s;
+			font-size: 13.25px;
+		}
+
+.app :hover {
+	margin-right: 30px; margin-top: -7.5px;
+	background-color: rgba(92, 92, 92, 0.25); border-radius: 5px; 
+	box-shadow: 0px -0.5px 0.5px rgba(95, 95, 95, 0.5);
+	padding: 3px; padding-left: 10px; padding-right: 10px;
+}
+
+.MoreBtn {
+	float: right; 
+	margin-right: 30px; margin-top: -7.5px;
+	background-color: rgba(92, 92, 92, 0.25); border-radius: 5px; 
+	box-shadow: 0px -0.5px 1px rgba(95, 95, 95, 0.5);
+	padding: 3px; padding-left: 10px; padding-right: 10px;
+	backdrop-filter:  contrast(70%);
+	-webkit-backdrop-filter: contrast(70%);
+}
+
+.MoreBtnL {
+	float: right; 
+	margin-right: 30px; margin-top: -7.5px;
+	background-color: rgba(240, 240, 240, 0.15);
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	box-shadow: none;
+	padding: 3px; padding-left: 10px; padding-right: 10px;
+}
+
+#myMenu {list-style-type: none;}
+#myMenu li a {text-decoration: none;color: rgb(255, 255, 255);}
+
+
+/* Style the tab */
+.tab {
+    overflow: auto;
+    width: 100%;
+}
+  
+  /* Style the buttons inside the tab */
+  .tab .buttonTab {
+    background-color: inherit;
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+	width: 48%;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: #ccc;
+    margin: 2px;
+    border-radius: 8px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab .buttonTab:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab .buttonTab.active {
+    background-color: rgba(100, 100, 100, 0.4);  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+  }
+  
+  /* Fade in tabs */
+  @-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
