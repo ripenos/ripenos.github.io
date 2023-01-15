@@ -1,0 +1,656 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="og:title" property="og:title" content="Ripen OS" /><meta name="og:description" property="og:description" content="Ripen OS Official | An open-sourced GUI in the Web | An initiative of the RGOS"/><meta name="description" content="Ripen OS Official | An open-sourced GUI in the Web | An initiative of the RGOS"/><meta content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg" property="og:image"/><meta content="Ripen OS Official" property="twitter:title"/><meta content="Ripen OS Official | An open-sourced GUI in the Web | An initiative of the RGOS" property="twitter:description"/><meta content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg" property="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/>
+
+    <link rel="shortcut icon" href="Assets/General/ripenOs.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="Assets/General/ripenOs.jpg" />
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0" />
+    <title>Ripen OS</title>
+</head>
+<body onload="startTime(),  StartDate(),startTimeM(),  StartDateM(), startTimeH(),  StartDateH()" class="bg">
+
+
+    <!-- Actionbar -->
+    <div class="actionbarM">
+        <!-- Ripebar -->
+        <div class="ripebar" id="myripebar" onmouseover="HoverDock()" onmouseleave="HoverDockDown()">
+            <button class="logo" id="ripeBtn" style="margin-top: 2.5px; z-index: 2;">
+                <img src="Assets/General/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white; border-radius: 5px; transition: all 0.5s;" id="RipeLogoM">
+            </button>
+
+            <div style="position: absolute; bottom: 5px; margin-left: 47.5px; z-index: 5;">
+                <input type="text" placeholder="Search the web" class="searchT" onclick="disp_prompt()" id="adrsbr" oninput="opacityM()" onfocus="disp_prompt()">
+
+                <img src="Assets/UI/windows11-search-button-S.png" alt="search" 
+                style="width: 18px; margin-left: -30px;-webkit-transform: translateY(3.5px); transform: translateY(3.5px);" id="SearchInput2">
+            </div>
+
+            <div id="RipenPanel">
+                <div class="tab">
+                    <CENTER>
+                        <button class="tablinks" onclick="openCity(event, 'RipenPanelTB'),   
+                        document.getElementById('RipeLogoM').src= 'Assets/General/ripenOs.jpg';
+                        document.getElementById('RipeLogoM').style.backgroundColor= 'white';
+                        document.getElementById('RipeLogoM').style.width= '31px';
+                        document.getElementById('RipeLogoM').style.marginLeft= '0px';" id="defaultOpen" onmouseup="exitSearchMenu()">
+                            <span class="material-symbols-rounded" style="margin-left: -7.5px">
+                                home
+                            </span>
+                            <p class="MenuTxt">Home</p>
+                        </button>
+                        <button class="tablinks" onclick="openCity(event, 'SearchPanelTB')" id="searchmenu" onmouseup="enterSearchMenu()" style="display: none">
+                            <span class="material-symbols-rounded">
+                                search
+                            </span>
+                        </button>
+                        <button id="ripenExpandMenuBtn" class="tablinks" onmouseover="ExpandMenuR()" onmouseleave="ReExpandMenuR()">
+                            <span class="material-symbols-rounded" >
+                                menu
+                            </span>
+                        </button>
+                        <p class="MenuTxt2" onmouseover="ExpandMenuR()" onmouseleave="ReExpandMenuR()">Menu</p>
+                    </CENTER>
+                    <div id="RipeTogglesL">
+                        <div class="userIconR">
+                            <img src="Assets/UI/icons8-male-user-96.png" alt="">
+                            <p class="MenuTxt3">Admin</p>
+                        </div>
+                        <div class="folderIconR">
+                            <img src="Assets/UI/icons8-folder-96.png" alt="">
+                            <p class="MenuTxt4">Files</p>
+                        </div>
+                        <div class="SettingsIconR">
+                            <img src="Assets/UI/icons8-gear-96.png" alt="">
+                            <p class="MenuTxt5">Settings</p>
+                        </div>
+                        <div class="shutDownIconR">
+                            <img src="Assets/UI/icons8-shutdown-52.png" alt="">
+                            <p class="MenuTxt6">Power</p>
+                        </div>
+                        <hr class="RipenPanelHR">
+                        <div class="vl"></div>
+                    </div>
+                </div>
+                    <div id="RipenPanelTB" class="tabcontent">
+                        <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; font-size: 18px; width: max-content;"></p>
+                        <br>
+                        <p style="font-size: 15px; font-weight: 700; margin-top: -4px;  -webkit-transform: translate(7.5px, -10px);
+                            transform: translate(7.5px, -10px); color: #ccc;">What's today for you?</p>
+                        <div class="card1">
+                            <div style="margin-top: -2.5px;">Your Calendar</div>
+                            <div class="calendar-Today">Meeting at 4:30pm</div>
+                            <div class="calendar-Today">Family trip at wonderland</div>
+                        </div>
+                        <span class="card2"> 
+                            <div id="ww_3005933c55876" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#a3a3a326","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}' 
+                            style="width: 9.5vw;height:max-content; margin: 5px; border-radius: 5px; height:160px;">
+                                <a href="https://weatherwidget.org/tr/" id="ww_3005933c55876_u" target="_blank">Web Sitesi için Ücretsiz HTML Hava Durumu Widget</a>
+                            </div>
+                            <script async src="https://app1.weatherwidget.org/js/?id=ww_3005933c55876"></script>
+                        </span>
+                            <div class="card3">
+                                <CENTER>
+                                    <h6>No Music Played</h6>
+                                    <h1 class="AlbumArtNoMusicPlayed">♫</h1>
+                                    <center style="-webkit-transform: translateX(-20px);transform: translateX(-20px);">
+                                        <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png"  style="filter: invert(100%); cursor: pointer; float: right; ">
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png"  style="filter: invert(100%); cursor: pointer; float: right; ">							
+                                        <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" style="filter: invert(100%); cursor: pointer; float: right; ">
+                                    </center>
+                                    <br>
+                                    <input type="range" min="1" max="100" value="0" class="slider" id="musicRanger">
+                                </CENTER>
+                            </div><br><br>
+                            <div class="StartPinnedW2">
+                                <div style="margin-top: -3px; margin-bottom: 5px;" id="QNHeader">Quick Note</div>
+                                <input type="text" class="SearchQ" placeholder="Add a Quick Note" title="Quick note"> 		
+                                <img src="https://img.icons8.com/fluency-systems-regular/344/save.png" alt="save" width="20px" class="Savebtn">
+                            </div>
+
+                  </div>
+                  <div id="SearchPanelTB" class="tabcontent">
+                    <iframe src="https://www.wikipedia.org/" frameborder="0" class="responsive-iframe"  id="msg" ></iframe>
+                    <p class="StartSearch">Start searching the Web!</p>
+                    <br>
+                  </div>
+            </div>
+        </div>
+
+        <div class="ripebarMobile" id="myripebarM">
+
+            <button class="logo" id="ripeBtnM" style="margin-top: 2.5px; z-index: 2;">
+                <img src="Assets/General/ripenOs.jpg" alt="logo" style="padding: 2px; background-color: white; border-radius: 5px; transition: all 0.5s;" id="RipeLogoMb">
+            </button>
+
+            <div style="position: absolute; bottom: 5px; margin-left: 47.5px; z-index: 5;">
+                <input type="text" placeholder="Search the web" class="searchTM" onclick="disp_prompt()" id="adrsbr" oninput="opacityM()" onfocus="disp_prompt()">
+
+                <img src="Assets/UI/windows11-search-button-S.png" alt="search" 
+                style="width: 18px; margin-left: -30px;-webkit-transform: translateY(3.5px); transform: translateY(3.5px);" id="SearchInput2">
+            </div>
+            <div class="controlBtn" style="width: 35px; right: 137.5px;" id="controlButtonBM">
+                <center style="margin-top: 5px;"><img src="Assets/UI/icons8-adjust-48.png" alt="controls" id="controlShowBtnM"></center>
+            </div>
+            <div class="controlBtn" id="CalM">
+                <div id="txtM" class="tD"></div>
+                <div id="txtdtyM"class="tY"></div>
+            </div>
+            <div class="logo" style="width: 40px; right:5px; bottom: 5px;" id="NotyM">
+                <img src="Assets/UI/noty.png" width="22px" class="notybutton" 
+                style="padding: 2px; background-color: white;" >
+            </div>
+
+            <div id="RipenPanelM">
+                 <div style="margin-bottom: 35px;">
+                    <img src="Assets/UI/icons8-male-user-96.png" style="display:inline-block; width: 65px; border-radius: 25%; margin-right: 10px; ">
+                    <div style="display:inline-block; position: absolute; padding: 5px; top: 10px;">
+                        <h3 id="greetingsM" style="color: white;font-family:Arial, Helvetica, sans-serif;"></h3>
+                        <h5 style="color: white;font-family:Arial, Helvetica, sans-serif; margin-top: 5px;">admin6901@mail.com</h5>
+                    </div>
+                    <div style="display: inline; padding: 7px; position: absolute; top: 65px; margin-bottom: 10px;">
+                        <!--Documents-->
+                        <img src="https://img.icons8.com/windows/344/download--v1.png"
+                        style="filter: invert(100%); cursor: pointer; margin-right: 10px; width: 22px;">	
+        
+                        <!--Explorer-->
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/windows-explorer.png" 
+                        style="filter: invert(100%); cursor: pointer; margin-right: 10px;  width: 22px;">
+        
+                        <!--Settings-->
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png"
+                        style="filter: invert(100%);cursor: pointer; margin-right: 10px;  width: 22px;">
+        
+                        <!--Power Coontrols-->
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/shutdown.png"
+                        style="filter: invert(100%); cursor: pointer; margin-right: 10px;  width: 22px;">
+                    </div>
+                </div>
+                <center>
+                    <div class="tab2">
+                        <img src="Assets/UI/icons8-apps-tab-48.png" alt="" 
+                    style="position: absolute; width: 23px; top: 116px; left: 9px;">
+                <input type="text" placeholder="Search all Apps" class="searchTAM" style="padding-left: 37.5px;" id="myInput" onkeyup="myFunctionInput()">
+                        <!--<button class="buttonTab" id="defaultOpen" style="float: left;">All Apps</button>-->
+                    </div>
+                </center>
+                
+                <div id="AllAppsM">
+                <ul id="myUL"> <CENTER  id="AllAppsList" style="width: 100%; margin-left: 0px;  max-height: 87.5vh;">
+                    <li><div class="Appimg"><img src="Assets/Apps/Adobe1.png">
+                        <p>Illustrator</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/adobe2.png">
+                        <p>AfterEffects</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/adobe3.png">
+                        <p>Premiere Pro</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/adobe4.png">
+                        <p>XD</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/adobe5.png">
+                        <p>Lightroom</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/Adobe6.webp">
+                        <p>Photoshop</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/calculator.png">
+                        <p>Calculator</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-calendar-96.png">
+                        <p>Calendar</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-clock-96.png">
+                        <p>Clock</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/chrome.webp">
+                        <p>Chrome</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/discord.png">
+                        <p>Discord</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/excel.png">
+                        <p>Excel</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/epicgames.png">
+                        <p>Epic Games</p></div></li>
+                    <li onclick="openFiles()"><div class="Appimg"><img src="Assets/Apps/Files.png">
+                        <p>Files</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/facebook.png">
+                        <p>Facebook</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/github.png">
+                        <p>GitHub</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/drive.png">
+                        <p>Google Drive</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-envelope-96.png">
+                        <p>Mail</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-place-marker-96.png">
+                        <p>Maps</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/todo.png">
+                        <p>Todo</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/mc.png">
+                        <p>Minecraft</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-notepad-96.png">
+                        <p>Notes</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/netflix.jpg">
+                        <p>Netflix</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/UI/noty.png" 
+                        style="background-color: white; width: 33px; padding: 1px;">
+                        <p>Updates</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-paint-palette-with-brush-96.png">
+                        <p>Paint</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/prime.png">
+                        <p>Prime</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/pinterest.png">
+                        <p>Pinterest</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/rar.png">
+                        <p>WinRar</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-read-96.png">
+                        <p>ReadMe</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/General/ripenOs.jpg">
+                        <p>About</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/Spotify.png">
+                        <p>Spotify</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/settings.png">
+                        <p>Settings</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/icons8-microphone-96.png">
+                        <p>Recorder</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/whatsApp.png">
+                        <p>WhatsApp</p></div></li>
+                    <li><div class="Appimg"><img src="Assets/Apps/youtube.webp">
+                        <p>YouTube</p></div></li>
+                    <br><br>
+                </CENTER> </ul>
+                </div>
+
+            </div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <!-- Dockbar -->
+        <div class="actionbarC" id="dock" onmouseover="dockZoomIn()" onmouseleave="dockZoomOut()">
+            <img src="Assets/UI/icons8-android-app-drawer-48.png"
+                onmouseover="this.style.transform= 'scale(1)'; this.style.marginLeft= '0'; " 
+                onmouseleave="this.style.transform= 'scale(1)'; this.style.marginLeft= '0'; " id="AllApps"
+                onclick="this.style.marginTop= '-2.5px'">
+
+            <center><div class="DockApps">
+                <img src="Assets/Apps/chrome.webp">
+                <img src="Assets/Apps/Files.png" onclick="openFiles()">
+                <img src="Assets/Apps/icons8-envelope-96.png">
+                <img src="Assets/Apps/Spotify.png">
+                <img src="Assets/Apps/netflix.jpg">
+                <img src="Assets/Apps/Adobe6.webp">
+            </div></center>
+
+            <div id="SearchApps" style="padding-top: 15px;">
+                <br><br>
+                <img src="Assets/UI/icons8-apps-tab-48.png" alt="" 
+                    style="position: absolute; width: 23px; margin-left: 42.5px; margin-top: -42.5px;">
+                <input type="text" placeholder="Search all Apps" class="searchTA" style="padding-left: 37.5px;" id="myInput" onkeyup="myFunctionInput()"><br>
+                <div style="position: absolute;">
+                    <div style="width: 43vw;"></div>
+                    <button class="AllAppBtnM"  id="AllAppsName" style="margin-right: 5px">All Apps</button>
+                    <button class="AllAppBtnM"  id="AllAppsName">Pinned 
+                        <span class="material-symbols-rounded" style="margin-top: -10px;-webkit-transform: translateY(5px); transform: translateY(5px); font-size: 20px;">
+                        expand_more
+                    </span></button>
+                    <button class="sortBtn">
+                        <img src="Assets/UI/sort.png" alt="">
+                        Sort</button>
+                    <hr style="width: 100%; margin-top: 468.5px; margin-left: -15px; 
+                            border:0.5px solid rgba(240, 240, 240, 0.15); transition: all 0.3s;" id="AllAppsHR">
+                </div>
+                   <ul id="myUL"> <CENTER  id="AllAppsList">
+                            <li><div class="Appimg"><img src="Assets/Apps/Adobe1.png">
+                                <p>Illustrator</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/adobe2.png">
+                                <p>AfterEffects</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/adobe3.png">
+                                <p>Premiere Pro</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/adobe4.png">
+                                <p>XD</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/adobe5.png">
+                                <p>Lightroom</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/Adobe6.webp">
+                                <p>Photoshop</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/calculator.png">
+                                <p>Calculator</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-calendar-96.png">
+                                <p>Calendar</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-clock-96.png">
+                                <p>Clock</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/chrome.webp">
+                                <p>Chrome</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/discord.png">
+                                <p>Discord</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/excel.png">
+                                <p>Excel</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/epicgames.png">
+                                <p>Epic Games</p></div></li>
+                            <li onclick="openFiles()"><div class="Appimg"><img src="Assets/Apps/Files.png">
+                                <p>Files</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/facebook.png">
+                                <p>Facebook</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/github.png">
+                                <p>GitHub</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/drive.png">
+                                <p>Google Drive</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-envelope-96.png">
+                                <p>Mail</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-place-marker-96.png">
+                                <p>Maps</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/todo.png">
+                                <p>Todo</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/mc.png">
+                                <p>Minecraft</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-notepad-96.png">
+                                <p>Notes</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/netflix.jpg">
+                                <p>Netflix</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/UI/noty.png" 
+                                style="background-color: white; width: 33px; padding: 1px;">
+                                <p>Updates</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-paint-palette-with-brush-96.png">
+                                <p>Paint</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/prime.png">
+                                <p>Prime</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/pinterest.png">
+                                <p>Pinterest</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/rar.png">
+                                <p>WinRar</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-read-96.png">
+                                <p>ReadMe</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/General/ripenOs.jpg">
+                                <p>About</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/Spotify.png">
+                                <p>Spotify</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/settings.png">
+                                <p>Settings</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/icons8-microphone-96.png">
+                                <p>Recorder</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/whatsApp.png">
+                                <p>WhatsApp</p></div></li>
+                            <li><div class="Appimg"><img src="Assets/Apps/youtube.webp">
+                                <p>YouTube</p></div></li>
+                            <br>
+                    </CENTER> </ul>
+
+                    
+                    <script>
+                        function myFunctionInput() {
+                            var input, filter, ul, li, a, i, txtValue;
+                            input = document.getElementById("myInput");
+                            filter = input.value.toUpperCase();
+                            ul = document.getElementById("myUL");
+                            li = ul.getElementsByTagName("li");
+                            for (i = 0; i < li.length; i++) {
+                                a = li[i].getElementsByTagName("div")[0];
+                                txtValue = a.textContent || a.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    li[i].style.display = "";
+                                } else {
+                                    li[i].style.display = "none";
+                                }
+                            }
+                        }
+                        </script>
+                        
+                <br>
+            </div>
+        </div>
+
+        <!-- Feedbar -->
+        <div class="actionbarR" id="feedbar"  onmouseover="HoverDock()" onmouseleave="HoverDockDown()">
+            <div id="NotyPanel">
+                <h3 style="padding: 5px; margin-bottom: 5px;">Notification</h3>
+                <button class="button2" style="position: absolute; top: 10px; right: 15px;">Clear All</button>
+                
+                <img src="Assets/General/ripenOs.jpg" style="margin: 5px; margin-left: 10px; width: 18px; border-radius:3px; display: inline-block; margin-bottom: -5px"><p style="display: inline-block;">Ripen Updates</p>
+                <p style="display: inline-block; position: absolute; right: 30px; margin-top: 10px;"><span id="prev" class="material-symbols-rounded" 
+                    style=" font-size: 15px;">close</span></p>
+                <div style="width: 95%; padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 12px;">
+                    <div>
+                        <p style="display: inline-block;">Now</p>
+                        <p style="display: inline-block; position: absolute; right: 30px; "><span id="prev" class="material-symbols-rounded" 
+                            style=" font-size: 15px;">close</span></p>
+                    </div>
+                    <br>
+                    <img src="Assets/General/ripenOs.jpg" style="border-radius: 25%; width: 45px; display:flex; margin-bottom: -50px;">
+                    <div style="margin-left: 60px; margin-right: 5px; margin-bottom: 20px;" >
+                        <h3>Ripen OS Gaming</h3>
+                        <p>Ripen OS Gaming is on its way!!! Where your vibe would match with Ripen's Gaming Vibe!!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="CalPanel">
+            <header>
+                <p class="current-date"></p>
+                <div class="icons">
+                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                    <span id="next" class="material-symbols-rounded">chevron_right</span>
+                </div>
+            </header>
+            <CENTER>
+            <br>
+            <div class="calendar">
+                <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="days"></ul>
+            </div></CENTER>
+            </div>
+
+            <div class="controlBtnN" style="width: 44px; right: 7.5px;" onclick="noty_Panel()">
+                <img src="Assets/UI/noty.png" width="22px" class="notybutton" 
+                style="padding: 2px; background-color: white;" >
+            </div>
+            <div class="controlBtn" onclick="calendarSH()" id="Calbtn" style="margin-right: 35px;">
+                <div id="txt" class="tD"></div>
+                <div id="txtdty"class="tY"></div>
+            </div>
+
+            <div class="controlBtn" style="width: 35px; right: 140px;" id="controlButtonB">
+                <center style="margin-top: 5px;"><img src="Assets/UI/icons8-adjust-48.png" alt="controls" id="controlShowBtn"></center>
+            </div>
+            <div class="controlBtn" style="width: 35px; right: 179px;" id="personalize">
+                <center style="margin-top: 5px;"><img src="https://img.icons8.com/fluency/48/null/lively-wallpaper.png" alt="personalize" id="personalizeShowBtn"></center>
+            </div>
+            
+            <div id="personalizePanel">
+                <h3>personalization</h3>
+                <img src="Assets/UI/icons8-change-theme-96.png" alt="themes" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Theme</h4>
+                <div class="Theme">
+                    <button class="DarkThemeBtn" id="Darktheme">Dark</button>
+                    <button class="LightThemeBtn" id="LightTheme">Light</button>
+                </div>
+                <br>
+                <img src="Assets/UI/icons8-taskbar-96.png" alt="actionbar" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Actionbar Behaviour</h4>
+                <div class="Theme">
+                    <button class="DarkThemeBtn" id="Acbars">Show</button>
+                    <button class="DarkThemeBtn" id="AcDocks">Hide</button>
+                </div>
+                <br>
+                <img src="Assets/UI/icons8-picture-96.png" alt="picture" 
+                style="display: inline-block; -webkit-transform: translateY(5px);  transform: translateY(5px);">
+                <h4 style="display: inline-block;-webkit-transform: translateY(-2.5px);  transform: translateY(-2.5px);">Wallpaper</h4>
+                <div class="Walls">
+                    <img src="Assets/General/RipenWaves2.png" alt="RipenWaves" id="RipenWaves">
+                    <img src="https://9to5mac.com/wp-content/uploads/sites/6/2022/06/macOS-Ventura-wallpaper-1-1.jpg?quality=82&strip=all" alt="Ventura" id="Ventura">
+                    <img src="https://wallpapercave.com/wp/wp11233324.jpg" alt="VenturaDark" id="VenturaDark">
+                    <img src="Assets/UI/InsertImgBg.png" alt="InsertBg" class="InsertBg">
+                    <input type="file" id="WallIn" accept="image/png, image/jpeg" onchange="showResult( this.files[0]);">
+                </div>
+            </div>
+
+            <div id="ControlToggles">
+                <div class="ControlToggle" style="display: inline-block;" id="wifiBtn">
+                    <img src="Assets/UI/icons8-wi-fi-48.png" alt="wifiIcon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Wi-Fi</p>
+                </div>
+            
+                <div class="ControlToggle" style="display: inline-block;" id="audioBtn">
+                    <img src="Assets/UI/icons8-audio-48.png" alt="audiocon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Audio</p>
+                </div>
+                
+                <div class="ControlToggle" style="display: inline-block;" id="batteryBtn">
+                    <img src="Assets/UI/icons8-battery-level-48.png" alt="batteryIcon" 
+                    style="margin-right: 2px;  margin-top: -2.5px; padding: 3px; background-color: white;">
+                    <p style="display: inline-block; font-size: 13px;">Battery</p>
+                </div>
+            </div>
+            
+            <div id="wifiPanel">   
+                <h3 style="padding: 5px;">Network</h3>
+                    <div style="padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 8px;">
+            
+                        <img src="Assets/UI/wifiSecured.png" width="25px" style="float: right;">
+                        <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 7px;">Secured</h6>
+            
+                        <img src="Assets/UI/wifiConnected.png" width="42px" style="margin-right: 5px; margin-bottom: -5px;">
+            
+                        <p style="display: inline-block;font-size: 17px; ">Network 5G</p><br>
+                        <h5  style="display: inline-block;margin-left: 30px;">Connected, </h5>
+                        <a href="#info" style="display: inline-block; text-decoration: none; color: white;margin-bottom: 10px;"><h5><u>Info</u></h5></a>
+                        <button class="wifibtn">Disconnect</button><br><br><br>
+                    </div>
+                    
+                    <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05); margin-top: 220px">
+                    <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px;">More Network Settings</h5>
+            </div>
+            
+            <div id="audioPanel">
+                <h3 style="padding: 5px;">Volume</h3>
+                <br>
+                <input type="range" min="1" max="100" value="100" class="slider" style="width: 82%; margin-left: 35px;">
+                <img src="Assets/UI/volume.png" alt="volume" class="volimg">
+                <h5 class="volstgPanel">Volume Settings</h5>
+                <h5 class="volmixer">Mixer</h5>
+            </div>
+            
+            <div id="batteryPanel" >
+                <h3 style="padding: 5px; margin-bottom: 5px;">Battery</h3>
+            
+                <img src="Assets/UI/icons8-battery-level-48.png" style="-webkit-transform: translate(2.5px, 5px);transform: translate(2.5px, 5px);">
+            
+                <h2 style="margin-left: 2px; display: inline-block; font-size: 20px;">70%</h2> 
+            
+            
+                <input type="range" value="100" class="slider" style=" margin-left: 5px; margin-top: 15px;" step="25">
+            
+                <img src="Assets/UI/performance.png" width="25px" style="float: right; margin-right: 13px; margin-top: 5px;">
+                <h5 style="float: right;color: #ccc;margin-right: -20px; margin-top: 32px;">Better Performance</h5>
+            
+                <img src="Assets/UI/power.png" width="25px" style="margin-left: 1px; margin-top: 5px;">
+                <h5 style="color: #ccc;margin-left: 5px; margin-top: 7px;">Better Battery</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div id="Desktop"></div>
+
+            <!--Time Widget-->
+            <div style="float: right; text-align: right; margin-top: -10px; padding: 10px;">
+                <div style="margin-right: 10px;">
+                <div id="txtH" style="color: azure; font-weight:900; font-size: 65px"></div>
+    
+                <div id="txtdtyH" style="color: azure; font-weight:900; font-size: 15px; margin-top: -12.5px; margin-right: 10px;"></div>
+                </div>
+            </div>
+            <div style="padding: 17px;" class="DesktopShow">
+                    <div class="ThisPc">
+                    <div class="myDIV" id="bin">
+                        <CENTER>
+                            <img src="https://ripenos.github.io/WinRipen/Assets/bin.png" width="65px">
+                            <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recycle Bin</p>
+                        </CENTER>
+                    </div>
+                    </div><br>
+                <div class="ThisPc">
+                    <div class="myDIV" id="myPc" style="top: 125px;">
+                        <CENTER>
+                            <img src="data:image/png;base64,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" width="65px">
+                            <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">This Pc</p>
+                        </CENTER>
+                    </div>
+                </div><br>
+            </div>
+
+         <!--Context Menu on right click-->
+         <div id="context-menu">
+            <div class="darktheme" id="themeCM" style="padding: 7px;">
+            <div class="item">
+                <img src="Assets/UI/view.png" width="27px" style="margin-bottom: -7px;">
+                View 
+                <span style="float: right;"> <img src="Assets/UI/cMarrow.png"  width="16px"/></span>
+            </div>
+            <div class="item">
+                <img src="Assets/UI/sort.png" width="27px" style="margin-bottom: -7px;">
+                Sort by
+                <span style="float: right;">
+                    <img src="Assets/UI/cMarrow.png"  width="16px"/>
+                </span>
+            </div>
+            <div class="item" style="margin-bottom: 3px;">
+                <img src="Assets/UI/refresh.png" width="23px" style="margin-bottom: -7px; margin-right: 2px;">
+                Refresh
+            </div>
+            <center>
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; margin-bottom: 3px; margin-top: 2px;">
+            </center>
+            <div class="item" style="margin-bottom: 3px;">
+                <img src="Assets/UI/new.png" width="23px" style="margin-bottom: -7px;">
+                New
+                <span style="float: right;">
+                    <img src="Assets/UI/cMarrow.png"  width="16px"	/>
+                </span>
+            </div>
+
+            <div class="item" style="margin-bottom: 3px;">
+                <img src="Assets/UI/newFolder.png" width="21px" style="margin-bottom: -4px; margin-right: 2px;">
+                New Folder
+            </div>
+            <center>
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; margin-bottom: 3px; margin-top: 2px;">
+            </center>
+            <div class="item">
+                <img src="Assets/UI/displaySettings.png" width="23px" style="margin-bottom: -7px;">
+                Display settings</div>
+            <div class="item" id="personalizeShowBtnCT"> 
+                <img src="Assets/UI/personalize.png" width="23px" style="margin-bottom: -7px;">
+                Personalize</div>
+            <center>
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; margin-bottom: 3px; margin-top: 2px;">
+            </center>
+            <div class="item">Running Tasks</div>
+            <div class="item">History
+                <span style="float: right;"><img src="Assets/UI/cMarrow.png"  width="16px"	/></span>
+            </div>
+            <div class="item">Open in cmd</div>
+        </div>
+        </div>
+
+        <div id="maxApp"><div id="files"  onclick="actionbarDown()"><div class="application">
+            <div class="topbar">
+                <h3>Files</h3>
+        
+                <div class="appControls">
+                    <div id="min" onclick="minFiles()"></div>
+                    <div id="max" onclick="maxFiles()"></div>
+                    <div id="close" onclick="closeFiles()"></div>
+                </div>
+            </div>
+            <iframe src="Apps\Files\index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div></div></div>
+
+    <script src="scripts\script.js"></script>
+    <script src="scripts\apps.js"></script>
+    <script src="scripts\actionbar.js"></script>
+</body>
+</html>

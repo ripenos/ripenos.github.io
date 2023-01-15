@@ -1,0 +1,177 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    background:black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-size: 15px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    justify-content: center;
+}
+img{-webkit-user-drag: none;} 
+
+#Boot{display: block;}
+
+#Lockscreen {
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#welcome{
+    background: url("../Assets/General/RipenWaves2.png");
+    -webkit-filter:saturate(200%) blur(75px) brightness(12.5%);
+    filter:saturate(200%) blur(75px) brightness(12.5%);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s;
+    text-align: left;
+}
+
+#logo{
+    position: absolute;
+    width: 200px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+width: 52px;
+height: 52px;
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translate(-50%, -50%);}
+
+.double-bounce1, .double-bounce2 {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: rgb(255, 123, 0);
+opacity: 0.6;
+backdrop-filter: blur(35px);
+position: absolute;
+top: 0;
+left: 0;
+-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+#loadItems{transition: all 1s; opacity: 0;}
+
+.lockS-time {
+    position: relative;
+    background:transparent; 
+    color: azure;
+    border: none; padding: 7px 20px; 
+    top: 70px;
+    font-family:'Arial black';
+    align-content: center;
+    align-items: center;
+    font-size: 90px;
+    z-index: 6;
+    font-weight: 800;
+    opacity: 0; transition: all 1s;
+}
+
+.lockS-date {
+    position: absolute;
+    background:transparent; 
+    color: azure;
+    border: none; 
+    padding: 7px 20px; 
+    top: 180px;
+    left:50%;
+    transform: translate(-50%);
+    font-family:'Arial black';
+    align-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 6;
+    font-weight: 800;
+    opacity: 0; transition: all 1s;
+}
+
+.loginBtn {
+    position: absolute;
+    width: 200px;
+    bottom: 15%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: rgba(71, 71, 71, 0.5);
+    backdrop-filter: blur(15px) ;
+    -webkit-backdrop-filter: blur(15px) ;
+    padding: 7px;
+    border-radius: 4px;
+    border: 0.15px solid rgba(170, 182, 221, 0.06);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    color: azure;
+    transition: all 0.3s;
+    z-index: 6;
+    margin: 0;
+}
+
+.loginBtn:hover{background: rgba(71, 71, 71, 0.25);}
+.loginBtn:active{transform:translate(-50%, -50%) scale(0.95);}
+
+#QuickInfo{
+position: absolute;
+right: 20px;
+bottom: 20px; z-index: 6;
+opacity: 0; transition: all 1s;
+}
+
+#QuickInfo img
+{z-index: 6; width: 19.5px; position: relative; margin-bottom: -2.5px;}
+#QuickInfo span {
+    border-radius: 5px; transition: all 0.3s; border: 0.5px solid transparent;  margin: 1px; padding: 10px;
+}
+#QuickInfo span:hover{background-color: rgba(71, 71, 71, 0.25); border-top: 0.15px solid #f1f1f10e;}
+
+#greetings{
+    z-index: 6; color: white; 
+    left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 48px;
+    opacity: 0; transition: opacity 0.5s, top 0.75s ease-out;
+}
