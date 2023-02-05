@@ -29,4 +29,8 @@ A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
     - Auto Hide Actionbar
     - Search engine: changed from Bing to Wikipedia
 
+## v2.5
+1. Bub fixes and improvements
+2. Optimized the Responsive OS (for Desktop, tab, and Phone)
+
 MIT License • Copyright (c) 2023 RipenOS
