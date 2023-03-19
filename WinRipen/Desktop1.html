@@ -9,10 +9,6 @@
 
     <!-- Linking the CSS stylesheet -->
     <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/flyouts.css">
-    <link rel="stylesheet" href="Styles/apps.css">
-    <link rel="stylesheet" href="Styles/GUI.css">
-    <link rel="stylesheet" href="Styles/flyoutsComponents.css">
     <!-- Google Font Link for Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
@@ -27,309 +23,355 @@
             transition: visibility 1.5s, opacity 2s ease-out; }
     </style>
 </head>
-<body class="bg" onload="ShowDs(), startTime(),  StartDate(), startTimeH(),  StartDateH()">
+<body class="bg" onload="ShowDs(), startTime(),  StartDate(), startTimeM(),  StartDateM(), startTimeH(),  StartDateH()">
     <div class="blank" id="myblank"></div>
 
     <!-- TASKBAR -->
     <div class="taskbar" id="mytaskbar">
-        <!--Start button-->
-        <div class="startbutton" id="myStartBtn" onmousedown="mouseDown()" onmouseup="mouseUp()" onmouseleave="mouseUp()">
-            <img src="Assets/windows11-logo.png" width="25px" id="nonSe">
-            <img src="Assets/windows11-logo.png" width="25px" id="Se">
+
+        <div class="widgetbutton">
+            <h6 style="font-size: 12px;">No Music Played</h6>
+
+                <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" >
+                <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png">
+                <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png">
         </div>
 
-        <!--Tab button-->
-		<div class="tabbutton" id="myTabBtn" onmousedown="mouseDown3()" onmouseup="mouseUp3()" onmouseleave="mouseUp3()">
-            <img src="Assets/Windows11-tab-view-button.png" width="26px" id="nonSet">
-            <img src="Assets/Windows11-tab-view-button.png" width="26px" id="set">
-        </div>
-        <!--Calendar button-->
-        <div class="calbutton" onclick="calendarSH()" style="cursor:pointer;" id="Calbtn">
-            <img src="Assets/noty.png" width="23px" class="notybutton">
-                 <div id="txt" class="tD"></div>
-                 <div id="txtdty"class="tY"></div>
-         </div>
+        <div class="dockApps">
+            <!--Start button-->
+            <div class="startbutton" id="myStartBtn">
+                <img src="Assets/windows11-logo.png" width="25px" id="nonSe">
+                <img src="Assets/windows11-logo.png" width="25px" id="Se">
+            </div>
 
-        <div class="DesktopShow">
-            
-            <input type="text" placeholder="Search the web" class="searchT" style="margin-left: 107px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-left: 15px; " 
+            <!--Tab button-->
+            <div class="tabbutton" id="myTabBtn">
+                <img src="Assets/Windows11-tab-view-button.png" width="26px" id="nonSet">
+                <img src="Assets/Windows11-tab-view-button.png" width="26px" id="set">
+            </div>
+
+            <input type="text" placeholder="Search the web" class="searchT" style=" font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-left: 15px; " 
             id="SearchInput" >
-
-            <!--Search bar (search button)-->
-            <img src="Assets/windows11-search-button.png" alt="search" width="16px" 
-            style="margin-top: 15px; transition: 0.3s; position:absolute; margin-left: -27.5px; " id="SearchInput2"
-            onclick="getVal()"  onmousedown="mouseDown2()" onmouseup="mouseUp2()" onmouseleave="mouseUp2()">
+            <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2" onclick="getVal()">
             
             <!--FIle explorer-->
-            <div class="FIlesbutton" id="myP4" onmousedown="mouseDown4()" onmouseup="mouseUp4()" 
-            style="margin-left: 275px;" onclick="FileExplr()" onmouseleave="mouseUp4()">
+            <div class="FIlesbutton" id="myP4">
                 <img src="Assets/Windows_11_Explorer.png" width="26px" id="nonSeF">
                 <img src="Assets/Windows_11_Explorer.png" width="26px" id="seF">
                 <div class="HiddenF"></div>
             </div>
 
             <!--Edge-->
-            <div class="Edgebutton" id="myP5" onmousedown="mouseDown5()" onmouseup="mouseUp5()"
-            style="margin-left: 315px;" onclick="EdgeB()" onmouseleave="mouseUp5()">
+            <div class="Edgebutton" id="myP5">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="nonSeB">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="seB">
                 <div class="HiddenB"></div>
             </div>
 
             <!--ms paint-->
-            <div class="FIlesbutton" id="myP6" onmousedown="mouseDown6()" onmouseup="mouseUp6()" 
-            style="margin-left: 355px;" onclick="Paint()" onmouseleave="mouseUp6()">
-                <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="25px">
+            <div class="FIlesbutton" id="myP6">
+                <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="26px">
                 <div class="HiddenP"></div>
+            </div>
+        </div>
+
+        <!--Calendar button-->
+        <div class="calbutton" onclick="calendarSH()" id="Calbtn">
+            <img src="Assets/noty.png" width="23px" class="notybutton">
+            <div id="txt" class="tD"></div>
+            <div id="txtdty"class="tY"></div>
+        </div>
+
+        <div class="DesktopShow">
+
+            <!--Taskbar Allignment button-->
+            <div class="actionbutton4" onclick="TBA()">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nO3auw3CQBCE4SvDQENIphweBUBbphhTAY8Aoh8dWiTkAJ0RvlvDfPEKz2rsaAlBRD4CLIAGuFDe2bLUfZfY4de2TxPRFVgCk1AYMAFWlomkZoC9DS+DM8DasjUpw/F9jKrgDFBZtlPK8ENwitR8WiQT1IgzqBFnUCPOoEacQY04gxpxBjXiDGrEGdSIM6iRX20EmAMHhtPGZ+RYJD5oaG2ORdJ+6EN86/n/tEjLj7xa84GXabN87KWhRUbcyMlmi5/cuoCZZTumDMfrabQKzgCbPqe32oavdrObZkn5PtPUlrhZtrQzdTwBM/bzdKeZ5uU4Or4/DIhIeLoDRqTAJIcx0msAAAAASUVORK5CYII=" width="18px" id="nonSeA4" >
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nO3auw3CQBCE4SvDQENIphweBUBbphhTAY8Aoh8dWiTkAJ0RvlvDfPEKz2rsaAlBRD4CLIAGuFDe2bLUfZfY4de2TxPRFVgCk1AYMAFWlomkZoC9DS+DM8DasjUpw/F9jKrgDFBZtlPK8ENwitR8WiQT1IgzqBFnUCPOoEacQY04gxpxBjXiDGrEGdSIM6iRX20EmAMHhtPGZ+RYJD5oaG2ORdJ+6EN86/n/tEjLj7xa84GXabN87KWhRUbcyMlmi5/cuoCZZTumDMfrabQKzgCbPqe32oavdrObZkn5PtPUlrhZtrQzdTwBM/bzdKeZ5uU4Or4/DIhIeLoDRqTAJIcx0msAAAAASUVORK5CYII=" width="18px" id="seA4" >
             </div>
 
             <!--Volume button-->
-            <div class="actionbutton" id="myP7" onmousedown="mouseDown7()" onmouseup="mouseUp7()" onmouseleave="mouseUp7()">
+            <div class="actionbutton" id="myP7">
                 <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="nonSeA" >
                 <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="seA" >
             </div>
 
             <!--Network button-->
-            <div class="actionbutton2" style="right: 152px;" id="myP8" onmousedown="mouseDown8()" onmouseup="mouseUp8()" onmouseleave="mouseUp8()">
+            <div class="actionbutton2" style="right: 152px;" id="myP8">
                 <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="nonSeA2" >
                 <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="seA2" >
             </div>
 
             <!--Battery button-->
-            <div class="actionbutton3"  style="right: 185px;" id="myP9" onmousedown="mouseDown9()" onmouseup="mouseUp9()" onmouseleave="mouseUp9()">
+            <div class="actionbutton3"  style="right: 185px;" id="myP9">
                 <img src="Assets/windows11-actions - battery.png" width="19.5px" id="nonSeA3" >
                 <img src="Assets/windows11-actions - battery.png" width="19.5px" id="seA3" >
             </div>
         </div>
     </div>
 
-    <!--START MENU-->
-    <div class="startmenu"  id="myStartmenu" style="padding-left: 15px; padding-top: 10px;">
-        <div class="darktheme" id="themeS">
-            <CENTER>
-            <div style="float: left; margin-top: -30px;">
-                    <!--Profile-->
-                    <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="65px" >
-                    <CENTER>
-                        <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; margin-left: 20px;"></p>
-                        <h5 style="color: white;">admin6901@mail.com</h5>
-                    </CENTER>
-                    <!--App Search box-->
-                    <input type="text" placeholder="Search apps" class="searchS" id="mySearch" onkeyup="FunctionAppS()" title="App Search"><br><br>
-                    <img src="Assets/AppsIco.png" width="17px" style="margin-left: -160px; margin-top: -25px;-webkit-transform: translate(0px, -33.5px); transform: translate(0px, -33.5px);">
-
-                    <!--Apps-->
-                    <div class="darkthemeComp" id="themeSA" 
-                    style="height: 372px; overflow-y: hidden; margin-top: -20px;padding-top: 5px;">
-                    <div class="startApps">
-                        
-                        <h3 style="margin-left: 10px; margin-bottom: 12px;">All Apps</h3>
-                        <hr width="85%" style="border-bottom: 1px solid black; border-radius: 5px;"><br>	
-                        <div class="tab">
-                            <ul id="myMenu" style="margin-left: -15px;">
-                                <!--A-->
-                                <li ><button class="startAppsbuttonH"><b>A</b></a></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Access</button></li>
-                                    <li ><button class="startAppsbutton">Adobe Acrobat DC</button></li>
-                                    <li ><button class="startAppsbutton">Adobe After effects</button></li>
-                                    <li ><button class="startAppsbutton">Adobe Photoshop</button></li>
-                                    <li ><button class="startAppsbutton">Adobe Premiere Pro</button></li>
-                                </div>
-            
-                                <!--C-->
-                                <li ><button class="startAppsbuttonH"><b>C</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Calculator</button></li>
-                                    <li ><button class="startAppsbutton">Calendar</button></li>
-                                    <li ><button class="startAppsbutton">Camera</button></li>
-                                    <li ><button class="startAppsbutton">Clock</button></li>
-                                </div>
-            
-                                <!--E-->
-                                <li ><button class="startAppsbuttonH"><b>E</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Exel</button></li>
-                                </div>
-            
-                                <!--F-->
-                                <li ><button class="startAppsbuttonH"><b>F</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li><button class="startAppsbutton" onclick="FileExplr()">File Explorer</button></li>
-                                </div>
-            
-                                <!--G-->
-                                <li ><button class="startAppsbuttonH"><b>G</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Google Chrome</button></li>
-                                </div>
-            
-                                <!--M-->
-                                <li ><button class="startAppsbuttonH"><b>M</b></a></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Mail</button></li>
-                                    <li ><button class="startAppsbutton">Media Player</button></li>
-                                    <li ><button class="startAppsbutton" onclick="EdgeB()">Microsoft Edge</button></li>
-                                    <li ><button class="startAppsbutton">Microsoft Store</button></li>
-                                </div>
-            
-                                <!--N-->
-                                <li ><button class="startAppsbuttonH"><b>N</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Notepad</button></li>
-                                </div>
-            
-                                <!--O-->
-                                <li ><button class="startAppsbuttonH"><b>O</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Office</button>
-                                    <li ><button class="startAppsbutton">OneDrive</button>
-                                </div>
-            
-                                <!--P-->
-                                <li ><button class="startAppsbuttonH"><b>P</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton" onclick="Paint()">Paint</button></li>
-                                    <li ><button class="startAppsbutton">Photos</button></li>
-                                    <li ><button class="startAppsbutton">Powerpoint</button></li>
-                                </div>
-            
-                                <!--S-->
-                                <li ><button class="startAppsbuttonH"><b>S</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Settings</button></li>
-                                    <li ><button class="startAppsbutton">Spotify</button></li>
-                                </div>
-            
-                                <!--V-->
-                                <li ><button class="startAppsbuttonH"><b>V</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Visual Studio Code</button></li>
-                                </div>
-            
-                                <!--W-->
-                                <li ><button class="startAppsbuttonH"><b>W</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Weather</button></li>
-                                    <li ><button class="startAppsbutton">Windows Security</button></li>
-                                    <li ><button class="startAppsbutton">Windows Tools</button></li>
-                                    <li ><button class="startAppsbutton">Word</button></li>
-                                </div>
-            
-                                <!--X-->
-                                <li ><button class="startAppsbuttonH"><b>X</b></button></li>
-                                <div style="margin-left: 15px;">
-                                    <li ><button class="startAppsbutton">Xbox</button></li>
-                                </div></ul>
-
-                            <script>
-                                function FunctionAppS() {
-                                    //Asigning values.
-                                    var input, filter, ul, li, a, i, b;
-                                    input = document.getElementById("mySearch");
-                                    filter = input.value.toUpperCase();
-                                    ul = document.getElementById("myMenu");
-                                    li = ul.getElementsByTagName("li");
-        
-                                    //For Loop for app search
-                                    for (i = 0; i < li.length; i++) {
-                                    a = li[i].getElementsByTagName("button")[0];
-        
-                                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                        li[i].style.display = "";
-                                    } else {
-                                        li[i].style.display = "none";
-                                    }
-                                    }
-                                }
-                            </script>
-
-                        </div>
-                    </div>
-                    </div>
+    <!-- TASKBAR Mobile -->
+    <div class="taskbar" id="mytaskbar-mobile">
+        <div class="dockAppsM">
+            <!--Start button-->
+            <div class="startbuttonM">
+                <img src="Assets/windows11-logo.png" width="25px" id="nonSeM">
+                <img src="Assets/windows11-logo.png" width="25px" id="SeM">
             </div>
 
-            <div style="float: right; margin-top: 5px;">
-                <!--Pinned Apps-->
-                <b><p>Pinned</p></b>
-                <b><p style="float: right; margin-top: -22.5px;margin-right: 30px; font-size: 22px;">...</p></b><br>
-                <div class="StartPinned" style="margin-bottom: 10px;">
-                    <div class="StartPinnedApps" style="display:inline-block;" onclick="EdgeB()">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br>Edge
+            <input type="text" placeholder="Search the web" class="searchT" style=" font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-left: 15px; " 
+            id="SearchInput" >
+            <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2M" onclick="getVal()">
+        </div>
+
+        <!--Calendar button-->
+        <div class="calbutton" onclick="calendarSH()">
+            <img src="Assets/noty.png" width="23px" class="notybutton">
+            <div id="txtM" class="tD"></div>
+            <div id="txtdtyM"class="tY"></div>
+        </div>
+    </div>
+
+    <!--START MENU-->
+    <div class="startmenu"  id="myStartmenu">
+        <div class="darktheme" id="themeS">
+            <CENTER>
+                <div style="float: left; margin-top: -30px;">
+                        <!--Profile-->
+                        <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="65px" >
+                        <CENTER>
+                            <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; margin-left: 20px;"></p>
+                            <h5 style="color: white;">admin6901@mail.com</h5>
+                        </CENTER>
+                        <!--App Search box-->
+                        <input type="text" placeholder="Search apps" class="searchS" id="mySearch" onkeyup="FunctionAppS()" title="App Search"><br><br>
+                        <img src="Assets/AppsIco.png" width="17px" style="margin-left: -160px; margin-top: -25px;-webkit-transform: translate(0px, -33.5px); transform: translate(0px, -33.5px);">
+
+                        <!--Apps-->
+                        <div class="darkthemeComp" id="themeSA" 
+                        style="height: 372px; overflow-y: hidden; margin-top: -20px;padding-top: 5px;">
+                        <div class="startApps">
+                            
+                            <h3 style="margin-left: 10px; margin-bottom: 12px;">All Apps</h3>
+                            <hr width="85%" style="border-bottom: 1px solid black; border-radius: 5px;"><br>	
+                            <div class="tab">
+                                <ul id="myMenu" style="margin-left: -15px;">
+                                    <!--A-->
+                                    <li ><button class="startAppsbuttonH"><b>A</b></a></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img style="width: 17.5px; margin-bottom: -5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/2101px-Adobe_Creative_Cloud_rainbow_icon.svg.png" alt="">
+                                            Adobe CC
+                                        </button></li>
+                                    </div>
+                
+                                    <!--C-->
+                                    <li ><button class="startAppsbuttonH"><b>C</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/calculator.png" alt="">
+                                            Calculator</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/calendar.png" alt="">
+                                            Calendar</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/camera.png" alt="">
+                                            Camera</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/clock.png" alt="">
+                                            Clock</button></li>
+                                    </div>
+                
+                                    <!--F-->
+                                    <li ><button class="startAppsbuttonH"><b>F</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li><button class="startAppsbutton" onclick="FileExplr()">
+                                            <img style="width: 17.5px; margin-bottom: -5px;"  src="Assets/Windows_11_Explorer.png" alt="">
+                                            File Explorer</button></li>
+                                    </div>
+                
+                                    <!--M-->
+                                    <li ><button class="startAppsbuttonH"><b>M</b></a></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/mail.png" alt="">
+                                            Mail</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://blogs.windows.com/wp-content/uploads/prod/sites/44/2021/11/Logo.png" alt="">
+                                            Media Player</button></li>
+                                        <li ><button class="startAppsbutton" onclick="EdgeB()">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" alt="">
+                                            Microsoft Edge</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" alt="">
+                                            Microsoft Store</button></li>
+                                    </div>
+                
+                                    <!--N-->
+                                    <li ><button class="startAppsbuttonH"><b>N</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/notepad.png" alt="">
+                                            Notepad</button></li>
+                                    </div>
+                
+                                    <!--O-->
+                                    <li ><button class="startAppsbuttonH"><b>O</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/452/microsoft-office-2019.png" alt="">
+                                            Office</button>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/microsoft-onedrive-2019.png" alt="">
+                                            OneDrive</button>
+                                    </div>
+                
+                                    <!--P-->
+                                    <li ><button class="startAppsbuttonH"><b>P</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton" onclick="Paint()">
+                                            <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" alt="">
+                                            Paint</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/photos.png" alt="">
+                                            Photos</button></li>
+                                    </div>
+                
+                                    <!--S-->
+                                    <li ><button class="startAppsbuttonH"><b>S</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/452/settings.png" alt="">
+                                            Settings</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" alt="">
+                                            Spotify</button></li>
+                                    </div>
+
+                                    <!--W-->
+                                    <li ><button class="startAppsbuttonH"><b>W</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/weather.png" alt="">
+                                            Weather</button></li>
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/windows-defender.png" alt="">
+                                            Windows Security</button></li>
+                                    </div>
+                
+                                    <!--X-->
+                                    <li ><button class="startAppsbuttonH"><b>X</b></button></li>
+                                    <div style="margin-left: 15px;">
+                                        <li ><button class="startAppsbutton">
+                                            <img src="https://img.icons8.com/fluency/52/null/xbox.png" alt="">
+                                            Xbox</button></li>
+                                    </div>
+                                </ul>
+
+                                <script>
+                                    function FunctionAppS() {
+                                        //Asigning values.
+                                        var input, filter, ul, li, a, i, b;
+                                        input = document.getElementById("mySearch");
+                                        filter = input.value.toUpperCase();
+                                        ul = document.getElementById("myMenu");
+                                        li = ul.getElementsByTagName("li");
+            
+                                        //For Loop for app search
+                                        for (i = 0; i < li.length; i++) {
+                                        a = li[i].getElementsByTagName("button")[0];
+            
+                                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                            li[i].style.display = "";
+                                        } else {
+                                            li[i].style.display = "none";
+                                        }
+                                        }
+                                    }
+                                </script>
+
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+                <div style="float: right; margin-top: 10px;">
+                    <!--Pinned Apps-->
+                    <b><p>Pinned</p></b>
+                    <div class="Start-moreMenu">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPUlEQVR4nO3NsQkAIAxE0YxncP8Font8EbSxDhbhXvsPzkxEigE6MIEBeEZ7D/bgioz2/cDPOICW0USkggUiPrQWJTWBOQAAAABJRU5ErkJggg==">
                     </div>
+                    <br>
+                    <div class="StartPinned" style="margin-bottom: 10px;">
+                        <div class="StartPinnedApps" onclick="EdgeB()">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br>Edge
+                        </div>
 
-                    <div class="StartPinnedApps" style="display:inline-block;" id="a1">
-                        <img src="https://img.icons8.com/fluency/452/microsoft-powerpoint-2019.png" width="32px" style="margin-bottom: -2px;"><br>Ms ppt
-                    </div>
+                        <div class="StartPinnedApps" id="a1">
+                            <img src="https://img.icons8.com/fluency/452/settings.png" width="32px" style="margin-bottom: -2px;"><br>Settings
+                        </div>
 
-                    <div class="StartPinnedApps" style="display:inline-block;" id="a2">
-                        <img src="https://img.icons8.com/fluency/452/microsoft-word-2019.png" width="33px" style="margin-bottom: -2px;"><br>Word
-                    </div>
+                        <div class="StartPinnedApps" id="a2">
+                            <img src="https://img.icons8.com/fluency/452/microsoft-office-2019.png" width="33px" style="margin-bottom: -2px;"><br>Office
+                        </div>
 
-                    <div class="StartPinnedApps" style="margin-bottom: 7.5px; display:inline-block;" id="a3">
-                        <img src="https://img.icons8.com/fluency/452/microsoft-excel-2019.png" width="33px" style="margin-bottom: -2px;"><br>Exel
-                    </div><br>
+                        <div class="StartPinnedApps" id="a3">
+                            <img src="https://blogs.windows.com/wp-content/uploads/prod/sites/44/2021/11/Logo.png" width="30px" style="margin-bottom: -2px; padding-top: 3px;"><br>Player
+                        </div>
 
-                    <div style="float: left; margin-right: 5px;">
-                        <div class="StartPinnedApps" style="margin-left: 7px; display:inline-block;" id="a4">
+                        <div class="StartPinnedApps" id="a4">
                             <img src="https://winaero.com/blog/wp-content/uploads/2020/02/Colorful-Mail-Fuent-big-icon-2020.png" width="28px"><br>Mail
                         </div>
 
-                        <div class="StartPinnedApps" style="margin-left: 4px; padding-left: -2px; display:inline-block;" onclick="Paint()" id="a5">
+                        <div class="StartPinnedApps" onclick="Paint()" id="a5">
                             <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="29px"><br>Paint
                         </div>
 
-                        <div class="StartPinnedApps" style="margin-left: 4px; display:inline-block;" id="a6">
+                        <div class="StartPinnedApps" id="a6">
                             <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" width="29px"><br>Spotify
                         </div>	
 
-                        <div  class="StartPinnedApps" style="margin-left: 4px; display:inline-block;" id="a7">
+                        <div  class="StartPinnedApps" id="a7">
                             <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" width="29px"><br>Store
                         </div>
                     </div>
-                </div>
 
-                <!--Recommended Files/Apps-->
-                <b><p>Recommended</p></b>
+                    <!--Recommended Files/Apps-->
+                    <b><p>Recommended</p></b>
+                    <b><p class="MoreBtn" style="font-size: 12px; float: right; margin-top: -17.5px;margin-right: 30px;">more &rsaquo;</p></b><br>
+                    <div class="StartPinned" style="margin-bottom: 10px; width: 315px;" id="Recommended">
 
-                <b><p class="MoreBtn" style="font-size: 12px; float: right; margin-top: -17.5px;margin-right: 30px;">more &rsaquo;</p></b><br>
-                <div class="StartPinned" style="margin-bottom: 10px; width: 315px;" id="Recommended">
-                    <div class="StartPinnedApps" style="display:inline-block;" id="r1">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/.pptx_icon_%282019%29.svg" width="31px" >
-                        <p style="font-size: 12px; display:inline-block; -webkit-transform: translateY(-10px); transform: translateY(-10px); margin-left: -5px;  margin-right: 5px;">presentation.pptx</p>
+                        <div class="StartPinnedApps-r" id="r1">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/.pptx_icon_%282019%29.svg" width="31px" >
+                            <p style="font-size: 12px;">Hello.pptx</p>
+                        </div>
+
+                        <div class="StartPinnedApps-r" id="r2">
+                            <img src="https://i.stack.imgur.com/6i4gY.png" width="32px" >
+                            <p style="font-size: 12px;">Read Me.txt</p>
+                        </div>
                     </div>
 
-                    <div class="StartPinnedApps" style="display:inline-block;" id="r2">
-                        <img src="https://i.stack.imgur.com/6i4gY.png" width="32px" >
-                        <p style="font-size: 12px; display:inline-block; -webkit-transform: translateY(-10px); transform: translateY(-10px);   margin-left: -7.5px; margin-right: 5px;">Read Me.txt</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <!--Shortcuts-->
-                    <div class="StartPinnedA" 
-                    style="margin-top: 2px; margin-right: 21px; padding-right: 35px; margin-left: 2px;">
-                        <!--Documents-->
-                        <img src="https://img.icons8.com/windows/344/download--v1.png" width="23px" style="filter: invert(100%); margin-bottom: 7px; margin-top: 5px; cursor: pointer; margin-left: -2px;">	
-                        <br>
-                        <!--Explorer-->
-                        <img src="https://img.icons8.com/fluency-systems-regular/344/windows-explorer.png" width="20px" style="filter: invert(100%); margin-bottom: 10px; cursor: pointer;">
-                        <br>
-                        <!--Settings-->
-                        <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png" width="20px" style="filter: invert(100%); margin-bottom: 10px; cursor: pointer;">
-                        <br>
-                        <!--Power Coontrols-->
-                        <img src="https://img.icons8.com/fluency-systems-regular/452/shutdown.png" width="20px" style="filter: invert(100%); cursor: pointer;">
+                    <div class="StartPinnedA">
+                        <img src="https://img.icons8.com/windows/344/download--v1.png" width="20px">	
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/windows-explorer.png" width="20px" >
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png" width="20px">
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/shutdown.png" width="20px" >
                     </div>
                     
-                    <!--Weather Widget-->
-                    <div class="StartPinnedW3" style=" margin-right: 1.5px;"><CENTER>
-                        <div id="ww_2706ca9d41a60" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'
-                        style="margin: -15px; margin-left: -20px; margin-top: -7.5px; transform: translateX(-10px) scale(0.88) translateY(-5px); width: 120px;"><a href="https://weatherwidget.org/tr/" id="ww_2706ca9d41a60_u" target="_blank">Web Sitesi için Ücretsiz HTML Hava Durumu Widget</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_2706ca9d41a60"></script>
-                    </CENTER></div>
+                    <div class="StartPinnedW3">
+                        <CENTER>
+                            <div id="ww_2706ca9d41a60" v='1.3' loc='auto' class="weather-start"
+                            a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3,"el_whr":3}'
+                            style="	width: 60px; left: 50%; top: 50%;-webkit-transform: translate(-50%, -65%) scale(0.80); transform: translate(-50%, -65%) scale(0.80);
+                            height: 123px; position: absolute;">
+                                <a href="https://weatherwidget.org/tr/" id="ww_2706ca9d41a60_u" target="_blank">Web Sitesi için Ücretsiz HTML Hava Durumu Widget</a>
+                            </div>
+                            <script async src="https://app1.weatherwidget.org/js/?id=ww_2706ca9d41a60"></script>
+                        </CENTER>
+                    </div>
 
-                    <!--Music widget-->
-                    <div class="StartPinnedW" style="margin-top: 2px;">
+                    <div class="StartPinnedW">
                         <div class="musicThumbNailD">🎵</div>
                         <h6 style="font-size: 12px; margin-bottom: 7.5px;translate: -7.5px 5px;">No Music Played</h6>
                         
@@ -343,263 +385,158 @@
                         </div><br>
                         <input type="range" min="1" max="100" value="0" class="slider" style="translate: 0px 5px;">
                     </div>
-                </div>
 
-                <!--Quick Notes Widget-->
-                <div class="StartPinnedW2" >
-                    <input type="text" class="SearchQ" placeholder="Add a Quick Note" title="Quick note"> 		
-                    <img src="https://img.icons8.com/fluency-systems-regular/344/save.png" alt="save" width="20px" class="Savebtn">
+                    <div class="StartPinnedW2" >
+                        <input type="text" class="SearchQ" placeholder="Add a Quick Note" title="Quick note"> 		
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/save.png" alt="save" width="20px" class="Savebtn">
+                    </div>
                 </div>
-
-            </div>
             </CENTER>
-            </div>
-	    </div>
+        </div>
+	</div>
 
         <!--START MENU Phone-->
         <div class="startmenuM"  id="myStartmenuM" >
-            <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="80px" style="display:inline-block;">
-            <div style="display:inline-block; position: absolute; padding: 5px; top: 15px;">
-                <h3 id="greetingsM" style="color: white;font-family:Arial, Helvetica, sans-serif;"></h3>
-                <h5 style="color: white;font-family:Arial, Helvetica, sans-serif; margin-top: 5px;">admin6901@mail.com</h5>
-            </div>
-            <div style="display: inline; padding: 7px; position: absolute; top: 60px; margin-bottom: 10px;">
-                <!--Documents-->
-                <img src="https://img.icons8.com/windows/344/download--v1.png" width="23px" 
-                style="filter: invert(100%); cursor: pointer; margin-right: 10px;">	
+            <div class="statM-Header">
+                <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="80px" style="display:inline-block;">
+                <div style="display:inline-block; position: absolute; padding: 5px; top: 15px;">
+                    <h3 id="greetingsM" style="color: white;font-family:Arial, Helvetica, sans-serif;"></h3>
+                    <h5 style="color: white;font-family:Arial, Helvetica, sans-serif; margin-top: 5px;">admin6901@mail.com</h5>
+                </div>
+                <div style="display: inline; padding: 7px; position: absolute; top: 60px; margin-bottom: 10px;">
+                    <!--Documents-->
+                    <img src="https://img.icons8.com/windows/344/download--v1.png" width="23px" 
+                    style="filter: invert(100%); cursor: pointer; margin-right: 10px;">	
 
-                <!--Explorer-->
-                <img src="https://img.icons8.com/fluency-systems-regular/344/windows-explorer.png" width="20px" 
-                style="filter: invert(100%); cursor: pointer; margin-right: 10px;">
+                    <!--Explorer-->
+                    <img src="https://img.icons8.com/fluency-systems-regular/344/windows-explorer.png" width="20px" 
+                    style="filter: invert(100%); cursor: pointer; margin-right: 10px;">
 
-                <!--Settings-->
-                <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png" width="20px" 
-                style="filter: invert(100%);cursor: pointer; margin-right: 10px;">
+                    <!--Settings-->
+                    <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png" width="20px" 
+                    style="filter: invert(100%);cursor: pointer; margin-right: 10px;">
 
-                <!--Power Coontrols-->
-                <img src="https://img.icons8.com/fluency-systems-regular/452/shutdown.png" width="20px" 
-                style="filter: invert(100%); cursor: pointer; margin-right: 10px;">
+                    <!--Power Coontrols-->
+                    <img src="https://img.icons8.com/fluency-systems-regular/452/shutdown.png" width="20px" 
+                    style="filter: invert(100%); cursor: pointer; margin-right: 10px;">
+                </div>
             </div>
             <center>
-                <div class="tab" style="  margin-top: 15px;">
-                    <button class="buttonTab" onclick="openCity(event, 'AllApps')"  style="float: left;">All Apps</button>
-                    <button class="buttonTab" onclick="openCity(event, 'Feeds')" id="defaultOpen" style="float: right">Feed</button>
-                </div>
-
-                <input type="text" placeholder="Search the web" class="searchTM" 
-                style=" background-color: rgba(31, 31, 31, 0.50); text-align: left; padding-left: 15px; margin-bottom: 10px;
-                width: 90%; font-family: Arial, Helvetica, sans-serif; font-size: 13px;" >
-            </center>
-              
-            <CENTER>
-                <div id="AllApps" class="tabcontent">
-                    <div style="	background-color: rgba(0, 0, 0, 0.20);
-                    border-radius: 8px;
-                    font-family: Arial, Helvetica, sans-serif;
-                    border:  0.5px solid #f1f1f12a; padding: 11px;">
+                <div id="AllApps">
+                    <div class="StartM-Apps">
                         <ul id="myMenu" style="margin-left: -15px;">
                             <!--A-->
                             <li ><button class="startAppsbuttonH"><b>A</b></a></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Access</button></li>
-                                <li ><button class="startAppsbutton">Adobe Acrobat DC</button></li>
-                                <li ><button class="startAppsbutton">Adobe After effects</button></li>
-                                <li ><button class="startAppsbutton">Adobe Photoshop</button></li>
-                                <li ><button class="startAppsbutton">Adobe Premiere Pro</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img style="width: 17.5px; margin-bottom: -5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/2101px-Adobe_Creative_Cloud_rainbow_icon.svg.png" alt="">
+                                    Adobe CC
+                                </button></li>
                             </div>
         
                             <!--C-->
                             <li ><button class="startAppsbuttonH"><b>C</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Calculator</button></li>
-                                <li ><button class="startAppsbutton">Calendar</button></li>
-                                <li ><button class="startAppsbutton">Camera</button></li>
-                                <li ><button class="startAppsbutton">Clock</button></li>
-                            </div>
-        
-                            <!--E-->
-                            <li ><button class="startAppsbuttonH"><b>E</b></button></li>
-                            <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Exel</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/calculator.png" alt="">
+                                    Calculator</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/calendar.png" alt="">
+                                    Calendar</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/camera.png" alt="">
+                                    Camera</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/clock.png" alt="">
+                                    Clock</button></li>
                             </div>
         
                             <!--F-->
                             <li ><button class="startAppsbuttonH"><b>F</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li><button class="startAppsbutton" onclick="FileExplr()">File Explorer</button></li>
-                            </div>
-        
-                            <!--G-->
-                            <li ><button class="startAppsbuttonH"><b>G</b></button></li>
-                            <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Google Chrome</button></li>
+                                <li><button class="startAppsbutton" onclick="FileExplr()">
+                                    <img style="width: 17.5px; margin-bottom: -5px;"  src="Assets/Windows_11_Explorer.png" alt="">
+                                    File Explorer</button></li>
                             </div>
         
                             <!--M-->
                             <li ><button class="startAppsbuttonH"><b>M</b></a></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Mail</button></li>
-                                <li ><button class="startAppsbutton">Media Player</button></li>
-                                <li ><button class="startAppsbutton" onclick="EdgeB()">Microsoft Edge</button></li>
-                                <li ><button class="startAppsbutton">Microsoft Store</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/mail.png" alt="">
+                                    Mail</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://blogs.windows.com/wp-content/uploads/prod/sites/44/2021/11/Logo.png" alt="">
+                                    Media Player</button></li>
+                                <li ><button class="startAppsbutton" onclick="EdgeB()">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" alt="">
+                                    Microsoft Edge</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" alt="">
+                                    Microsoft Store</button></li>
                             </div>
         
                             <!--N-->
                             <li ><button class="startAppsbuttonH"><b>N</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Notepad</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/notepad.png" alt="">
+                                    Notepad</button></li>
                             </div>
         
                             <!--O-->
                             <li ><button class="startAppsbuttonH"><b>O</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Office</button>
-                                <li ><button class="startAppsbutton">OneDrive</button>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/452/microsoft-office-2019.png" alt="">
+                                    Office</button>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/microsoft-onedrive-2019.png" alt="">
+                                    OneDrive</button>
                             </div>
         
                             <!--P-->
                             <li ><button class="startAppsbuttonH"><b>P</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton" onclick="Paint()">Paint</button></li>
-                                <li ><button class="startAppsbutton">Photos</button></li>
-                                <li ><button class="startAppsbutton">Powerpoint</button></li>
+                                <li ><button class="startAppsbutton" onclick="Paint()">
+                                    <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" alt="">
+                                    Paint</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/photos.png" alt="">
+                                    Photos</button></li>
                             </div>
         
                             <!--S-->
                             <li ><button class="startAppsbuttonH"><b>S</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Settings</button></li>
-                                <li ><button class="startAppsbutton">Spotify</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/452/settings.png" alt="">
+                                    Settings</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" alt="">
+                                    Spotify</button></li>
                             </div>
-        
-                            <!--V-->
-                            <li ><button class="startAppsbuttonH"><b>V</b></button></li>
-                            <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Visual Studio Code</button></li>
-                            </div>
-        
+
                             <!--W-->
                             <li ><button class="startAppsbuttonH"><b>W</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Weather</button></li>
-                                <li ><button class="startAppsbutton">Windows Security</button></li>
-                                <li ><button class="startAppsbutton">Windows Tools</button></li>
-                                <li ><button class="startAppsbutton">Word</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/weather.png" alt="">
+                                    Weather</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/windows-defender.png" alt="">
+                                    Windows Security</button></li>
                             </div>
         
                             <!--X-->
                             <li ><button class="startAppsbuttonH"><b>X</b></button></li>
                             <div style="margin-left: 15px;">
-                                <li ><button class="startAppsbutton">Xbox</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="https://img.icons8.com/fluency/52/null/xbox.png" alt="">
+                                    Xbox</button></li>
                             </div>
                         </ul>
                     </div>
-                </div>
-                
-                <div id="Feeds" class="tabcontent">
-                    <!--Pinned Apps-->
-                    <b><p style="text-align: left;">Pinned</p></b>
-                    <b><p style="float: right; margin-top: -25px; font-size: 22px;">...</p></b><br>
-                    <CENTER>
-                        <div style=" padding: 10px;
-                        width: 95%; display: inline-block;
-                        background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a;">
-
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br>Edge
-                        </div>
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://img.icons8.com/fluency/452/microsoft-powerpoint-2019.png" width="32px" style="margin-bottom: -2px;"><br>Ms ppt
-                        </div>
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://img.icons8.com/fluency/452/microsoft-word-2019.png" width="33px" style="margin-bottom: -2px;"><br>Word
-                        </div>
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://img.icons8.com/fluency/452/microsoft-excel-2019.png" width="33px" style="margin-bottom: -2px;"><br>Exel
-                        </div>
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" width="29px"><br>Spotify
-                        </div>	
-                        <div style="display:inline-block; padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a; width: 25%; margin-bottom: 5px;">
-                            <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="29px"><br>Paint
-                        </div>
-                    </div> 
-                    </CENTER>      
-                    
-                    <!--Recommended Apps-->
-                    <b><p style="text-align: left; margin-top: 10px;">Recommended</p></b>
-                    <b><p style="float: right; margin-top: -25px; font-size: 22px;">...</p></b><br>
-                    <CENTER>
-                    <div style=" padding: 10px;
-                    width: 95%;
-                    background-color: rgba(0, 0, 0, 0.20);
-                    border-radius: 8px;
-                    font-family: Arial, Helvetica, sans-serif;
-                    border:  0.5px solid #f1f1f12a;">
-
-                        <div style="padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a;  margin-bottom: 5px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/.pptx_icon_%282019%29.svg" width="31px" >
-                            <p style="font-size: 12px; display:inline-block; -webkit-transform: translateY(-10px); transform: translateY(-10px);  margin-right: 5px;">presentation.pptx</p>
-                        </div>
-
-                        <div style="padding: 7px; background-color: rgba(0, 0, 0, 0.20);
-                        border-radius: 8px;
-                        font-family: Arial, Helvetica, sans-serif;
-                        border:  0.5px solid #f1f1f12a;  margin-bottom: 5px;">
-                            <img src="https://i.stack.imgur.com/6i4gY.png" width="32px" >
-                            <p style="font-size: 12px; display:inline-block; -webkit-transform: translateY(-10px); transform: translateY(-10px); margin-right: 5px;">ReadMe.txt</p>
-                        </div>
-                    </div> 
-                    
-                    
-                    <div style="margin-top: 7px;">
-                        <!--Music widget-->
-                        <div class="StartPinnedW" style="margin-top: 2px; width: 95%;">
-                            <h6 style="font-size: 12px; margin-bottom: 10px;">No Music Played</h6>
-                            
-                                <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" width="15px" 
-                                style="filter: invert(100%); cursor: pointer; margin-right: 5px;" >
-                                <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="15px" 
-                                style="filter: invert(100%); cursor: pointer; margin-right: 5px;" >							
-                                <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" width="15px" 
-                                style="filter: invert(100%); cursor: pointer; margin-right: 5px;" >
-                            <br>
-                            <input type="range" min="1" max="100" value="0" class="slider">
-                        </div>
-                    </div>
-    
-                    <!--Quick Notes Widget-->
-                    <div class="StartPinnedW2" style="margin-top: 2px; width: 95%;">
-                        <h6 style="font-size: 15px; margin-bottom: 10px;">Add a quick note</h6>
-                        <input type="text" class="SearchQ" placeholder="Add a Quick Note" title="Quick note"> 		
-                        <img src="https://img.icons8.com/fluency-systems-regular/344/save.png" alt="save" width="20px" class="Savebtn">
-                    </div>
-                    </CENTER>
-                <div class="SpaceFeedM">RGOS</div>
                 </div>
             </CENTER>
         </div>
@@ -610,43 +547,31 @@
             <div class="desktops">
                 <div class="desktop1">
                     <p>Desktop 1</p>
-                    <img src="https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096" width="195px" height="105px" id="dstp1Img">
+                    <img src="../Assets/RipenWaves2.png" width="195px" height="105px" id="dstp1Img">
                 </div><br>
                 <div class="desktop2">
                     <div class="newD"><span>&#43;</span></div>
                 </div>
             </div>
         </div>
-
-        <div id="Desktop"></div>
+        
         <!--Time Widget-->
-        <div style="padding: 17px; right: 0; text-align: right; margin-top: -10px; position: absolute;">
-            <div style="margin-right: 10px;  z-index: 2;">
-            <div id="txtH" style="color: azure; font-weight:900; font-size: 65px"></div>
-
-            <div id="txtdtyH" style="color: azure; font-weight:900; font-size: 15px; margin-top: -12.5px; margin-right: 10px;"></div>
-            </div>
-            <button onclick="theme()" style="margin-top: 10px; margin-right: 10px; z-index: 300000; width: 200px;" class="welcome-btn" id="myTheme">Toggle theme</button>
-        </div>
-        <!--Desktop Icons-->
-        <div style="padding: 17px;" class="DesktopShow">
-            <div class="ThisPc">
-                <div class="myDIV" id="bin">
-                    <CENTER>
-                        <img src="Assets/bin.png" width="65px">
-                        <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recycle Bin</p>
-                    </CENTER>
+        <div style="padding: 17px; text-align: right; margin-top: -10px; position: absolute; right: 0px; color: white;">
+                <div style="margin-right: -5px; z-index: 2;">
+                    <div id="txtH" style="color: azure; font-weight:900; font-size: 65px; filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
+                    <div id="txtdtyH" style="color: azure; font-weight:900; font-size: 20px; margin-top: -10px;filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
                 </div>
-            </div><br>
-    
-            <div class="ThisPc">
-                    <div class="myDIV" id="myPc" style="top: 125px;">
-                        <CENTER>
-                            <img src="Assets/pc.png" width="65px">
-                            <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">This Pc</p>
-                        </CENTER>
-                    </div>
-            </div><br>
+            <div class="desk-widget-info">
+                <p style="font-size: 16px;  display: inline-block; margin-right: 5px; filter: none;">No events Today</p>
+                <p style="font-size: 20px;  display: inline-block; margin-right: 5px; filter: none;">●</p>
+                <img src="/Assets/windows11-actions%20-%20battery.png" style="width: 25px; margin-bottom: -5px; filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));">
+                <div style="margin-left: -1px; display: inline-block; font-size: 16px; filter: none;
+                    color: white; font-weight: 600;
+                    letter-spacing: 0.5px;
+                    padding-bottom: 5px;
+                    filter: drop-shadow(0px 0px 1px black);" id="status">
+                </div> 
+            </div>
         </div>
         
         <!--Context Menu on right click-->
@@ -703,110 +628,182 @@
         </div>
         </div>
         
-	<!--Volume Flyout-->
-	<div class="actionmenu"  style="padding: 27.5px;">
-    <div class="darktheme" id="themeV"  style="padding: 10px;">
-		<img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
-		<h6 style=" font-size: 17px; margin-bottom: 15px; margin-top: 5px; margin-left: 5px;">Volume</h6>
+        <!--Volume Flyout-->
+        <div class="actionmenu"  style="padding: 27.5px;">
+        <div class="darktheme" id="themeV"  style="padding: 10px;">
+            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <h6 style=" font-size: 17px; margin-bottom: 15px; margin-top: 5px; margin-left: 5px;">Volume</h6>
 
-		<input type="range" min="1" max="100" value="50" class="slider" style="width: 82%; margin-left: 35px;">
+            <input type="range" min="1" max="100" value="50" class="slider" style="width: 82%; margin-left: 35px;">
 
-		<img src="Assets/volume.png" alt="volume" width="27px"
-		style="margin-left: 2px; translate: 0px -19px;margin-bottom: 12px;">
+            <img src="Assets/volume.png" alt="volume" width="27px"
+            style="margin-left: 2px; translate: 0px -19px;margin-bottom: 12px;">
 
-		<h5 style="display: inline-block; color: #ccc;  margin-left: -25px; cursor: pointer; ">Volume Settings</h5>
-		<h5 style="float: right; color: #ccc;margin-right: 15px; margin-top: 25px;">Mixer</h5>
-    </div>
-	</div>
-
-	<!--Network Flyout-->
-	<div class="actionmenu2" style="padding: 27.5px;">
-        <div class="darktheme" id="themeWifi" style="padding: 10px;">
-		<img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
-		<h6 style=" font-size: 17px; margin-bottom: 25px; margin-top: 5px; margin-left: 5px; ">Network</h6>
-
-		<label class="switch" style="margin-left: 10px;">
-			<input type="checkbox" checked>
-			<span class="slider2 round"></span>
-		</label>Wifi
-
-		<label class="switch" style="margin-left: 15px;">
-			<input type="checkbox">
-			<span class="slider2 round"></span>
-		</label>Aeroplane mode
-		<br>
-		<div style="padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 20px; ">
-
-			<img src="Assets/wifiSecured.png" width="20px" style="float: right;">
-			<h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 3px;">Secured</h6>
-
-			<img src="Assets/wifiConnected.png" width="42px" style="margin-right: 10px; margin-bottom: -5px;">
-
-			<p style="display: inline-block;translate: 0px -17px; font-size: 17px; ">Network 5G</p>
-			<h5  style="display: inline-block;translate: 0px -17px; margin-left: 55px;">Connected, </h5>
-			<a href="#info" style="display: inline-block;translate: 0px -17px; text-decoration: none; color: white;"><h5><u>Info</u></h5></a>
-			
-			<button style="float: right; padding: 10px; background-color: #f1f1f11a; border-radius: 8px; border: none;width: 150px; color: white; font-weight: 700;">Disconnect</button><br><br><br>
-		</div>
-
-		<hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05); margin-top: 202px">
-		<h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px;">More Network Settings</h5>
+            <h5 style="display: inline-block; color: #ccc;  margin-left: -25px; cursor: pointer; ">Volume Settings</h5>
+            <h5 style="float: right; color: #ccc;margin-right: 15px; margin-top: 25px;">Mixer</h5>
         </div>
-	</div>
-
-	<!--Battery Flyout-->
-	<div class="actionmenu3" style="padding: 27.5px;">
-        <div class="darktheme" id="themeB" style="padding: 10px;">
-		<img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
-		<h6 style=" font-size: 17px; margin-bottom: 5px; margin-top: 5px; margin-left: 5px;">Battery</h6>
-
-		<img src="Assets/battery.png" width="40px" style=" margin-bottom: -13px;">
-
-		<h2 style="margin-left: 2px; display: inline-block; font-size: 20px;">100%</h2> 
-		<h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px; margin-bottom: 5px;">
-		2h 12mins remaining • Medium Usage</h5><br>
-
-		<input type="range"  class="slider" style=" margin-left: 5px; margin-top: 15px;" step="25">
-
-		<img src="Assets/performance.png" width="25px" style="float: right; margin-right: 13px; margin-top: 2.5px;">
-		
-		<h5 style="float: right;color: #ccc;margin-right: -20px; margin-top: 30px;">Better Performance</h5>
-
-		<img src="Assets/power.png" width="25px" style="margin-left: 1px; margin-top: 2.5px;">
-		<h5 style="color: #ccc;margin-left: 5px;">Better Battery</h5>
         </div>
-	</div>
 
-	<!--Calendar Flyout-->
-	<div class="wrapper" >
-        <div class="darktheme" id="themeCl">
-		<header>
-			<p class="current-date"></p>
-			<div class="icons">
-				<span id="prev" class="material-symbols-rounded">chevron_left</span>
-				<span id="next" class="material-symbols-rounded">chevron_right</span>
-			</div>
-		</header>
-		<br>
-		<div class="calendar">
-			<ul class="weeks">
-				<li>Sun</li>
-				<li>Mon</li>
-				<li>Tue</li>
-				<li>Wed</li>
-				<li>Thu</li>
-				<li>Fri</li>
-				<li>Sat</li>
-			</ul>
-			<ul class="days"></ul>
-		</div>
-		<div style="bottom: 0;">
-			<hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05);">
-			<img src="Assets/moreControls.png" width="20px" style="float: right; cursor: pointer; padding: 15px;">
-			<b><p style="float: left; font-size: 18px; padding: 15px;">Calendar</p></b>
-		</div>
+        <!--Network Flyout-->
+        <div class="actionmenu2" style="padding: 27.5px;">
+            <div class="darktheme" id="themeWifi" style="padding: 10px;">
+            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <h6 style=" font-size: 17px; margin-bottom: 25px; margin-top: 5px; margin-left: 5px; ">Network</h6>
+
+            <label class="switch" style="margin-left: 10px;">
+                <input type="checkbox" checked>
+                <span class="slider2 round"></span>
+            </label>Wifi
+
+            <label class="switch" style="margin-left: 15px;">
+                <input type="checkbox">
+                <span class="slider2 round"></span>
+            </label>Aeroplane mode
+            <br>
+            <div style="padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 20px; ">
+
+                <img src="Assets/wifiSecured.png" width="20px" style="float: right;">
+                <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 3px;">Secured</h6>
+
+                <img src="Assets/wifiConnected.png" width="42px" style="margin-right: 10px; margin-bottom: -5px;">
+
+                <p style="display: inline-block;translate: 0px -17px; font-size: 17px; ">Network 5G</p>
+                <h5  style="display: inline-block;translate: 0px -17px; margin-left: 55px;">Connected, </h5>
+                <a href="#info" style="display: inline-block;translate: 0px -17px; text-decoration: none; color: white;"><h5><u>Info</u></h5></a>
+                
+                <button style="float: right; padding: 10px; background-color: #f1f1f11a; border-radius: 8px; border: none;width: 150px; color: white; font-weight: 700;">Disconnect</button><br><br><br>
+            </div>
+
+            <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05); margin-top: 202px">
+            <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px;">More Network Settings</h5>
+            </div>
         </div>
-	</div>
+
+        <!--Battery Flyout-->
+        <div class="actionmenu3" style="padding: 27.5px;">
+            <div class="darktheme" id="themeB" style="padding: 10px; padding-left: 12px;">
+            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <h6 style=" font-size: 17px; margin-bottom: 5px; margin-top: 5px; margin-left: 5px;">Battery</h6>
+            <img src="Assets/windows11-actions - battery.png" width="40px" style=" margin-bottom: -13px;">
+
+            <div style="margin-left: 2px; display: inline-block; font-size: 20px;
+            color: white; font-weight: 600;
+            letter-spacing: 0.5px;
+            padding-bottom: 5px;
+            filter: drop-shadow(0px 0px 1px black);" id="status2"></div> 
+            
+            <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px; margin-bottom: 5px;">
+            2h 12mins remaining • Medium Usage</h5><br>
+
+            <input type="range"  class="slider" style=" margin-left: 5px; margin-top: 15px;" step="25">
+
+            <img src="Assets/performance.png" width="25px" style="float: right; margin-right: 13px; margin-top: 2.5px;">
+            
+            <h5 style="float: right;color: #ccc;margin-right: -20px; margin-top: 30px;">Better Performance</h5>
+
+            <img src="Assets/power.png" width="25px" style="margin-left: 1px; margin-top: 2.5px;">
+            <h5 style="color: #ccc;margin-left: 5px;">Better Battery</h5>
+            </div>
+        </div>
+
+        <!--Calendar Flyout-->
+        <div class="wrapper" >
+            <div class="darktheme" id="themeCl">
+            <header>
+                <p class="current-date"></p>
+                <div class="icons">
+                    <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                    <span id="next" class="material-symbols-rounded">chevron_right</span>
+                </div>
+            </header>
+            <br>
+            <div class="calendar">
+                <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="days"></ul>
+            </div>
+            <div style="bottom: 0;">
+                <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05);">
+                <img src="Assets/moreControls.png" width="20px" style="float: right; cursor: pointer; padding: 15px;">
+                <b><p style="float: left; font-size: 18px; padding: 15px;">Calendar</p></b>
+            </div>
+            </div>
+        </div>
+
+        <div class="taskbar-Al">
+            <div class="darktheme" id="themeTA">
+                <h4>Taskbar Alignment</h4>
+                <button onclick="taskbarLeft()">Left</button>
+                <button onclick="taskbarCenter()">Center</button>
+            </div>
+        </div>
+
+        <div id="Desktop">
+            <div class="Welcome" id="welcome-page">
+                <div class="darktheme" id="themeWl">
+                    <div class="appControls">
+                        <div id="close" onclick="closeWelcome()"></div>
+                    </div>
+                    <CENTER id="welcome-logo">
+                        <img src="Assets/windows11-logo.png" alt="">
+                        <h1>Windows Ripen</h1>
+                    </CENTER>
+
+                    <div class="welcome-content">
+                        <h4 style="margin-top: -20px;">An initiative of the RGOS</h4>
+                    <p>
+                        Windows Ripen, a member of the <a href="https://ripenos.github.io/" target="_blank">RGOS</a> family, is an open source concept based on the <a href="https://www.microsoft.com/en-in/windows">Windows Operating System</a> (c).
+                    </p>
+
+                    <h4>❗ Note</h4>
+                    <p style="font-weight: bold;">This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.</p>
+
+                    <h4>⚖️ License</h4>
+                    <p>MIT License License as Copyright (c) 2022-23 RipenOS</p>
+
+                    <h4>📱 Current Version</h4>
+                    <p>version 0.7</p>
+                    
+                    <h4>©️ Credits</h4>
+                    <p>The RGOS uses assets and templates provided by other such fascinating providers. They are:
+                        <ol>
+                            <li>Icons by <a href="https://icons8.com/">icons8.com</a> and <a href="https://fonts.google.com/icons">Google fonts and icons</a>.</li>
+                            <li>Weather widgets by <a href="https://weatherwidget.org/">Weatherwidget</a>.</li>
+                            <li>Code reference by <a href="https://www.w3schools.com/">W3schools</a>.</li>
+                        </ol>
+                    </p>
+                </div>
+                <button class="welcome-btn" onclick="closeWelcome()">Ok I understand</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Desktop Icons-->
+        <div style="padding: 17px;" class="DesktopShow">
+            <div class="ThisPc" id="bin">
+                <div class="myDIV" id="bin">
+                    <CENTER>
+                        <img src="Assets/bin.png" width="65px">
+                        <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Recycle Bin</p>
+                    </CENTER>
+                </div>
+            </div>
+            <div class="ThisPc" id="thispc">
+                    <div class="myDIV" id="myPc" style="top: 125px;">
+                        <CENTER>
+                            <img src="Assets/pc.png" width="65px">
+                            <p style="filter: drop-shadow(0px 0px 2px rgb(0, 0, 0)); color: azure; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">This Pc</p>
+                        </CENTER>
+                    </div>
+            </div><br>
+        </div>
 
     <!--Apps under testing-->
         
