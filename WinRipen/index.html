@@ -9,212 +9,268 @@
 
         <style>
             *
-            {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Poppins', sans-serif;
-            }
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-            body, html {
-                background-image: url("Assets/RipenWaves2.png");
-                background-size: cover;
-                height: 100vh;
-                font-size: 15px;
-                overflow: hidden; 
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
+body, html {
+    background:black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-size: 15px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    justify-content: center;
+}
+img{-webkit-user-drag: none;} 
 
-            .darkmode
-            {
-                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-                background: rgba(0, 0, 0, 0.6);
-                border-radius: 10px;
-                overflow: hidden;
-                border: 1.95px solid rgba(225, 225, 225, 0.25);
-                color: white;
-                backdrop-filter: blur(35px);
+#Boot{display: block;}
 
-            }
+#Lockscreen {
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+}
 
-            .lightmode
-            {
-                border-bottom: 1px solid rgba(209, 209, 209, 0.329);
-                background-color: rgba(240, 240, 240, 0.15);
-                backdrop-filter: blur(35px);
-                color: rgb(255, 255, 255);
-                filter: drop-shadow(0px 0px 2px black);
-            }
+#welcome{
+    background: url("Assets/RipenWaves2.png");
+    -webkit-filter:saturate(200%) blur(75px) brightness(12.5%);
+    filter:saturate(200%) blur(75px) brightness(12.5%);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s;
+    text-align: left;
+}
 
+#logo{
+    position: absolute;
+    width: 125px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-            .welcome {
-                position: relative;
-                width: 100%; 
-                backdrop-filter: blur(35px);
-                height:fit-content; 
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                color: rgb(255, 255, 255);
-                transition: 0.5s;
-                text-align: left;
-                height: 100vh;
-            }
-            
-            /* welcome Content */
-            .welcome-content {
-                margin: 0;
-                width: 67.5%;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                translate: -50% -50%;
-                scale: 0;
-                visibility: hidden;
-                opacity: 0;
-                transition: all 0.5s;
-            }
+.spinner {
+width: 52px;
+height: 52px;
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translate(-50%, -50%);}
 
-            @media (max-width:700px) {
-                .welcome-content {
-                 width: 85%;
-                }
-            }
+.double-bounce1, .double-bounce2 {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: rgb(255, 123, 0);
+opacity: 0.6;
+backdrop-filter: blur(35px);
+position: absolute;
+top: 0;
+left: 0;
+-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+animation: sk-bounce 2.0s infinite ease-in-out;
+}
 
-            .welcome-content a {
-                color: rgb(255, 166, 0); font-weight: 700;
-            }
-            
-            /* The Close Button */
-            .welcome-close {
-                color: white;
-                font-size: 20px;
-                font-weight: bold;
-            }
-            
-            .welcome-close:hover,
-            .welcome-close:focus {
-                color: #000;
-                text-decoration: none;
-                cursor: pointer;
-            }
-            
-            .welcome-header {
-                padding: 15px 20px;
-                background-color: rgba(124, 124, 124, 0.15);
-                border-radius: 8px 8px 0 0 ;
-            }
-            
-            .welcome-body {padding: 2px 16px;}
-            
-            .welcome-footer {
-                padding: 10px 16px;
-                background-color: rgba(124, 124, 124, 0.15);
-                color: white;
-                border-radius: 0 0 8px 8px;
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
 
-            }
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
 
-            .welcome-btn {
-                color: white; background-color:rgb(255, 123, 0); border: none; border-radius: 8px; padding: 10px; cursor: pointer; font-size: 20px; font-weight: bold; border: 1px solid #ccc; transition: all 0.5s; box-shadow: 0px 0px 5px black;
-            }
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
 
+#loadItems{transition: all 1s; opacity: 0;}
 
-            .logoRipen{
-                position: absolute;
-                margin: 10px;
-            }
+.lockS-time {
+    position: relative;
+    background:transparent; 
+    color: azure;
+    border: none; padding: 7px 20px; 
+    top: 70px;
+    font-family:'Arial black';
+    align-content: center;
+    align-items: center;
+    font-size: 90px;
+    z-index: 6;
+    font-weight: 800;
+    opacity: 0; transition: all 1s;
+}
 
-            .logoRipen img {
-                width: 40px;
-                border-radius: 8px;
-            }
+.lockS-date {
+    position: absolute;
+    background:transparent; 
+    color: azure;
+    border: none; 
+    padding: 7px 20px; 
+    top: 180px;
+    left:50%;
+    transform: translate(-50%);
+    font-family:'Arial black';
+    align-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 6;
+    font-weight: 800;
+    opacity: 0; transition: all 1s;
+}
 
-            .logoRipen .LogoName {
-                display: inline-block;
-                margin-left: 1px;
-                -webkit-transform: translateY(-10px);
-                        transform: translateY(-10px);
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.loginBtn {
+    position: absolute;
+    width: 200px;
+    bottom: 15%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: rgba(71, 71, 71, 0.5);
+    backdrop-filter: blur(15px) ;
+    -webkit-backdrop-filter: blur(15px) ;
+    padding: 7px;
+    border-radius: 4px;
+    border: 0.15px solid rgba(170, 182, 221, 0.06);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    color: azure;
+    transition: all 0.3s;
+    z-index: 6;
+    margin: 0;
+}
 
-            }
-            
-            #Winlogo {
-                width: 30px;
-            }
+.loginBtn:hover{background: rgba(71, 71, 71, 0.25);}
+.loginBtn:active{transform:translate(-50%, -50%) scale(0.95);}
+
+#QuickInfo{
+position: absolute;
+right: 20px;
+bottom: 20px; z-index: 6;
+opacity: 0; transition: all 1s;
+}
+
+#QuickInfo img
+{z-index: 6; width: 19.5px; position: relative; margin-bottom: -2.5px;}
+#QuickInfo span {
+    border-radius: 5px; transition: all 0.3s; border: 0.5px solid transparent;  margin: 1px; padding: 10px;
+}
+#QuickInfo span:hover{background-color: rgba(71, 71, 71, 0.25); border-top: 0.15px solid #f1f1f10e;}
+
+#greetings{
+    z-index: 6; color: white; 
+    left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 48px;
+    opacity: 0; transition: opacity 0.5s, top 0.75s ease-out;
+}
         </style>
     </head>
 
-    <body onload="displayWelcome()">
+    <body onload="onLoad(), intoLockscreen(), startTime(), StartDate()">
+        <div id="welcome"></div>
+
+        <div id="Boot">
+            <CENTER id="loadItems"><img src="Assets/windows11-logo.png" alt="" id="logo">
+                <br>
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </CENTER>
+        </div>
+
+        <div id="Lockscreen">
+            <CENTER>
+                <div id="txt" class="lockS-time"></div>
+                <div id="txtdty" class="lockS-date"></div>
+                <button class="loginBtn" onclick="DesktopDirect()" id="myLB">login</button>
+            </CENTER>
         
-        <CENTER>
-			<!-- welcome content -->
-            <div class="welcome">
+            <CENTER>
+                <p id="greetings"></p>
+            </CENTER>
 
-                <div class="logoRipen">
-                    <img src="https://raw.githubusercontent.com/ripenos/ripenos.github.io/main/Assets/General/ripenOs.jpg" alt="RGOS logo">
-                    <h1 class="LogoName">RGOS</h1>
-                </div>
-                <button onclick="myFunction()" style="float: right; margin: 10px; z-index: 300000;" class="welcome-btn">Toggle theme</button>
-
-                <div class="welcome-content" id="mywelcome">
-                        <div class="darkmode" id="theme" style="transition: all 0.5s;">
-                            <div class="welcome-header">
-                                <img src="Assets/windows11-logo.png" alt="" id="Winlogo">
-                                <h2 style="display: inline-block; -webkit-transform: translateY(-7.5    px);
-                                transform: translateY(-7.5px); margin-left: 5px;">Windows Ripen</h2>
-                            </div>
-                            <br>
-                            <div class="welcome-body">
-                                <p>
-                                    Windows Ripen, a member of the <a href="https://ripenos.github.io/">RGOS</a> family, is an open source concept based on the Windows Operating System.
-                                </p>
-                                <br>
-                                <b>🚧 This project is still under progress.</b>
-                                <br><br>
-                                <font color="#ccc">This project is not in any way affiliated with Microsoft and should not be confused with Microsoft's Operating System or Products.</font>
-                                <p>Microsoft, Windows and Other demonstrated Products in this project are trademarks of the Microsoft group of companies.</p>
-                                <br>
-                                <font color="#fff"><b>Copyright (c) 2023 RipenOS</b></font><br><br>
-                            </div>
-                            <div class="welcome-footer">
-                                <span class="welcome-close" ><button class="welcome-btn" onclick="intoLockScreen()" style="font-size: 16px;">Okay, I understand!</button></span>
-                            </div>
-                        </div>
-                </div>
+            <div id="QuickInfo">
+                <span><img src="Assets/windows11-actions - wifi.png"></span>
+                <span><img src="Assets/windows11-actions - battery.png"></span>
             </div>
-        </CENTER>
+        </div>
 
-        <CENTER>
-            <p id="greetings" style="z-index: 6; color: white; 
-                  left: 50%; top: 50%; transform: translate(-50%, -50%);
-                  opacity: 0; transition: opacity 0.5s, top 0.75s ease-out;"></p>
-        </CENTER>
-    
         <script>
-
-            function displayWelcome(){
-                var welc = document.getElementsByClassName("welcome-content")[0];
-
-                welc.style.transition= "all 0.5s"
-                welc.style.visibility= "visible";
-                welc.style.opacity= "1";
-                welc.style.scale= "1.1";
+            function onLoad(){
+                document.getElementById("loadItems").style.opacity= "1";
+                document.getElementById("welcome").style.opacity= "1";
+            }
+            function intoLockscreen(){
 
                 setTimeout(() => {
-                    welc.style.transition= "all 1s";
-                    welc.style.scale= "1";
-                }, 700);
+                    document.getElementById("loadItems").style.opacity= "0";
+                }, 3000);
 
+                setTimeout(() => {
+                    document.getElementById("Boot").style.display= "none";
+                    document.getElementById("Lockscreen").style.opacity= "1";
+                    document.getElementById("welcome").style.filter= "saturate(200%) blur(35px) brightness(100%)";
+
+                    
+                    document.getElementById("Lockscreen").style.display= "block";
+                    document.getElementById("myLB").style.opacity = '1';
+                    document.getElementById("txt").style.opacity = '1';
+                    document.getElementById("txtdty").style.opacity = '1';
+                    document.getElementById("QuickInfo").style.opacity = '1';
+                }, 4000);
             }
 
-            function myFunction() {
-            var element = document.getElementById("theme");
-            element.classList.toggle("lightmode");
+            function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            m = checkTime(m);
+            document.getElementById('txt').innerHTML =  h + ":" + m;
+            setTimeout(startTime, 1000);
             }
 
-            var welcome = document.getElementById("mywelcome");
-            var span = document.getElementsByClassName("welcome-close")[0];
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+
+            function StartDate(){
+                const dToday = new Date();
+                let dt = dToday.getDate();
+
+                var myDate = new Date();
+                var myDay = myDate.getDay();
+
+                // Array of days.
+                var weekday = ['Sunday', 'Monday', 'Tuesday',
+                    'Wednesday', 'Thursday', 'Friday', 'Saturday'
+                ];
+                document.getElementById('txtdty').innerHTML =  dt + 'th ' + dToday.getFullYear() + ' ' + weekday[myDay];
+                setTimeout(startTime, 1000);
+            }
 
             var GreetDate = new Date();
             var hrs = GreetDate.getHours();
@@ -229,39 +285,25 @@
 
             document.getElementById('greetings').innerHTML ='<b>' + greet + ',  Admin' + '</b>';
             document.getElementById('greetings').style.position = 'Absolute';
-            document.getElementById('greetings').style.fontSize = '48px';
 
-            
-            span.onclick = function() {
-                document.getElementById("mywelcome").style.opacity = "0";
-                document.getElementById('greetings').style.opacity = '1';
-            }
+            function DesktopDirect(){
+                setTimeout(() => {
+                    document.getElementById("myLB").style.opacity = '0';
+                    document.getElementById("txt").style.opacity = '0';
+                    document.getElementById("txtdty").style.opacity = '0';
+                    document.getElementById("QuickInfo").style.opacity = '0';
+                    document.getElementById('greetings').style.opacity = '1';
+                }, 250);
 
-            function intoLockScreen(){
-                
                 setTimeout(() => {
                     document.getElementById('greetings').style.opacity = '0';
+                }, 2000);
 
-                }, 3000);
-                
                 setTimeout(() => {
-                    window.open("lockscreen.html", '_self');
-                }, 3500);
-
+                    window.open("desktop1.html", '_self');
+                }, 3000);
             }
 
-          </script>
-
-        <script type="text/javascript" src="vanilla-tilt.js"></script>
-
-        <script type="text/javascript">
-            VanillaTilt.init(document.querySelector("#mywelcome"), {
-                max: 5,
-                speed: 400,
-            });
-            
-            //It also supports NodeList
-            VanillaTilt.init(document.querySelectorAll("#mywelcome"));
         </script>
     </body>
 </html>
