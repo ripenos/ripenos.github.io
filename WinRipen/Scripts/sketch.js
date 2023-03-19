@@ -1,5 +1,6 @@
 let startbutton = document.getElementsByClassName("startbutton")[0]
 let startmenu = document.getElementsByClassName("startmenu")[0]
+let startbuttonM = document.getElementsByClassName("startbuttonM")[0]
 let startmenuM = document.getElementsByClassName("startmenuM")[0]
 
 let tabb = document.getElementsByClassName("tabbutton")[0]
@@ -24,29 +25,10 @@ let action5 = document.getElementsByClassName("Calbtn")[0]
 
 let se = document.getElementById("Se")
 let  NSe = document.getElementById("nonSe")
+let seM = document.getElementById("SeM")
+let  NSeM = document.getElementById("nonSeM")
 let Set = document.getElementById("set")
 let NSet = document.getElementById("nonSet")
-
-let files = document.getElementsByClassName("FIlesbutton")[0]
-let FIlesmodal = document.getElementsByClassName("FileExplr")[0]
-let FHid = document.getElementsByClassName("HiddenF")[0]
-var span2 = document.getElementsByClassName("close2")[0];
-var span3 = document.getElementsByClassName("MaxBar")[0];
-var span4 = document.getElementsByClassName("MinBar")[0];
-
-let Edge = document.getElementsByClassName("Edgebutton")[0]
-let Edgemodal = document.getElementsByClassName("Browser")[0]
-let BHid = document.getElementsByClassName("HiddenB")[0]
-var span5 = document.getElementsByClassName("close3")[0];
-var span6 = document.getElementsByClassName("MaxBar2")[0];
-var span7 = document.getElementsByClassName("MinBar2")[0];
-
-let Paintmodal = document.getElementsByClassName("Paint")[0]
-let PHid = document.getElementsByClassName("HiddenP")[0]
-var span8 = document.getElementsByClassName("close4")[0];
-var span9 = document.getElementsByClassName("MaxBar3")[0];
-var span10 = document.getElementsByClassName("MinBar3")[0];
-
 
 let SeA = document.getElementById("seA")
 let NSeA = document.getElementById("nonSeA")
@@ -59,6 +41,10 @@ let NSeA3 = document.getElementById("nonSeA3")
 
 let SeA4 = document.getElementById("seA4")
 let NSeA4 = document.getElementById("nonSeA4")
+
+let actionmenu4 = document.getElementsByClassName("taskbar-Al")[0]
+let action4 = document.getElementsByClassName("actionbutton4")[0]
+
 function ShowDs(){
     setTimeout(() => {
         document.getElementById("myblank").style.visibility = 'hidden';
@@ -101,11 +87,46 @@ function StartDate(){
     var myDate = new Date();
     var myDay = myDate.getDay();
 
-    // Array of days.
-    var weekday = ['Sunday', 'Monday', 'Tuesday',
-        'Wednesday', 'Thursday', 'Friday', 'Saturday'
-    ];
     document.getElementById('txtdty').innerHTML =  dt + '/' + dToday.getMonth() + '/' + dToday.getFullYear();
+    setTimeout(startTime, 1000);
+}
+
+function startTimeM() {
+    const todayM = new Date();
+    let hM = todayM.getHours();
+    let mM = todayM.getMinutes();
+    var ampmM = "";
+    mM = checkTime(mM);
+
+    if (hM > 12) {
+        hM = hM - 12;
+        ampmM = " PM";
+    } else if (hM == 12){
+        hM = 12;
+        ampmM = " PM";
+    } else if (hM < 12){
+        ampmM = " AM";
+    } else {
+        ampmM = "PM";
+    };
+
+    document.getElementById('txtM').innerHTML =  hM + ":" + mM+ampmM;
+    setTimeout(startTime, 1000);
+}
+
+function checkTimeM(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+function StartDateM(){
+    const dTodayM = new Date();
+    let dtM = dTodayM.getDate();
+
+    var myDateM = new Date();
+    var myDayM = myDateM.getDay();
+
+    document.getElementById('txtdtyM').innerHTML =  dtM + '/' + dTodayM.getMonth() + '/' + dTodayM.getFullYear();
     setTimeout(startTime, 1000);
 }
 
@@ -148,86 +169,6 @@ document.getElementById('txtdtyH').innerHTML = weekday2[myDay2] + ', ' + Months2
 setTimeout(startTimeH, 1000);
 }
 
-function mouseDown() {
-	document.getElementById("myStartBtn").style.scale = "0.75";
-}
-  
-  function mouseUp() {
-	document.getElementById("myStartBtn").style.scale = "1";
-  }
-
-  function mouseDown2() {
-	document.getElementById("SearchInput2").style.scale = "0.75";
-  }
-  
-  function mouseUp2() {
-	document.getElementById("SearchInput2").style.scale = "1";
-  }
-
-  function mouseDown3() {
-	document.getElementById("myTabBtn").style.scale = "0.75";
-  }
-  
-  function mouseUp3() {
-	document.getElementById("myTabBtn").style.scale = "1";
-  }
-
-  function mouseDown4() {
-	document.getElementById("myP4").style.scale = "0.75";
-  }
-  
-  function mouseUp4() {
-	document.getElementById("myP4").style.scale = "1";
-  }
-
-  function mouseDown5() {
-	document.getElementById("myP5").style.scale = "0.75";
-  }
-  
-  function mouseUp5() {
-	document.getElementById("myP5").style.scale = "1";
-  }
-
-  function mouseDown6() {
-	document.getElementById("myP6").style.scale = "0.75";
-  }
-  
-  function mouseUp6() {
-	document.getElementById("myP6").style.scale = "1";
-  }
-
-  function mouseDown7() {
-	document.getElementById("myP7").style.scale = "0.75";
-  }
-  
-  function mouseUp7() {
-	document.getElementById("myP7").style.scale = "1";
-  }
-
-  function mouseDown8() {
-	document.getElementById("myP8").style.scale = "0.75";
-  }
-  
-  function mouseUp8() {
-	document.getElementById("myP8").style.scale = "1";
-  }
-
-  function mouseDown9() {
-	document.getElementById("myP9").style.scale = "0.75";
-  }
-  
-  function mouseUp9() {
-	document.getElementById("myP9").style.scale = "1";
-  }
-
-  function mouseDown10() {
-	document.getElementById("myP10").style.scale = "0.75";
-  }
-  
-  function mouseUp10() {
-	document.getElementById("myP10").style.scale = "1";
-  }
-
   var GreetDate = new Date();
   var hrs = GreetDate.getHours();
   var greet;
@@ -253,14 +194,10 @@ function mouseDown() {
   document.getElementById('greetingsM').innerHTML ='<b>' + greet2 + ',  Admin' + '</b>';
 
   startbutton.addEventListener("click", ()=>{
-	if(startmenu.style.bottom == "75px" || startmenuM.style.bottom == "65px"){
+	if(startmenu.style.bottom == "75px"){
         startmenu.style.bottom = "-665px";
         startmenu.style.visibility = "hidden";
         startmenu.style.opacity = "0";
-
-        startmenuM.style.bottom = "-665px";
-        startmenuM.style.visibility = "hidden";
-        startmenuM.style.opacity = "0";
 
         se.style.display = "none";
 		NSe.style.display = "block";
@@ -276,13 +213,33 @@ function mouseDown() {
         startmenu.style.visibility = "visible";
         startmenu.style.opacity = "100%";
 
+        tabmenu.style.bottom = "-655px"
+		tabview.style.display = "none";
+		desktops.style.display = "none";
+    }
+})
+
+startbuttonM.addEventListener("click", ()=>{
+	if(startmenuM.style.bottom == "65px"){
+        startmenuM.style.bottom = "-665px";
+        startmenuM.style.visibility = "hidden";
+        startmenuM.style.opacity = "0";
+
+        seM.style.display = "none";
+		NSeM.style.display = "block";
+
+	}
+	else{
+        seM.style.display = "block";
+		NSeM.style.display = "none";
+
         startmenuM.style.bottom = "65px";
         startmenuM.style.visibility = "visible";
         startmenuM.style.opacity = "100%";
 
-        tabmenu.style.bottom = "-655px"
-		tabview.style.display = "none";
-		desktops.style.display = "none";
+        actionmenu5.style.bottom = "-665px";
+        actionmenu5.style.visibility = "hidden";
+        actionmenu5.style.opacity = "0";
     }
 })
 
@@ -340,117 +297,6 @@ tabb.addEventListener("click", ()=>{
 	}
 })
 
-
-
-function cBgRWaves(){
-  document.body.style.backgroundImage = "url('https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096')";
-  document.getElementById("dstp1Img").src="https://pbs.twimg.com/media/FUrfhkyXsAwgIof?format=jpg&name=4096x4096";
-}
-
-function cBgBloom(){
-  document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/6233787.jpg')";
-  document.getElementById("dstp1Img").src="https://wallpaperaccess.com/full/6233787.jpg";
-}
-
-function cBgMon(){
-  document.body.style.backgroundImage = "url('https://uhdwallpapers.org/uploads/converted/21/06/11/macos-monterey-1680x1050_897687-mm-90.jpg')";
-  document.getElementById("dstp1Img").src="https://uhdwallpapers.org/uploads/converted/21/06/11/macos-monterey-1680x1050_897687-mm-90.jpg";
-}
-
-function cBgBls(){
-  document.body.style.backgroundImage = "url('https://www.hdwallpapers.in/download/windows_xp_bliss-wide.jpg')";
-  document.getElementById("dstp1Img").src="https://www.hdwallpapers.in/download/windows_xp_bliss-wide.jpg";
-}
-
-function cBgNS(){
-  document.body.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/bee6c9a9-78f2-4294-ad27-6ca52060f5a5/dc6du5w-92b68c4d-c41c-44f2-9cdf-38ca4d895c99.jpg')";
-  document.getElementById("dstp1Img").src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/bee6c9a9-78f2-4294-ad27-6ca52060f5a5/dc6du5w-92b68c4d-c41c-44f2-9cdf-38ca4d895c99.jpg";
-}
-
-function cBgFW(){
-  document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/d8/16/94/d81694d202eb63f975af5b6b0d8e37ac.png')";
-  document.getElementById("dstp1Img").src="https://i.pinimg.com/originals/d8/16/94/d81694d202eb63f975af5b6b0d8e37ac.png";
-}
-
-function cBgDN(){
-  document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/0c/fd/74/0cfd744b2ef587ddb7aca744cbb3069d.jpg')";
-  document.getElementById("dstp1Img").src="https://i.pinimg.com/originals/0c/fd/74/0cfd744b2ef587ddb7aca744cbb3069d.jpg";
-}
-
-function cBgAA(){
-  document.body.style.backgroundImage = "url('Assets/4k_cool_2020_art_4k_hd-3840x2160.jpg')";
-  document.getElementById("dstp1Img").src="Assets/4k_cool_2020_art_4k_hd-3840x2160.jpg";
-}
-
-
-
-function cbarHover() {
-  document.getElementsByClassName("CLoseBar")[0].style.scale = "1.1"
-  document.getElementsByClassName("CLoseBar")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("CLoseBar2")[0].style.scale = "1.1"
-  document.getElementsByClassName("CLoseBar2")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("CLoseBar3")[0].style.scale = "1.1"
-  document.getElementsByClassName("CLoseBar3")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-}
-
-function cbarHoverL() {
-  document.getElementsByClassName("CLoseBar")[0].style.scale = "1"
-  document.getElementsByClassName("CLoseBar")[0].style.boxShadow = "none"
-  document.getElementsByClassName("CLoseBar2")[0].style.scale = "1"
-  document.getElementsByClassName("CLoseBar2")[0].style.boxShadow = "none"
-  document.getElementsByClassName("CLoseBar3")[0].style.scale = "1"
-  document.getElementsByClassName("CLoseBar3")[0].style.boxShadow = "none"
-}
-
-function MxbarHover() {
-  document.getElementsByClassName("MaxBar")[0].style.backgroundColor = "orange"
-  document.getElementsByClassName("MaxBar")[0].style.scale = "1.1"
-  document.getElementsByClassName("MaxBar")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("MaxBar2")[0].style.backgroundColor = "orange"
-  document.getElementsByClassName("MaxBar2")[0].style.scale = "1.1"
-  document.getElementsByClassName("MaxBar2")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("MaxBar3")[0].style.backgroundColor = "orange"
-  document.getElementsByClassName("MaxBar3")[0].style.scale = "1.1"
-  document.getElementsByClassName("MaxBar3")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-}
-
-function MxbarHoverL() {
-  document.getElementsByClassName("MaxBar")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MaxBar")[0].style.scale = "1"
-  document.getElementsByClassName("MaxBar")[0].style.boxShadow = "none"
-  document.getElementsByClassName("MaxBar2")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MaxBar2")[0].style.scale = "1"
-  document.getElementsByClassName("MaxBar2")[0].style.boxShadow = "none"
-  document.getElementsByClassName("MaxBar3")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MaxBar3")[0].style.scale = "1"
-  document.getElementsByClassName("MaxBar3")[0].style.boxShadow = "none"
-}
-
-function MnbarHover() {
-  document.getElementsByClassName("MinBar")[0].style.backgroundColor = "rgb(0, 255, 0)"
-  document.getElementsByClassName("MinBar")[0].style.scale = "1.1"
-  document.getElementsByClassName("MinBar")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("MinBar2")[0].style.backgroundColor = "rgb(0, 255, 0)"
-  document.getElementsByClassName("MinBar2")[0].style.scale = "1.1"
-  document.getElementsByClassName("MinBar2")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-  document.getElementsByClassName("MinBar3")[0].style.backgroundColor = "rgb(0, 255, 0)"
-  document.getElementsByClassName("MinBar3")[0].style.scale = "1.1"
-  document.getElementsByClassName("MinBar3")[0].style.boxShadow = "0px 0px 7.5px rgba(37, 37, 37, 0.65)"
-}
-
-function MnbarHoverL() {
-  document.getElementsByClassName("MinBar")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MinBar")[0].style.scale = "1"
-  document.getElementsByClassName("MinBar")[0].style.boxShadow = "none"
-  document.getElementsByClassName("MinBar2")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MinBar2")[0].style.scale = "1"
-  document.getElementsByClassName("MinBar2")[0].style.boxShadow = "none"
-  document.getElementsByClassName("MinBar3")[0].style.backgroundColor = "rgba(100, 100, 100, 0.85)"
-  document.getElementsByClassName("MinBar3")[0].style.scale = "1"
-  document.getElementsByClassName("MinBar3")[0].style.boxShadow = "none"
-}
-
-
 //action menu 
 action.addEventListener("click", ()=>{
 	if(actionmenu.style.bottom == "65px"){
@@ -474,6 +320,9 @@ action.addEventListener("click", ()=>{
     actionmenu3.style.bottom = "-665px";
     actionmenu3.style.visibility = "hidden";
     actionmenu3.style.opacity = "0";
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
     actionmenu5.style.bottom = "-665px";
     actionmenu5.style.visibility = "hidden";
     actionmenu5.style.opacity = "0";
@@ -519,6 +368,9 @@ action2.addEventListener("click", ()=>{
     actionmenu.style.opacity = "0";
     actionmenu3.style.bottom = "-665px";
     actionmenu3.style.visibility = "hidden";
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
     actionmenu3.style.opacity = "0";
     actionmenu5.style.bottom = "-665px";
     actionmenu5.style.visibility = "hidden";
@@ -566,6 +418,11 @@ action3.addEventListener("click", ()=>{
     actionmenu2.style.bottom = "-665px";
     actionmenu2.style.visibility = "hidden";
     actionmenu2.style.opacity = "0";
+
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+
     actionmenu5.style.bottom = "-665px";
     actionmenu5.style.visibility = "hidden";
     actionmenu5.style.opacity = "0";
@@ -597,7 +454,6 @@ function calendarSH(){
     actionmenu5.style.visibility = "hidden";
     actionmenu5.style.opacity = "0";
 
-
   }
   else{
     actionmenu5.style.bottom = "65px";
@@ -613,14 +469,109 @@ function calendarSH(){
     actionmenu3.style.bottom = "-665px";
     actionmenu3.style.visibility = "hidden";
     actionmenu3.style.opacity = "0";
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
 
+    startmenuM.style.bottom = "-665px";
+    startmenuM.style.visibility = "hidden";
+    startmenuM.style.opacity = "0";
+    seM.style.display = "none";
+    NSeM.style.display = "block";
+    
     tabmenu.style.bottom = "-655px"
     tabview.style.display = "none";
     desktops.style.display = "none";
     actionmenu5.style.opacity = "1"
+
+    set.style.display = "none";
+    NSet.style.display = "block";
+    SeA3.style.display = "none";
+    NSeA3.style.display = "block";
+    SeA2.style.display = "none";
+    NSeA2.style.display = "block";
+    SeA.style.display = "none";
+    NSeA.style.display = "block";
+    SeA4.style.display = "none";
+    NSeA4.style.display = "block";	
   }
 
 }
+
+function TBA(){
+    if(actionmenu4.style.bottom == "75px"){
+      actionmenu4.style.bottom = "-665px";
+      actionmenu4.style.visibility = "hidden";
+      actionmenu4.style.opacity = "0";
+  
+      SeA4.style.display = "none";
+      NSeA4.style.display = "block";	
+    }
+    else{
+      actionmenu4.style.bottom = "75px";
+      actionmenu4.style.visibility = "visible";
+      actionmenu4.style.opacity = "100%";
+  
+      actionmenu.style.bottom = "-665px";
+      actionmenu.style.visibility = "hidden";
+      actionmenu.style.opacity = "0";
+      actionmenu2.style.bottom = "-665px";
+      actionmenu2.style.visibility = "hidden";
+      actionmenu2.style.opacity = "0";
+      actionmenu3.style.bottom = "-665px";
+      actionmenu3.style.visibility = "hidden";
+      actionmenu3.style.opacity = "0";
+  
+      actionmenu5.style.bottom = "-665px";
+      actionmenu5.style.visibility = "hidden";
+      actionmenu5.style.opacity = "0";
+      
+      tabmenu.style.bottom = "-655px"
+      tabview.style.display = "none";
+      desktops.style.display = "none";
+
+      SeA4.style.display = "block";
+      NSeA4.style.display = "none";	
+
+      set.style.display = "none";
+      NSet.style.display = "block";
+      SeA3.style.display = "none";
+      NSeA3.style.display = "block";
+      SeA2.style.display = "none";
+      NSeA2.style.display = "block";
+      SeA.style.display = "none";
+      NSeA.style.display = "block";
+
+    }
+  }
+
+  function taskbarLeft(){
+    document.getElementsByClassName("widgetbutton")[0].style.bottom = "-100px";
+
+    setTimeout(() => {
+        document.getElementsByClassName("widgetbutton")[0].style.display = "none";
+    }, 500);
+
+    document.getElementsByClassName("dockApps")[0].style.left = "15px";
+    document.getElementsByClassName("dockApps")[0].style.transform = "translateX(0%)";
+
+    startmenu.style.left = "2%";
+    startmenu.style.transform = "translateX(0%)";
+  }
+
+  function taskbarCenter(){
+    document.getElementsByClassName("widgetbutton")[0].style.display = "flex";
+
+    setTimeout(() => {
+        document.getElementsByClassName("widgetbutton")[0].style.bottom = "5px";
+    }, 250);
+
+    document.getElementsByClassName("dockApps")[0].style.left = "50%";
+    document.getElementsByClassName("dockApps")[0].style.transform = "translateX(-50%)";
+
+    startmenu.style.left = "50%";
+    startmenu.style.transform = "translateX(-50%)";
+  }
 
 const contextMenu = document.getElementById("context-menu");
 const scope = document.querySelector("#Desktop");
@@ -731,199 +682,6 @@ scope.addEventListener("click", (e) => {
           });
       });
 
-
-  
-function FileExplr(){
-	if(FIlesmodal.style.transform == "translate(-50%, -50%) scale(1)"){
-		FIlesmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-		FIlesmodal.style.opacity = "0";
-		FIlesmodal.style.top = "100%";
-		FHid.style.display = "block";
-		SeF.style.display = "none";
-		NSeF.style.display = "block";
-	}
-	else{
-		FIlesmodal.style.transform = "translate(-50%, -50%) scale(1)";
-		FIlesmodal.style.animation = "fadeEffect3 1s";
-    FIlesmodal.style.opacity = "1";
-		FIlesmodal.style.top = "50%";
-		FHid.style.display = "none";
-		startmenu.style.bottom = "-655px";
-		se.style.display = "none";
-		NSe.style.display = "block";
-		SeF.style.display = "block";
-		NSeF.style.display = "none";
-
-		span2.onclick = function() {
-			FIlesmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-      FIlesmodal.style.animation = "fadeEffect3 1s";
-			FIlesmodal.style.opacity = "0";
-			FIlesmodal.style.top = "50%";
-			FHid.style.display = "none";
-
-			SeF.style.display = "none";
-			NSeF.style.display = "block";
-		}
-
-		span3.onclick = function() {
-			if (FIlesmodal.style.width == "80%"){
-				FIlesmodal.style.transform = "translate(-50%, -50%)";
-				FIlesmodal.style.width = "100%";
-				FIlesmodal.style.borderRadius = "0";
-				FIlesmodal.style.height = "100%"
-			}
-			else {
-				FIlesmodal.style.width = "80%";
-				FIlesmodal.style.borderRadius = "8px";
-				FIlesmodal.style.height = "80%"
-
-			}
-		}
-
-		span4.onclick = function() {
-			FIlesmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-			FIlesmodal.style.opacity = "0";
-			FIlesmodal.style.top = "100%";
-			FHid.style.display = "block";
-			SeF.style.display = "none";
-			NSeF.style.display = "block";
-		}
-	}
-}
-
-function EdgeB(){
-	if(Edgemodal.style.transform == "translate(-50%, -50%) scale(1)"){
-		Edgemodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-		Edgemodal.style.opacity = "0";
-		Edgemodal.style.top = "100%";
-		BHid.style.display = "block";
-		SeB.style.display = "none";
-		NSeB.style.display = "block";
-	}
-	else{
-		Edgemodal.style.transform = "translate(-50%, -50%) scale(1)";
-   Edgemodal.style.animation = "fadeEffect3 1s";
-
-		Edgemodal.style.opacity = "1";
-		Edgemodal.style.top = "50%";
-		BHid.style.display = "none";
-		startmenu.style.bottom = "-655px";
-		se.style.display = "none";
-		NSe.style.display = "block";
-		SeB.style.display = "block";
-		NSeB.style.display = "none";
-
-		span5.onclick = function() {
-			Edgemodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-			Edgemodal.style.opacity = "0";
-			Edgemodal.style.top = "50%";
-			BHid.style.display = "none";
-
-			SeB.style.display = "none";
-			NSeB.style.display = "block";
-		}
-
-		span6.onclick = function() {
-			if (Edgemodal.style.width == "80%"){
-				Edgemodal.style.transform = "translate(-50%, -50%)";
-				Edgemodal.style.width = "100%";
-				Edgemodal.style.borderRadius = "0";
-				Edgemodal.style.height = "100%"
-			}
-			else {
-				Edgemodal.style.width = "80%";
-				Edgemodal.style.borderRadius = "8px";
-				Edgemodal.style.height = "80%"
-
-			}
-		}
-
-		span7.onclick = function() {
-			Edgemodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-			Edgemodal.style.opacity = "0";
-			Edgemodal.style.top = "100%";
-			BHid.style.display = "block";
-			SeB.style.display = "none";
-			NSeB.style.display = "block";
-		}
-	}
-}
-
-
-
-function disp_prompt()
-{
-var sitename = document.getElementById("adrsbr")
-document.getElementById("msg").src = "https://" + sitename.value;
-
-sitename.addEventListener("keydown", function (e) {
-    if (e.keyCode === 13) {
-        validate(e);
-    }
-});
-
-function validate(e) {
-	document.getElementById("msg").src = "https://" + sitename.value;
-}
-
-}
-
-function opacityM() {
-	document.getElementById("msg").src = "https://www.bing.com/search?q=" + document.getElementById("adrsbr").value;
-
-}
-
-function Paint(){
-	if(Paintmodal.style.transform == "translate(-50%, -50%) scale(1)"){
-		Paintmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-		Paintmodal.style.opacity = "0";
-		Paintmodal.style.top = "100%";
-		PHid.style.display = "block";
-
-	}
-	else{
-		Paintmodal.style.transform = "translate(-50%, -50%) scale(1)";
-    Paintmodal.style.animation = "fadeEffect3 1s";
-		Paintmodal.style.opacity = "1";
-		Paintmodal.style.top = "50%";
-		startmenu.style.bottom = "-655px";
-		se.style.display = "none";
-		NSe.style.display = "block";
-		PHid.style.display = "none";
-
-
-		span8.onclick = function() {
-			Paintmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-			Paintmodal.style.opacity = "0";
-			Paintmodal.style.top = "50%";
-		}
-
-		span9.onclick = function() {
-			if (Paintmodal.style.width == "87.5%"){
-				Paintmodal.style.transform = "translate(-50%, -50%)";
-				Paintmodal.style.width = "100%";
-				Paintmodal.style.borderRadius = "0";
-				Paintmodal.style.height = "100%"
-			}
-			else {
-				Paintmodal.style.transform = "translate(-50%, -52%)";
-				Paintmodal.style.width = "87.5%";
-				Paintmodal.style.borderRadius = "8px";
-				Paintmodal.style.height = "80%"
-
-			}
-		}
-
-		span10.onclick = function() {
-			Paintmodal.style.transform = "translate(-50%, -50%) scale(0.5)";
-			Paintmodal.style.opacity = "0";
-			Paintmodal.style.top = "100%";
-			PHid.style.display = "block";
-
-		}
-	}
-}
-
 function theme() {
   var element1 = document.getElementById("mytaskbar");
   var element2 = document.getElementById("themeS");
@@ -934,6 +692,7 @@ function theme() {
   var element7 = document.getElementById("themeCl");
   var element8 = document.getElementById("themeSA");
   var element9 = document.getElementsByClassName("desktops")[0];
+  var element10 = document.getElementById("themeTA");
 
   element1.classList.toggle("taskbarLight");
   element2.classList.toggle("lighttheme");
@@ -944,6 +703,7 @@ function theme() {
   element7.classList.toggle("lighttheme");
   element8.classList.toggle("lightthemeComp");
   element9.classList.toggle("desktopsL");
+  element10.classList.toggle("lighttheme");
 
   var comp1  = document.getElementsByClassName("StartPinned")[0];
   var comp2  = document.getElementsByClassName("StartPinnedApps")[0];
@@ -987,23 +747,6 @@ function theme() {
 
   }
 
-  function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("buttonTab");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-
     window.onclick = function(event) {
       if (event.target == document.getElementById("Desktop")) {
         startmenu.style.bottom = "-665px";
@@ -1038,8 +781,64 @@ function theme() {
         SeA3.style.display = "none";
         NSeA3.style.display = "block";
 
+        actionmenu4.style.bottom = "-665px";
+        actionmenu4.style.visibility = "hidden";
+        actionmenu4.style.opacity = "0";
+    
+        SeA4.style.display = "none";
+        NSeA4.style.display = "block";
+
         actionmenu5.style.bottom = "-665px";
         actionmenu5.style.visibility = "hidden";
         actionmenu5.style.opacity = "0";
+
+        document.getElementById("Calbtn").style.backgroundColor = "transparent";
+
       }
     }
+
+        var div = document.getElementById("status");
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+              display(battery);
+            });
+        } 
+        else if (navigator.battery) {
+            display(navigator.battery);
+        } 
+        else {
+            div.innerHTML = "70%";
+        }
+        
+        function display(battery) {
+            var status = "";
+            status += (battery.level * 100).toFixed(0) + "%";
+            div.innerHTML = status;
+        }
+
+        var div2 = document.getElementById("status2");
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+              display2(battery);
+            });
+        } 
+        else if (navigator.battery) {
+            display2(navigator.battery);
+        } 
+        else {
+            div2.innerHTML = "70%";
+        }
+        
+        function display2(battery) {
+            var status2 = "";
+            status2 += (battery.level * 100).toFixed(0) + "%";
+            div2.innerHTML = status2;
+        }
+
+function closeWelcome(){
+    document.getElementById("welcome-page").style.transform = "translate(-50%, -50%) scale(0)";
+
+    setTimeout(() => {
+        document.getElementById("welcome-page").style.display = "none";
+    }, 500);
+}
