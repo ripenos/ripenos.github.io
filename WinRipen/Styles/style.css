@@ -25,7 +25,7 @@ a { color: white;}
 }
 
 .darktheme {
-	background-color: rgba(22, 22, 22, 0.65);
+	background-color: rgba(0, 0, 0, 0.65);
 	-webkit-backdrop-filter: blur(35px);
 	  backdrop-filter: blur(35px) ;
 	  color: white;
@@ -40,7 +40,7 @@ a { color: white;}
 }
 
 .darkthemeComp {
-	background-color: rgba(0, 0, 0, 0.20);
+	background-color: rgba(10, 10, 10, 0.45);
 	  color: white;
 	  border: 0.5px solid #f1f1f110;
 	  box-shadow: none;
@@ -148,6 +148,8 @@ h5 {
 	  -webkit-transform: translate(-8px, -8px);	
       transform: translate(-8px, -8px);	
     }
+
+	.startbutton:active{scale: 0.85;}
     
     .startbutton #nonSe{display: block; }
     
@@ -201,7 +203,6 @@ h5 {
 		border-radius: 35px;
 		transition: all 0.3s;
 		margin-left: 20px;
-
     }
     
     .tabbutton :hover {
@@ -213,9 +214,8 @@ h5 {
 		transform: translate(-8px, -8px);
     }
     
-    .tabbutton #nonSet{
-      display: block;
-    }
+	.tabbutton:active{scale: 0.85;}
+    .tabbutton #nonSet{display: block;}
     
     .tabbutton #set {
       display: none;
@@ -248,6 +248,7 @@ h5 {
 	}
 
 	.calbutton:hover {background-color: rgba(170, 170, 170, 0.25);}
+	.calbutton:active{scale: 0.90;}
 
     .notybutton {
       float: right;
@@ -276,6 +277,8 @@ h5 {
 	transform: translate(-8px, -8px);
 	margin-bottom: -17px;
 }
+
+.FIlesbutton:active{scale: 0.85;}
 
 .FIlesbutton #seF {
 	display: none;
@@ -332,6 +335,8 @@ h5 {
 	transform: translate(-8px, -8px);
 	margin-bottom: -17px;
 }
+
+.Edgebutton:active{scale: 0.85;}
 
 .Edgebutton #seB {
 	display: none;
@@ -424,9 +429,9 @@ h5 {
 	transform: translate(-5px, -5px);
 }
 
-.actionbutton #nonSeA{
-	display: block;
-}
+.actionbutton:active{scale: 0.85;}
+
+.actionbutton #nonSeA{display: block;}
 
 .actionbutton #seA {
 	display: none;
@@ -459,6 +464,7 @@ h5 {
 	transform: translate(-5px, -5px);
 }
 
+.actionbutton2:active{scale: 0.85;}
 .actionbutton2 #nonSeA2{display: block;}
 
 .actionbutton2 #seA2 {
@@ -492,6 +498,7 @@ h5 {
 	transform: translate(-5px, -5px);
 }
 
+.actionbutton3:active{scale: 0.85;}
 .actionbutton3 #nonSeA3{display: block;}
 
 .actionbutton3 #seA3 {
@@ -516,7 +523,7 @@ h5 {
 	transition: 0.3s;
 }
 
-
+.actionbutton4:active{scale: 0.85;}
 .actionbutton4 :hover {
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
@@ -544,7 +551,7 @@ h5 {
 	#myTheme {display: none;}
 }
 
-::-webkit-scrollbar {width: 5px;}
+::-webkit-scrollbar {width: 5px; height: 5px;}
 
 ::-webkit-scrollbar-track {
     border-radius: 5px;
@@ -879,9 +886,9 @@ h5 {
 	height: 47px;
 	left: 1.5%;
 	z-index: 101;
-	background-color: rgba(22, 22, 22, 0.75);
-	-webkit-backdrop-filter: blur(35px) contrast(200%);
-	  backdrop-filter: blur(35px) contrast(200%);
+	background-color: rgba(0, 0, 0, 0.65);
+	-webkit-backdrop-filter: blur(35px);
+	  backdrop-filter: blur(35px);
 	  color: white;
 	  border: 0.5px solid #f1f1f123;
 	  box-shadow: 0px 0px 5px rgb(0, 0, 0);
@@ -1389,7 +1396,7 @@ h5 {
 	  transform: translateX(-50%);
 	  width: max-content;
 	  display: flex;
-	  padding-top: 25px;
+	  padding-top: 10px;
   }
   
   @media screen and (max-width: 850px) {
@@ -1405,16 +1412,16 @@ h5 {
 		  transform: translateX(-50%) scale(0.80);
 		  width: max-content;
 		  display: flex;
-		  padding-top: 25px;
 	  }
   }
   
   .welcome-content {
-	  margin-top: 100px;
-	  padding: 10px; 
-	  position: relative;
-	  height: calc(475px - 160px);
+	  margin-top: 90px;
+	  padding: 20px; padding-top: 25px;	  position: relative;
+	  height: calc(475px - 175px);
 	  overflow: scroll; overflow-x: hidden;
+	  background-color: rgba(66, 66, 66, 0.2);
+	  border-radius: 10px;
   }
   .welcome-content a{transition: all 0.3s;}
   .welcome-content a:hover{color: orange;}
@@ -1434,16 +1441,17 @@ h5 {
 	}
 	
 	.welcome-btn {
-	  color: white; 
-	  background-color:rgb(255, 123, 0);
-	  border-radius: 8px; 
-	   padding: 10px; 
-	   cursor: pointer; 
-	   font-size: 16px; font-weight: bold; 
-	   border: 1px solid #ccc; 
-	   transition: all 0.5s;
-	  margin-top: 10px; margin-right: -10px;
-	   float: right;
+		color: white; 
+		background-color:rgb(255, 123, 0);
+		border-radius: 8px; 
+		 padding: 10px; 
+		 cursor: pointer; 
+		 width: 100%;
+		 font-size: 16px; font-weight: bold; 
+		 border: 1px solid #ccc; 
+		 transition: all 0.5s;
+		margin-top: 10px; margin-right: 0px;
+		 float: right;
 	  }
   
 	  .welcome-btn:hover{
@@ -1454,11 +1462,14 @@ h5 {
 /* START MENU COMPs */
 
 .StartPinned {
-	display: inline-table;
+	position: relative;
+	display:flex;
 	float: right;	
 	margin-right: 20px;
 	padding: 9px;
-	width: 315px;
+	width: 315px; height: 95px;
+	overflow-x: scroll;
+	overflow-y: hidden;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -1466,37 +1477,31 @@ h5 {
 }
 
 .StartPinnedApps {
-	width: calc(100% / 6); height: auto;
-	padding: 10px;
-	display: inline-table;
+	width: calc(100% / 6); height: 60px;
+	padding: 10px; padding-left: 11px; padding-right: 11px;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
 	font-family: Arial, Helvetica, sans-serif;
 	border:  0.5px solid #f1f1f12a;
 	align-items: center;
-	justify-items: center;
 	transition: all 0.3s;
-	margin: 2.33px;
+	margin: 2.33px;  margin-right: 5.5px;
 }
 
 .StartPinnedApps-r {
-	width: 42.5%; height: 30px;
-	padding: 10px;
-	display: inline-table;
+	width: calc(100% / 2); height: 30px;
+	padding: 10px;	padding-right: 35px;
+	display: flex;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
 	font-family: Arial, Helvetica, sans-serif;
 	border:  0.5px solid #f1f1f12a;
 	align-items: center;
-	justify-items: center;
-	margin: 2.5px; padding-left: 0; margin-right: 9.5px;
 	transition: all 0.3s;
+	margin: 2.33px; margin-right: 5px;
 }
 
-.StartPinnedApps-r p {
-	display: flex;
-	margin-top: calc(100% / 15);
-}
+#Recommended{height: 70px; padding-bottom: 0;}
 
 .StartPinnedApps-r img {float: left;}
 .StartPinnedApps-r:hover{background-color: rgba(54, 54, 54, 0.2);}
@@ -1506,38 +1511,57 @@ h5 {
 
 .StartPinnedA {
 	position: absolute;
-	bottom: 10px; right: 20px;
+	bottom: 10px; right: 20px; padding: 5px; padding-bottom: 0; padding-top: 6px;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
+	width: 115px; height: 65px;
 	font-family: Arial, Helvetica, sans-serif;
 	border:  0.5px solid #f1f1f12a;
+	overflow: hidden;
 }
 
-.StartPinnedA img{
-	filter: invert(100%);
+.StartPinnedA .btn-Stc{
 	cursor: pointer;
 	border-radius: 5px;
-	transition: all 0.3s;
-	padding: 5px; margin: 5px;
-	display:grid;
+	transition: all 0.3s; margin-bottom: 3px;
+	padding: 3px;
+	color: white;
+	display:flex;
 }
 
-.StartPinnedA img:hover{ background-color: rgba(92, 92, 92, 0.2);}
-.StartPinnedA img:active{background-color: rgba(54, 54, 54, 0.2);}
+.StartPinnedA .btn-Stc img{filter: invert(100%);}
+.StartPinnedA .btn-Stc p{font-size: 13.5px; margin-top: 2.5px;}
+.StartPinnedA  .btn-Stc:hover{ background-color: rgba(92, 92, 92, 0.2);}
+.StartPinnedA  .btn-Stc:active{background-color: rgba(54, 54, 54, 0.2);}
 
 .StartPinnedW {
 	position: absolute;
-	bottom: 70px;
-	padding: 11px; padding-top: 13px;
-	width: 175px;
+	bottom: 87.5px;
+	padding: 11px;padding-bottom: 15px;
+	width: 175px; height: 100px;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
 	font-family: Arial, Helvetica, sans-serif;
 	border:  0.5px solid #f1f1f12a;
 }
 
+
 .musicThumbNailD{
-	float: left; background: rgba(53, 53, 53, 0.45); padding: 12px; border-radius: 5px;
+	float: left; background: rgba(53, 53, 53, 0.45); padding: 19px; border-radius: 5px; margin-bottom: 5px;
+}
+
+#musicW-start-no{
+	position: absolute;
+	font-size: 10px;
+	bottom: 37.5px;
+	left: 17.5px;
+}
+
+#musicW-end-no{
+	position: absolute;
+	font-size: 10px;
+	bottom: 37.5px;
+	right: 17.5px;
 }
 
 .StartPinnedW2 {
@@ -1551,6 +1575,8 @@ h5 {
 	border:  0.5px solid #f1f1f12a;
 }
 
+.StartPinnedW2 p{padding-bottom: 5px; text-align: center;}
+
 .StartPinnedW2 .Savebtn {
 	display:inline-block; margin-right: -15px; 
 	margin-bottom: -10px;filter: invert(100%); 
@@ -1562,15 +1588,17 @@ h5 {
 
 .StartPinnedW3 {
 	position: absolute;
-	bottom: 10px; right: 70px;
-	padding: 11px;
-	width: 55px;
-	height: 123px;
+	bottom: 87.5px;
+	right: 20px;
+	padding: 13px;
+	width: 100px;
+	height: 100px;
 	background-color: rgba(0, 0, 0, 0.20);
 	border-radius: 8px;
 	font-family: Arial, Helvetica, sans-serif;
 	border:  0.5px solid #f1f1f12a; overflow: hidden;
 }
+
   .slider {
 	appearance: none;
 	-webkit-appearance: none;
