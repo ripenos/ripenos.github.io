@@ -6,6 +6,7 @@
     <title>RGOS | Windows Ripen</title>
     <link rel="shortcut icon" href="Assets/windows11-logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="Assets/windows11-logo.png" />
+    <link rel="manifest" href="manifest.json">
 
     <!-- Linking the CSS stylesheet -->
     <link rel="stylesheet" href="Styles/style.css">
@@ -24,6 +25,9 @@
     </style>
 </head>
 <body class="bg" onload="ShowDs(), startTime(),  StartDate(), startTimeM(),  StartDateM(), startTimeH(),  StartDateH()">
+
+    <noscript>This Project doesn't represent a real full functioning Operating System. To run this project you need javascript.</noscript>
+
     <div class="blank" id="myblank"></div>
 
     <!-- TASKBAR -->
@@ -145,7 +149,7 @@
                         </CENTER>
                         <!--App Search box-->
                         <input type="text" placeholder="Search apps" class="searchS" id="mySearch" onkeyup="FunctionAppS()" title="App Search"><br><br>
-                        <img src="Assets/AppsIco.png" width="17px" style="margin-left: -160px; margin-top: -25px;-webkit-transform: translate(0px, -33.5px); transform: translate(0px, -33.5px);">
+                        <img src="Assets/AppsIco.png" width="17px" style="margin-left: -160px; margin-top: -22.5px;-webkit-transform: translate(0px, -33.5px); transform: translate(0px, -33.5px);">
 
                         <!--Apps-->
                         <div class="darkthemeComp" id="themeSA" 
@@ -818,5 +822,7 @@
         
 	<!-- Linking the external JavaScript -->
     <script src="Scripts/sketch.js"></script>
+    <script src="index.js"></script>
+
     </body>
 </html>
