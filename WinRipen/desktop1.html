@@ -33,7 +33,8 @@
     <!-- TASKBAR -->
     <div class="taskbar" id="mytaskbar">
 
-        <div class="widgetbutton">
+        <!--Widget button-->
+        <div class="widgetbutton"  onclick="widgetShow()">
             <h6 style="font-size: 12px;">No Music Played</h6>
 
                 <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" >
@@ -761,6 +762,87 @@
             </div>
         </div>
 
+        <div class="widgets">
+            <div class="widgets-cont">
+                <div class="appControls">
+                    <div id="close" onclick="widgetHide()"></div>
+                </div>
+                <input type="text" placeholder="Search the web" class="searchT" style=" font-size: 13px; padding-left: 15px; " id="widget-search">
+                <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2W">
+
+                <div class="widgetB">
+                    <div class="widgetB-left">
+                        <div id="ww_f79cc37756cf1" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}' class="weather-widgetB" style="height: 270px;">Weather Data Source: <a href="https://tiempolargo.com/" id="ww_f79cc37756cf1_u" target="_blank">Tiempo a 25 días</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_f79cc37756cf1"></script>
+                        <iframe src="Apps - (Testing)/calc/index.html" frameborder="0" class="calcW"></iframe>
+                        <iframe src="Apps - (Testing)/QR-generator/index.html" frameborder="0" class="qrW"></iframe>
+                    </div>    
+                    <div class="widgetB-right">
+                        <div class="Music-widget">
+                            <div class="musicThumbNailD2">🎵</div>
+                            <h6 id="widget-music-title">No Music Playing</h6>
+                            <h6 id="widget-music-author">Various Artist</h6>
+                            <h6 id="musicW-start-no2">00:00</h6>
+                            <h6 id="musicW-end-no2">--:--</h6>
+                            <span id="MW-repeat" class="material-symbols-rounded">repeat</span>				
+                            <span id="MW-shuffle" class="material-symbols-rounded">shuffle</span>						
+                            <div id="widgetM-controls">
+                                <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" width="18px" 
+                                style="filter: invert(100%); cursor: pointer; float: right; " >
+                                <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                style="filter: invert(100%); cursor: pointer; float: right; " >							
+                                <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" width="18px" 
+                                style="filter: invert(100%); cursor: pointer; float: right; " >
+                            </div>
+                            <br>
+                            <div class="playlist-cont">
+                                <div class="playlist">
+                                    <div class="musicThumbNailD2PL">🎵</div>
+                                    <div class="playlist-details"><h6>Song 1</h6>
+                                    <h6>Artist</h6></div>
+                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer;" >		
+                                </div>
+                                <div class="playlist">
+                                    <div class="musicThumbNailD2PL">🎵</div>
+                                    <div class="playlist-details"><h6>Song 2</h6>
+                                    <h6>Artist</h6></div>
+                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer;" >		
+                                </div>
+                                <div class="playlist">
+                                    <div class="musicThumbNailD2PL">🎵</div>
+                                    <div class="playlist-details"><h6>Song 3</h6>
+                                    <h6>Artist</h6></div>
+                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer;" >		
+                                </div>
+                                <div class="playlist">
+                                    <div class="musicThumbNailD2PL">🎵</div>
+                                    <div class="playlist-details"><h6>Song 4</h6>
+                                    <h6>Artist</h6></div>
+                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer;" >		
+                                </div>
+                            </div>
+                            <input type="range" min="1" max="100" value="0" class="slider" id="WidgetM-slider">
+                        </div>
+                        <iframe src="Apps - (Testing)/translate-widget/index.html" frameborder="0" class="TranW"></iframe>
+                        <iframe src="Apps - (Testing)/Dictionary-widget/index.html" frameborder="0" class="dictW"></iframe>
+                        <div class="rgosW">
+                            <h3>RGOS Family</h3>
+                            <a href="https://ripenos.github.io" target="_blank">
+                                <button>
+                                    <img src="https://ripenos.github.io/Assets/General/ripenOs.png" alt="">
+                                    Ripen OS
+                                </button>
+                            </a>
+                        </div>
+                    </div>  
+                </div>
+
+            </div>
+        </div>
+
         <div id="Desktop">
             <div class="Welcome" id="welcome-page">
                 <div class="darktheme" id="themeWl">
@@ -787,9 +869,23 @@
                     <h4>©️ Credits</h4>
                     <p>The RGOS uses assets and templates provided by other such fascinating providers. They are:
                         <ol>
-                            <li>Icons by <a href="https://icons8.com/">icons8.com</a> and <a href="https://fonts.google.com/icons">Google fonts and icons</a>.</li>
-                            <li>Weather widgets by <a href="https://weatherwidget.org/">Weatherwidget</a>.</li>
-                            <li>Code reference by <a href="https://www.w3schools.com/">W3schools</a>.</li>
+                            <li>Icons by <a href="https://icons8.com/" target="_blank">icons8.com</a> and <a href="https://fonts.google.com/icons" target="_blank">Google fonts and icons</a>.</li>
+                            <li>Weather widgets by:</li>
+                                <ul>
+                                    <li><a href="https://weatherwidget.org/" target="_blank">Weatherwidget.org</a></li>
+                                    <li>
+                                        <a
+                                            href="https://www.tomorrow.io/weather-api/"
+                                            target="_blank">
+                                            <img
+                                            alt="Powered by the Tomorrow.io Weather API"
+                                            src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                                            width="500px" style="scale: 5.1; margin-left: 92.5px;-webkit-transform: translateY(-0.25px); transform: translateY(-0.25px);"
+                                            />
+                                        </a>
+                                    </li>
+                                </ul>
+                            <li>Code reference by <a href="https://www.w3schools.com/" target="_blank">W3schools</a>.</li>
                         </ol>
                     </p>
                 </div>
