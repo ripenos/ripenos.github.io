@@ -22,6 +22,8 @@ let action3 = document.getElementsByClassName("actionbutton3")[0]
 let actionmenu3 = document.getElementsByClassName("actionmenu3")[0]
 let actionmenu5 = document.getElementsByClassName("wrapper")[0]
 let action5 = document.getElementsByClassName("Calbtn")[0]
+let widgetB = document.getElementsByClassName("widgetbutton")[0]
+let widgetM = document.getElementsByClassName("widgets")[0]
 
 let se = document.getElementById("Se")
 let  NSe = document.getElementById("nonSe")
@@ -448,6 +450,57 @@ action3.addEventListener("click", ()=>{
 	}
 })
 
+function widgetHide(){
+    widgetM.style.left = "-100vw";
+}
+
+function widgetShow(){
+    if(widgetM.style.left == "0"){
+        widgetM.style.left = "-100vw";
+      }
+      else{
+        widgetM.style.left = "0";
+
+        actionmenu5.style.bottom = "-665px";
+        actionmenu5.style.visibility = "hidden";
+        actionmenu5.style.opacity = "0";
+        actionmenu.style.bottom = "-665px";
+        actionmenu.style.visibility = "hidden";
+        actionmenu.style.opacity = "0";
+        actionmenu2.style.bottom = "-665px";
+        actionmenu2.style.visibility = "hidden";
+        actionmenu2.style.opacity = "0";
+        actionmenu3.style.bottom = "-665px";
+        actionmenu3.style.visibility = "hidden";
+        actionmenu3.style.opacity = "0";
+        actionmenu4.style.bottom = "-665px";
+        actionmenu4.style.visibility = "hidden";
+        actionmenu4.style.opacity = "0";
+    
+        startmenuM.style.bottom = "-665px";
+        startmenuM.style.visibility = "hidden";
+        startmenuM.style.opacity = "0";
+        seM.style.display = "none";
+        NSeM.style.display = "block";
+        
+        tabmenu.style.bottom = "-655px"
+        tabview.style.display = "none";
+        desktops.style.display = "none";
+        actionmenu5.style.opacity = "1"
+    
+        set.style.display = "none";
+        NSet.style.display = "block";
+        SeA3.style.display = "none";
+        NSeA3.style.display = "block";
+        SeA2.style.display = "none";
+        NSeA2.style.display = "block";
+        SeA.style.display = "none";
+        NSeA.style.display = "block";
+        SeA4.style.display = "none";
+        NSeA4.style.display = "block";	
+      }
+}
+
 function calendarSH(){
   if(actionmenu5.style.bottom == "65px"){
     actionmenu5.style.bottom = "-665px";
@@ -547,12 +600,14 @@ function TBA(){
 
   function taskbarLeft(){
     document.getElementsByClassName("widgetbutton")[0].style.bottom = "-100px";
+    document.getElementsByClassName("widgetbutton")[0].style.left = "calc(100% - 460px)";
 
     setTimeout(() => {
-        document.getElementsByClassName("widgetbutton")[0].style.display = "none";
-    }, 500);
+        document.getElementsByClassName("widgetbutton")[0].style.bottom = "5px";    
+    }, 1050);
 
     document.getElementsByClassName("dockApps")[0].style.left = "15px";
+    document.getElementsByClassName("dockApps")[0].style.webkitTransform = "translateX(0%)";
     document.getElementsByClassName("dockApps")[0].style.transform = "translateX(0%)";
 
     startmenu.style.left = "2%";
@@ -560,13 +615,15 @@ function TBA(){
   }
 
   function taskbarCenter(){
-    document.getElementsByClassName("widgetbutton")[0].style.display = "flex";
+    document.getElementsByClassName("widgetbutton")[0].style.bottom = "-100px";
+    document.getElementsByClassName("widgetbutton")[0].style.left = "6px";
 
     setTimeout(() => {
         document.getElementsByClassName("widgetbutton")[0].style.bottom = "5px";
-    }, 250);
+    }, 1050);
 
     document.getElementsByClassName("dockApps")[0].style.left = "50%";
+    document.getElementsByClassName("dockApps")[0].style.webkitTransform = "translateX(-50%)";
     document.getElementsByClassName("dockApps")[0].style.transform = "translateX(-50%)";
 
     startmenu.style.left = "50%";
@@ -792,6 +849,8 @@ function theme() {
         actionmenu5.style.visibility = "hidden";
         actionmenu5.style.opacity = "0";
 
+        widgetM.style.left = "-100vw";
+
         document.getElementById("Calbtn").style.backgroundColor = "transparent";
 
       }
@@ -836,6 +895,7 @@ function theme() {
         }
 
 function closeWelcome(){
+    document.getElementById("welcome-page").style.webkitTransform = "translate(-50%, -50%) scale(0)";
     document.getElementById("welcome-page").style.transform = "translate(-50%, -50%) scale(0)";
 
     setTimeout(() => {
