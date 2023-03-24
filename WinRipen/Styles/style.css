@@ -92,25 +92,26 @@ h5 {
 		position: absolute;
 		transition: all 0.3s;
 		border: none;
-		left: 6px;
-		bottom: -100px;
+		right: 255px;
+		bottom: 5px;
 		width: 175px;
 		color: white;
 		cursor: pointer;
 		font-weight: bold;
-		border-radius: 12.5px;
+		border-radius: 10px;
 		padding: 11px;
 		z-index: 203;
 		background-color: transparent;
 		text-align: left;
 		font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 		font-size: 12px;
-		display:none ;
+		display:flex ;
 	}
 
-	.widgetbutton:hover {background-color: rgba(170, 170, 170, 0.15);}
+	.widgetbutton:hover {background-color: rgba(170, 170, 170, 0.20);}
+	.widgetbutton:active{scale: 0.95;}
 	.widgetbutton h6 {margin-right: 10px;}
-	.widgetbutton img {padding-left: 7.5px; margin-top: 2.5px; filter: invert(100%); cursor: pointer; width: 13px; height: 13px;}
+	.widgetbutton img {padding-left: 7.5px; margin-top: 2.5px; filter: invert(100%); cursor: pointer; width: 13px; height: 13px; transition: all 0.3s;}
 	.widgetbutton img:hover{scale: 1.1;}
 
 	.dockApps {
@@ -234,11 +235,11 @@ h5 {
 		border: none;
 		right: 6px;
 		bottom: 5px;
-		width: 110px;
+		width: 105px;
 		color: white;
 		cursor: pointer;
 		font-weight: bold;
-		border-radius: 12.5px;
+		border-radius: 10px;
 		padding: 3px;
 		z-index: 203;
 		background-color: transparent;
@@ -416,17 +417,17 @@ h5 {
 	z-index: 111;
 	width: 25px;
 	height: 25px;
-	border-radius: 35px;
+	border-radius: 5px;
 	transition: 0.3s;
 }
 
 .actionbutton :hover {
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	padding: 5px;
+	border-radius: 7.5px;
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton:active{scale: 0.85;}
@@ -437,11 +438,11 @@ h5 {
 	display: none;
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
+	padding: 5px;
+	border-radius: 7.5px;
 	border: 0.15px solid rgba(170, 182, 221, 0.10);
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton2 {
@@ -458,10 +459,10 @@ h5 {
 .actionbutton2 :hover {
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	padding: 5px;
+	border-radius: 7.5px;
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton2:active{scale: 0.85;}
@@ -471,11 +472,11 @@ h5 {
 	display: none;
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
+	padding: 5px;
+	border-radius: 7.5px;
 	border: 0.15px solid rgba(170, 182, 221, 0.10);
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton3 {
@@ -492,10 +493,10 @@ h5 {
 .actionbutton3 :hover {
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	padding: 5px;
+	border-radius: 7.5px;
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton3:active{scale: 0.85;}
@@ -505,11 +506,11 @@ h5 {
 	display: none;
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
+	padding: 5px;
+	border-radius: 7.5px;
 	border: 0.15px solid rgba(170, 182, 221, 0.10);
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton4 {
@@ -527,10 +528,10 @@ h5 {
 .actionbutton4 :hover {
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	padding: 5px;
+	border-radius: 7.5px;
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 .actionbutton4 #nonSeA4{display: block;}
@@ -539,11 +540,11 @@ h5 {
 	display: none;
 	background-color: rgba(212, 212, 212, 0.25); 	
 	border:  0.5px solid #0000001f;
-	padding: 4px;
-	border-radius: 15px;
+	padding: 5px;
+	border-radius: 7.5px;
 	border: 0.15px solid rgba(170, 182, 221, 0.10);
-	-webkit-transform: translate(-5px, -5px);
-	transform: translate(-5px, -5px);
+	-webkit-transform: translate(-6px, -6px);
+	transform: translate(-6px, -6px);
 }
 
 @media (max-width:775px) {
@@ -806,27 +807,33 @@ h5 {
 	position:absolute;
 	width: 100vw; 
 	top: 0; 
-	height: calc(100vh - 47px); 
-	height: calc(100dvh - 47px); 
+	height: calc(100vh - 78px); 
+	height: calc(100dvh - 78px); 
 }
 
 .desk-widget-info{
-	margin-top: 15px; margin-right: -20px; background-color: rgba(0, 0, 0, 0.55);
-				   padding: 5px; border-radius: 8px 0 0 8px ;-webkit-backdrop-filter: blur(25px);  backdrop-filter: blur(25px); padding-left: 25px; padding-right: 20px;
-				   border: 1px solid #f1f1f138; border-right: 0px; transition: all 0.3s;
+	margin-top: 15px; 
+	margin-right: -20px; 
+	background-color: rgba(0, 0, 0, 0.65);
+	padding: 5px; 
+	border-radius: 8px 0 0 8px ;
+	-webkit-backdrop-filter: blur(25px);  backdrop-filter: blur(25px); 
+	padding-left: 25px; padding-right: 20px;
+	border: 1px solid #f1f1f138; 
+	border-right: 0px; transition: all 0.3s;
 }
   
 @media (max-width: 850px){.desk-widget-info{display: none;}}
 
 .appControls{
 	position:absolute;
-	top: 0px; right: 15px;
+	top: 0px; right: 25px;
   }
 
 #close{
 	background: red;
-	height: 5px;
-	width: 85px;
+	height: 6px;
+	width: 90px;
 	border-radius: 5px;
 	transition: all 0.5s;
 	cursor: pointer;
@@ -834,11 +841,11 @@ h5 {
   }
   
   #close:hover{
-	scale: 1.1; 	height: 10px; -webkit-transform: translateY(5px); transform: translateY(5px);
+	height: 7.5px; -webkit-transform: scale(1.1) translateY(2px); transform: scale(1.1)   translateY(2px);
 	box-shadow: 0px 0px 2px black;
   }
   
-  #close:active{-webkit-scale: 1; scale: 1;}
+  #close:active{ -webkit-transform: scale(1); transform: scale(1);  }
   
   #min{
 	background:rgba(135, 135, 135, 0.35);
@@ -1041,6 +1048,7 @@ h5 {
 	  height: 100%;
 	  overflow: auto;
 	  background-color: rgba(0, 0, 0, 0.75);
+	  -webkit-backdrop-filter: blur(50px) ;
 	  backdrop-filter: blur(50px) ;
 	  transition: all 0.3s;
   }
@@ -1056,6 +1064,7 @@ h5 {
 	  height: 75px;
 	  overflow: hidden;
 	  background-color: rgba(29, 29, 29, 0.5);
+	  -webkit-backdrop-filter: blur(25px) contrast(110%);
 	  backdrop-filter: blur(25px) contrast(110%);
 	  border-radius: 17px;
 	  border: 0.5px solid rgba(158, 158, 158, 0.1);
@@ -1083,6 +1092,7 @@ h5 {
 	  overflow: hidden;
 	  background-color: rgb(0,0,0);
 	  background-color: rgba(83, 83, 83, 0.2);
+	  -webkit-backdrop-filter: blur(15px) contrast(110%); 
 	  backdrop-filter: blur(15px) contrast(110%); 
 	  border-radius: 17px;
 	  border: 1px solid rgba(182, 182, 182, 0.06);
@@ -1134,6 +1144,7 @@ h5 {
 	  width: 225px;
 	  height: 145px;
 	  background-color: rgba(83, 83, 83, 0.2);
+	  -webkit-backdrop-filter: blur(15px) contrast(110%); 
 	  backdrop-filter: blur(15px) contrast(110%); 
 	  border-radius: 17px;
 	  border: 1px solid rgba(182, 182, 182, 0.06);
@@ -1359,22 +1370,12 @@ h5 {
 	  margin-right: 100px;
   }
   
-  /*#bin{
-	  bottom: 65px;
-	  right: 2%;
-  }
-  
-  #thispc{
-	  position: absolute;
-	  transform: translateY(-120px);
-  }*/
-  
   .Welcome{
 	  position: absolute;
 	  width: 450px;
 	  left: 50%;	top: 50%;
-	  -webkit-transform: translate(-50%, -50%);
-	  transform: translate(-50%, -50%);
+	  -webkit-transform: translate(-50%, -55%);
+	  transform: translate(-50%, -55%);
 	  height: 475px;
 	  transition: all 0.5s;
 	  z-index: 51;
@@ -1438,6 +1439,14 @@ h5 {
 	
 	.welcome-content ol{
 	  padding: 10px;  font-size: 13px; padding-left: 35px; padding-top: 5px;
+	}
+
+	.welcome-content ul{
+		padding: 10px;  font-size: 13px; padding-left: 25px; padding-top: 6px;
+	}
+
+	.welcome-content ul li{
+		margin: 2px; margin-bottom: 5px;
 	}
 	
 	.welcome-btn {
@@ -1618,6 +1627,7 @@ h5 {
 	padding: 11px;
 	padding-top: 15px;
 	width: 170px; height: 352px;
+	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
 	text-align: justify; overflow-y: scroll; overflow-x: hidden; margin-right: 2px;
 }
@@ -1684,4 +1694,290 @@ h5 {
 .tab {
     overflow: auto;
     width: 100%;
+}
+
+.widgets{
+	position: absolute;
+	width: 40%;
+	height: calc(100vh - 100px); 
+	height: calc(100dvh - 100px); 
+	border-radius: 0 20px 20px 0;
+	top: 0;
+	left: -100vw;
+	background-color: rgba(0, 0, 0, 0.65);
+	-webkit-backdrop-filter: blur(35px);
+	  backdrop-filter: blur(35px) ;
+	box-shadow: 0px -0.5px 1px rgba(95, 95, 95, 0.1);
+	z-index: 98;
+	color: white;
+	padding: 10px;
+	margin-top: 10px;
+	transition: all 1s;
+	overflow: hidden;
+	border: 1px solid rgba(209, 209, 209, 0.329);
+	border-left: none;
+}
+
+@media screen and (max-width: 1355px) {
+	.widgets{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.widgets{
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.widgets{
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.widgets{display: none;}
+}
+
+.widgets-cont{
+	padding-top: 20px;
+	width: 92.5%;
+}
+
+#widget-search{
+	width: 100%;
+}
+
+#SearchInput2W{
+	position: absolute;
+	transition: all 0.1s;
+	right: 6.85%;
+	top: 32.5px;
+}
+
+.widgetB{
+	margin-top: 8px;
+	position: absolute;
+	padding-right: 10px;
+	padding-top: 20px;
+	width: 91%; 
+	left: 50%; 
+	height: calc(100% - 90px); 
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	overflow-y: scroll; overflow-x: hidden;
+}
+
+.calcW{
+	width: 92%;
+	margin-top: 10px;
+	border-radius: 20px;
+	height: 450px;
+	padding: 10px;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.TranW{
+		width: 99%;
+		margin-top: 10px;
+		border-radius: 20px;
+		background-color: rgba(0, 0, 0, 0.20);
+		height: 455px;
+		border:  0.5px solid #f1f1f12a;
+}
+
+.qrW{
+	width: 99%;
+	margin-top: 10px;
+	border-radius: 20px;
+	height: 520px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border:  0.5px solid #f1f1f12a;
+}
+
+.dictW{
+	width: 99%;
+	margin-top: 10px;
+	border-radius: 20px;
+	height: fit-content;
+	min-height: 350px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border:  0.5px solid #f1f1f12a;
+}
+
+.widgetB-left{
+	position: relative;
+	float: left;
+	width: 49%;
+}
+
+.widgetB-right{
+	position: relative;
+	float: right;
+	width: 49%;
+}
+
+.weather-widgetB{
+position: relative;
+width: 100%;
+border-radius: 20px;
+border:  0.5px solid #f1f1f12a;
+}
+
+.rgosW{
+	width: 92%;  height: 81px;
+	position: relative;
+	padding: 15px; padding-left: 10px; padding-right: 10px;
+	margin-top: 10px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 20px;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.rgosW h3{
+	padding-left: 5px;
+}
+
+.rgosW a{
+	text-decoration: none;
+}
+.rgosW img{width: 30px; margin-right: 5px;}
+
+.rgosW button{
+		display: flex; 
+		width: 100%; 
+		padding: 12px;margin-top: 10px; padding-left: 14px;
+			align-items: center; border-radius: 15px;
+		background: none; border: none; 	cursor: pointer;
+		color: white;  transition: all 0.3s;
+		font-size: 20px; font-weight: 600;
+		background-color: rgba(167, 167, 167, 0.05);
+}
+
+.rgosW button:hover{background-color: rgba(167, 167, 167, 0.1);}
+.rgosW button:active{scale: 0.95;}
+.Music-widget {
+	width: 92.5%;  height: 300px;
+	position: relative;
+	padding: 11px;padding-bottom: 15px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 20px;
+	border:  0.5px solid #f1f1f12a;
+}
+
+.Music-widget #widget-music-title{
+	margin-left: 65px; 
+	position: absolute;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.Music-widget #widget-music-author{
+	margin-left: 65px; 
+	position: absolute;
+	margin-top: 32.5px;
+	color: #bbb;
+}
+
+.musicThumbNailD2{
+	float: left; background: rgba(53, 53, 53, 0.45); padding: 19px; border-radius: 10px; margin-bottom: 5px;
+}
+
+.Music-widget span{
+	padding: 5px;
+	border-radius: 7.5px;
+}
+
+.Music-widget span:hover{
+	background-color: #b9b9b924;
+}
+
+#MW-repeat{
+	position: absolute;
+	top: 72.5px; left: 15px;
+	-webkit-transform: scale(0.80);
+	transform: scale(0.80);
+}
+
+#MW-shuffle{
+	position: absolute;
+	top: 72.5px; left: 45px;
+	-webkit-transform: scale(0.80);
+	transform: scale(0.80);
+}
+
+.playlist-cont{
+	width: 97.5%;
+	position: relative;
+	top: 35px;
+	height: 150px;
+	padding-top: 5px; padding-right: 5px; padding-bottom: 5px;
+	overflow-x: hidden; overflow-y: scroll;
+	background-color: #b9b9b915;
+	border-radius: 10px;
+}
+
+.playlist{
+	width: 90%;
+	margin-left: 5px;
+	padding: 10px;
+	position: relative;
+	border-radius: 10px;
+}
+
+.playlist:hover{
+	background-color: #b9b9b915;
+}
+
+.playlist .musicThumbNailD2PL{
+	background: rgba(53, 53, 53, 0.75);
+	text-align: center; width: 22px; text-align: center;
+	padding: 10px;
+	  border-radius: 50%; margin-bottom:5px;
+}
+
+.playlist img{
+	position: absolute;
+	top: 17.5px; right: 10px;
+}
+
+.playlist-details{
+	position: absolute;
+	top: 20px; left: 60px;
+}
+
+.playlist-details h6{margin-bottom: 1px;}
+
+#musicW-start-no2{
+	position: absolute;
+	font-size: 10px;
+	bottom: 40px;
+	left: 17.5px;
+}
+
+#musicW-end-no2{
+	position: absolute;
+	font-size: 10px;
+	bottom: 40px;
+	right: 17.5px;
+}
+
+#widgetM-controls{
+	position: absolute;
+	right: 15px;
+	top: 70px;
+}
+
+#widgetM-controls img{
+margin: 5px;
+}
+
+#WidgetM-slider{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	width: 90%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
