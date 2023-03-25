@@ -1,5 +1,12 @@
+<img align="right" width="100" height="100" src="https://i.imgur.com/kYPwIBk.png">
+
 # Changelog
 A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
+
+## Other OSs changelogs
+* [Windows Ripen](https://github.com/ripenos/ripenos.github.io/blob/main/WinRipen/Changelog.md)
+
+<hr>
 
 ## v1.0 **(1st Prime Update)**
 1. 1st Public Release
