@@ -1,3 +1,5 @@
+<img align="right" width="100" height="100" src="https://img.icons8.com/fluency/256/donate.png">
+
 # How should I contribute to RGOS?
 This is an open-sourced project that accepts contributions via pull requests on GitHub. This document has the responsibility to align the contributions according to the standards established in it. If in doubt, [open an issue](https://github.com/ripenos/ripenos.github.io/issues/new).
 
