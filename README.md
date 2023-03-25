@@ -1,5 +1,7 @@
+<img align="right" width="100" height="100" src="Assets/General/ripenOs.png">
+
 # The Ripen Group of Operating Systems
- [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [A walkthough of our OSs](https://github.com/ripenos/ripenos.github.io/#Gallery) | [FAQ](https://github.com/ripenos/ripenos.github.io/#Questions) | [Evolution](Docs/Evolution.md)
+ [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [Code of Conduct](CODE_OF_CONDUCT.md) | [FAQ](https://github.com/ripenos/ripenos.github.io/#Questions) | [Evolution](Docs/Evolution.md)
  
  ![22-12-29_21-08-33-554-2](https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg)
 
@@ -29,8 +31,8 @@ RGOS Framework are the set of stylesheets for building interface components that
 
 ### Windows Ripen
 
-![Screenshot 2023-01-15 195548](https://user-images.githubusercontent.com/120778877/212546538-0db40afc-81b7-41a4-8aab-7a2eafc31f37.png)
-![Screenshot 2023-01-15 195617](https://user-images.githubusercontent.com/120778877/212546545-9e8ff862-d937-4531-a24c-f6a626649447.png)
+![image](https://user-images.githubusercontent.com/120778877/227715549-f398121f-1f23-400f-9ffd-da5573bea5b7.png)
+![image](https://user-images.githubusercontent.com/120778877/227715613-314bc538-fdc2-43c4-957c-4ca7225de0ba.png)
 
 ## ❓ Questions
 
