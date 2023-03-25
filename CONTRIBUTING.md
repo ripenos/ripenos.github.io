@@ -1,5 +1,5 @@
 # How should I contribute to RGOS?
-This is a totally free project that accepts contributions via pull requests on GitHub. This document has the responsibility to align the contributions according to the standards established in it. If in doubt, [open an issue](https://github.com/ripenos/ripenos.github.io/issues/new).
+This is an open-sourced project that accepts contributions via pull requests on GitHub. This document has the responsibility to align the contributions according to the standards established in it. If in doubt, [open an issue](https://github.com/ripenos/ripenos.github.io/issues/new).
 
 ## First steps
 1. Fork this repository.
@@ -9,4 +9,4 @@ This is a totally free project that accepts contributions via pull requests on G
 
 ## Next steps
 1. Then, for community purposes, please fill in this form: [Contributor's Approval form](https://forms.gle/1iCE6GHVEG9ssWYB6)
-2. Enjoy with a cup of tea ☕!
+2. Help us grow while sipping your tea ☕!
