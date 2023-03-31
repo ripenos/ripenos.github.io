@@ -196,22 +196,24 @@ setTimeout(startTimeH, 1000);
         startmenu.style.opacity = "0";
 
         se.style.display = "none";
-		NSe.style.display = "block";
+		    NSe.style.display = "block";
 
 	}
 	else{
         se.style.display = "block";
-		NSe.style.display = "none";
+		    NSe.style.display = "none";
         set.style.display = "none";
-		NSet.style.display = "block";
+		    NSet.style.display = "block";
 
         startmenu.style.bottom = "75px";
         startmenu.style.visibility = "visible";
         startmenu.style.opacity = "100%";
 
+        widgetM.style.bottom = "-1665px";
+
         tabmenu.style.bottom = "-655px"
-		tabview.style.display = "none";
-		desktops.style.display = "none";
+		  tabview.style.display = "none";
+		  desktops.style.display = "none";
     }
 })
 
@@ -448,6 +450,13 @@ function widgetShow(){
         actionmenu3.style.visibility = "hidden";
         actionmenu3.style.opacity = "0";
     
+        
+        startmenu.style.bottom = "-665px";
+        startmenu.style.visibility = "hidden";
+        startmenu.style.opacity = "0";
+        se.style.display = "none";
+        NSe.style.display = "block";
+
         startmenuM.style.bottom = "-665px";
         startmenuM.style.visibility = "hidden";
         startmenuM.style.opacity = "0";
@@ -760,3 +769,38 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+function easterEgg1(){
+  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+}
+
+const tabsBox = document.querySelector(".tabs-box"),
+allTabs = tabsBox.querySelectorAll(".tab"),
+arrowIcons = document.querySelectorAll(".icon i");
+
+let isDragging = false;
+let isDragging2 = false;
+
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        // if clicked icon is left, reduce 350 from tabsBox scrollLeft else add
+        let scrollWidth = tabsBox.scrollLeft += icon.id === "left" ? -340 : 340;
+        handleIcons(scrollWidth);
+    });
+});
+
+const dragging = (e) => {
+    if(!isDragging) return;
+    tabsBox.classList.add("dragging");
+    tabsBox.scrollLeft -= e.movementX;
+    handleIcons(tabsBox.scrollLeft)
+}
+
+const dragStop = () => {
+    isDragging = false;
+    tabsBox.classList.remove("dragging");
+}
+
+tabsBox.addEventListener("mousedown", () => isDragging = true);
+tabsBox.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
