@@ -11,8 +11,10 @@
     <!-- Linking the CSS stylesheet -->
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/index.css">
-    <!-- Google Font Link for Icons -->
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <style>
         .blank {
@@ -304,60 +306,50 @@
                     </div>
                     <br>
                     <div class="StartPinned" style="margin-bottom: 10px;">
-                        <div class="StartPinnedApps" onclick="EdgeB()">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br>Edge
-                        </div>
-
-                        <div class="StartPinnedApps" id="a1">
-                            <img src="https://img.icons8.com/fluency/452/settings.png" width="32px" style="margin-bottom: -2px;"><br>Settings
-                        </div>
-
-                        <div class="StartPinnedApps" id="a2">
-                            <img src="https://img.icons8.com/fluency/452/microsoft-office-2019.png" width="33px" style="margin-bottom: -2px;"><br>Office
-                        </div>
-
-                        <div class="StartPinnedApps" id="a3">
-                            <img src="https://blogs.windows.com/wp-content/uploads/prod/sites/44/2021/11/Logo.png" width="30px" style="margin-bottom: -2px; padding-top: 3px;"><br>Player
-                        </div>
-
-                        <div class="StartPinnedApps" id="a4">
-                            <img src="https://winaero.com/blog/wp-content/uploads/2020/02/Colorful-Mail-Fuent-big-icon-2020.png" width="28px"><br>Mail
-                        </div>
-
-                        <div class="StartPinnedApps" onclick="Paint()" id="a5">
-                            <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="29px"><br>Paint
-                        </div>
-
-                        <div class="StartPinnedApps" id="a6">
-                            <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" width="29px"><br>Spotify
-                        </div>	
-
-                        <div  class="StartPinnedApps" id="a7">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" width="29px"><br>Store
-                        </div>
+                        <div class="wrapper2">
+                            <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+                            <ul class="tabs-box">
+                              <li class="tab"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br><p>Edge</p></li>
+                              <li class="tab"><img src="https://img.icons8.com/fluency/452/settings.png" width="32px" style="margin-bottom: -2px;"><br><p>Settings</p></li>
+                              <li class="tab"><img src="https://img.icons8.com/fluency/452/microsoft-office-2019.png" width="33px" style="margin-bottom: -2px;"><br><p>Office</p></li>
+                              <li class="tab"><img src="https://blogs.windows.com/wp-content/uploads/prod/sites/44/2021/11/Logo.png" width="33px" style="margin-bottom: -2px;"><br><p>Player</p></li>
+                              <li class="tab"><img src="https://winaero.com/blog/wp-content/uploads/2020/02/Colorful-Mail-Fuent-big-icon-2020.png" width="33px" style="margin-bottom: -2px;"><br><p>Mail</p></li>
+                              <li class="tab"><img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="33px" style="margin-bottom: -2px;"><br><p>Paint</p></li>
+                              <li class="tab"><img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" width="33px" style="margin-bottom: -2px;"><br><p>Spotify</p></li>
+                              <li class="tab"><img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" width="33px" style="margin-bottom: -2px;"><br><p>Store</p></li>
+                            </ul>
+                            <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+                          </div>
                     </div>
 
                     <!--Recommended Files/Apps-->
                     <b><p>Recommended</p></b>
                     <b><p class="MoreBtn" style="font-size: 12px; float: right; margin-top: -17.5px;margin-right: 30px;">more &rsaquo;</p></b><br>
                     <div class="StartPinned" style="margin-bottom: 10px;" id="Recommended">
-
-                        <div class="StartPinnedApps-r" id="r1">
+                        <div class="StartPinnedApps-r" id="r1" onclick="rec1()">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2klEQVR4nO3Z3StDYRwH8MfrNPNa2pHVzA3lZkoiy7hQkz+ArCWUhWJttHIhbvwFXi+UK7mbl5RcKBz5C/YPeP0XNs9zzlcbEZK9PHuc6fnW9/759Pud53Q6hMjIyPz/0GvrIL1S7plaj2wbX3Cr4gFXyh2PwydKhzziEYzT4ZMAb28SQcM9N3kJYKOd4hGMJ2DCKR7BOAI0f4t4BOMJmGkUj2AcAfqcIh7BeAJC1eIRjCMAy+ZfEfHFbtW4z0CkVjyC8bxG0yiRgLfICahyhbKLXCH1y1Ua9QHxJyD+CC3qzb9bKHHw98QeJED4BBJrk5xC7AFadMQgEzi3gS534XnUg+d5N+iJI4/exOcNoAEX6HD/R8f7QI8a8wBwZgMNdID6XN/r7wI9toNdWKHvm4DdQmjHlQYCnNrAAk6wsfafO9UGfdsC7JD36hGLAQCnNrBgC9hk6++daQbWTGkjSC4BWtABbbop9c7ZgfWStBAkp4DZDBq0AuvFKSNILgF6qCazhquAjaLPiEOLeEDisxDhssy6aAI2Cz4hxK/QQR301QroS+WZdcUMbBW+TmCv9I9fZDkqkYC3yAmocoWM84sp1VJVueUJGBCJoKpySy8VDzeAjIwMMWxeAHYX2+Y7NomIAAAAAElFTkSuQmCC" width="31px" >
-                            <p style="font-size: 13px;">rgos.png</p>
+                            <br><p style="font-size: 13px;">rgos.png</p>
                         </div>
 
-                        <div class="StartPinnedApps-r" id="r2">
+                        <div class="StartPinnedApps-r" id="r2"  onclick="rec2()">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO2Zz0sbQRTH91g1F71k41EQqhdL8eSxIFgKK+SooEGlhUJFPUQRioe0R7Uo2D9A8NKjkKjBH5iIRg/GUxISUKtkRZMaelEzL30yawxaY7vJzs6usg++x10+n533dmZZQbDKKquef5EN+zsSEI8h6ECtyX2rCPIXCIhHLOBp/rgr+UsAI3hFYKhGkcCpF5tPUiDXX8tfAlgKfKzjLwEMBeB9I38JYCnQ85q/BDAUIF0t/CWApUDHG/4SwFKgt/W/ErlpxvsE0xmYbeAvASwFSohgCTz3Fch2SJh1OrWlUyo+7AEeAp36CJCAA38tihiSuke22l2HIamnWRcBPULy8Psbbgx/mdgOtbtwS3Kda5LgDh8cwkQiQXMV/jq5QyVCUveBuWbgr9Yht/BrXRiPx+/mctczvk3byVwzcEeA5OFlrw1TqzZMhH9gLBYrJBKJjJYN/y8Blm0je22YXhGUpFYrMb47h9FolOazJng9BUgePumrKsDf5mzFhtG9+QHN8HrNwJXTiSlJwqSn/gE8jeytMu8+UIAfe/koPF0Z3QVY9Xy6CDyXnVhPeDDbWUht25A8PB8BlTNQDjyY5Xug1LYBMwlogQczCGT8Isq+mrLgwWiB7LoDT/xNeB4ZLgsejBa4WHOgvPkBM5nMPQm18GC0wO9lEWfGB5UD2Y2EG5ML1arhwWiBU58dBz714feJQWUlTvyvlJlQCw9GCihvnyURzxbsykrQdqIzUep9BCN/MZXypKHY9UHxJ0uBtyz/k6mBJ+tiGzMBq6yySjBtXQNECAXqig7xVAAAAABJRU5ErkJggg==" width="32px" >
-                            <p style="font-size: 13px;">ReadMe.txt</p>
+                            <br><p style="font-size: 13px;">ReadMe.md</p>
                         </div>
 
-                        <div class="StartPinnedApps-r" id="r2">
+                        <div class="StartPinnedApps-r" id="r2" onclick="easterEgg1()">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACW0lEQVR4nO3ZTU8TURQG4K4MkhCjqB0pqNAi1m+pqFhBqCA23QO1X5R+t2ClGHFp4sKwMUTj2oUrTTQmxo0blY7xf6C/oufceU2n1W3b9GY6NfMmd3+eO/fce5Kx2axYsfL/h37YA1RWfrN6DO0usbNfNR5QVn7JKL66tEe9xiNYUvE6oHRIR+BFz8+uBIj7A8YjWCYgP2I8giUCOH3GeATLBKyOG49giQCK3jAewTIB93zGI1gmIDHfECFeSn4npPbAG7fxCJYJaGHZLEA91hdQrSPUXprdQe3ZPmjPe8Ff7N3ZxNjq0a9A7XEfxOvD4HKXAbSHfdA2D0ArHYS20Q/x5CjEJ6WLAKV+aBtHoD2wQytWZ38HRNEB8WoQvNsNgKKiv6ZifRBi7ThE4WTthc25wFsuiI9D5gaItSGIwgmI/DBEzgmRHYXIjIHTbnDqLDh1Hrx9CvxtwKSAvBMiNwqRHYPIuMHpetHJi+DEZfCqBxyfAK97wO9GTAjInNYHM06dAycvgBOXasNa/Ap45So4dl0f4ChyE5T0mg/QsOjwNCg0A856wW9dJgTEPeCVCXDsGjg6CYp4QeEpUOgWKDQLCvnATz3grw5z9gDHJkFRLygyBQpXi56pzf3BOVB+Gvy+8a5zJwF/j8i/opfvgIILoG0P+HtzNw93FBC8DVqeBy0tgBb9qBR84A/OlgvnjgGW/KgsBlAJBkA74+By67vOnQRUsnOobM6CPg+3VTh3rIklL5sFqMf6Aqp1hMzzi6npK1lV9mQC/EYiSFX2aFe5Kw1gxYoVm2nzB9Ci1z/Ke1QLAAAAAElFTkSuQmCC" width="32px" >
-                            <p style="font-size: 13px;">rickroll.mp4</p>
+                            <br><p style="font-size: 13px;">SURPRISE.mp4</p>
                         </div>
                     </div>
+                    <script>
+                        function rec1(){
+                            window.open("https://ripenos.github.io/Assets/General/ripenOs.png", "_blank");
+                        }
 
+                        function rec2(){
+                            window.open("https://github.com/ripenos/ripenos.github.io#readme", "_blank");
+                        }
+                    </script>
                     <div class="StartPinnedA">
                         <div class="btn-Stc">
                             <img src="https://img.icons8.com/fluency-systems-regular/452/settings.png" width="19px">
