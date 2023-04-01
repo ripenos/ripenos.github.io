@@ -39,5 +39,19 @@ A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
 ## v2.5
 1. Bub fixes and improvements
 2. Optimized the Responsive OS (for Desktop, tab, and Phone)
-
+3. App drawer with custom App list
+4. Custom Cursor
+5. Live Battery status
+6. Draggable Desktop icons 
+7. Refreshed Controls Menu
+8. **NEW** Controls menu as a sub menu with
+    - Temp Lock
+    - Fullscreen
+    - Readers view
+    - etc.
+9. Volume and Brightness sliders
+10. Refreshed Ripen Panel
+11. Search engine from Wikipedia to info.com
+12. **NEW** Interactable Sun rise-set wallpaper
+ 
 MIT License • Copyright (c) 2023 RipenOS
