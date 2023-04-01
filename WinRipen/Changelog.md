@@ -79,3 +79,16 @@ This project is still under progress and all Its **major changes** would be list
 
 ### Features 
 - Live Weather in Start Menu
+
+## v0.7
+### UI and features
+- Welcome page
+- Refreshed Start menu
+- **NEW** Widget Menu with Weather, Calculator, Music, Translator, and QR code generator widgets
+- Refreshed desktop switcher
+- Draggable Desktop icons
+- New desktop widget - Quick Info
+- Custom Cursor
+- Refreshed Calendar Menu
+- Live Battery status 
+- Overall UI tweaks and bugs fixed
