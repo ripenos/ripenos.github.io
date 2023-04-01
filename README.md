@@ -10,15 +10,15 @@
  #### 🚧 This project is still in progress
  
 ## 👪 OS Members
-### [The Ripen OS](https://ripenos.github.io/)
-The Head of the family
+> ### [The Ripen OS](https://ripenos.github.io/)
+> The Head of the family
 
-### [The Windows Ripen](https://ripenos.github.io/WinRipen)
-An open-sourced concept based on the Windows Operating System.
- > **❗ This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.**
+> ### [The Windows Ripen](https://ripenos.github.io/WinRipen)
+> An open-sourced concept based on the Windows Operating System.
+> > **❗ This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.**
 
-### Ripen OS Dynamica
-Coming Soon!!
+> ### Ripen OS Dynamica
+> Coming Soon!!
 
 ## 🎒 Resources
 ### [Ripen.css framework](https://ripenos.github.io/Docs/frameworks/frameworks.html)
