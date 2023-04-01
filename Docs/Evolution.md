@@ -6,3 +6,4 @@
 ![stage 3](https://user-images.githubusercontent.com/120778877/216783134-690d68f4-c22c-4dbe-bbb6-a5ec096b4ecd.png)
 ![stage 4](https://user-images.githubusercontent.com/120778877/216783128-7128f8e4-879f-41f5-b87c-b2f0ec560cf0.png)
 ![stage 5](https://user-images.githubusercontent.com/120778877/216783129-427e8fff-d423-481e-a51e-50789db53178.png)
+![stage 6](https://user-images.githubusercontent.com/120778877/229288812-198b8337-657b-4d48-a63a-9bbb8bd9aeb0.png)
