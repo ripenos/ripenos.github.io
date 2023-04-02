@@ -53,5 +53,6 @@ A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
 10. Refreshed Ripen Panel
 11. Search engine from Wikipedia to info.com
 12. **NEW** Interactable Sun rise-set wallpaper
+13. PWA integration
  
 MIT License • Copyright (c) 2023 RipenOS
