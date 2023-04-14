@@ -1,4 +1,4 @@
-<img align="right" width="100" height="100" src="Assets/General/ripenOs.png">
+<img align="right" width="100" height="100" src="Ripenos/Assets/General/ripenOs.png">
 
 # The Ripen Group of Operating Systems
  [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [Code of Conduct](CODE_OF_CONDUCT.md) | [FAQ](https://github.com/ripenos/ripenos.github.io/#Questions) | [Evolution](Docs/Evolution.md)
