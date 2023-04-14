@@ -10,7 +10,7 @@
  #### 🚧 This project is still in progress
  
 ## 👪 OS Members
-> ### [The Ripen OS](https://ripenos.github.io/)
+> ### [The Ripen OS](https://ripenos.github.io/Ripenos)
 > The Head of the family
 
 > ### [The Windows Ripen](https://ripenos.github.io/WinRipen)
