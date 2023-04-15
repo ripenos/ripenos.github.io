@@ -50,8 +50,8 @@
             </div>
 
             <input type="text" placeholder="Search the web" class="searchT" style=" font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-left: 15px; " 
-            id="SearchInput" >
-            <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2" onclick="getVal()">
+            id="SearchInput" onclick="widgetSearchShow()" oninput="opacityMTb(), inWidgetSearch()">
+            <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2" onclick="getVal()" title="Search in Google on new tab">
             
             <!--FIle explorer-->
             <div class="FIlesbutton" id="myP4">
@@ -109,6 +109,12 @@
             <div class="actionbutton3"  style="right: 185px;" id="myP9">
                 <img src="Assets/windows11-actions - battery.png" width="19.5px" id="nonSeA3" >
                 <img src="Assets/windows11-actions - battery.png" width="19.5px" id="seA3" >
+            </div>
+
+            <!-- At a glance -->
+            <div class="actionbutton4"  style="right: 220px;" id="myP10">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABH0lEQVR4nO2WUQ6CMBBEuZG00fufA/QGQjzCmCYkmlrS0s4uqPsSP4zt7gydynadYRiGYfwyAByAG4ArAK/Qzy/9wse1FusBTHjxAHChqZXslygmagLMfkts5rcic+K7J8dmzvRzLcd4looTmP3WimV+rzYBZr+V2LjCdZ4UG1erq1v+JosyV1yUtB+f68fUonGLoFoTiX1TRa8htSjOG90ESfwUtK4tPgG4b7mkpRctd2FT1OwRMaEmXsKEuvgoe4w7IZd5pZPQffKCcdIXT4hTeLcMuQiAGRvmSRTW7cWevLQJaIqPTDRPpLuIZ43Vu4pvNXEI8bUmDiVeY5hTQ2KYU4c5zO1G4TDHfcOyaRnmDsNXxYYxzBmGYRjG3/IE1anyuW/e8W0AAAAASUVORK5CYII=" width="18.5px" id="seA4" >
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJklEQVR4nO2X7Q3CMAxEsxEUwf5zUNgAECM8hMqXoBGJ7aSJ5PeriNS+S67UhOA4juM4zi/ABjgCB2AIPQGsgTNvrsAudCq+HxNMsbm8JE/X35+HnmKz7SJORMT/+b4NE//EN22CRPFNmiBTfFMmEIpvwgRK8YuawEj8IiYwFl/VBDDkvlE/hrljwtqh2BtbsvOSXaXESRiJX8YE8tiohjks4mQYG9Ewh+YkLMVrBCExUUJ8NRPIMp91T9EeTH++NYXPKQ+bkYlxbtGo2Mkk8VIT/K7fp+RttqhWfK4J5vutY0VXwCn20NQe5pD0i5moPcyh6ReJkzo2mXG6JMUm4yRMdz5zhtpKi87FyVz8kyIxfRS9/8Tus49RHqexVj/HcRzHCUtyA55c8sCxbpgNAAAAAElFTkSuQmCC" width="18.5px" id="nonSeA4" >
             </div>
         </div>
     </div>
@@ -711,6 +717,34 @@
             </div>
         </div>
 
+        <!--At a glance Flyout-->
+        <div class="actionmenu4" style="padding: 27.5px;">
+            <div class="darktheme"style="padding: 10px; padding-left: 12px;">
+                <div class="tray-cont">
+                    <div class="glance-longBtn">
+                        <img src="https://img.icons8.com/fluency/52/null/windows-defender.png" alt="">
+                        <p>Defender</p>
+                        <span id="Defender-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="data:image/png;base64,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" alt="">
+                        <p>Bluetooth</p>
+                        <span id="bluetooth-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" alt="">
+                        <p>Spotify</p>
+                        <span id="spotify-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="https://ripenos.github.io/home_resources/Assets/ripenos/ripenOs.png" alt="">
+                        <p>RGOS Family</p>
+                        <span id="RGOS-more">•••</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--Calendar Flyout-->
         <div class="wrapper" >
             <div class="darktheme" id="themeCl">
@@ -744,70 +778,77 @@
 
         <div class="widgets">
             <div class="widgets-cont">
-                <input type="text" placeholder="Search the web" class="searchT" style=" font-size: 13px; padding-left: 15px; " id="widget-search">
+                <input type="text" placeholder="Search the web" class="searchT" style=" font-size: 13px; padding-left: 15px; " id="widget-search" onclick="inWidgetSearch()" oninput="opacityM(), inWidgetSearch()">
                 <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2W">
+                <img style="right:9.75%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVR4nO2YTUoDQRCFkyO4SaILL+VvDILeSTe6iQuz8QoGTDIKehV3moi7TxpqoBwmyXRrNUTrg4Lw5uWR7pnpFNVqOY7jOJYAbWAAzIC51BQ4CdeWfGcfGAOvUvfA3m/lRwFcs5yrGv/lCv/FT/OjkF1YR1/5Dxv4D1LzowEeVdAt0JEaKX2m/OExKLkDdqXC55JJan40wEIF9ZTeU/pc6eH5LdlW+o7S31PzcyzgQ+kdpXeVvsi5gEIFjeSHdCu3eKr8T0ofAltSN0ovUvOjCS8Q6zlS/tMG/kFqfhLhKGt6zMmZrne7yrB6thORn7qAtuzUJLyAwBvwABzX/dGI/xx4AT6lnoGzFf5+03xn4yCyV7H25+iFTP3WvZCpP0cvZOrP0UqY+v/lAorIXsjUn6MXMvUnEdurWPtz9UJmfmfjwOdC3/C5UBQ+FxJ8LpSKz4Xq8blQFD4XchzH+dN8AXX8kehvGtPzAAAAAElFTkSuQmCC" alt="search" width="20px"  class="widget-btn" onclick="inWidget()">
+                <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADxklEQVR4nO2ZyW9PURTHn6FVLRJDzIkUC0OCrgnlHxAiMW/YqKGphYglYVVaQ4iV2qhhIYYVttRGak6MoQi6MJWYKj5ykvM47u/29b73K/mJ3zd5ycs993zPee/de8/woqiIIoroEQBlQC1wFLgBtAOf9WrXsWZgg8yNCg3ATsJRHxUagJYUD3ApKjQAbcbB5cA4oL9e43QsRltUSAD6Ap3q3HffGtc9IjLBV6DP33ZyaIJstnm7DxLmPTTzZiXMG9ITPsdkfYBjavQOUANUGPkI4LpxbH8C10Ez75roGlmFcosN9DTL/ysBuz2b8DVwXB/snRn/CFQmcE0APpn5b5XjhHK6aMjX+UWEQ/bA4gDOpcC3FLwLsjo/TANQjBYNQvc8RiRIzUnBPcdZdjHuqo3LP0fgRdL+SzKy15C8l89vZNOBJcAKYEZq8l88M5RDuKaZ8YlqM0ZjWuKxzlqtif4ygHXO3hqdRnmHUX4ClKbQnSpvDLgFfNBL7huAKSl4SoGnxo9toYq9gcdGsS6FwX3dbFCR7QFKAjk3Gt1HQK8QpUrHaBNQHuD8BcJxvruHAMqBw45el0e0VewHtDqKEnRGJujIm7c4qSdNhV7VwClnzp4EvpFq06I1eCkDA4EjHoKSLta8XTabEng3m3mik7MnxAZw1bEtvgwKct4hWwV8MURrPXMa7ZsP4Dxj5u/yyNcbudheldpxh7DOELZ45LeNvNtgBsw182965DaI1eblvBIOMYRvPPIOIx8QuDxjdHjkkh/FGFx8AH4/i3NKQQ1SMaoDvsC8FEuoLq8vAKx2NnFOSqERNsapAM6zZv7OblIIsb06i+ODPMfoFSkdPXOnOMfo5gTeLU76PamLY7Q18zGqgcw9h6/a6smjI+mBxWk9bQboNc9584nFCvkEMk8qcSgglSjR9CAU5wJTiaYsqUTWZK5Ev0RSMtepe+bPJXMCYHse6bTsiV1ywmhR8l7vpXM3OQVPKfDM+LE1SqE8xiloclKIPw1+TymkoBmVTzfCLSmlFFwGrASq8nCySjmW2dJUS0ophLJ3J6SQBl56ivr7PVDUV6uOi3ueov555kYXsJBwyOZdGsC5PGVbZX4m57uItDFeaXA56iRfsm/GJ3BN9DS2mpXL19jKidRZW4tiBG37rbFxARjuBJ0Dga1FCY7DnXN/jWktNvdoAzgptZVGbYbm7swstv7f9nrKHxwrNCUp16tSxwrzB4dAagXCcTEqNAD1//pPvjINQke08/xCj8xPen9dZesL8jdrEUVE/yZ+ACOnjrrCE5ioAAAAAElFTkSuQmCC" alt="search" width="20px"  class="widget-btn">
 
                 <div class="widgetB">
-                    <div class="widgetB-left">
-                        <div id="ww_f79cc37756cf1" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}' class="weather-widgetB" style="height: 270px;">Weather Data Source: <a href="https://tiempolargo.com/" id="ww_f79cc37756cf1_u" target="_blank">Tiempo a 25 días</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_f79cc37756cf1"></script>
-                        <iframe src="Apps - (Testing)/calc/calc/index.html" frameborder="0" class="calcW"></iframe>
-                        <iframe src="Apps - (Testing)/QR-generator/QR-generator/index.html" frameborder="0" class="qrW"></iframe>
-                    </div>    
-                    <div class="widgetB-right">
-                        <div class="Music-widget">
-                            <div class="musicThumbNailD2">🎵</div>
-                            <h6 id="widget-music-title">No Music Playing</h6>
-                            <h6 id="widget-music-author">Various Artist</h6>
-                            <h6 id="musicW-start-no2">00:00</h6>
-                            <h6 id="musicW-end-no2">--:--</h6>
-                            <span id="MW-repeat" class="material-symbols-rounded">repeat</span>				
-                            <span id="MW-shuffle" class="material-symbols-rounded">shuffle</span>						
-                            <div id="widgetM-controls">
-                                <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" width="18px" 
-                                style="filter: invert(100%); cursor: pointer; float: right; " >
-                                <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
-                                style="filter: invert(100%); cursor: pointer; float: right; " >							
-                                <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" width="18px" 
-                                style="filter: invert(100%); cursor: pointer; float: right; " >
+                    <div class="widgetM-cont">
+                        <div class="widgetB-left">
+                            <div id="ww_f79cc37756cf1" v='1.3' loc='auto' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}' class="weather-widgetB">Weather Data Source: <a href="https://tiempolargo.com/" id="ww_f79cc37756cf1_u" target="_blank">Tiempo a 25 días</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_f79cc37756cf1"></script>
+                            <iframe src="Apps - (Testing)/calc/calc/index.html" frameborder="0" class="calcW"></iframe>
+                            <iframe src="Apps - (Testing)/QR-generator/QR-generator/index.html" frameborder="0" class="qrW"></iframe>
+                        </div>    
+                        <div class="widgetB-right">
+                            <div class="Music-widget">
+                                <div class="musicThumbNailD2">🎵</div>
+                                <h6 id="widget-music-title">No Music Playing</h6>
+                                <h6 id="widget-music-author">Various Artist</h6>
+                                <h6 id="musicW-start-no2">00:00</h6>
+                                <h6 id="musicW-end-no2">--:--</h6>
+                                <span id="MW-repeat" class="material-symbols-rounded">repeat</span>				
+                                <span id="MW-shuffle" class="material-symbols-rounded">shuffle</span>						
+                                <div id="widgetM-controls">
+                                    <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer; float: right; " >
+                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer; float: right; " >							
+                                    <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" width="18px" 
+                                    style="filter: invert(100%); cursor: pointer; float: right; " >
+                                </div>
+                                <br>
+                                <div class="playlist-cont">
+                                    <div class="playlist">
+                                        <div class="musicThumbNailD2PL">🎵</div>
+                                        <div class="playlist-details"><h6>Song 1</h6>
+                                        <h6>Artist</h6></div>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                        style="filter: invert(100%); cursor: pointer;" >		
+                                    </div>
+                                    <div class="playlist">
+                                        <div class="musicThumbNailD2PL">🎵</div>
+                                        <div class="playlist-details"><h6>Song 2</h6>
+                                        <h6>Artist</h6></div>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                        style="filter: invert(100%); cursor: pointer;" >		
+                                    </div>
+                                    <div class="playlist">
+                                        <div class="musicThumbNailD2PL">🎵</div>
+                                        <div class="playlist-details"><h6>Song 3</h6>
+                                        <h6>Artist</h6></div>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                        style="filter: invert(100%); cursor: pointer;" >		
+                                    </div>
+                                    <div class="playlist">
+                                        <div class="musicThumbNailD2PL">🎵</div>
+                                        <div class="playlist-details"><h6>Song 4</h6>
+                                        <h6>Artist</h6></div>
+                                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
+                                        style="filter: invert(100%); cursor: pointer;" >		
+                                    </div>
+                                </div>
+                                <input type="range" min="1" max="100" value="0" class="slider" id="WidgetM-slider">
                             </div>
-                            <br>
-                            <div class="playlist-cont">
-                                <div class="playlist">
-                                    <div class="musicThumbNailD2PL">🎵</div>
-                                    <div class="playlist-details"><h6>Song 1</h6>
-                                    <h6>Artist</h6></div>
-                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
-                                    style="filter: invert(100%); cursor: pointer;" >		
-                                </div>
-                                <div class="playlist">
-                                    <div class="musicThumbNailD2PL">🎵</div>
-                                    <div class="playlist-details"><h6>Song 2</h6>
-                                    <h6>Artist</h6></div>
-                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
-                                    style="filter: invert(100%); cursor: pointer;" >		
-                                </div>
-                                <div class="playlist">
-                                    <div class="musicThumbNailD2PL">🎵</div>
-                                    <div class="playlist-details"><h6>Song 3</h6>
-                                    <h6>Artist</h6></div>
-                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
-                                    style="filter: invert(100%); cursor: pointer;" >		
-                                </div>
-                                <div class="playlist">
-                                    <div class="musicThumbNailD2PL">🎵</div>
-                                    <div class="playlist-details"><h6>Song 4</h6>
-                                    <h6>Artist</h6></div>
-                                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="18px" 
-                                    style="filter: invert(100%); cursor: pointer;" >		
-                                </div>
-                            </div>
-                            <input type="range" min="1" max="100" value="0" class="slider" id="WidgetM-slider">
-                        </div>
-                        <iframe src="Apps - (Testing)/translate-widget/translate-widget/index.html" frameborder="0" class="TranW"></iframe>
-                        <iframe src="Apps - (Testing)/Dictionary-widget/Dictionary-widget/index.html" frameborder="0" class="dictW"></iframe>
-                    </div>  
+                            <iframe src="Apps - (Testing)/translate-widget/translate-widget/index.html" frameborder="0" class="TranW"></iframe>
+                            <iframe src="Apps - (Testing)/Dictionary-widget/Dictionary-widget/index.html" frameborder="0" class="dictW"></iframe>
+                        </div>  
+                    </div>
                 </div>
 
+                <div class="widgetSearch">
+                    <iframe src="https://bing.com/" frameborder="0" id="search-feild"></iframe>
+                </div>
             </div>
         </div>
 
@@ -818,46 +859,52 @@
                         <img src="Assets/windows11-logo.png" alt="">
                         <h1>Windows Ripen</h1>
                     </CENTER>
-
+                    <div class="welcome-options">
+                        <button id="welcome-fam">Welcome</button>
+                        <button id="rgos-fam">RGOS Family</button>
+                    </div>
                     <div class="welcome-content">
-                        <h4 style="margin-top: -20px;">An initiative of the RGOS</h4>
-                    <p>
-                        Windows Ripen, a member of the <a href="https://ripenos.github.io/" target="_blank">RGOS</a> family, is an open source concept based on the <a href="https://www.microsoft.com/en-in/windows">Windows Operating System</a> (c).
-                    </p>
+                        <div id="welcome-cont">
+                            <h4 style="margin-top: -20px;">An initiative of the RGOS</h4>
+                            <p>
+                                Windows Ripen, a member of the <a href="https://ripenos.github.io/" target="_blank">RGOS</a> family, is an open source concept based on the <a href="https://www.microsoft.com/en-in/windows">Windows Operating System</a> (c).
+                            </p>
 
-                    <h4>❗ Note</h4>
-                    <p style="font-weight: bold;">This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.</p>
+                            <h4>⚖️ License</h4>
+                            <p>MIT License License as Copyright (c) 2022-23 RipenOS</p>
 
-                    <h4>⚖️ License</h4>
-                    <p>MIT License License as Copyright (c) 2022-23 RipenOS</p>
+                            <h4>📱 Current Version</h4>
+                            <p>version 0.8</p>
+                            
+                            <h4>©️ Credits</h4>
+                            <p>The RGOS uses assets and templates provided by other such fascinating providers. They are:</p>
+                                <ol>
+                                    <li>Icons by <a href="https://icons8.com/" target="_blank">icons8.com</a> and <a href="https://fonts.google.com/icons" target="_blank">Google fonts and icons</a>.</li>
+                                    <li>Weather widgets by: <a href="https://weatherwidget.org/" target="_blank">Weatherwidget.org</a></li>
+                                    <li>Code reference by <a href="https://www.w3schools.com/" target="_blank">W3schools</a>.</li>
+                                </ol>
+                            <p style="font-weight: bold; ">This project is not in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.
+                                Microsoft, Windows and Other demonstrated Products in this project are trademarks of the Microsoft group of companies.
+                            </p>
+                        </div>
+                        <div id="RGOS-cont">
+                            <h4 style="margin-top: -20px;">RGOS Family</h4>
 
-                    <h4>📱 Current Version</h4>
-                    <p>version 0.7</p>
-                    
-                    <h4>©️ Credits</h4>
-                    <p>The RGOS uses assets and templates provided by other such fascinating providers. They are:
-                        <ol>
-                            <li>Icons by <a href="https://icons8.com/" target="_blank">icons8.com</a> and <a href="https://fonts.google.com/icons" target="_blank">Google fonts and icons</a>.</li>
-                            <li>Weather widgets by:</li>
-                                <ul>
-                                    <li><a href="https://weatherwidget.org/" target="_blank">Weatherwidget.org</a></li>
-                                    <li>
-                                        <a
-                                            href="https://www.tomorrow.io/weather-api/"
-                                            target="_blank">
-                                            <img
-                                            alt="Powered by the Tomorrow.io Weather API"
-                                            src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
-                                            width="500px" style="scale: 5.1; margin-left: 92.5px;-webkit-transform: translateY(-0.25px); transform: translateY(-0.25px);"
-                                            />
-                                        </a>
-                                    </li>
-                                </ul>
-                            <li>Code reference by <a href="https://www.w3schools.com/" target="_blank">W3schools</a>.</li>
-                        </ol>
-                    </p>
-                </div>
-                <button class="welcome-btn" onclick="closeWelcome()">Ok I understand</button>
+                            <CENTER>
+                            <span>
+                            <div class="RGOS-fam-btn" id="ripenos">
+                                <span><img src="Assets/RGOS-family/ripenOs.png" alt=""><p>Ripen OS</p></span>
+                                <img src="Assets/RGOS-family/ripenos-desktop.png" alt="">
+                            </div>
+                            <div class="RGOS-fam-btn" id="dynamica">
+                                <span><img src="Assets/RGOS-family/ripenOsD.png" alt=""><p>Ripen OS Dynamica</p></span>
+                                <img src="Assets/RGOS-family/Dynamica-desktop.png" alt="">
+                            </div>
+                            </span>
+                            </CENTER>
+                        </div>
+                    </div>
+                    <button class="welcome-btn" onclick="closeWelcome()">Ok I understand</button>
                 </div>
             </div>
         </div>
