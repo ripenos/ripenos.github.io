@@ -20,6 +20,8 @@ let action2 = document.getElementsByClassName("actionbutton2")[0]
 let actionmenu2 = document.getElementsByClassName("actionmenu2")[0]
 let action3 = document.getElementsByClassName("actionbutton3")[0]
 let actionmenu3 = document.getElementsByClassName("actionmenu3")[0]
+let action4 = document.getElementsByClassName("actionbutton4")[0]
+let actionmenu4 = document.getElementsByClassName("actionmenu4")[0]
 let actionmenu5 = document.getElementsByClassName("wrapper")[0]
 let action5 = document.getElementsByClassName("Calbtn")[0]
 let widgetB = document.getElementsByClassName("widgetbutton")[0]
@@ -40,6 +42,9 @@ let NSeA2 = document.getElementById("nonSeA2")
 
 let SeA3 = document.getElementById("seA3")
 let NSeA3 = document.getElementById("nonSeA3")
+
+let SeA4 = document.getElementById("seA4")
+let NSeA4 = document.getElementById("nonSeA4")
 
 function ShowDs(){
     setTimeout(() => {
@@ -326,10 +331,13 @@ action.addEventListener("click", ()=>{
 		tabview.style.display = "none";
 		desktops.style.display = "none";
 		actionmenu.style.opacity = "1"
-
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+		SeA4.style.display = "none";
+		NSeA4.style.display = "block";
 		se.style.display = "none";
 		NSe.style.display = "block";
-
 		set.style.display = "none";
 		NSet.style.display = "block";
 		SeA.style.display = "block";
@@ -373,7 +381,11 @@ action2.addEventListener("click", ()=>{
 
 		se.style.display = "none";
 		NSe.style.display = "block";
-
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+		SeA4.style.display = "none";
+		NSeA4.style.display = "block";
 		set.style.display = "none";
 		NSet.style.display = "block";
 		SeA2.style.display = "block";
@@ -418,7 +430,11 @@ action3.addEventListener("click", ()=>{
 
 		se.style.display = "none";
 		NSe.style.display = "block";
-
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+		SeA4.style.display = "none";
+		NSeA4.style.display = "block";
 		set.style.display = "none";
 		NSet.style.display = "block";
 		SeA3.style.display = "block";
@@ -430,12 +446,64 @@ action3.addEventListener("click", ()=>{
 	}
 })
 
+action4.addEventListener("click", ()=>{
+	if(actionmenu4.style.bottom == "65px"){
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+
+		SeA4.style.display = "none";
+		NSeA4.style.display = "block";
+
+	}
+	else{
+    actionmenu4.style.bottom = "65px";
+    actionmenu4.style.visibility = "visible";
+    actionmenu4.style.opacity = "100%";
+
+    actionmenu.style.bottom = "-665px";
+    actionmenu.style.visibility = "hidden";
+    actionmenu.style.opacity = "0";
+    actionmenu2.style.bottom = "-665px";
+    actionmenu2.style.visibility = "hidden";
+    actionmenu2.style.opacity = "0";
+    actionmenu3.style.bottom = "-665px";
+    actionmenu3.style.visibility = "hidden";
+    actionmenu3.style.opacity = "0";
+    actionmenu5.style.bottom = "-665px";
+    actionmenu5.style.visibility = "hidden";
+    actionmenu5.style.opacity = "0";
+
+
+		tabmenu.style.bottom = "-655px"
+		tabview.style.display = "none";
+		desktops.style.display = "none";
+
+		se.style.display = "none";
+		NSe.style.display = "block";
+    SeA3.style.display = "none";
+		NSeA3.style.display = "block"
+		set.style.display = "none";
+		NSet.style.display = "block";
+		SeA4.style.display = "block";
+		NSeA4.style.display = "none";
+		SeA2.style.display = "none";
+		NSeA2.style.display = "block";
+		SeA.style.display = "none";
+		NSeA.style.display = "block";
+	}
+})
+
 function widgetShow(){
     if(widgetM.style.bottom == "68px"){
         widgetM.style.bottom = "-1665px";
+        document.getElementsByClassName('widgetB')[0].style.display = "block";
+        document.getElementsByClassName('widgetSearch')[0].style.display = "none";
       }
       else{
         widgetM.style.bottom = "68px";
+        document.getElementsByClassName('widgetB')[0].style.display = "block";
+        document.getElementsByClassName('widgetSearch')[0].style.display = "none";
 
         actionmenu5.style.bottom = "-665px";
         actionmenu5.style.visibility = "hidden";
@@ -479,6 +547,80 @@ function widgetShow(){
       }
 }
 
+function inWidgetSearch(){
+    document.getElementsByClassName('widgetB')[0].style.display = "none";
+    document.getElementsByClassName('widgetSearch')[0].style.display = "block";
+}
+
+function inWidget(){
+  document.getElementsByClassName('widgetSearch')[0].style.display = "none";
+  document.getElementsByClassName('widgetB')[0].style.display = "none";
+
+  setTimeout(() => {
+    document.getElementsByClassName('widgetB')[0].style.display = "block";
+  }, 250);
+}
+
+function widgetSearchShow(){
+  if(widgetM.style.bottom == "68px"){
+      widgetM.style.bottom = "-1665px";
+      document.getElementsByClassName('widgetB')[0].style.display = "block";
+      document.getElementsByClassName('widgetSearch')[0].style.display = "none";
+    }
+    else{
+      widgetM.style.bottom = "68px";
+      document.getElementsByClassName('widgetB')[0].style.display = "none";
+      document.getElementsByClassName('widgetSearch')[0].style.display = "block";
+
+      actionmenu5.style.bottom = "-665px";
+      actionmenu5.style.visibility = "hidden";
+      actionmenu5.style.opacity = "0";
+      actionmenu.style.bottom = "-665px";
+      actionmenu.style.visibility = "hidden";
+      actionmenu.style.opacity = "0";
+      actionmenu2.style.bottom = "-665px";
+      actionmenu2.style.visibility = "hidden";
+      actionmenu2.style.opacity = "0";
+      actionmenu3.style.bottom = "-665px";
+      actionmenu3.style.visibility = "hidden";
+      actionmenu3.style.opacity = "0";
+  
+      
+      startmenu.style.bottom = "-665px";
+      startmenu.style.visibility = "hidden";
+      startmenu.style.opacity = "0";
+      se.style.display = "none";
+      NSe.style.display = "block";
+
+      startmenuM.style.bottom = "-665px";
+      startmenuM.style.visibility = "hidden";
+      startmenuM.style.opacity = "0";
+      seM.style.display = "none";
+      NSeM.style.display = "block";
+      
+      tabmenu.style.bottom = "-655px"
+      tabview.style.display = "none";
+      desktops.style.display = "none";
+      actionmenu5.style.opacity = "1"
+  
+      set.style.display = "none";
+      NSet.style.display = "block";
+      SeA3.style.display = "none";
+      NSeA3.style.display = "block";
+      SeA2.style.display = "none";
+      NSeA2.style.display = "block";
+      SeA.style.display = "none";
+      NSeA.style.display = "block";
+    }
+}
+
+function opacityM() {
+document.getElementById("search-feild").src = "https://www.bing.com/search?q=" + document.getElementById("widget-search").value;
+}
+function opacityMTb() {
+  document.getElementById("search-feild").src = "https://www.bing.com/search?q=" + document.getElementById("SearchInput").value;
+  }
+
 function calendarSH(){
   if(actionmenu5.style.bottom == "65px"){
     actionmenu5.style.bottom = "-665px";
@@ -500,6 +642,11 @@ function calendarSH(){
     actionmenu3.style.bottom = "-665px";
     actionmenu3.style.visibility = "hidden";
     actionmenu3.style.opacity = "0";
+    actionmenu4.style.bottom = "-665px";
+    actionmenu4.style.visibility = "hidden";
+    actionmenu4.style.opacity = "0";
+		SeA4.style.display = "none";
+		NSeA4.style.display = "block";
 
     startmenuM.style.bottom = "-665px";
     startmenuM.style.visibility = "hidden";
@@ -511,7 +658,6 @@ function calendarSH(){
     tabview.style.display = "none";
     desktops.style.display = "none";
     actionmenu5.style.opacity = "1"
-
     set.style.display = "none";
     NSet.style.display = "block";
     SeA3.style.display = "none";
@@ -666,12 +812,18 @@ scope.addEventListener("click", (e) => {
     
         SeA3.style.display = "none";
         NSeA3.style.display = "block";
-
+      actionmenu4.style.bottom = "-665px";
+      actionmenu4.style.visibility = "hidden";
+      actionmenu4.style.opacity = "0";
+      SeA4.style.display = "none";
+      NSeA4.style.display = "block";
         actionmenu5.style.bottom = "-665px";
         actionmenu5.style.visibility = "hidden";
         actionmenu5.style.opacity = "0";
 
         widgetM.style.bottom = "-1665px";
+        document.getElementsByClassName('widgetB')[0].style.display = "block";
+        document.getElementsByClassName('widgetSearch')[0].style.display = "none";
 
         document.getElementById("Calbtn").style.backgroundColor = "transparent";
 
@@ -804,3 +956,20 @@ const dragStop = () => {
 tabsBox.addEventListener("mousedown", () => isDragging = true);
 tabsBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
+
+document.getElementById('welcome-fam').addEventListener("click", ()=>{
+  document.getElementById('welcome-cont').style.display = "block"
+  document.getElementById('RGOS-cont').style.display = "none"
+})
+document.getElementById('rgos-fam').addEventListener("click", ()=>{
+  document.getElementById('welcome-cont').style.display = "none"
+  document.getElementById('RGOS-cont').style.display = "block"
+})
+
+document.getElementById('ripenos').addEventListener("click", ()=>{
+  window.open(
+    "https://ripenos.github.io/Ripenos", "_blank");
+})
+document.getElementById('dynamica').addEventListener("click", ()=>{
+  alert("Hey! Ripenos Dynamica is coming soon!!");
+})
