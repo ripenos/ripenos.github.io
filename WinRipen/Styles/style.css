@@ -61,6 +61,20 @@
     background: #04AA6D;
     cursor: pointer;
 }
+.slider {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 95%;
+	height: 7px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+  }
+
+  .slider:hover {opacity: 1;}
 
 #Desktop{
 	position:absolute;
@@ -208,7 +222,7 @@
 	  left: 50%;	top: 50%;
 	  -webkit-transform: translate(-50%, -55%);
 	  transform: translate(-50%, -52.5%);
-	  height: 475px;
+	  height: 505px;
 	  transition: all 0.5s;
 	  z-index: 51;
 	  padding: 20px;
@@ -221,6 +235,26 @@
 	  background-clip: text;
 	  -webkit-text-fill-color: transparent;
 	}
+
+	.welcome-options{
+		width: 450px;
+		position: absolute;
+		top: 100px;
+		display: flex;
+	}
+	.welcome-options button{
+		width: calc(100% / 2);
+		padding: 7.5px;
+		color: white;
+		background-color: rgba(109, 109, 109, 0.2);
+		border-radius: 5px;
+		border: none;
+		transition: all 0.3s;
+	}
+	.welcome-options button:hover{background-color: rgba(109, 109, 109, 0.3);}
+	.welcome-options button:active{background-color: rgba(109, 109, 109, 0.4);}
+	#rgos-fam{margin-left: 7.5px;}
+
   .Welcome #welcome-logo{
 	  align-items: center;
 	  position: absolute;
@@ -233,9 +267,9 @@
   }
   
   .welcome-content {
-	  margin-top: 90px;
+	  margin-top: 120px;
 	  padding: 20px; padding-top: 25px;	  position: relative;
-	  height: calc(475px - 175px);
+	  height: calc(475px - 195px);
 	  overflow: scroll; overflow-x: hidden;
 	  background-color: rgba(66, 66, 66, 0.2);
 	  border-radius: 10px;
@@ -244,9 +278,11 @@
   .welcome-content a:hover{color: orange;}
   
   .welcome-content p{
-	  padding-left: 10px;
+	  padding: 12.5px;
 	  font-size: 13px;
 	  text-align: left;
+	  background-color: rgba(109, 109, 109, 0.2);
+	  border-radius: 5px;
 	}
 	
 	.welcome-content h4{
@@ -254,17 +290,45 @@
 	}
 	
 	.welcome-content ol{
+		margin-top: 5px;
+		margin-bottom: 5px;
+		border-radius: 5px;
+		background-color: rgba(109, 109, 109, 0.2);
 	  padding: 10px;  font-size: 13px; padding-left: 35px; padding-top: 5px;
 	}
-
-	.welcome-content ul{
-		padding: 10px;  font-size: 13px; padding-left: 25px; padding-top: 6px;
-	}
-
-	.welcome-content ul li{
-		margin: 2px; margin-bottom: 5px;
-	}
 	
+	#welcome-cont{
+		display: block;
+	}
+		
+	#RGOS-cont{
+		width:100%;
+		display: none;
+	}
+	#RGOS-cont span{display: flex;}
+	.RGOS-fam-btn{
+		width: calc(100% /1);
+		background-color: rgba(109, 109, 109, 0.2);
+		border-radius: 5px;
+		margin: 5px;
+		border: none;
+		padding: 7.5px;
+		transition: all 0.3s;
+	}
+	.RGOS-fam-btn:hover{background-color: rgba(109, 109, 109, 0.3);}
+	.RGOS-fam-btn:active{background-color: rgba(109, 109, 109, 0.4);}
+	.RGOS-fam-btn span{
+		text-align: left;
+		align-items: center;
+	}
+	.RGOS-fam-btn img{
+		width: calc(100% / 1);
+		margin-top: 20px; margin-bottom: 10px;
+	}
+	.RGOS-fam-btn span img{width: 22.5px; margin-top: 0; margin-bottom: 0;}
+	.RGOS-fam-btn span p{margin-left: -20px; background: none; padding:0; padding-left: 10px;}
+
+
 	.welcome-btn {
 		color: white; 
 		background-color:rgb(255, 123, 0);
@@ -275,7 +339,7 @@
 		 font-size: 16px; font-weight: bold; 
 		 border: 1px solid #ccc; 
 		 transition: all 0.5s;
-		margin-top: 10px; margin-right: 0px;
+		margin-top: 20px; margin-right: 0px;
 		 float: right;
 	  }
   
@@ -579,7 +643,7 @@
 	
 	.actionbutton {
 		position: absolute;
-		right: 120px;
+		right: 117.5px;
 		bottom: 8px;
 		z-index: 111;
 		width: 25px;
@@ -670,6 +734,40 @@
 	.actionbutton3 #nonSeA3{display: block;}
 	
 	.actionbutton3 #seA3 {
+		display: none;
+		background-color: rgba(212, 212, 212, 0.25); 	
+		border:  0.5px solid #0000001f;
+		padding: 5px;
+		border-radius: 7.5px;
+		border: 0.15px solid rgba(170, 182, 221, 0.10);
+		-webkit-transform: translate(-6px, -6px);
+		transform: translate(-6px, -6px);
+	}
+
+	.actionbutton4 {
+		position: absolute;
+		right: 90px;
+		bottom: 6.5px;
+		z-index: 111;
+		width: 25px;
+		height: 25px;
+		border-radius: 35px;
+		transition: 0.3s;
+	}
+	
+	.actionbutton4 :hover {
+		background-color: rgba(212, 212, 212, 0.25); 	
+		border:  0.5px solid #0000001f;
+		padding: 5px;
+		border-radius: 7.5px;
+		-webkit-transform: translate(-6px, -6px);
+		transform: translate(-6px, -6px);
+	}
+	
+	.actionbutton4:active{scale: 0.85;}
+	.actionbutton4 #nonSeA4{display: block;}
+	
+	.actionbutton4 #seA4 {
 		display: none;
 		background-color: rgba(212, 212, 212, 0.25); 	
 		border:  0.5px solid #0000001f;
@@ -779,20 +877,28 @@
 			transition: all 1s ease-in-out;
 		  display: none;
 		  overflow: hidden;
-		  overflow-y: scroll;
+
 		}
 	  
 		  .statM-Header{
 			width: 100%; height: 7.5em;
-			padding: 5px; margin: 10px;
+			padding: 5px; margin: 10px; margin-top: 5px;
 			position: relative;
 		  }
 		
 		  .StartM-Apps{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 7.5px;
+			width: 90%;
 			background-color: rgba(0, 0, 0, 0.20);
-			border-radius: 10px; font-family: Arial, Helvetica, sans-serif;
+			max-height: 60vh;
+			border-radius: 10px;
 			border:  0.5px solid #f1f1f12a; 
 			padding: 11px;
+			overflow: hidden;
+			overflow-y: scroll;
 		}
 		
 		.StartM-Apps button img{ margin-right: 100px;}
@@ -874,11 +980,8 @@
 		  font-family: Arial, Helvetica, sans-serif;
 		  border:  0.5px solid #f1f1f12a;
 	  }
-	  
-	  
-	  .musicThumbNailD{
-		  float: left; background: rgba(53, 53, 53, 0.45); padding: 19px; border-radius: 5px; margin-bottom: 5px;
-	  }
+	
+	  .musicThumbNailD{float: left; background: rgba(53, 53, 53, 0.45); padding: 19px; border-radius: 5px; margin-bottom: 5px;}
 	  
 	  #musicW-start-no{
 		  position: absolute;
@@ -928,21 +1031,6 @@
 		  font-family: Arial, Helvetica, sans-serif;
 		  border:  0.5px solid #f1f1f12a; overflow: hidden;
 	  }
-	  
-		.slider {
-		  appearance: none;
-		  -webkit-appearance: none;
-		  width: 95%;
-		  height: 7px;
-		  border-radius: 5px;
-		  background: #d3d3d3;
-		  outline: none;
-		  opacity: 0.7;
-		  -webkit-transition: .2s;
-		  transition: opacity .2s;
-		}
-	  
-		.slider:hover {opacity: 1;}
 		
 	  .startApps {
 		  padding: 11px;
@@ -1018,7 +1106,7 @@
 
 	  .widgets{
 		position: absolute;
-		width: 40%;
+		width: 42.5%;
 		height: calc(100vh - 100px); 
 		height: calc(100dvh - 100px); 
 		border-radius: 20px;
@@ -1042,35 +1130,84 @@
 	@media screen and (max-width: 950px) {.widgets{width: 65%;}}
 	
 	.widgets-cont{
-		padding-top: 20px;
-		width: 92.5%;
+		padding-top: 15px;
+		width: 100%;
+}
+
+	#widget-search{
+		position: relative;
+		top: 50%; left: 1.5%; border-radius: 10px;
+		width: 80%; margin: 0px; margin-top: 13.5px;
+		-webkit-transform: translate(0%, -50%);
+		transform: translate(0%, -50%);
+		border:  0.25px solid #f1f1f11e;
+		height: 36px;
 	}
-	
-	#widget-search{width: 100%; margin-left: 15px;}
 	
 	#SearchInput2W{
 		position: absolute;
 		transition: all 0.1s;
-		right: 6.85%;
-		top: 32.5px;
+		right: 19%;
+		top: 28.5px;
 	}
-	
-	.widgetB{
-		margin-top: 8px;
+
+	.widget-btn{
 		position: absolute;
-		padding-right: 10px;
-		padding-top: 20px;
-		width: 91%; 
-		left: 50%; 
-		height: calc(100% - 90px); 
+		transition: all 0.1s;
+		right: 2.75%;
+		top: 20px;
+		padding: 7.5px;
+		border:  0.25px solid #f1f1f11e;
+		border-radius: 8px;
+		background-color: rgba(241, 241, 241, 0.06);
+		transition: all 0.3s;
+	}
+	.widget-btn:hover{background-color: rgba(241, 241, 241, 0.1)}
+	.widget-btn:active{background-color: rgba(241, 241, 241, 0.2)}
+
+	.widgetB{
+		position: absolute;
+		padding: 17.5px;
+		padding-bottom: 7.5px;
+		width: 89%; 
+		left: 50%;
+		border-radius: 30px;
+		height: calc(100% - 120px); 
 		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
-		overflow-y: scroll; overflow-x: hidden;
+		overflow: hidden;
+		overflow-y: scroll;
+		border:  0.25px solid #f1f1f13a;
+		border-radius: 15px;
+		background-color: rgba(41, 41, 41, 0.15);
+		display: block;
 	}
-	
+
+	.widgetSearch{
+		position: absolute;
+		padding: 17.5px;
+		padding-bottom: 7.5px;
+		width: 89%; 
+		left: 50%;
+		border-radius: 30px;
+		height: calc(100% - 120px); 
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		overflow: hidden;
+		border:  0.25px solid #f1f1f13a;
+		border-radius: 15px;
+		background-color: rgba(41, 41, 41, 0.15);
+		display: none;
+	}
+	.widgetSearch iframe{
+		border-radius: inherit;	
+		width: 100%;
+		height: 97.5%;
+	}
+
 	.calcW{
 		width: 92%;
-		margin-top: 10px;
+		margin-top: 20px;
 		border-radius: 20px;
 		height: 350px;
 		padding: 10px;
@@ -1079,7 +1216,7 @@
 	
 	.TranW{
 			width: 99%;
-			margin-top: 10px;
+			margin-top: 20px;
 			border-radius: 20px;
 			background-color: rgba(0, 0, 0, 0.20);
 			height: 455px;
@@ -1088,16 +1225,16 @@
 	
 	.qrW{
 		width: 99%;
-		margin-top: 10px;
+		margin-top: 20px;
 		border-radius: 20px;
-		height: 520px;
+		height: 527.5px;
 		background-color: rgba(0, 0, 0, 0.20);
 		border:  0.5px solid #f1f1f12a;
 	}
 	
 	.dictW{
 		width: 99%;
-		margin-top: 10px;
+		margin-top: 20px;
 		border-radius: 20px;
 		height: fit-content;
 		min-height: 375px;
@@ -1109,12 +1246,14 @@
 		position: relative;
 		float: left;
 		width: 49%;
+		padding-bottom: -17.5px;
 	}
 	
 	.widgetB-right{
 		position: relative;
 		float: right;
 		width: 49%;
+		padding-bottom: 17.5px;
 	}
 	
 	.weather-widgetB{
@@ -1122,6 +1261,7 @@
 	width: 100%;
 	border-radius: 20px;
 	border:  0.5px solid #f1f1f12a;
+	height: 260px;
 	}
 	
 	.Music-widget {
@@ -1412,6 +1552,18 @@
 	z-index: 99;
 }
 
+.actionmenu4{
+	bottom: -665px;
+	right: 10%;
+	width: 195px;
+	height: 155px;
+	overflow: hidden;
+	position: absolute;
+  opacity: 0;
+  visibility: hidden;
+	transition: all 1s ease-in-out;
+	z-index: 99;
+}
 
   .wrapper{
 	position: absolute;
@@ -1455,7 +1607,7 @@
   }
   .calendar{
 	 height: 300px; overflow-y: scroll; margin: 15px; margin-top: -15px;
-	padding: 20px; background: rgba(0, 0, 0, 0.25); border-radius: 7.5px;  
+	padding: 20px; border-radius: 7.5px;  
    }
 
   .calendar ul{
@@ -1468,7 +1620,7 @@
   .calendar .days{margin-bottom: 20px;}
 
   .calendar li{
-	color: #acc;
+	color: rgb(255, 255, 255);
 	width: calc(100% / 7);
 	font-size: 1.07rem;
 	font-weight: bolder;
@@ -1594,4 +1746,38 @@
   .tabs-box.dragging .tab {
 	user-select: none;
 	pointer-events: none;
+  }
+
+  .glance-longBtn{
+	display: flex;
+	align-items: center;
+	padding: 10px; width: 90%;
+	margin-left: -1.5%; margin-bottom: 10px;
+	background-color: rgba(39, 39, 39, 0.5);
+	border-radius: 8px;
+	transition: all 0.3s;
+	overflow: hidden;
+  }
+  .glance-longBtn img{width: 22.5px; margin-right: 7.5px;}
+  .glance-longBtn:hover{background-color: rgba(105, 105, 105, 0.35);}
+  .glance-longBtn:active{background-color: rgba(105, 105, 105, 0.5) ;}
+  .glance-longBtn span{
+	position: relative;	
+	padding: 5px;
+	border-radius: 5px;
+	transition: all 0.3s;
+  }
+  #Defender-more{margin-left: 45px;}
+  #bluetooth-more{margin-left: 45px;}
+  #spotify-more{margin-left: 62.5px;}
+  #RGOS-more{margin-left: 15px;}
+
+  .glance-longBtn span:hover{background-color: rgba(105, 105, 105, 0.35);}
+  .glance-longBtn span:active{background-color: rgba(105, 105, 105, 0.5);}
+
+  .tray-cont{
+	height: 100%;
+	overflow: hidden;
+	padding-left: 5px; padding-right: 5px;
+	overflow-y: scroll;
   }
