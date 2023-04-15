@@ -135,7 +135,7 @@ input:checked + .slider2:before {
 
 @media screen and (max-width: 850px) {
     .desk-widget-info{display: none;}
-    .startmenu, .actionmenu, .actionmenu2, .SearchInput, .SearchInput2, .DesktopShow, .taskbar-Al {display: none;}
+    .startmenu, .actionmenu, .actionmenu2, .SearchInput, .SearchInput2 {display: none;}
     .startmenuM {display: block;}  
     #mytaskbar{display: none;}
     #mytaskbar-mobile{display: block;}
@@ -165,6 +165,7 @@ input:checked + .slider2:before {
     }
 
     .Welcome{width: 89%;}
+	.welcome-options{width: 89%;}
     .Welcome #welcome-logo{
         align-items: center;
         position: absolute;
@@ -177,4 +178,5 @@ input:checked + .slider2:before {
 
     .widgets{display: none;}
     .searchT{margin-left: 15px;}
+
 }
