@@ -92,3 +92,8 @@ This project is still under progress and all Its **major changes** would be list
 - Refreshed Calendar Menu
 - Live Battery status 
 - Overall UI tweaks and bugs fixed
+
+## v0.8
+- Welcome page with welcome and RGOS Family
+- Refreshed Widget menu with built-in Search menu
+- Further UI tweaks
