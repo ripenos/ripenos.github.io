@@ -35,88 +35,91 @@
 
     <!-- TASKBAR -->
     <div class="taskbar" id="mytaskbar">
+        <div id="tbItems">
+            <div class="dockApps">
+                <!--Start button-->
+                <div class="startbutton" id="myStartBtn">
+                    <img src="Assets/windows11-logo.png" width="25px" id="nonSe">
+                    <img src="Assets/windows11-logo.png" width="25px" id="Se">
+                </div>
 
-        <div class="dockApps">
-            <!--Start button-->
-            <div class="startbutton" id="myStartBtn">
-                <img src="Assets/windows11-logo.png" width="25px" id="nonSe">
-                <img src="Assets/windows11-logo.png" width="25px" id="Se">
+                <!--Tab button-->
+                <div class="tabbutton" id="myTabBtn">
+                    <img src="Assets/Windows11-tab-view-button.png" width="26px" id="nonSet">
+                    <img src="Assets/Windows11-tab-view-button.png" width="26px" id="set">
+                </div>
+
+                <input type="text" placeholder="Search the web" class="searchT" style=" font-family: Arial, Helvetica, sans-serif; font-size: 13px; " 
+                id="SearchInput" onclick="widgetSearchShow()" oninput="opacityMTb(), inWidgetSearch()">
+                <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2" onclick="getVal()" title="Search in Google on new tab">
+                
+                <!--FIle explorer-->
+                <div class="FIlesbutton" id="myP4">
+                    <img src="Assets/Windows_11_Explorer.png" width="26px" id="nonSeF">
+                    <img src="Assets/Windows_11_Explorer.png" width="26px" id="seF">
+                </div>
+
+                <!--Edge-->
+                <div class="Edgebutton" id="myP5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="nonSeB">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="seB">
+                </div>
+
+                <!--ms paint-->
+                <div class="FIlesbutton" id="myP6">
+                    <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="26px">
+                </div>
+
+                <!--Widget button-->
+                <div class="widgetbutton"  onclick="widgetShow()">
+                    <span class="widgetB-shorten">
+                        <img  width="35px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEoElEQVR4nO2Yb2wTZRzHS7DFVyTgC4G9myaOdSNqSCTqiAY1xigxvgFCjPICBUk0IIkayRQT1OBWtwEGfWMCKNKtY252G2u7dexvq4vKNvBvHMZsWdu7i2wvpPc8z9e096ft3dFx12sJSX/JN2lyS+/z+d1zz/NbHY5ylatc5botCnPf1GDe24TYuSnEWhcRa0M6cR8Qbwfi5+V0APFv5XSCJbrAEt/J8YMlusESPXJ6wRIXQLk+EK5vkST6pigXaAI3UGMf+JTXhdi5E5j3UsRaISUFr4C3Z4F3aMC7NODdGvALaXjKBUC5oJwQSKKfUK7/GOB1FQ4/7w0h5tWA36jrnZqu+/N2nebAh+T0g3IDoFwYhAsHgSnrEunOq+DF7TpVwQdA+DAIPwjCX4TIDbZYg5/z1WC+lRTe9V5N1wOarvfndj0NLsETfggiN0yuc0Nu8wLzbc1F6Xq8F3T2NOiMB+z3d8Auvwo2/Qrob2+DxLpkcAme8MMg/AhEfsRjQcA3na/rLGHUdT/Y3FdgfzeD/XEI7PIesJ9fAPu+DhitAsKrgcAyIOAwTuhO0KseGVyCJ/woCD82aV4g3r6Q23V5a4ydB5v5COzXfcDkdmBiCzC2ARhcCwSdN4a7ybDhe2RwCV4UxpAUxq9ZEDDo+uwXwMWKgiHzJrhc6XoaXhTGIQoRWBDQH0iIbCwufEBKNriUqBUB/UuaWqOlERhXwZVYENCPAaWAR1ogF96SgNHWWDqBqB0C+uHrNhPo1h1ICN9VfIHBNXYJ6McANrmtuPBBF8jVJrsEjMcAljq87H4S4dVgE0+CzH5tCG9RwNrwZTAGGO7rZuMwW2ZGXu3wlT0GSOD6fb0EAgFd19lZD7B2PeC42zjrqkG9x9Wu086XgHon8K5DSr0TtHOXChXe/zIaXU4cdTjSSX0OH9hll4D2P6QBYF0eeCUVbrXrOfBK3nOpUI1Z8KrECpddApm1riyXJeHlKMtFBy9HgTqqgVdik4DykmbW+s0LSDdln1ToBY6sUq97Vrh08A13LLdHIAOe2WHMCpA/20D9u0F920DPPgd25mmQSyfV6yP1r6Fl1cocAf+LW+0SyN4apR3GrICZLM6EsPBXyL5dyGhrNCvQ8OFBbKh144H7a7G5bhOefWYLWs80Zp7QPz2gE82gPx4HvfQ5yJVTEGODdgkMaQ6kUWBlpSmBqqr7UFlZmZPammr1Ovx7Ad/OnLC+/XYJ6A8kevgtYNmavPDs3gfVm2rhlagCvp2GsUVA5Eev5Z6m8hgw3QPi/QzUcxj04Otg23eAPfpEGpxt3AwSOK3etO6Rh3Tw7ur1pgWSQvRf8wLC6HShY8CViXYcef8N7N29A89vfQqPP/Ywvjz5QWab7dmnF+gwOokj5n9WEfmxTwudX5bMXBD0pxOg4x+DhQ+BBd4E+eWU/u/4aINpgetcxJ3ko6SoAsLSSTH8lxivNi2QfgpC5NitFhCFSJPDaqV+2k7y0eCt634kAPzgtCygSIhCtKWUyynJR8VU5wuG174TIh/xpHaEpBBZsB1aSH1nZFLko42W13y5ylWucjlKXf8DXjjS26sMD2MAAAAASUVORK5CYII=">
+                    </span>
+                    <span class="widgetB-expand">
+                    <h6 style="font-size: 12px;">No Music Played</h6>
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" >
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png">
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png">
+                    </span>
+                </div>
             </div>
 
-            <!--Tab button-->
-            <div class="tabbutton" id="myTabBtn">
-                <img src="Assets/Windows11-tab-view-button.png" width="26px" id="nonSet">
-                <img src="Assets/Windows11-tab-view-button.png" width="26px" id="set">
+            <!--Calendar button-->
+            <div class="calbutton" onclick="calendarSH()" id="Calbtn">
+                <img src="Assets/noty.png" width="23px" class="notybutton">
+                <div id="txt" class="tD"></div>
+                <div id="txtdty"class="tY"></div>
             </div>
 
-            <input type="text" placeholder="Search the web" class="searchT" style=" font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-left: 15px; " 
-            id="SearchInput" onclick="widgetSearchShow()" oninput="opacityMTb(), inWidgetSearch()">
-            <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2" onclick="getVal()" title="Search in Google on new tab">
-            
-            <!--FIle explorer-->
-            <div class="FIlesbutton" id="myP4">
-                <img src="Assets/Windows_11_Explorer.png" width="26px" id="nonSeF">
-                <img src="Assets/Windows_11_Explorer.png" width="26px" id="seF">
-            </div>
+            <div class="DesktopShow">
 
-            <!--Edge-->
-            <div class="Edgebutton" id="myP5">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="nonSeB">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="25px" id="seB">
-            </div>
+                <!--Volume button-->
+                <div class="actionbutton" id="myP7">
+                    <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="nonSeA" >
+                    <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="seA" >
+                </div>
 
-            <!--ms paint-->
-            <div class="FIlesbutton" id="myP6">
-                <img src="https://img.icons8.com/fluency/48/000000/microsoft-paint.png" width="26px">
-            </div>
+                <!--Network button-->
+                <div class="actionbutton2" style="right: 152px;" id="myP8">
+                    <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="nonSeA2" >
+                    <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="seA2" >
+                </div>
 
-            <!--Widget button-->
-            <div class="widgetbutton"  onclick="widgetShow()">
-                <span class="widgetB-shorten">
-                    <img  width="35px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEoElEQVR4nO2Yb2wTZRzHS7DFVyTgC4G9myaOdSNqSCTqiAY1xigxvgFCjPICBUk0IIkayRQT1OBWtwEGfWMCKNKtY252G2u7dexvq4vKNvBvHMZsWdu7i2wvpPc8z9e096ft3dFx12sJSX/JN2lyS+/z+d1zz/NbHY5ylatc5botCnPf1GDe24TYuSnEWhcRa0M6cR8Qbwfi5+V0APFv5XSCJbrAEt/J8YMlusESPXJ6wRIXQLk+EK5vkST6pigXaAI3UGMf+JTXhdi5E5j3UsRaISUFr4C3Z4F3aMC7NODdGvALaXjKBUC5oJwQSKKfUK7/GOB1FQ4/7w0h5tWA36jrnZqu+/N2nebAh+T0g3IDoFwYhAsHgSnrEunOq+DF7TpVwQdA+DAIPwjCX4TIDbZYg5/z1WC+lRTe9V5N1wOarvfndj0NLsETfggiN0yuc0Nu8wLzbc1F6Xq8F3T2NOiMB+z3d8Auvwo2/Qrob2+DxLpkcAme8MMg/AhEfsRjQcA3na/rLGHUdT/Y3FdgfzeD/XEI7PIesJ9fAPu+DhitAsKrgcAyIOAwTuhO0KseGVyCJ/woCD82aV4g3r6Q23V5a4ydB5v5COzXfcDkdmBiCzC2ARhcCwSdN4a7ybDhe2RwCV4UxpAUxq9ZEDDo+uwXwMWKgiHzJrhc6XoaXhTGIQoRWBDQH0iIbCwufEBKNriUqBUB/UuaWqOlERhXwZVYENCPAaWAR1ogF96SgNHWWDqBqB0C+uHrNhPo1h1ICN9VfIHBNXYJ6McANrmtuPBBF8jVJrsEjMcAljq87H4S4dVgE0+CzH5tCG9RwNrwZTAGGO7rZuMwW2ZGXu3wlT0GSOD6fb0EAgFd19lZD7B2PeC42zjrqkG9x9Wu086XgHon8K5DSr0TtHOXChXe/zIaXU4cdTjSSX0OH9hll4D2P6QBYF0eeCUVbrXrOfBK3nOpUI1Z8KrECpddApm1riyXJeHlKMtFBy9HgTqqgVdik4DykmbW+s0LSDdln1ToBY6sUq97Vrh08A13LLdHIAOe2WHMCpA/20D9u0F920DPPgd25mmQSyfV6yP1r6Fl1cocAf+LW+0SyN4apR3GrICZLM6EsPBXyL5dyGhrNCvQ8OFBbKh144H7a7G5bhOefWYLWs80Zp7QPz2gE82gPx4HvfQ5yJVTEGODdgkMaQ6kUWBlpSmBqqr7UFlZmZPammr1Ovx7Ad/OnLC+/XYJ6A8kevgtYNmavPDs3gfVm2rhlagCvp2GsUVA5Eev5Z6m8hgw3QPi/QzUcxj04Otg23eAPfpEGpxt3AwSOK3etO6Rh3Tw7ur1pgWSQvRf8wLC6HShY8CViXYcef8N7N29A89vfQqPP/Ywvjz5QWab7dmnF+gwOokj5n9WEfmxTwudX5bMXBD0pxOg4x+DhQ+BBd4E+eWU/u/4aINpgetcxJ3ko6SoAsLSSTH8lxivNi2QfgpC5NitFhCFSJPDaqV+2k7y0eCt634kAPzgtCygSIhCtKWUyynJR8VU5wuG174TIh/xpHaEpBBZsB1aSH1nZFLko42W13y5ylWucjlKXf8DXjjS26sMD2MAAAAASUVORK5CYII=">
-                </span>
-                <span class="widgetB-expand">
-                <h6 style="font-size: 12px;">No Music Played</h6>
-                    <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" >
-                    <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png">
-                    <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png">
-                </span>
+                <!--Battery button-->
+                <div class="actionbutton3"  style="right: 185px;" id="myP9">
+                    <img src="Assets/windows11-actions - battery.png" width="19.5px" id="nonSeA3" >
+                    <img src="Assets/windows11-actions - battery.png" width="19.5px" id="seA3" >
+                </div>
+
+                <!-- At a glance -->
+                <div class="actionbutton4"  style="right: 220px;" id="myP10">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABH0lEQVR4nO2WUQ6CMBBEuZG00fufA/QGQjzCmCYkmlrS0s4uqPsSP4zt7gydynadYRiGYfwyAByAG4ArAK/Qzy/9wse1FusBTHjxAHChqZXslygmagLMfkts5rcic+K7J8dmzvRzLcd4looTmP3WimV+rzYBZr+V2LjCdZ4UG1erq1v+JosyV1yUtB+f68fUonGLoFoTiX1TRa8htSjOG90ESfwUtK4tPgG4b7mkpRctd2FT1OwRMaEmXsKEuvgoe4w7IZd5pZPQffKCcdIXT4hTeLcMuQiAGRvmSRTW7cWevLQJaIqPTDRPpLuIZ43Vu4pvNXEI8bUmDiVeY5hTQ2KYU4c5zO1G4TDHfcOyaRnmDsNXxYYxzBmGYRjG3/IE1anyuW/e8W0AAAAASUVORK5CYII=" width="18.5px" id="seA4" >
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJklEQVR4nO2X7Q3CMAxEsxEUwf5zUNgAECM8hMqXoBGJ7aSJ5PeriNS+S67UhOA4juM4zi/ABjgCB2AIPQGsgTNvrsAudCq+HxNMsbm8JE/X35+HnmKz7SJORMT/+b4NE//EN22CRPFNmiBTfFMmEIpvwgRK8YuawEj8IiYwFl/VBDDkvlE/hrljwtqh2BtbsvOSXaXESRiJX8YE8tiohjks4mQYG9Ewh+YkLMVrBCExUUJ8NRPIMp91T9EeTH++NYXPKQ+bkYlxbtGo2Mkk8VIT/K7fp+RttqhWfK4J5vutY0VXwCn20NQe5pD0i5moPcyh6ReJkzo2mXG6JMUm4yRMdz5zhtpKi87FyVz8kyIxfRS9/8Tus49RHqexVj/HcRzHCUtyA55c8sCxbpgNAAAAAElFTkSuQmCC" width="18.5px" id="nonSeA4" >
+                </div>
             </div>
         </div>
-
-        <!--Calendar button-->
-        <div class="calbutton" onclick="calendarSH()" id="Calbtn">
-            <img src="Assets/noty.png" width="23px" class="notybutton">
-            <div id="txt" class="tD"></div>
-            <div id="txtdty"class="tY"></div>
-        </div>
-
-        <div class="DesktopShow">
-
-            <!--Volume button-->
-            <div class="actionbutton" id="myP7">
-                <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="nonSeA" >
-                <img src="Assets/windows11-actions - Volume.png" width="19.5px" id="seA" >
-            </div>
-
-            <!--Network button-->
-            <div class="actionbutton2" style="right: 152px;" id="myP8">
-                <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="nonSeA2" >
-                <img src="Assets/windows11-actions - wifi.png" width="19.5px" id="seA2" >
-            </div>
-
-            <!--Battery button-->
-            <div class="actionbutton3"  style="right: 185px;" id="myP9">
-                <img src="Assets/windows11-actions - battery.png" width="19.5px" id="nonSeA3" >
-                <img src="Assets/windows11-actions - battery.png" width="19.5px" id="seA3" >
-            </div>
-
-            <!-- At a glance -->
-            <div class="actionbutton4"  style="right: 220px;" id="myP10">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABH0lEQVR4nO2WUQ6CMBBEuZG00fufA/QGQjzCmCYkmlrS0s4uqPsSP4zt7gydynadYRiGYfwyAByAG4ArAK/Qzy/9wse1FusBTHjxAHChqZXslygmagLMfkts5rcic+K7J8dmzvRzLcd4looTmP3WimV+rzYBZr+V2LjCdZ4UG1erq1v+JosyV1yUtB+f68fUonGLoFoTiX1TRa8htSjOG90ESfwUtK4tPgG4b7mkpRctd2FT1OwRMaEmXsKEuvgoe4w7IZd5pZPQffKCcdIXT4hTeLcMuQiAGRvmSRTW7cWevLQJaIqPTDRPpLuIZ43Vu4pvNXEI8bUmDiVeY5hTQ2KYU4c5zO1G4TDHfcOyaRnmDsNXxYYxzBmGYRjG3/IE1anyuW/e8W0AAAAASUVORK5CYII=" width="18.5px" id="seA4" >
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJklEQVR4nO2X7Q3CMAxEsxEUwf5zUNgAECM8hMqXoBGJ7aSJ5PeriNS+S67UhOA4juM4zi/ABjgCB2AIPQGsgTNvrsAudCq+HxNMsbm8JE/X35+HnmKz7SJORMT/+b4NE//EN22CRPFNmiBTfFMmEIpvwgRK8YuawEj8IiYwFl/VBDDkvlE/hrljwtqh2BtbsvOSXaXESRiJX8YE8tiohjks4mQYG9Ewh+YkLMVrBCExUUJ8NRPIMp91T9EeTH++NYXPKQ+bkYlxbtGo2Mkk8VIT/K7fp+RttqhWfK4J5vutY0VXwCn20NQe5pD0i5moPcyh6ReJkzo2mXG6JMUm4yRMdz5zhtpKi87FyVz8kyIxfRS9/8Tus49RHqexVj/HcRzHCUtyA55c8sCxbpgNAAAAAElFTkSuQmCC" width="18.5px" id="nonSeA4" >
-            </div>
-        </div>
+        <div class="dockbar" id="dock"></div>
+        
     </div>
 
     <!-- TASKBAR Mobile -->
@@ -147,7 +150,7 @@
             <CENTER>
                 <div style="float: left; margin-top: -30px;">
                         <!--Profile-->
-                        <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="65px" >
+                        <img src="https://img.icons8.com/fluency/452/user-male-circle.png" width="65px" id="startPfp">
                         <CENTER>
                             <p id="greetings" style="color: white;font-family:Arial, Helvetica, sans-serif; margin-left: 20px;"></p>
                             <h5 style="color: white;">admin6901@mail.com</h5>
@@ -191,6 +194,15 @@
                                             Clock</button></li>
                                     </div>
                 
+                                    <!--D-->
+                                    <li ><button class="startAppsbuttonH"><b>D</b></a></li>
+                                        <div style="margin-left: 15px;">
+                                            <li ><button class="startAppsbutton">
+                                                <img style="width: 17.5px; margin-bottom: -5px;" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="">
+                                                Discord
+                                            </button></li>
+                                    </div>
+
                                     <!--F-->
                                     <li ><button class="startAppsbuttonH"><b>F</b></button></li>
                                     <div style="margin-left: 15px;">
@@ -313,7 +325,7 @@
                     <br>
                     <div class="StartPinned" style="margin-bottom: 10px;">
                         <div class="wrapper2">
-                            <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+                            <div class="iconP"><i id="left" class="fa-solid fa-angle-left"></i></div>
                             <ul class="tabs-box">
                               <li class="tab"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microsoft_Edge_logo_%282019%29.png" width="31px"><br><p>Edge</p></li>
                               <li class="tab"><img src="https://img.icons8.com/fluency/452/settings.png" width="32px" style="margin-bottom: -2px;"><br><p>Settings</p></li>
@@ -324,7 +336,7 @@
                               <li class="tab"><img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" width="33px" style="margin-bottom: -2px;"><br><p>Spotify</p></li>
                               <li class="tab"><img src="https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png" width="33px" style="margin-bottom: -2px;"><br><p>Store</p></li>
                             </ul>
-                            <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+                            <div class="iconP"><i id="right" class="fa-solid fa-angle-right"></i></div>
                           </div>
                     </div>
 
@@ -339,7 +351,7 @@
 
                         <div class="StartPinnedApps-r" id="r2"  onclick="rec2()">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO2Zz0sbQRTH91g1F71k41EQqhdL8eSxIFgKK+SooEGlhUJFPUQRioe0R7Uo2D9A8NKjkKjBH5iIRg/GUxISUKtkRZMaelEzL30yawxaY7vJzs6usg++x10+n533dmZZQbDKKquef5EN+zsSEI8h6ECtyX2rCPIXCIhHLOBp/rgr+UsAI3hFYKhGkcCpF5tPUiDXX8tfAlgKfKzjLwEMBeB9I38JYCnQ85q/BDAUIF0t/CWApUDHG/4SwFKgt/W/ErlpxvsE0xmYbeAvASwFSohgCTz3Fch2SJh1OrWlUyo+7AEeAp36CJCAA38tihiSuke22l2HIamnWRcBPULy8Psbbgx/mdgOtbtwS3Kda5LgDh8cwkQiQXMV/jq5QyVCUveBuWbgr9Yht/BrXRiPx+/mctczvk3byVwzcEeA5OFlrw1TqzZMhH9gLBYrJBKJjJYN/y8Blm0je22YXhGUpFYrMb47h9FolOazJng9BUgePumrKsDf5mzFhtG9+QHN8HrNwJXTiSlJwqSn/gE8jeytMu8+UIAfe/koPF0Z3QVY9Xy6CDyXnVhPeDDbWUht25A8PB8BlTNQDjyY5Xug1LYBMwlogQczCGT8Isq+mrLgwWiB7LoDT/xNeB4ZLgsejBa4WHOgvPkBM5nMPQm18GC0wO9lEWfGB5UD2Y2EG5ML1arhwWiBU58dBz714feJQWUlTvyvlJlQCw9GCihvnyURzxbsykrQdqIzUep9BCN/MZXypKHY9UHxJ0uBtyz/k6mBJ+tiGzMBq6yySjBtXQNECAXqig7xVAAAAABJRU5ErkJggg==" width="32px" >
-                            <br><p style="font-size: 13px;">ReadMe.md</p>
+                            <br><p style="font-size: 13px;">About.md</p>
                         </div>
 
                         <div class="StartPinnedApps-r" id="r2" onclick="easterEgg1()">
@@ -385,7 +397,7 @@
                         
                         <h6 id="musicW-start-no">00:00</h6>
                         <h6 id="musicW-end-no">--:--</h6>
-                        <div style="translate: -17.5px 10px; scale: 0.85;">					
+                        <div style="translate: -25px 10px; scale: 0.85;">					
                             <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" width="15px" 
                             style="filter: invert(100%); cursor: pointer; float: right; " >
                             <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png" width="15px" 
@@ -393,7 +405,7 @@
                             <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" width="15px" 
                             style="filter: invert(100%); cursor: pointer; float: right; " >
                         </div><br>
-                        <input type="range" min="1" max="100" value="0" class="slider" style="translate: 0px 20px;">
+                        <input type="range" min="1" max="100" value="0" class="slider" style="translate: 0px 25px;">
                     </div>
 
                     <div class="StartPinnedW2" >
@@ -461,7 +473,16 @@
                                     <img src="https://img.icons8.com/fluency/52/null/clock.png" alt="">
                                     Clock</button></li>
                             </div>
-        
+
+                            <!--D-->
+                            <li ><button class="startAppsbuttonH"><b>D</b></a></li>
+                                <div style="margin-left: 15px;">
+                                    <li ><button class="startAppsbutton">
+                                        <img style="width: 17.5px; margin-bottom: -2.5px;" src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="">
+                                        Discord
+                                    </button></li>
+                            </div>
+
                             <!--F-->
                             <li ><button class="startAppsbuttonH"><b>F</b></button></li>
                             <div style="margin-left: 15px;">
@@ -553,7 +574,7 @@
         </div>
 
         <!--TAB VIEW-->
-        <div class="tabmenu">
+        <div class="tabmenu" >
             <div class="tabview"></div>
             <div class="desktops">
                 <div class="desktop1">
@@ -567,82 +588,153 @@
         </div>
         
         <!--Time Widget-->
-        <div style="padding: 17px; text-align: right; margin-top: -10px; position: absolute; right: 0px; color: white;">
-                <div style="margin-right: -5px; z-index: 2;">
+        <div style="padding: 17px; text-align: right; margin-top: -10px; position: absolute; right: 0px; color: white;" id="desk-widget">
+                <div style="margin-right: 10px; z-index: 2;">
                     <div id="txtH" style="color: azure; font-weight:900; font-size: 65px; filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
                     <div id="txtdtyH" style="color: azure; font-weight:900; font-size: 20px; margin-top: -10px;filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
                 </div>
             <div class="desk-widget-info">
-                <p style="font-size: 16px;  display: inline-block; margin-right: 5px; filter: none;">No events Today</p>
-                <p style="font-size: 20px;  display: inline-block; margin-right: 5px; filter: none;">●</p>
-                <img src="Assets/windows11-actions - battery.png" style="width: 25px; margin-bottom: -5px; filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));">
-                <div style="margin-left: -1px; display: inline-block; font-size: 16px; filter: none;
+                <p style="font-size: 16px;  margin-right: 5px; filter: none; margin-top: 2.5px;">No events Today</p>
+                <p style="font-size: 20px;margin-right: 5px; filter: none;">●</p>
+                <div class="battery-wrapper">
+                    <div class="battery-cont" id="desk-WBt">
+                        <div class="battery" id="deskWB"></div>
+                    </div>
+                    <div class="battery-edge"></div>
+                </div>
+                <div style="margin-left: -1px; font-size: 16px; filter: none;
                     color: white; font-weight: 600;
                     letter-spacing: 0.5px;
-                    padding-bottom: 5px;
+                    padding-bottom: 5px; margin-top: 2.5px;
                     filter: drop-shadow(0px 0px 1px black);" id="status">
                 </div> 
+                
             </div>
         </div>
         
         <!--Context Menu on right click-->
         <div id="context-menu">
             <div class="darktheme" id="themeCM" style="padding: 7px;">
-            <div class="item">
-                <img src="Assets/view.png" width="27px" style="margin-bottom: -7px;">
-                View 
-                <span style="float: right;"> <img src="Assets/cMarrow.png"  width="16px"/></span>
-            </div>
-            <div class="item">
-                <img src="Assets/sort.png" width="27px" style="margin-bottom: -7px;">
-                Sort by
-                <span style="float: right;">
-                    <img src="Assets/cMarrow.png"  width="16px"/>
+            <div class="item" onclick="ExpandContextView()" id="view-contx">
+                <img src="Assets/view.png" width="27px">
+                <p>View</p>
+                <span id="view-more"> 
+                    <img src="Assets/cMarrow.png"  width="16px" id="view-more-img"/>
                 </span>
+
+                <div id="view-optionsCt">
+                    <p
+                    onclick="
+                    document.getElementById('bin').style.scale= '0.77';
+                    document.getElementById('myPc').style.scale= '0.77';
+                    ">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAr0lEQVR4nO3WMQ6DMBBEUZ+E3P8IQA4WV4OQ3CE7gy1YF/+VSLPSboEnJQCYkqSPpK+krKvz2y5pichYytB/toiMpXKRy4UiMhaZIjIWFmgYPZSlZ/BsC2Rj7i8iYyn/37u/xFcylvLAbI0HZq08So9ngDeIMldFmbPIFJGxsEDD6KEsPYNnWyAbcylzoswBz6DM1VHmLDJFZCws0DB6KEvP4NkWyMZcypwocwCQAh1zfc4uBDH75wAAAABJRU5ErkJggg==">
+                        Small icons
+                    </p>
+                    <p 
+                    onclick="
+                    document.getElementById('bin').style.scale= '1';
+                    document.getElementById('myPc').style.scale= '1';
+                    ">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTUlEQVR4nO2XPU7DQBCFXfEbzuMDJNDCiRLBBdJSBs4SxB0gRYAGOpTa0ocWRsKySDzZ3SEsmq+xIo3e+M3azryqchzH+bMAR8AVsAAaNtNI3SVwaKmlQhreE8ddu3FOLTUyrRQmFlpq5AhTeLTQUqN4TvtoLLTUkAELLTUbtJbAEDgGRsBTaQaGnbrT0gwMOnUnpRkYlX4CS7npAXBW4jugZtcGmtL/BxaJTR8stNTIJpjC2EJLTdgAZROMYQ4cWGhthTSehGVKucOHuvFPDXNqOcWAR8ovPFLikbLMVSIZpdYKmMm1VyuXgTDR677JKrTegVpqavn9KwamUjNNMBAm/nnzrbp63UnkNPAcYmQrTr5EGpit6XtjbeC8U3dR0gm8Anudun3gLcJAYGfvgAql1gq4tfgKeaSsvofhkbKKeIQ8UrbxSOk4zv/kAwWI9yqKJbc6AAAAAElFTkSuQmCC">
+                        Medium icons
+                    </p>
+                    <p 
+                    onclick="
+                    document.getElementById('bin').style.scale= '1.2';
+                    document.getElementById('myPc').style.scale= '1.2';
+                    ">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVR4nO2ZPUvDQBiA48emTu5W/QHi6KCISB3cRLAgblYU8S+4CtLBT1qrox+bqzg5OdlBcNWh1U1xaAcdjD5ycKWlpCG5kNyJ90CW5r33vae95j7iOBaLxWI0wCBQBF4Al/hxZa0jUTtq52eAGvqoAWnVzg9p7nydKpBSERDDxhQKKgJiHJpCRUUgiT9sUFwVAaNwrEB4boEdYA+45w/9Aq/AlEe++SiPZSchgW9g3CfnnOkCpwHyXpsmUAW2gUmgN2DuFLAClHULPClN840afUBJl8APMKra+aY6w8CXDoGbADn6xRUg7kqHQM6nbTdw0RR7Lj7zic/pENj1abvuEb/mE5/XIVDyaXviEV9sE9sBPOoQEMy2aZv1iF1uE7sapFBcAu/AiEfbLuBYLslduTnq9IibAD50CggOfHL0iMvn/kbQInEKbIZO3qiRMUFgK4JA1gSBuwgClyYICBYU8k/L5YgRAp/Aonimt+QYA5aaZ2H53M+E3dw4MQvUeQAOgf2WVeabHC5nQSYtnQKx4fxHAZc/frD1jDmUVQTE+bwp5FVfbJhyvD4QWkBKpGUCnZ1PK3W+5QikII64E3zFVJG7NLVv3mKxWJyk+AUom7DM5XAZpQAAAABJRU5ErkJggg==">
+                        Large Icons
+                    </p>
+                    <hr>
+                    <p>Auto Arrange icons</p>
+                    <hr>
+                    <p onclick="ShowDeskIcoCtx()" id="ToggleDeskIcoDisplay">Hide desktop icons</p>
+                    <p onclick="ShowDeskWidgetCtx()" id="ToggleDeskWidDisplay">Hide desktop widgets</p>
+                </div>
             </div>
-            <div class="item" style="margin-bottom: 3px;">
-                <img src="Assets/refresh.png" width="23px" style="margin-bottom: -7px; margin-right: 2px;">
-                Refresh
+            <div class="item" onclick="ExpandContextSort()" id="sort-contx">
+                <img src="Assets/sort.png" width="27px">
+                <p>Sort by</p>
+                <span id="sort-more">
+                    <img src="Assets/cMarrow.png"  width="16px"  id="sort-more-img"/>
+                </span>
+                <br>
+                <div id="sort-optionsCt">
+                    <p>Name</p>
+                    <p>Size</p>
+                    <p>Item Type</p>
+                    <p>Date modified</p>
+                </div>
+            </div>
+            <div class="item"
+            onclick="
+              document.getElementById('DeskIcons').style.opacity = '0';
+              document.getElementById('desk-widget').style.opacity = '0';
+              document.getElementById('refreshImg').classList.add('refreshImg');
+
+            setTimeout(() => {
+            document.getElementById('DeskIcons').style.opacity = '1';
+            document.getElementById('desk-widget').style.opacity = '1';
+            document.getElementById('refreshP').innerHTML = 'Refreshed';
+            document.getElementById('refreshImg').classList.remove('refreshImg');
+            }, 250);
+
+            setTimeout(() => {
+                document.getElementById('refreshP').innerHTML = 'Refresh';
+            }, 1000);
+            ">
+                <img src="Assets/refresh.png" width="23px" id="refreshImg">
+                <p id="refreshP">Refresh</p>
             </div>
             <center>
-                <hr style="border:1px solid rgba(204, 204, 204, 0.65); width: 95%; margin-bottom: 3px; margin-top: 2px;">
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; ">
             </center>
-            <div class="item" style="margin-bottom: 3px;">
-                <img src="Assets/new.png" width="23px" style="margin-bottom: -7px;">
-                New
-                <span style="float: right;">
-                    <img src="Assets/cMarrow.png"  width="16px"	/>
+            <div class="item" id="new-contx" onclick="ExpandContextNew()">
+                <img src="Assets/new.png" width="23px">
+                <p>New</p>
+                <span id="new-more">
+                    <img src="Assets/cMarrow.png"  width="16px"	 id="new-more-img"/>
                 </span>
+
+                <div id="new-optionsCt">
+                    <p>Shortcut</p>
+                    <p>Presentation</p>
+                    <p>Bitmap image</p>
+                    <p>Spreadsheet</p>
+                    <p>Rich Document</p>
+                    <p>Text document</p>
+                </div>
             </div>
 
-            <div class="item" style="margin-bottom: 3px;">
-                <img src="Assets/newFolder.png" width="21px" style="margin-bottom: -4px; margin-right: 2px;">
-                New Folder
+            <div class="item" >
+                <img src="Assets/newFolder.png" width="21px">
+                <p>New Folder</p>
             </div>
             <center>
-                <hr style="border:1px solid rgba(204, 204, 204, 0.65); width: 95%; margin-bottom: 3px; margin-top: 2px;">
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; ">
             </center>
             <div class="item">
-                <img src="Assets/displaySettings.png" width="23px" style="margin-bottom: -7px;">
-                Display settings</div>
-            <div class="item">
-                <img src="Assets/personalize.png" width="23px" style="margin-bottom: -7px;">
-                Personalize</div>
-            <center>
-                <hr style="border:1px solid rgba(204, 204, 204, 0.65); width: 95%; margin-bottom: 3px; margin-top: 2px;">
-            </center>
-            <div class="item">Running Tasks</div>
-            <div class="item">History
-                <span style="float: right;"><img src="Assets/cMarrow.png"  width="16px"	/></span>
+                <img src="Assets/displaySettings.png" width="23px">
+                <p>Display settings</p>
             </div>
-            <div class="item">Open in cmd</div>
+            <div class="item">
+                <img src="Assets/personalize.png" width="23px">
+                <p>Personalize</p>
+            </div>
+            <center>
+                <hr style="border:1px solid rgba(204, 204, 204, 0.35); width: 95%; ">
+            </center>
+            <div class="item" id="cnt-tasks"><p>Running Tasks</p></div>
+            <div class="item" id="cnt-cmd"><p>Open in cmd</p></div>
         </div>
         </div>
         
         <!--Volume Flyout-->
-        <div class="actionmenu"  style="padding: 27.5px;">
+        <div class="actionmenu"  style="padding: 27.5px;" >
         <div class="darktheme" id="themeV"  style="padding: 10px;">
-            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <img src="Assets/moreControls.png" width="17px" class="actionCenterMore">
             <h6 style=" font-size: 17px; margin-bottom: 15px; margin-top: 5px; margin-left: 5px;">Volume</h6>
 
             <input type="range" min="1" max="100" value="50" class="slider" style="width: 82%; margin-left: 35px;">
@@ -650,77 +742,129 @@
             <img src="Assets/volume.png" alt="volume" width="27px"
             style="margin-left: 2px; translate: 0px -19px;margin-bottom: 12px;">
 
-            <h5 style="display: inline-block; color: #ccc;  margin-left: -25px; cursor: pointer; ">Volume Settings</h5>
-            <h5 style="float: right; color: #ccc;margin-right: 15px; margin-top: 25px;">Mixer</h5>
+            <div class="controls-bottom">
+                <h5>Audio output</h5>
+                <h5 id="right-controls">Mixer</h5>
+            </div>
         </div>
         </div>
 
         <!--Network Flyout-->
-        <div class="actionmenu2" style="padding: 27.5px;">
+        <div class="actionmenu2" style="padding: 27.5px;" >
             <div class="darktheme" id="themeWifi" style="padding: 10px;">
-            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <img src="Assets/moreControls.png" width="17px" class="actionCenterMore">
             <h6 style=" font-size: 17px; margin-bottom: 25px; margin-top: 5px; margin-left: 5px; ">Network</h6>
 
             <label class="switch" style="margin-left: 10px;">
-                <input type="checkbox" checked>
+                <input type="checkbox" checked id="WifiMode" onclick="wifiOff()">
                 <span class="slider2 round"></span>
             </label>Wifi
 
             <label class="switch" style="margin-left: 15px;">
-                <input type="checkbox">
+                <input type="checkbox" id="planeMode" onclick="airplane()">
                 <span class="slider2 round"></span>
             </label>Aeroplane mode
             <br>
-            <div style="padding: 10px; background-color: #f1f1f12a; border-radius: 8px; margin-top: 20px; ">
 
-                <img src="Assets/wifiSecured.png" width="20px" style="float: right;">
-                <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 3px;">Secured</h6>
+            <div id="wifiBlocks">
+                <div class="wifiBlock" id="connectedWifi">
+                    <img src="Assets/wifiSecured.png" width="25px" style="float: right;" class="wifi-secu">
+                    <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 7px;">Secured</h6>
 
-                <img src="Assets/wifiConnected.png" width="42px" style="margin-right: 10px; margin-bottom: -5px;">
+                    <img src="Assets/wifiConnected.png" class="wifi-icon">
 
-                <p style="display: inline-block;translate: 0px -17px; font-size: 17px; ">Network 5G</p>
-                <h5  style="display: inline-block;translate: 0px -17px; margin-left: 55px;">Connected, </h5>
-                <a href="#info" style="display: inline-block;translate: 0px -17px; text-decoration: none; color: white;"><h5><u>Info</u></h5></a>
-                
-                <button style="float: right; padding: 10px; background-color: #f1f1f11a; border-radius: 8px; border: none;width: 150px; color: white; font-weight: 700;">Disconnect</button><br><br><br>
+                    <p >Network 5G</p><br>
+                    <h5  >Connected, </h5>
+                    <a href="#info" style="display: inline-block; text-decoration: none; color: white;margin-bottom: 10px;"><h5><u>Info</u></h5></a>
+                    <br><button class="wifibtn" id="connectedWifiBtn">Disconnect</button>
+                </div>
+                <div class="wifiBlock" id="DisconnectedWifi1">
+                    <img src="Assets/wifiSecured.png" width="25px" style="float: right;">
+                    <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 7px;">Secured</h6>
+
+                    <img src="Assets/wifiConnected.png"  class="wifi-icon">
+
+                    <p >Network 4G</p><br>
+                    <h5  >Not Connected, </h5>
+                    <a href="#info" style="display: inline-block; text-decoration: none; color: white;margin-bottom: 10px;"><h5><u>Info</u></h5></a>
+                </div>
+                <div class="wifiBlock" id="DisconnectedWifi2">
+                    <img src="Assets/wifiSecured.png" width="25px" style="float: right;">
+                    <h6 style="float: right; font-size: 11px; margin-top: 5px; margin-right: 7px;">Secured</h6>
+
+                    <img src="Assets/wifiConnected.png"  class="wifi-icon">
+
+                    <p >Hotspot 2.0</p><br>
+                    <h5  >Not Connected, </h5>
+                    <a href="#info" style="display: inline-block; text-decoration: none; color: white;margin-bottom: 10px;"><h5><u>Info</u></h5></a>
+                </div>
             </div>
+            <div id="planeMode-on"><p>Airplane mode is turned on</p></div>
+            <div id="wifi-off"><p>Wifi is turned off</p></div>
 
-            <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05); margin-top: 202px">
-            <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px;">More Network Settings</h5>
-            </div>
+            <div class="controls-bottom"><h5>More Network Settings</h5></div>
+        </div>
         </div>
 
         <!--Battery Flyout-->
-        <div class="actionmenu3" style="padding: 27.5px;">
+        <div class="actionmenu3" style="padding: 27.5px;" >
             <div class="darktheme" id="themeB" style="padding: 10px; padding-left: 12px;">
-            <img src="Assets/moreControls.png" width="17px" style="float: right; margin-right: 5px; margin-top: 5px; cursor: pointer;">
+            <img src="Assets/moreControls.png" width="17px" class="actionCenterMore">
             <h6 style=" font-size: 17px; margin-bottom: 5px; margin-top: 5px; margin-left: 5px;">Battery</h6>
-            <img src="Assets/windows11-actions - battery.png" width="40px" style=" margin-bottom: -13px;">
 
-            <div style="margin-left: 2px; display: inline-block; font-size: 20px;
-            color: white; font-weight: 600;
-            letter-spacing: 0.5px;
-            padding-bottom: 5px;
-            filter: drop-shadow(0px 0px 1px black);" id="status2"></div> 
-            
-            <h5 style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px; margin-bottom: 5px;">
-            2h 12mins remaining • Medium Usage</h5><br>
-
-            <input type="range"  class="slider" style=" margin-left: 5px; margin-top: 15px;" step="25">
+            <div id="battery-index">
+                <div class="battery-wrapper flyout" >
+                    <div class="battery-cont" id="desk-WBt">
+                        <div class="battery" id="flyWB"></div>
+                    </div>
+                    <div class="battery-edge"></div>
+                </div>
+                <div id="status2"></div> 
+            </div>
+            <div id="battery-state">
+                <h5 
+                style="display: inline-block; color: #ccc; margin-top: 15px; margin-left: 15px; margin-bottom: 5px;"
+                id="charging-time"></h5>
+                <h5 style="display: inline-block; color: #ccc; margin-top: 15px;margin-bottom: 5px;">
+                ● Medium Usage</h5><br>
+            </div>
+            <input type="range"  class="slider" style=" margin-left: 5px; margin-top: 17.5px;" step="25">
 
             <img src="Assets/performance.png" width="25px" style="float: right; margin-right: 13px; margin-top: 2.5px;">
             
             <h5 style="float: right;color: #ccc;margin-right: -20px; margin-top: 30px;">Better Performance</h5>
 
             <img src="Assets/power.png" width="25px" style="margin-left: 1px; margin-top: 2.5px;">
-            <h5 style="color: #ccc;margin-left: 5px;">Better Battery</h5>
+            <h5 style="margin-left: 5px;">Better Battery</h5>
             </div>
+
+            <div class="controls-bottom" style="transform: translateX(-47.5%); bottom:10px; width: 82.5%;"><h5>Power Plan</h5></div>
         </div>
 
         <!--At a glance Flyout-->
-        <div class="actionmenu4" style="padding: 27.5px;">
+        <div class="actionmenu4" style="padding: 27.5px;" >
             <div class="darktheme"style="padding: 10px; padding-left: 12px;">
-                <div class="tray-cont">
+                <h4>Taskbar mode</h4>
+                <div style="display: flex; padding-bottom: 5px;">
+                    <button onclick="dockedT()" id="dockBtn">docked</button>
+                    <button id="showBtn" onclick="dockedF()">Shown</button>
+                </div>
+                <h4>Background Apps</h4>
+                <div id="tray-layout">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKklEQVR4nO2XsU7DMBRF0wVaaL+qhRX1h1qBFEbEyAeB+g8lQ1sWmDNkiXRQVA+VRYuTh2pH3DM/Pb0TO7ZvlgkhRLIAV8ADUAA1p6ld3T0wSmX4Fd14iy7B/stbWMYWKIwC77EFaqNA/UPPR6Dq2K8C8jYCZrx+A6A0tiz/QmADTIFrYAZsQwRczzyFFZh6dTehAmeF44y9uknfBGZ9X4GNG3oM3Lb8B0JOoarVXu8gEIzhFCpTvQfyc65AYRRYm4ew4F6VFhZZTICRe1V24RUYRhU4kFg2D7PAPNDULZIYXqQAipQRQZESRUoPRUr/0nr57XJLNVI2PLmaZ06QxYTj7JoYeRAnP/omcOfVzfsk8AlceHWXwFeIgCJlGxQpUaS0oUgphBD/gm8W9xBVo1PxEwAAAABJRU5ErkJggg==" alt=""
+                    id="tile-trayBtn"
+                    onclick="
+                    document.getElementById('tiles-tray').style.display= 'block'; 
+                    document.getElementById('med-icon-tray').style.display= 'none';
+                    ">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTUlEQVR4nO2XPU7DQBCFXfEbzuMDJNDCiRLBBdJSBs4SxB0gRYAGOpTa0ocWRsKySDzZ3SEsmq+xIo3e+M3azryqchzH+bMAR8AVsAAaNtNI3SVwaKmlQhreE8ddu3FOLTUyrRQmFlpq5AhTeLTQUqN4TvtoLLTUkAELLTUbtJbAEDgGRsBTaQaGnbrT0gwMOnUnpRkYlX4CS7npAXBW4jugZtcGmtL/BxaJTR8stNTIJpjC2EJLTdgAZROMYQ4cWGhthTSehGVKucOHuvFPDXNqOcWAR8ovPFLikbLMVSIZpdYKmMm1VyuXgTDR677JKrTegVpqavn9KwamUjNNMBAm/nnzrbp63UnkNPAcYmQrTr5EGpit6XtjbeC8U3dR0gm8Anudun3gLcJAYGfvgAql1gq4tfgKeaSsvofhkbKKeIQ8UrbxSOk4zv/kAwWI9yqKJbc6AAAAAElFTkSuQmCC" alt=""
+                    id="grid-trayBtn"
+                    onclick="
+                    document.getElementById('tiles-tray').style.display= 'none'; 
+                    document.getElementById('med-icon-tray').style.display= 'block';
+                    ">
+                </div>
+                <div class="tray-cont" id="tiles-tray">
                     <div class="glance-longBtn">
                         <img src="https://img.icons8.com/fluency/52/null/windows-defender.png" alt="">
                         <p>Defender</p>
@@ -741,6 +885,54 @@
                         <p>RGOS Family</p>
                         <span id="RGOS-more">•••</span>
                     </div>
+                    <div class="glance-longBtn">
+                        <img src="https://img.icons8.com/fluency/52/microsoft-onedrive-2019.png" alt="">
+                        <p>OneDrive</p>
+                        <span id="Ondrive-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/2101px-Adobe_Creative_Cloud_rainbow_icon.svg.png" alt="">
+                        <p>Adobe</p>
+                        <span id="adobe-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="">
+                        <p>Discord</p>
+                        <span id="discord-more">•••</span>
+                    </div>
+                    <div class="glance-longBtn">
+                        <img src="https://img.icons8.com/fluency/52/null/xbox.png" alt="">
+                        <p>Xbox</p>
+                        <span id="xbox-more">•••</span>
+                    </div>
+
+                </div>
+                <div class="tray-cont" id="med-icon-tray">
+                    <div class="glance-longBtn med">
+                        <img src="https://img.icons8.com/fluency/52/null/windows-defender.png" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFvElEQVR4nO2W248TZRjGi+IVnXMHvTMa/wZjjJGQGI0XZtnOTM+nNZEL/wlQMLiHHqbb87Zdeth23cSbRRQFZcMFysqyi3gjS1Q0wA1wwWnZlfCa72unnW+m7eLFLMTskzxpZpI2v+f73kNttm1ta1vbwtqff2HXh7N7qZHmISrcXLCHm6tUuHGLjjQeo08q3Filw40FKtT4lAnV99r2nN5peyZ04MBz9pG5/dTI7F9UZBaQ6UhT5wbQYc0zHVPh+lUmWP8Iff+psTO+Gc4emf2WGnlycDpcByakuYZ8gglPs1sOL348Z7ePNBdbp24AD80A7S8D5ckD7S8BHar3Am+7Ckygek5U5uxbGsAeadapfifuL8HhL36C23fXIDG/BKy3AEywZgYPaq4AHaxUtgyeCjXfJ8A78O369uTgwfo/oKny/a/AevMtWAM4E6wAi30UhXhvawJEmhfIUydrnHZnwKgqCuHJAROomMDZgObyecvh7SMzb/Vu0G6N9wrQDZFtwRLg0x3z/uk3LA1AhRu5zSZLvwBaCM6dAdbfhWaxy8D6y8D5SmkL8WEHFZ75e8BIbAVwpU3QelVOXQLOncbAGjiG95dQgKuW4dOB6muDwLXmNAZglAQUT6wYQl0CzpUC1ldqgWv2FYEJFF6xJkCo5iXBq0D7pnDJ0GhUthuUdqUIWFqZxCduvInssSVg3ek2fBHDtzzltiQAE6x/RpSKrwDjXy7C/YcbkPnqAnDtBkXAxgCsvwS8exKuXL/deX/n/jowsqoHb7vwiTUBQrWmfgnRrgzcW9swNagpgJzE5VI7dcl8A64UAc97C8B78nVLAtChyhlie3rzkD2+bGpYVlGJd5ycMMHXTv0CvJIEzlsg4XGAwoI1AQLVZWIJBabxiRtru2qCHQzPa+DYeeC8+SVLAjDBo6um7YlGoDtlmjL9pIfnDeDYnjzqpd+sCRA4eqPX9kQNyromofjNyhPBI0gTuBfB57A5d/a6RQGm7/banq0NWgTOlewbAsELsqqDN4Pz2FngPZk7lgRgA+VHJnBiCRVAcKnEqES6cu02OJR4C3AAuKDZnX5k3Q10wPXwReC8U8ApKpROkFNJUx3fQMIAnTOAZ7B5d9qaG2B8pRskeGv1bwbfDXERBCkOvDvbE1zATgPvSlnTA5yvtEqA/wd4fQiHFDNAZzC4Zl5JWTOFOH9xubv2EXwBTxXUoETDnrw48Ll+cgUczhgIri40tivVspKyZg9w3uIZ/dpHfwNyx86bYPnhCeKdMDyGoc0hol1oVwoc2JMguCat2cSsb6qhX/usMwb31tYJeFTjrCEAt28cn7gxRG5+EXhntAPesazWLAnA+QqH9duTU5IwMXcW7q9tQHb+506DcsPjhgBj+IRFaQyuXLvVeX/3wTrwQ2NdcCWJLSjqQWsCePMecgnlgJNVfOLok0fN6MniEycDjOJyMd5Afn4RBOcEOJQuvENRQVRU2ZIAjC/z6uZLKINPXC9+6AiUv14i3s2cXAERlZasEvDILzlTL9usEu/JXh20hFoBRk0NSzx/twzivjEdfAtcRM9y/E/L4NsBMoOWEDI3RAYgT14Pr3bARTmB7ZATKUsDcO70m/3AtVnOD32+CXzCBC5ix4FXoq/brBbvzpzvBa7NclTzveFHMXwvcBFZii1aDt8KkH63F7g2DtENPHi4Yaj5URClRB/wOIKH3c7YO7atkqCkKkZwbZYLw+NwpL6A90N+/hzsHkLw8b7gohRDi65s20q9GBjf5VAmf+yC62a5nMB/H4QPjoBjnx7eDC4iOyfOot+zbbU4Jc8IcvJ4d47rR2L/UtG8W4qC6Iwe4/0qbXt6gh2ikowIsvpHv8nSB/x3UYqF0fdtz4T2HNjpUNQ9ohQ/KMqJ06Icu+yQYjdFKfbYIUVvilL0sijFfhCl6EGHc/xtmzL3/NNG3ta2bP8D/Qt0nubKrGWOUwAAAABJRU5ErkJggg==" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="https://play-lh.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="https://ripenos.github.io/home_resources/Assets/ripenos/ripenOs.png" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="https://img.icons8.com/fluency/52/microsoft-onedrive-2019.png" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/2101px-Adobe_Creative_Cloud_rainbow_icon.svg.png" alt="">
+                    </div>
+                    <div class="glance-longBtn med" id="discord-med-tray">
+                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="">
+                    </div>
+                    <div class="glance-longBtn med">
+                        <img src="https://img.icons8.com/fluency/52/null/xbox.png" alt="">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -768,15 +960,15 @@
                 </ul>
                 <ul class="days"></ul>
             </div>
-            <div style="bottom: 0;">
-                <hr style="width: 100%; border-bottom: 0.5px solid rgba(204, 204, 204, 0.05);">
-                <img src="Assets/moreControls.png" width="20px" style="float: right; cursor: pointer; padding: 15px;">
-                <b><p style="float: left; font-size: 18px; padding: 15px;">Calendar</p></b>
+            <div class="controls-bottom">
+                <b><h4 style="font-size: 18px;">Calendar</h4></b>
+                <img src="Assets/moreControls.png" width="20px" class="actionCenterMore">
+
             </div>
             </div>
         </div>
 
-        <div class="widgets">
+        <div class="widgets" >
             <div class="widgets-cont">
                 <input type="text" placeholder="Search the web" class="searchT" style=" font-size: 13px; padding-left: 15px; " id="widget-search" onclick="inWidgetSearch()" oninput="opacityM(), inWidgetSearch()">
                 <img src="Assets/windows11-search-button.png" alt="search" width="16px"  id="SearchInput2W">
@@ -848,11 +1040,12 @@
 
                 <div class="widgetSearch">
                     <iframe src="https://bing.com/" frameborder="0" id="search-feild"></iframe>
+                    <div id="searchOff"><p>Wifi is not available</p></div>
                 </div>
             </div>
         </div>
 
-        <div id="Desktop">
+        <div id="Desktop" onclick="DesktopClick()">
             <div class="Welcome" id="welcome-page">
                 <div class="darktheme" id="themeWl">
                     <CENTER id="welcome-logo">
@@ -874,7 +1067,7 @@
                             <p>MIT License License as Copyright (c) 2022-23 RipenOS</p>
 
                             <h4>📱 Current Version</h4>
-                            <p>version 0.8</p>
+                            <p>version 1.0</p>
                             
                             <h4>©️ Credits</h4>
                             <p>The RGOS uses assets and templates provided by other such fascinating providers. They are:</p>
@@ -891,16 +1084,16 @@
                             <h4 style="margin-top: -20px;">RGOS Family</h4>
 
                             <CENTER>
-                            <span>
-                            <div class="RGOS-fam-btn" id="ripenos">
-                                <span><img src="Assets/RGOS-family/ripenOs.png" alt=""><p>Ripen OS</p></span>
-                                <img src="Assets/RGOS-family/ripenos-desktop.png" alt="">
-                            </div>
-                            <div class="RGOS-fam-btn" id="dynamica">
-                                <span><img src="Assets/RGOS-family/ripenOsD.png" alt=""><p>Ripen OS Dynamica</p></span>
-                                <img src="Assets/RGOS-family/Dynamica-desktop.png" alt="">
-                            </div>
-                            </span>
+                                <span>
+                                <div class="RGOS-fam-btn" id="ripenos">
+                                    <span><img src="Assets/RGOS-family/ripenOs.png" alt=""><p>Ripen OS</p></span>
+                                    <img src="Assets/RGOS-family/ripenos-desktop.png" alt="">
+                                </div>
+                                <div class="RGOS-fam-btn" id="dynamica">
+                                    <span><img src="Assets/RGOS-family/ripenOsD.png" alt=""><p>Ripen OS Dynamica</p></span>
+                                    <img src="Assets/RGOS-family/Dynamica-desktop.png" alt="">
+                                </div>
+                                </span>
                             </CENTER>
                         </div>
                     </div>
@@ -910,7 +1103,7 @@
         </div>
 
         <!--Desktop Icons-->
-        <div style="padding: 17px;" class="DesktopShow">
+        <div style="padding: 17px;" class="DesktopShow" id="DeskIcons">
                 <div class="desktopIcons" id="bin">
                     <CENTER>
                         <img src="Assets/bin.png" width="65px">
@@ -925,6 +1118,17 @@
                 </div>
         </div>
 
+    <!-- Wifi Connections -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <div class="popup">
+        <div class="icon"><i class=""></i></div>
+        <div class="details">
+          <h2 class="title"></h2>
+          <p class="desc"></p>
+          <button class="reconnect">Check Now</button>
+        </div>
+    </div>
+    
     <!--Apps under testing-->
         
 	<!-- Linking the external JavaScript -->
