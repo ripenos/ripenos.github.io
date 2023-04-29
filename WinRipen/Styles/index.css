@@ -76,8 +76,8 @@ h5 {
 	color: white;
 }
 
-.searchT, .searchS, .SearchQ:focus-visible{outline: none; }
-
+ .searchS, .SearchQ:focus-visible{outline: none; }
+ .searchT:focus-visible{outline: none; width: 235px;}
 
 .switch {
 	position: relative;
@@ -180,3 +180,79 @@ input:checked + .slider2:before {
     .searchT{margin-left: 15px;}
 
 }
+
+
+.popup {
+	position: absolute;
+	left: 50%;
+	top: -25%;
+	visibility: hidden;
+	width: 490px;
+	border-radius: 5px;
+	padding: 13px 17px 20px;
+	display: flex;
+	transform: translateX(-50%);
+	transition: all 0.25s ease;
+	border-radius: 10px; z-index: 200;
+	border: 1px solid #f1f1f138;
+	background-color:  rgba(0, 0, 0, 0.65);
+	-webkit-backdrop-filter: blur(55px);
+	backdrop-filter: blur(55px);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+	color: white;
+  }
+  .popup.show {
+	top: 1%;
+	visibility: visible;
+  }
+  
+  .popup .icon i {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	color: #fff;
+	margin-right: 15px;
+	font-size: 1.2rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 25px;
+	background: #EA4D67;
+  }
+  .popup.online .icon i {
+	background: #2ECC71;
+  }
+  .popup .title {
+	font-size: 1.2rem;
+  }
+  .popup .desc {
+	margin: 3px 0 10px;
+	font-size: 1.04rem;
+  }
+  .popup .reconnect {
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 0.95rem;
+	padding: 8px 13px;
+	color: white;
+	background-color: rgb(255, 123, 0);
+	border-radius: 8px;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	cursor: url(cursor.svg), auto;
+	transition: all 0.5s;
+  }
+  .popup .reconnect:hover{
+	background-color: #f1f1f138;
+  }
+  .popup.online .reconnect {
+	pointer-events: none;
+  }
+  
+  @media screen and (max-width: 550px) {
+	.popup {
+	  width: 99%;
+	  padding: 10px 15px 17px;
+	}
+  }
