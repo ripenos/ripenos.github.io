@@ -779,8 +779,7 @@ scope.addEventListener("click", (e) => {
           });
       });
       
-    window.onclick = function(event) {
-      if (event.target == document.getElementById("Desktop")) {
+    function DesktopClick() {
         startmenu.style.bottom = "-665px";
         startmenu.style.visibility = "hidden";
         startmenu.style.opacity = "0";
@@ -826,8 +825,6 @@ scope.addEventListener("click", (e) => {
         document.getElementsByClassName('widgetSearch')[0].style.display = "none";
 
         document.getElementById("Calbtn").style.backgroundColor = "transparent";
-
-      }
     }
 
         var div = document.getElementById("status");
@@ -842,13 +839,41 @@ scope.addEventListener("click", (e) => {
         else {
             div.innerHTML = "70%";
         }
-        
+
         function display(battery) {
             var status = "";
             status += (battery.level * 100).toFixed(0) + "%";
             div.innerHTML = status;
+            let batteryLevel = `${parseInt(battery.level * 100)}%`;
+            document.getElementById('deskWB').style.width = batteryLevel;
+            document.getElementById('flyWB').style.width = batteryLevel;
         }
 
+                
+        const chargingTimeRef = document.getElementById("charging-time");
+
+        navigator.getBattery().then((battery) => {
+          function updateAllBatteryInfo() {
+            updateChargingInfo();
+          }
+          updateAllBatteryInfo();
+          //When the Battery Levvel Changes
+          battery.addEventListener("levelchange", () => {
+            updateAllBatteryInfo();
+          });
+          function updateChargingInfo() {
+            if (battery.charging) {
+              chargingTimeRef.innerText = "Charging";
+            } else {
+              //Display time left to discharge only when it is a integer value i.e not infinity
+              if (parseInt(battery.dischargingTime)) {
+                let hr = parseInt(battery.dischargingTime / 3600);
+                let min = parseInt(battery.dischargingTime / 60 - hr * 60);
+                chargingTimeRef.innerText = `${hr}hr ${min}mins remaining`;
+              }
+            }
+          }
+        })
         var div2 = document.getElementById("status2");
         if (navigator.getBattery) {
             navigator.getBattery().then(function(battery) {
@@ -928,7 +953,7 @@ function easterEgg1(){
 
 const tabsBox = document.querySelector(".tabs-box"),
 allTabs = tabsBox.querySelectorAll(".tab"),
-arrowIcons = document.querySelectorAll(".icon i");
+arrowIcons = document.querySelectorAll(".iconP i");
 
 let isDragging = false;
 let isDragging2 = false;
@@ -973,3 +998,309 @@ document.getElementById('ripenos').addEventListener("click", ()=>{
 document.getElementById('dynamica').addEventListener("click", ()=>{
   alert("Hey! Ripenos Dynamica is coming soon!!");
 })
+
+
+const popup = document.querySelector(".popup"),
+wifiIcon = document.querySelector(".icon i"),
+popupTitle = document.querySelector(".popup .title"),
+popupDesc = document.querySelector(".desc"),
+reconnectBtn = document.querySelector(".reconnect");
+
+let isOnline = true, intervalId, timer = 10;
+
+const checkConnection = async () => {
+    try {
+        // Try to fetch random data from the API. If the status code is between 
+        // 200 and 300, the network connection is considered online 
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        isOnline = response.status >= 200 && response.status < 300;
+    } catch (error) {
+        isOnline = false; // If there is an error, the connection is considered offline
+    }
+    timer = 10;
+    clearInterval(intervalId);
+    handlePopup(isOnline);
+}
+
+const handlePopup = (status) => {
+    if(status) { // If the status is true (online), update icon, title, and description accordingly
+        wifiIcon.className = "uil uil-wifi";
+        popupTitle.innerText = "Restored Connection";
+        popupDesc.innerHTML = "Your device is now successfully connected to the internet.";
+        popup.classList.add("online");
+        return setTimeout(() => popup.classList.remove("show"), 2000);
+    }
+    // If the status is false (offline), update the icon, title, and description accordingly
+    wifiIcon.className = "uil uil-wifi-slash";
+    popupTitle.innerText = "Lost Connection";
+    popupDesc.innerHTML = "Your network is unavailable. We will attempt to check your network in <b>10</b> seconds.";
+    popup.className = "popup show";
+
+    intervalId = setInterval(() => { // Set an interval to decrease the timer by 1 every second
+        timer--;
+        if(timer === 0) checkConnection(); // If the timer reaches 0, check the connection again
+        popup.querySelector(".desc b").innerText = timer;
+    }, 1000);
+}
+
+// Only if isOnline is true, check the connection status every 3 seconds
+setInterval(() => isOnline && checkConnection(), 3000);
+reconnectBtn.addEventListener("click", checkConnection);
+
+
+function airplane(){
+if(document.getElementById('planeMode-on').style.display == "block"){
+  document.getElementById('planeMode-on').style.display= "none";
+  document.getElementById('wifi-off').style.display= "none";
+  document.getElementById('search-feild').style.display= "block";
+  document.getElementById('searchOff').style.display= "none";
+  document.getElementById('wifiBlocks').style.display= "block";
+  document.getElementById('WifiMode').disabled = false;
+  document.getElementById('WifiMode').checked = true;
+}
+else{
+  document.getElementById('wifiBlocks').style.display= "none";
+  document.getElementById('planeMode-on').style.display= "block";
+  document.getElementById('wifi-off').style.display= "none";
+  document.getElementById('search-feild').style.display= "none";
+  document.getElementById('searchOff').style.display= "block";
+  document.getElementById('WifiMode').disabled = true;
+  document.getElementById('WifiMode').checked = false;
+}
+}
+
+function wifiOff(){
+if(document.getElementById('wifi-off').style.display == "block"){
+  document.getElementById('wifiBlocks').style.display= "block";
+  document.getElementById('wifi-off').style.display= "none";
+  document.getElementById('search-feild').style.display= "block";
+  document.getElementById('searchOff').style.display= "none";
+}
+else{
+  document.getElementById('wifiBlocks').style.display= "none";
+  document.getElementById('planeMode-on').style.display= "none";
+  document.getElementById('wifi-off').style.display= "block";
+  document.getElementById('search-feild').style.display= "none";
+  document.getElementById('searchOff').style.display= "block";
+}
+}
+
+function tbAutoDock(){
+  if(document.getElementById('mytaskbar').style.bottom == "8px"){
+    setTimeout(() => {
+      document.getElementById('mytaskbar').style.bottom= "-18px";
+      document.getElementById('tbItems').style.opacity = '0';
+      document.getElementById('dock').style.opacity = '1';
+      startmenu.style.transform = "translateY(25px)";
+      widgetM.style.transform = "translateY(25px)";
+      actionmenu.style.transform = "translateY(25px)";
+      actionmenu2.style.transform = "translateY(25px)";
+      actionmenu3.style.transform = "translateY(25px)";
+      actionmenu4.style.transform = "translateY(25px)";
+      actionmenu5.style.transform = "translateY(25px)";
+    }, 2500);
+}
+else{
+  document.getElementById('mytaskbar').style.bottom= "8px";
+  document.getElementById('tbItems').style.opacity = '1';
+  document.getElementById('dock').style.opacity = '0';
+  startmenu.style.transform = "translateY(0px)";
+  widgetM.style.transform = "translateY(0px)";
+  actionmenu.style.transform = "translateY(0px)";
+  actionmenu2.style.transform = "translateY(0px)";
+  actionmenu3.style.transform = "translateY(0px)";
+  actionmenu4.style.transform = "translateY(0px)";
+  actionmenu5.style.transform = "translateY(0px)";
+}
+}
+function tbUpLock(){
+  if(document.getElementById('mytaskbar').style.bottom == "8px"){
+    setTimeout(() => {
+      document.getElementById('mytaskbar').style.bottom= "8px";
+      document.getElementById('tbItems').style.opacity = '1';
+      document.getElementById('dock').style.opacity = '0';
+      startmenu.style.transform = "translateY(0px)";
+      widgetM.style.transform = "translateY(0px)";
+      actionmenu.style.transform = "translateY(0px)";
+      actionmenu2.style.transform = "translateY(0px)";
+      actionmenu3.style.transform = "translateY(0px)";
+      actionmenu4.style.transform = "translateY(0px)";
+      actionmenu5.style.transform = "translateY(0px)";
+    }, 2500);
+}
+else{
+  document.getElementById('mytaskbar').style.bottom= "8px";
+  document.getElementById('tbItems').style.opacity = '1';
+  document.getElementById('dock').style.opacity = '0';
+  startmenu.style.transform = "translateY(0px)";
+  widgetM.style.transform = "translateY(0px)";
+  actionmenu.style.transform = "translateY(0px)";
+  actionmenu2.style.transform = "translateY(0px)";
+  actionmenu3.style.transform = "translateY(0px)";
+  actionmenu4.style.transform = "translateY(0px)";
+  actionmenu5.style.transform = "translateY(0px)";
+}
+}
+
+
+
+function dockedT(){
+  document.getElementById('mytaskbar').style.bottom= "-18px";
+  document.getElementById('tbItems').style.opacity = '0';
+  document.getElementById('dock').style.display = 'block';
+  document.getElementById('dock').style.opacity = '1';
+  actionmenu4.style.transform = "translateY(25px)";
+
+  alert('Docked taskbar (Auto hide) is currently in testing so you might face any unexpected bug. If found any, please feel free to reach us on https://github.com/ripenos/ripenos.github.io/issues .')
+
+  document.getElementById('mytaskbar').addEventListener("mouseover", tbAutoDock)
+}
+
+function dockedF(){
+  document.getElementById('mytaskbar').style.bottom= "8px";
+  document.getElementById('tbItems').style.opacity = '1';
+  document.getElementById('dock').style.display = 'none';
+  actionmenu4.style.transform = "translateY(0px)";
+
+  document.getElementById('mytaskbar').addEventListener("mouseover", tbUpLock)
+}
+
+// Context menu functions
+
+function ExpandContextSort(){
+  let sort = document.getElementById('sort-contx');
+  let view = document.getElementById('view-contx');
+  let New = document.getElementById('new-contx');
+
+  if(sort.style.paddingBottom == '157.5px'){
+    sort.style.paddingBottom= '5px';
+    document.getElementById('sort-optionsCt').style.opacity= '0'
+
+    setTimeout(() => {
+      document.getElementById('sort-optionsCt').style.display= 'none'
+      sort.classList.remove('activeCnt');
+      document.getElementById('sort-more-img').style.transform= 'rotate(0deg)'
+    }, 300);
+
+  }
+  else{
+    view.style.paddingBottom= '5px';
+    document.getElementById('view-optionsCt').style.opacity= '0'
+    document.getElementById('view-optionsCt').style.display= 'none'
+    New.style.paddingBottom= '5px';
+    document.getElementById('new-optionsCt').style.opacity= '0'
+    document.getElementById('new-optionsCt').style.display= 'none'
+    document.getElementById('sort-optionsCt').style.display= 'grid'
+    document.getElementById('view-more-img').style.transform= 'rotate(0deg)'
+    document.getElementById('new-more-img').style.transform= 'rotate(0deg)'
+    sort.style.paddingBottom= '157.5px';
+    sort.classList.add('activeCnt');
+    view.classList.remove('activeCnt');
+    New.classList.remove('activeCnt');
+
+    setTimeout(() => {
+      document.getElementById('sort-optionsCt').style.opacity= '1'
+      document.getElementById('sort-more-img').style.transform= 'rotate(180deg)';
+    }, 300);
+  }
+}
+
+function ExpandContextView(){
+  let view = document.getElementById('view-contx');
+  let sort = document.getElementById('sort-contx');
+  let New = document.getElementById('new-contx');
+
+  if(view.style.paddingBottom == '255px'){
+    view.style.paddingBottom= '5px';
+    document.getElementById('view-optionsCt').style.opacity= '0'
+
+    setTimeout(() => {
+      document.getElementById('view-optionsCt').style.display= 'none'
+      view.classList.remove('activeCnt');
+      document.getElementById('view-more-img').style.transform= 'rotate(0deg)'
+    }, 300);
+  }
+  else{
+    sort.style.paddingBottom= '5px';
+    document.getElementById('sort-optionsCt').style.opacity= '0'
+    document.getElementById('sort-optionsCt').style.display= 'none'
+    New.style.paddingBottom= '5px';
+    document.getElementById('new-optionsCt').style.opacity= '0'
+    document.getElementById('new-optionsCt').style.display= 'none'
+    document.getElementById('view-optionsCt').style.display= 'grid'
+    document.getElementById('sort-more-img').style.transform= 'rotate(0deg)'
+    document.getElementById('new-more-img').style.transform= 'rotate(0deg)'
+    view.style.paddingBottom= '255px';
+    view.classList.add('activeCnt');
+    sort.classList.remove('activeCnt');
+    New.classList.remove('activeCnt');
+
+    setTimeout(() => {
+      document.getElementById('view-optionsCt').style.opacity= '1'
+      document.getElementById('view-more-img').style.transform= 'rotate(180deg)';
+    }, 300);
+  }
+}
+
+function ExpandContextNew(){
+  let view = document.getElementById('view-contx');
+  let sort = document.getElementById('sort-contx');
+  let New = document.getElementById('new-contx');
+
+  if(New.style.paddingBottom == '235px'){
+    New.style.paddingBottom= '5px';
+    document.getElementById('new-optionsCt').style.opacity= '0'
+
+    setTimeout(() => {
+      document.getElementById('new-optionsCt').style.display= 'none'
+      New.classList.remove('activeCnt');
+      document.getElementById('new-more-img').style.transform= 'rotate(0deg)'
+    }, 300);
+  }
+  else{
+    sort.style.paddingBottom= '5px';
+    view.style.paddingBottom= '5px';
+    document.getElementById('sort-optionsCt').style.opacity= '0'
+    document.getElementById('sort-optionsCt').style.display= 'none'
+    document.getElementById('view-optionsCt').style.opacity= '0'
+    document.getElementById('view-optionsCt').style.display= 'none'
+    document.getElementById('new-optionsCt').style.display= 'grid'
+    document.getElementById('sort-more-img').style.transform= 'rotate(0deg)'
+    document.getElementById('view-more-img').style.transform= 'rotate(0deg)'
+    New.style.paddingBottom= '235px';
+    New.classList.add('activeCnt');
+    sort.classList.remove('activeCnt');
+    view.classList.remove('activeCnt');
+
+    setTimeout(() => {
+      document.getElementById('new-optionsCt').style.opacity= '1'
+      document.getElementById('new-more-img').style.transform= 'rotate(180deg)';
+    }, 300);
+  }
+}
+
+function ShowDeskIcoCtx(){
+  if(document.getElementById('DeskIcons').style.display == 'none'){
+    document.getElementById('DeskIcons').style.display = 'block';
+    document.getElementById('DeskIcons').style.visibility = 'visible';
+    document.getElementById('ToggleDeskIcoDisplay').classList.remove('activeCnt');
+  }
+  else{
+    document.getElementById('DeskIcons').style.display = 'none';
+    document.getElementById('DeskIcons').style.visibility = 'hidden';
+    document.getElementById('ToggleDeskIcoDisplay').classList.add('activeCnt');
+  }
+}
+
+function ShowDeskWidgetCtx(){
+  if(document.getElementById('desk-widget').style.display == 'none'){
+    document.getElementById('desk-widget').style.display = 'block';
+    document.getElementById('desk-widget').style.visibility = 'visible';
+    document.getElementById('ToggleDeskWidDisplay').classList.remove('activeCnt');
+  }
+  else{
+    document.getElementById('desk-widget').style.display = 'none';
+    document.getElementById('desk-widget').style.visibility = 'hidden';
+    document.getElementById('ToggleDeskWidDisplay').classList.add('activeCnt');
+  }
+}
