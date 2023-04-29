@@ -97,3 +97,7 @@ This project is still under progress and all Its **major changes** would be list
 - Welcome page with welcome and RGOS Family
 - Refreshed Widget menu with built-in Search menu
 - Further UI tweaks
+
+## v0.9
+- Stability improvements
+- Bug fixes and UI tweaks
