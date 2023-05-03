@@ -33,6 +33,8 @@ const handlePopup = (status) => {
         popupTitle.innerText = "Restored Connection";
         popupDesc.innerHTML = "Your device is now successfully connected to the internet.";
         popup.classList.add("online");
+        document.getElementById("myblank").style.visibility = 'hidden';
+        document.getElementById("myblank").style.opacity = '0';
         return setTimeout(() => popup.classList.remove("show"), 2000);
     }
     // If the status is false (offline), update the icon, title, and description accordingly
@@ -40,7 +42,8 @@ const handlePopup = (status) => {
     popupTitle.innerText = "Lost Connection";
     popupDesc.innerHTML = "Your network is unavailable. We will attempt to check your network in <b>10</b> seconds.";
     popup.className = "popup show";
-
+    document.getElementById("myblank").style.visibility = 'visible';
+    document.getElementById("myblank").style.opacity = '1';
     intervalId = setInterval(() => { // Set an interval to decrease the timer by 1 every second
         timer--;
         if(timer === 0) checkConnection(); // If the timer reaches 0, check the connection again
