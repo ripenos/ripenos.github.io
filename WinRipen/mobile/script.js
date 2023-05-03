@@ -58,6 +58,7 @@ let startbutton = document.getElementById('sb');
 let startmenu = document.getElementById('startMenu');
 let taskbar = document.getElementById('tb');
 let dockApps = document.getElementById('dockApps')
+let desk = document.getElementById('desktop');
 function showStart(){
 	if(startmenu.style.bottom == "0%"){
         startmenu.style.bottom = "-100%";
@@ -71,7 +72,8 @@ function showStart(){
         taskbar.style.bottom = "1.25%";
         
         dockApps.style.top = "50%";
-
+        desk.style.scale= '1'
+        desk.style.borderRadius= '0px'
 	}
 	else{
         startmenu.style.bottom = "0%";
@@ -85,6 +87,8 @@ function showStart(){
         taskbar.style.bottom = "1%";
 
         dockApps.style.top = "150%";
+        desk.style.scale= '0.90'
+        desk.style.borderRadius= '20px'
     }
 }
 
@@ -166,3 +170,35 @@ else if (hrs >= 17 && hrs <= 24)
 greet = 'Good Evening';
 
 document.getElementById('greetings').innerHTML ='<b>' + greet + ',  Admin' + '</b>';
+
+function showRecents(){
+    let desk = document.getElementById('desktop');
+    let tb = document.getElementById('tb');
+    let cl = document.getElementsByClassName('recentsClose')[0]
+    let startbutton = document.getElementById('sb');
+    startbutton.style.width = "44px";
+
+    startmenu.style.bottom = "-100%";
+        desk.style.scale= '0.70'
+        desk.style.borderRadius= '20px'
+        tb.style.bottom= '-62px'
+        cl.style.bottom = '2.5%'
+}
+function HideRecents(){
+    let desk = document.getElementById('desktop');
+    let tb = document.getElementById('tb');
+    let cl = document.getElementsByClassName('recentsClose')[0]
+
+        desk.style.scale= '1'
+        desk.style.borderRadius= '0'
+        tb.style.bottom= '1.25%'
+        tb.style.background = 'rgba(0, 0, 0, 0.65)';
+        tb.style.backdropFilter = 'blur(35px)';
+        tb.style.webkitBackdropFilter = 'blur(35px)';
+        tb.style.border = '0.5px solid #f1f1f123';
+        tb.style.boxShadow = '0px 0px 5px rgba(0, 0, 0, 1)';
+        tb.style.bottom = "1.25%";
+        dockApps.style.top = "50%";
+
+        cl.style.bottom = '-72px'       
+}
