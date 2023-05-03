@@ -5,8 +5,6 @@ function ShowDs(){
     }, 750);
 }
 
-
-
 const popup = document.querySelector(".popup"),
 wifiIcon = document.querySelector(".icon i"),
 popupTitle = document.querySelector(".popup .title"),
