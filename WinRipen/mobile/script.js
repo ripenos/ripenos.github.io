@@ -88,6 +88,17 @@ function showStart(){
     }
 }
 
+function ShowContrls(){
+    let cnt = document.getElementById('controls');
+
+    if(cnt.style.top=='0px'){
+        cnt.style.top= '-100%';
+    }
+    else{
+        cnt.style.top= '0px';
+    }
+}
+
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -176,6 +187,7 @@ function showRecents(){
 
     startmenu.style.bottom = "-100%";
         desk.style.scale= '0.70'
+        desk.style.transform = 'translateY(-35px)'
         desk.style.borderRadius= '20px'
         tb.style.bottom= '-62px'
         cl.style.bottom = '2.5%'
@@ -187,6 +199,7 @@ function HideRecents(){
 
         desk.style.scale= '1'
         desk.style.borderRadius= '0'
+        desk.style.transform = 'translateY(0px)'
         tb.style.bottom= '1.25%'
         tb.style.background = 'rgba(0, 0, 0, 0.65)';
         tb.style.backdropFilter = 'blur(35px)';
