@@ -7,3 +7,4 @@
 ![stage 4](https://user-images.githubusercontent.com/120778877/216783128-7128f8e4-879f-41f5-b87c-b2f0ec560cf0.png)
 ![stage 5](https://user-images.githubusercontent.com/120778877/216783129-427e8fff-d423-481e-a51e-50789db53178.png)
 ![stage 6](https://user-images.githubusercontent.com/120778877/229288812-198b8337-657b-4d48-a63a-9bbb8bd9aeb0.png)
+![stage 7](https://github.com/ripenos/ripenos.github.io/assets/120778877/9c7f9456-4f8f-4b9e-9dd5-38e3f49abb31)
