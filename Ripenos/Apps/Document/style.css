@@ -1,0 +1,152 @@
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+   }
+   body {
+     background: transparent;
+     color: white;
+}
+
+
+  /* scrollbar */
+  ::-webkit-scrollbar {width: 5px;}
+
+/* Track */
+::-webkit-scrollbar-track {
+ border-radius: 5px;
+ background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: linear-gradient(180deg, rgba(255, 140, 0, 0.55) 0%, rgba(133, 53, 0, 0.55) 100%);
+ border-radius: 2px;
+ -webkit-transition: all 0.3s;
+ transition: all 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: linear-gradient(180deg, rgba(255, 140, 0, 0.75) 0%, rgba(133, 53, 0, 0.75) 100%);
+ border-radius: 50px;
+}
+   .container {
+     width: 100vw;
+     padding: 0 30px;
+     position: absolute;
+     top: 0; left: 0;
+     height: 100%;
+     overflow: hidden;
+     overflow-y: scroll;
+   }
+   .options {
+     padding: 12.5px;
+     border-bottom:  1px solid #f1f1f138;
+     border-right:  1px solid #f1f1f138;
+     border-left:  1px solid #f1f1f138;
+     border-radius:0 0 8px 8px  ;
+     background-color: rgba(0, 0, 0, 0.85);
+     backdrop-filter: blur(100px);
+     position: fixed;
+     left: 50%;
+     width: 95%;
+     top: 0;
+     transform: translateX(-50%);
+     z-index: 999;
+     box-shadow: 0px 0px 10px black;
+   }
+   #Options-all{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+   }
+   #options-btnS{display: none;}
+   button {
+     height: 28px;
+     width: 28px;
+     display: grid;
+     place-items: center;
+     border-radius: 3px;
+     border: none;
+     background-color: #ffffffe4;
+     outline: none;
+     color: #020929;
+     transition: all 0.3s;
+   }
+   button:hover{background-color: #ff8c00; color: white;}
+   select {
+     padding: 7px;
+     border: 1px solid #020929;
+     border-radius: 3px;
+   }
+   .options label,
+   .options select {
+     font-family: "Poppins", sans-serif;
+   }
+   .input-wrapper {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+   }
+   input[type="color"] {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     background-color: transparent;
+     width: 40px;
+     height: 28px;
+     border: none;
+     cursor: pointer;
+   }
+   input[type="color"]::-webkit-color-swatch {
+     border-radius: 5px;
+     box-shadow: 0 0 0 1px #ff8c00, 0 0 0 3px #020929;
+   }
+   input[type="color"]::-moz-color-swatch {
+     border-radius: 5px;
+     box-shadow: 0 0 0 1px #ff8c00, 0 0 0 3px #020929;
+   }
+   #text-input {
+     width: calc(100%/ 2);
+     margin-top: 85px;
+     margin-bottom: 100px;
+     padding: 20px;
+     margin-left: auto; margin-right: auto;
+     background: white;
+     height: 125vh;
+     color: black;
+     box-shadow: 0px 0px 5px black;
+     overflow: scroll;
+   }
+   #text-input:focus-visible{outline: none;}
+   .active {
+     background-color: #ff8c00;
+     color: white;
+   }
+
+   .recentsClose{
+    padding: 2.5px;
+    border-radius: 5px;
+    background: rgba(241, 241, 241, 0.09);
+      border: 0.5px solid #f1f1f123;	
+      transition: all 0.3s;
+    width: 100%;
+  }
+
+  .recentsClose p{font-size: 15px; font-weight: 600;}
+
+   @media screen and (max-width: 1000px) {
+     #text-input { width: 75%}
+   }
+   @media screen and (max-width: 750px) {
+    #Options-all{display: none;}
+    #options-btnS{display: block;}
+  }
+   @media screen and (max-width: 700px) {
+     #text-input { width: 90%}
+   }
+   @media screen and (max-width: 400px) {
+     #text-input { width: 112%; transform: translateX(-5%);}
+   }
