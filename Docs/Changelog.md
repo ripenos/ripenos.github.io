@@ -51,5 +51,22 @@ A page dedicated for the Changelog of [Ripen OS](https://ripenos.github.io/).
 11. Search engine from Wikipedia to info.com
 12. **NEW** Interactable Sun rise-set wallpaper
 13. PWA integration
- 
+
+## v3.0  **(3rd Prime Update)**
+1. Native Apps (Not all apps are made, some are still in progress)
+2. Action Panels Remastered and tweaked:
+    * Ripen Panel tweaks with Changeable User name
+    * wifi Panel remastered
+    * Control panel tweaked
+    * Overall Feedbar control panel consistency tweaks
+3. Local storage for Username and wallpaper
+4. Welcome page tweaked
+5. Added 2 more RGOS native Wallpapers made by Kavesh MP
+6. Custom Right click menu for Desktop - Desktop Edit Mode
+7. Better Responsiveness
+8. Rewamped Loading screen
+9. Boot screen and Lockscreen rewamped
+
+***
+
 MIT License • Copyright (c) 2023 RipenOS
