@@ -1,0 +1,90 @@
+*{
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+body{
+     display: flex;
+     align-items: center;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    background-color: transparent;
+}
+
+body button {
+     color: white;
+     background-color:rgb(255, 123, 0);
+     border-radius: 8px;
+     padding: 10px;
+     font-size: 16px;
+     font-weight: bold;
+     border: 1px solid #ccc;
+}
+
+body button:hover{
+     background-color:rgba(241, 241, 241, 0.09);
+}
+
+#camera{
+     position: relative;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+}
+
+#camera, #camera--view, #camera--sensor, #camera--output{
+     position: fixed;
+     width: 60%;
+     height: 75%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     object-fit: cover;
+ }
+ #camera, #camera--view, #camera--sensor{z-index: 2;}
+ #camera--view, #camera--sensor, #camera--output{
+     left: 50%;
+     transform: translateX(-50%) scaleX(-1) ;
+     filter: FlipH;
+     margin-top: 2.5%;
+     border-radius: 6.5px;
+     border: 2.5px solid #ccc;
+ }
+
+ #camera--trigger{
+     user-select: none;
+     text-align: center;
+     position: fixed;
+     bottom: 11%;
+     display: flex;
+     align-items: center;
+     right: 1%;
+     transition: all 0.5s;
+ }
+ #camera--trigger span{font-size: 3rem; transition: all 0.3s;}
+
+ @media screen and (max-width: 810px) {
+     #camera, #camera--view, #camera--sensor, #camera--output{
+          width: 95%;
+      }
+
+      #camera--trigger{
+          right: 42.5%;
+      }
+}
+
+ .refreshImg{animation: refreshRotate 0.5s infinite;}
+@keyframes refreshRotate {
+	0%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
