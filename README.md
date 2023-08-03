@@ -1,7 +1,7 @@
 <img align="right" width="100" height="100" src="Ripenos/Assets/General/ripenOs.png">
 
 # The Ripen Group of Operating Systems
- [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [Code of Conduct](CODE_OF_CONDUCT.md) | [Evolution of Ripen OS](Docs/Evolution.md)
+ [LICENSE](LICENSE) | [What's Happening](Docs/Changelog.md) | [credits we are thanking for](Docs/Credits.md) | [Code of Conduct](CODE_OF_CONDUCT.md) | [Evolution of RGOS](Docs/Evolution.md)
  
  ![22-12-29_21-08-33-554-2](https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg)
 
