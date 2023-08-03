@@ -46,4 +46,4 @@ RGOS Framework are the set of stylesheets for building interface components that
 ## ⚖️ License
 **MIT License** | Licensed as **Copyright (c) 2022 RipenOS**
 
-Developed by [Navaneet](https://github.com/navaneet239) | Maintained by [RGOS](https://github.com/ripenos)
+Developed by [Navaneet](https://github.com/navaneet239) and team | Maintained by [RGOS](https://github.com/ripenos)
