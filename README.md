@@ -27,7 +27,7 @@ RGOS Framework are the set of stylesheets for building interface components that
 ### Windows Ripen
 ![WinRipen](https://github.com/ripenos/ripenos.github.io/assets/120778877/c0eea1d5-aa05-4ccf-9cb9-f24b6a2c5d63)
 ### Windows Ripen Mobile
-![WinRipenMobile](https://github.com/ripenos/ripenos.github.io/assets/120778877/a34697a5-4d8e-4837-a634-110f91ff4dd3)
+<img src="https://github.com/ripenos/ripenos.github.io/assets/120778877/a34697a5-4d8e-4837-a634-110f91ff4dd3" width="250" height="auto">
 
 ## ❓ Questions
 
