@@ -35,7 +35,7 @@ RGOS Framework are the set of stylesheets for building interface components that
 > **Answer:** No, yet it tries to give you the experience of a desktop!
 
 ### Does it contain any UI library/Framework?
-> **Answer:** Yes, library called the [Ripen.css](https://ripenos.github.io/Docs/frameworks/frameworks.html).
+> **Answer:** Yes, library called the [Ripen.css](https://ripenos.github.io/ripen.css/).
 
 ### Can I contribute?
 > **Answer:** Yes! Send an Issue, Pull a request and fill in the contribution form provided in [CONTRIBUTING.md](CONTRIBUTING.md).
