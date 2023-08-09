@@ -16,7 +16,7 @@
  > _Coming soon_
 
 ## 🎒 Resources
-### [Ripen.css framework](https://ripenos.github.io/Docs/framework/frameworks.html)
+### [Ripen.css framework](https://ripenos.github.io/ripen.css/)
 RGOS Framework are the set of stylesheets for building interface components that look like the RGOS
 
 ## 🖼️ Gallery
