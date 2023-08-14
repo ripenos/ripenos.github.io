@@ -11,9 +11,9 @@
 ## 👪 OS Members
 | Name | Descriptions          |
 | ------- | ------------------ |
-| [The Ripen OS](https://ripenos.github.io/Ripenos) | Head of the Family • Where triplets come in handy! |
-| [The Windows Ripen](https://ripenos.github.io/WinRipen) | 1st member of the family • A new taste of Windows OS |
-| Ripen OS Dynamica | A dynamic Scenery • Coming soon |
+| [The Ripen OS](https://ripenos.github.io/Ripenos) | **Head of the Family** • Where triplets come in handy! |
+| [The Windows Ripen](https://ripenos.github.io/WinRipen) | **1st member of the family** • A new taste of Windows OS |
+| Ripen OS Dynamica | A dynamic Scenery • **Coming soon** |
 
  >  **Note ❗: Windows Ripen isn't in anyway affiliated with Microsoft and should not be confused with Microsoft’s Operating System or Products. This is not a Windows 365 cloud PC.**
 
