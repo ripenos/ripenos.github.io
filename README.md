@@ -31,17 +31,12 @@ RGOS Framework are the set of stylesheets for building interface components that
 
 ## ❓ Questions
 
-### Does your project contain Full working Operating System?
-> **Answer:** No, yet it tries to give you the experience of a desktop!
-
-### Does it contain any UI library/Framework?
-> **Answer:** Yes, library called the [Ripen.css](https://ripenos.github.io/ripen.css/).
-
-### Can I contribute?
-> **Answer:** Yes! Send an Issue, Pull a request and fill in the contribution form provided in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-### 
-<hr>
+| Questions | Answers          |
+| ------- | ------------------ |
+| Does your project contain Full working Operating System?|No, yet it tries to give you the experience of a desktop!|
+|Does it contain any UI library/Framework?| Yes, library called the [Ripen.css](https://ripenos.github.io/ripen.css/).|
+| Can I contribute?|Yes! Send an Issue, Pull a request and fill in the contribution form provided in [CONTRIBUTING.md](CONTRIBUTING.md).|
+| Are there apps in it | Yes! Native apps are present but exclusively only on Ripen OS |
 
 ## ⚖️ License
 **MIT License** | Licensed as **Copyright (c) 2022 RipenOS**
