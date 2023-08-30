@@ -45,4 +45,4 @@
 ## ⚖️ License
 **MIT License** | Licensed as **Copyright (c) 2022 RipenOS**
 
-Developed by [Navaneet](https://github.com/navaneet239) and team. | Maintained by [RGOS](https://github.com/ripenos)
+Developed by **[Navaneet](https://github.com/navaneet239)** and team. | Maintained by **[RGOS](https://github.com/ripenos)**
