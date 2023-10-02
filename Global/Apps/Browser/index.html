@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background:#f1f1f111;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  #browser {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 8px;
+    padding-top: 12px;
+  }
+  #url-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 7.5px;
+    margin: 0 8px;
+    color: #ffffff;
+    padding-left: 37.5px;
+    transition: all 0.3s;
+    font-weight: 600;
+  }
+  #url-input::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    margin-left: .4em;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    -webkit-filter: drop-shadow(0px 0px 0px black);
+    filter: drop-shadow(0px 0px 0px black);
+    transition: all 0.3s;
+    margin-right: -2.5px;
+    scale: 0.85;
+  }
+  #url-input::-webkit-search-cancel-button:hover{-webkit-filter: drop-shadow(0px 0px 5px black); -webkit-scale: 1.1;filter: drop-shadow(0px 0px 5px black); scale: 1.1;}
+  #url-input::-webkit-search-cancel-button:active{-webkit-filter: drop-shadow(0px 0px 7.5px black); -webkit-scale: 1; filter: drop-shadow(0px 0px 7.5px black); scale: 1;}
+  #url-input:focus-visible{outline: transparent; background-color: rgba(255, 255, 255, 0.15);}
+  #url-input:hover{background-color: rgba(255, 255, 255, 0.15);}
+  #url-input::placeholder{color: rgba(255, 255, 255, 0.6); font-weight: normal;}
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 8px;
+  }
+  .button {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  .button:hover {background-color: rgba(255, 255, 255, 0.2);}
+  .button:active {background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);}
+  .button .material-symbols-rounded{
+    font-size: 16px;
+    scale: 1.5;
+  }
+  #nav-icon1{scale: 1.95;}
+  #nav-icon2{scale: 1.95;}
+  iframe {
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8.5px;
+    height: calc(100% - 80px);
+  }
+
+  #searchBarIco{
+    margin-right: -28px;
+    transition: all 0.3s;
+    transform: translateX(17.5px) translateY(-1px) scale(0.75);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px;
+    border-radius: 7.5px;
+  }
+  #searchBarIco:hover{transform: translateX(17.5px) translateY(-1px) scale(0.8);}
+  #searchBarIco:active{transform: translateX(17.5px) translateY(-1px) scale(0.75);}
+
+  .vert{
+    background-color: rgba(255, 255, 255, 0.35); width: 1px; height: 26px;
+    margin-left: 5px; margin-right: 5px;
+  }
+
+  #reload-button:active #reload-icon{animation: rotateReload 0.35s;}
+  @keyframes rotateReload {
+   0%{transform: rotate(360deg);}
+   100%{transform: rotate(0deg);}
+  }
+
+  #previous-button:active #nav-icon1{animation: moveNav1 0.5s;}
+  @keyframes moveNav1 {
+   from{transform: translateX(-1.5px);}
+   to{transform: translateX(0px);}
+  }
+  #next-button:active #nav-icon2{animation: moveNav2 0.5s;}
+  @keyframes moveNav2 {
+   from{transform: translateX(1.5px);}
+   to{transform: translateX(0px);}
+  }
+  #home-icon{transition: all 0.3s;}
+  #home-button:active #home-icon{scale: 1.25;}
+  @media screen and (max-width: 650px) {
+    #DeskBtns{display: none;}
+    #url-input {    margin-left: 0px;}
+    #searchBarIco{transform: translateX(10px) translateY(-1px) scale(0.75);}
+    #searchBarIco:hover{transform: translateX(10px) translateY(-1px) scale(0.8);}
+    #searchBarIco:active{transform: translateX(10px) translateY(-1px) scale(0.75);}
+  }
+  @media screen and (max-width: 400px) {
+    .vert{display: none;}
+    #pfbtn{display: none;}
+    .button-container {gap: 2.5px; margin-left: 0;}
+  }
+</style>
+</head>
+<body>
+<div id="browser">
+  <div id="toolbar">
+    <div class="button-container" style="margin-left: 0px;" id="DeskBtns">
+      <button class="button" id="previous-button">
+        <span class="material-symbols-rounded"  id="nav-icon1">
+          navigate_before
+          </span>
+      </button>
+      <button class="button" id="next-button">
+        <span class="material-symbols-rounded"  id="nav-icon2">
+          navigate_next
+          </span>
+      </button>
+      <button class="button" id="reload-button">
+        <span class="material-symbols-rounded"  id="reload-icon">
+          refresh
+          </span>
+      </button>
+      <button class="button" id="home-button">
+        <span class="material-symbols-rounded" id="home-icon">
+        home
+        </span>
+      </button>
+    </div>
+    <span class="material-symbols-rounded" id="searchBarIco">
+    info
+    </span>
+    <input type="search" id="url-input" placeholder="Search or enter URL with https://">
+    <button id="go-button" class="button">
+      <span class="material-symbols-rounded">
+        search
+        </span>
+    </button>
+    <div class="button-container">
+      <div class="vert"></div>
+      <button class="button" id="pfbtn">
+        <span class="material-symbols-rounded">
+          person
+          </span>
+      </button>
+      <button class="button">
+        <span class="material-symbols-rounded">
+          menu
+          </span>
+      </button>
+    </div>
+  </div>
+  <iframe id="iframe" src="start-page.html"></iframe>
+</div>
+
+<script>
+const goButton = document.getElementById('go-button');
+const homeButton = document.getElementById('home-button');
+const reloadButton = document.getElementById('reload-button');
+const reloadIcon = document.getElementById('reload-icon');
+const previousButton = document.getElementById('previous-button');
+const nextButton = document.getElementById('next-button');
+const urlInput = document.getElementById('url-input');
+const iframe = document.getElementById('iframe');
+const visitedPages = [];
+let currentPageIndex = -1;
+
+const loadContent = (url) => {
+  if (url.startsWith('https://')) {
+    iframe.src = url;
+  } else {
+    const searchEngine = 'https://www.bing.com/search?q=';
+    iframe.src = searchEngine + encodeURIComponent(url);
+  }
+};
+
+const updateNavigationButtons = () => {
+  previousButton.disabled = currentPageIndex <= 0;
+  nextButton.disabled = currentPageIndex >= visitedPages.length - 1;
+};
+
+goButton.addEventListener('click', () => {
+  const url = urlInput.value;
+  loadContent(url);
+  if (!visitedPages.includes(url)) {
+    currentPageIndex = visitedPages.push(url) - 1;
+    updateNavigationButtons();
+  }
+});
+
+homeButton.addEventListener('click', () => {
+  iframe.src = 'start-page.html';
+});
+
+reloadButton.addEventListener('click', () => {
+  iframe.src = iframe.src;
+});
+
+previousButton.addEventListener('click', () => {
+  if (currentPageIndex > 0) {
+    currentPageIndex--;
+    loadContent(visitedPages[currentPageIndex]);
+    updateNavigationButtons();
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  if (currentPageIndex < visitedPages.length - 1) {
+    currentPageIndex++;
+    loadContent(visitedPages[currentPageIndex]);
+    updateNavigationButtons();
+  }
+});
+
+urlInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    const url = urlInput.value;
+    loadContent(url);
+    if (!visitedPages.includes(url)) {
+      currentPageIndex = visitedPages.push(url) - 1;
+      updateNavigationButtons();
+    }
+  }
+});
+</script>
+</body>
+</html>

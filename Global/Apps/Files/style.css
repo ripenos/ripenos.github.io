@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    background-color: transparent;
+}
+
+h4{font-size: 20px; margin-bottom: 2px;}
+
+button{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    border:  none;
+    transition: all 0.5s;
+    color: white;
+    align-items: center;
+    padding: 7.5px;
+}
+button:hover{ background-color: rgba(255, 255, 255, 0.2);}
+button:active{ background-color: rgba(255, 255, 255, 0.1);}
+
+#FilesNavBtn{
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    display: none;
+    padding: 10px;
+}
+#FilesNavBtn span{font-size: 19px;}
+#FilesNavBtnClose{
+    position: absolute;
+    right: 10px;
+    width: fit-content;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#FilesNavBtnClose span{font-size: 19px; margin: 0;}
+.FileNav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: rgba(241, 241, 241, 0.09);
+    border:  1px solid #f1f1f138;
+    overflow-x: hidden;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s;
+}
+
+.FileNav button {
+    display: block;
+    background-color: inherit;
+    color: #ccc;
+    padding: 5px 10px;
+    width: 100%;
+    border: none; border-radius: 5px;
+    outline: none; margin-bottom: 7.5px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+}
+
+.FileNav button span{margin-right: 5px; font-size: 20px;}
+
+.FileNav button:hover {
+    color: white;
+    background-color: rgba(221, 221, 221, 0.15);
+}
+
+.FileNav button :active {
+    scale: 0.90;
+}
+
+.FileNav button.active2 {
+    color: white;
+    background-color: rgba(221, 221, 221, 0.15);
+}
+
+.tabcontent2 {
+    display: none;
+    -webkit-animation: fadeEffect2 1s;
+    animation: fadeEffect2 1s;
+  }
+  
+  /* Fade in tabs */
+  @-webkit-keyframes fadeEffect2 {
+    0% {transform: scale(1); opacity:0;  }
+    50% {transform: scale(1.02) ; opacity:1;  }
+      100% {transform: scale(1); opacity:1;  }
+  }
+  
+  @keyframes fadeEffect2 {
+    0% {transform: scale(1); opacity:0;  }
+    50% {transform: scale(1.02) ; opacity:1;  }
+      100% {transform: scale(1); opacity:1;  }
+  }
+
+  #Recents div{
+    flex-wrap: wrap;
+  }
+
+
+.FIleFolders {
+	display:inline-block; 
+    padding: 10px; 
+    background-color: rgba(241, 241, 241, 0.09);
+    overflow: hidden;
+    border-radius: 8px;
+    border:  1px solid #f1f1f138;
+    width: 120px;
+    font-size: 13px;
+    transition: all 0.3s;
+	font-family: Arial, Helvetica, sans-serif; margin-right: 5px;
+}
+
+.FIleFolders img {
+    width: 37.5px; margin: 3.5px; margin-bottom: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.FIleFolders:hover{ background-color: rgba(255, 255, 255, 0.15);}
+.FIleFolders:active{ background-color: rgba(255, 255, 255, 0.1);}
+
+.DriveSpace {
+	height: 12px;
+	background-color: rgba(0, 0, 0, 0.20);
+	border-radius: 3px; width: 75%;
+	font-family: Arial, Helvetica, sans-serif;
+	border:  0.5px solid #f1f1f12a;
+    margin-top: 7.5px;
+}
+
+.DriveSpace .Occupied {
+	height: 10.5px; float: left;
+	background-color: rgb(255, 81, 0);
+	border-radius: 2.5px; width: 14%;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+.DriveSpace #PersonalD{width: 43%;}
+
+.DriveDetails{margin: 5px;}
+.DriveDetails p{margin: 7.5px;}
+.DriveDetails div{font-size: 14px; font-weight: 700;}
+
+#Files-body{
+    position: absolute;
+    top: 0px;
+    left: 23%;
+}
+
+#Toolbar{
+    position: absolute;
+    width: max-content;
+    left: -3%;
+}
+
+#Toolbar .devider-toolbar{display: inline-block; width: 1px; height: 25px; background-color: rgba(204, 204, 204, 0.45); -webkit-transform: translate(10px, 2px);transform: translate(10px, 2px); font-size: 22px;}
+
+#Toolbar p{display: inline-block; -webkit-transform: translate(5px, -5px);transform: translate(5px, -5px);}
+#toolbar .google-fonts-icon{display: inline-block; -webkit-transform: translate(5px, 2px);transform: translate(5px, 2px); font-size: 22px;}
+
+#toolbar #tools{
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.2s;
+    align-items: center;
+}
+
+#toolbar #tools:hover{background-color: #f1f1f12a;}
+#toolbar #tools:active{background-color: #f1f1f13f;}
+#toolbar #tools #arrow{transform: translateY(2.5px);}
+#toolbar img{padding: 0;}
+.folders{margin-top: 50px;}
+#drives img{width:50px; margin-right: 5px; margin-left: -5px; margin-bottom: 5px;}
+#DrivesRecent{position: relative;}
+@media screen and (max-width: 815px) {
+    .FileNav{
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    border: none;
+    border-radius: 0px;
+    position: absolute;
+    left: 100%;
+    }
+    .FileNav button{padding: 10px;}
+    .FileNav button span{font-size: 23px;}
+    #FilesNavBtn{display: block;}
+    #Toolbar{display: none;}
+    #FilesNavBtnClose{display: block;}
+    #Files-body{left: 3%;}
+
+    .folders{margin-top: 0px;}
+
+    .FIleFolders {
+        margin-bottom: 10px;
+        margin-right: 10px;
+        float: left;
+    }
+}

@@ -823,7 +823,7 @@ function openCam(){
     document.getElementById("myripebarM").style.borderRadius= "0";
    document.getElementById("myripebarM").style.width= "100%";
 document.getElementById("myripebarM").style.borderTop = " var(--primary-border)";
-    document.getElementById('CamIframe').src = 'Apps/Camera/index.html'
+    document.getElementById('CamIframe').src = '../Global/Apps/Camera/index.html'
     dockZoomOut();
     }, 1);
 
