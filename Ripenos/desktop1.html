@@ -1277,16 +1277,15 @@
 
                 <div id="Windows"  onclick="actionbarDown(), moveToFront(this)">
                     <div class="application">
-                        <div id="Windowstopbar" ondblclick="maxWindows()">
-                            <img src="https://qph.cf2.quoracdn.net/main-qimg-01e7b6400981899b80055f9ad51454ea"  style="background-color: white; padding: 5px;"><h3 >Windows Replicas</h3>
-                    
+                        <div id="Windowstopbar" style="background-color: transparent; z-index: 999999999999; position: fixed" ondblclick="maxWindows()">
+
                             <div class="appControls">
                                 <div class="min" id="min" onclick="minWindows()"></div>
                                 <div class="max" id="max" onclick="maxWindows()"></div>
                                 <div class="close" id="close" onclick="closeWindows()"></div>
                             </div>
                         </div>
-                        <iframe src="https://navaneet239.github.io/Windows-replica/" frameborder="0" style="position: absolute; bottom: 0; width: 100%; height: 92.5%;" id="WinIframe"></iframe>
+                        <iframe src="https://navaneet239.github.io/Windows-replica/index-nobg-forRGOS.html" frameborder="0" style="position: relative; top: -5px; width: 100%; height: 100%;" id="WinIframe"></iframe>
                     </div>
                 </div>
 
