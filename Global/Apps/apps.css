@@ -1,0 +1,728 @@
+:root {
+  --accent-color: rgb(255, 123, 0);
+  --primary-bg: rgba(0, 0, 0, 0.5);
+  --primary-border: 1px solid #ffffff35;
+  --primary-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  --secondary-bg: rgba(241, 241, 241, 0.09);
+}
+
+.application {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 10px;
+    z-index: 200;
+    border: var(--primary-border);
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    -webkit-backdrop-filter: blur(55px);
+    backdrop-filter: blur(55px);
+    transition: transform 0.2s, opacity 0.2s, visibility 0.2s, border-radius 0.2s,
+      width 0.2s, height 0.2s;
+    box-shadow: var(--primary-box-shadow);
+    resize: both;
+    color: white;
+  }
+  .application::-webkit-resizer {
+    opacity: 0;
+  }
+  
+  #files {
+    width: 80%;
+    height: 80%;
+    min-width: 60%;
+    min-height: 70%;
+  }
+  
+  #calculator {
+    width: 25%;
+    height: 81%;
+    min-width: 25%;
+    min-height: 79%;
+  }
+  
+  #WinRipenEmu {
+    width: 100%;
+    height: 100%;
+    min-width: 25%;
+    min-height: 75%;
+  }
+  
+  #QrApp {
+    width: 32.5%;
+    height: 82.5%;
+    min-width: 32.5%;
+    min-height: 82.5%;
+  }
+  
+  #calendar {
+    width: 60%;
+    height: 80%;
+    min-width: 60%;
+    min-height: 80%;
+  }
+  
+  #paint {
+    width: 80%;
+    height: 80%;
+    min-width: 35%;
+    min-height: 75%;
+  }
+  
+  #notes {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 32.5%;
+    height: 80%;
+    min-width: 27.5%;
+    min-height: 75%;
+  }
+  
+  #snake {
+    width: 55%;
+    height: 82.5%;
+    resize: none;
+  }
+  
+  #piano {
+    width: 60%;
+    height: 80%;
+    min-width: 50%;
+    min-height: 72.5%;
+  }
+  
+  #Windows {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Camera {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Browser {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Gallery {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Document {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #IEditor {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Scramble {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #games {
+    width: 65%;
+    height: 70%;
+    min-width: 60%;
+    min-height: 50%;
+    background-image: url('https://img.freepik.com/premium-photo/illustration-neon-light-background-with-mountain-moon-generative-ai_961829-7133.jpg');
+    background-size: cover;
+  }
+  
+  #ticTacToe {
+    width: 35%;
+    height: 80%;
+    min-width: 25%;
+    min-height: 72.5%;
+  }
+  .apps {
+    box-shadow: var(--primary-box-shadow);
+  }
+  
+  #AboutApp {
+    width: 27.5%;
+    height: 75%;
+    min-width: 20%;
+    min-height: 60%;
+  }
+  
+  #AboutApp p {
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 15px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  
+  #AboutApp h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+  }
+  #AboutApp ol {
+    padding: 10px;
+    font-size: 13px;
+    padding-left: 25px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  #AboutApp ol li {
+    margin-bottom: 5px;
+  }
+  #AboutApp ul {
+    padding-left: 35px;
+  }
+  #AboutApp a {
+    transition: all 0.3s;
+    filter: none;
+  }
+  #AboutApp a:hover {
+    color: var(--accent-color);
+  }
+  
+  .About-content {
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  #UpdateApp {
+    width: 30%;
+    height: 70%;
+    min-width: 20%;
+    min-height: 60%;
+  }
+  
+  #UpdateApp ol {
+    padding: 10px;
+    padding-left: 40px;
+    font-size: 13px;
+    border-radius: 5px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  
+  #UpdateApp ul {
+    padding-left: 10px;
+  }
+  #UpdateApp h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  #maxApp {
+    display: none;
+  }
+  .application iframe {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 1150px) {
+    .borderLeft {
+      display: none;
+    }
+    .borderRight {
+      display: none;
+    }
+  
+    #files,
+    #AboutApp,
+    #ticTacToe,
+    #UpdateApp,
+    #notes,
+    #games,
+    #calculator,
+    #QrApp,
+    #openQr,
+    #calendar,
+    #paint,
+    #Windows,
+    #Gallery,
+    #piano,
+    #Browser,
+    #Scramble,
+    #Ieditor,
+    #snake,
+    #Document,
+    #Camera {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      border: none;
+    }
+  }
+  
+  #gamestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+  }
+  #gamestopbar img {
+    width: 27.5px;
+    margin: 5px;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #filestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #filestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #filestopbar h3 {
+    margin-top: 0.1rem;
+  }
+  
+  #AboutApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #AboutApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #AboutApptopbar h3 {
+    margin-top: 0.2rem;
+  }
+  #ticTacToetopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #ticTacToetopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #ticTacToetopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #UpdateApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #UpdateApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #UpdateApptopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #notestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #notestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #notestopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #gamestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #gamestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #notestogamestopbarpbar h3 {
+    margin-top: 0.25rem;
+  }
+  #calculatortopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #calculatortopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #calculatortopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #WinRipenEmutopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #WinRipenEmutopbar img {
+    width: 1.85rem;
+    height: 1.85rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+  }
+  #WinRipenEmutopbar h3 {
+    margin-top: 0.1rem;
+    padding-right: 10px;
+    border-right: 1px solid #aaaaaa95;
+  }
+  #WinRipenEmutopbar .appControls .close{transform: translateY(12.5px);}
+  #WinEmuframe{max-height: calc(100% - 60px);}
+  .appTopbarBtn{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    padding: 7.5px;
+    margin-top: 2px;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+  .appTopbarBtn:hover {background-color: rgba(255, 255, 255, 0.2);}
+  .appTopbarBtn:active {background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);}
+  .appTopbarBtn .material-symbols-rounded{transition: all 0.3s;}
+  #WinRipenEmuFull:active .material-symbols-rounded{scale: 0.9;}
+  #QrApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #QrApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #QrApptopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #QrApptopbar div{transform: translate(3px,6px);}
+  #calendartopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #calendartopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #calendartopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #painttopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #painttopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #painttopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #painttopbar p {
+    margin-left: 0.35rem;
+    padding-right: 10px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-right: 1px solid #aaaaaa95;
+  }
+  #Windowstopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Windowstopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Windowstopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #pianotopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #pianotopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #pianotopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Browsertopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Browsertopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Browsertopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Gallerytopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Gallerytopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Gallerytopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Scrambletopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Scrambletopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Scrambletopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #IEditortopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #IEditortopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #IEditortopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #snaketopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #snaketopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #snaketopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Documenttopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Documenttopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Documenttopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Cameratopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Cameratopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Cameratopbar h3 {
+    margin-top: 0.1rem;
+  }
+  
+  .appControls {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+  }
+
+  
+.close {
+    background: red;
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  
+  .close:hover {
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .close:active {
+    scale: 1;
+  }
+  
+  .min {
+    background: rgba(135, 135, 135, 0.35);
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-right: 2.5px;
+  }
+  
+  .min:hover {
+    background: greenyellow;
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .min:active {
+    scale: 1;
+  }
+  
+  .max {
+    background: rgba(135, 135, 135, 0.35);
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-right: 2.5px;
+  }
+  
+  .max:hover {
+    background: yellow;
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .max:active {
+    scale: 1;
+  }
+  @media screen and (max-width: 550px) {
+    .max {
+      display: none;
+    }
+    .min {
+      visibility: hidden;
+    }
+  }
