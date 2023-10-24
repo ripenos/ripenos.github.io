@@ -1,0 +1,663 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="og:title" property="og:title" content="Windows Ripen Mobile" />
+    <meta name="og:description" property="og:description" content="Windows Ripen Mobile Official | An open-sourced concept based on the Windows Operating System | An initiative of the RGOS"/>
+    <meta name="description" content="Windows Ripen Mobile Official | An open-sourced concept based on the Windows Operating System | An initiative of the RGOS"/>
+    <meta content="Assets/Banner.png" property="og:image"/>
+    <meta property="og:type" content="website"/>
+    <title>RGOS | Windows Ripen Mobile</title>
+    <link rel="shortcut icon" href="Assets/windows11-logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="Assets/windows11-logo.png" />
+    <link rel="manifest" href="manifest.json">
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+    <style>
+        .blank {
+            background: rgba(0, 0, 0, 0.67);
+            -webkit-backdrop-filter: blur(25px) contrast(120%);
+            backdrop-filter: blur(25px) contrast(120%);
+            width: 100%; height: 100%;
+            position:absolute; z-index: 1000000000000000000;
+            visibility: visible; opacity: 1;
+            transition: visibility 1s, opacity 1s; 
+        }
+    </style>
+</head>
+<body
+onload="ShowDs(), startTime(),  StartDate(), startTimeS()">
+    <div class="blank" id="myblank"></div>
+
+    <div id="switchP">
+        <div class="Switch_Mobile">
+            <CENTER>
+            <div class="img-ph">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEjElEQVR4nO2YW3dTRRzFp1iRtogVQZxvJMsnX3xxuZZLvNdbi3cTLUhDtWAvadPcr6dJkza9BAEREQT5ItSP8c/Zrpkzk845pGlOmnT1If+19vtv77Nnzsww1p/+9Kc//en2ZCq/v5ar1P7LVW6goXINWaXM6rbSFtIlpeImUlIbSK1sILlSdWRVkbDWkSisI15Yc5RfQyxfcZQrIyqUXZVaFsqUpCKZIiLpIpbSxZ1IyjrftoFsubbjgq/sA1/aB14aaAGfK+8JLw2kVrCYtJ60bUCD4y0GvM2AdxjwLgPeZ8CHDPiYAZ8w4DMGfMGACQZ8yYCvGfANA75jwA/d05IwkLLg34CAv8CA9xjwAQM+YsAYAz5lwOcMGGfARQZ8ZYB/3114SAOW+AIdGNDw+6X+bW/AobTYiQHRd1dlWqXeI3BoA0lhoNC+Ab1gJbxZmUNMHUKBASA4IOHDHRkYa1KZXqUeGFDAx4AfnwF+EhqEPTko4cMJvwZWt3fhe1WZgAY+5gBPDsK+9CzsS8dhXz4O++fnpAR8OJH3Y8DZ613w3ayMAFfQtobWwFdOwJ4SGoIdGoZ9dVjCL/gxoH9WEr6bfdf1aAo9pIBHYE+PwP7lpFT91+cl/ELcr4HS1i58l8AbaXuhp0casPUZoVOoX3sB9etCoxJ+IZ7zY8A5IhwYXlZFJ26kHRpSSZ9U0Abwb6Ooz76I+uxp1OdOoz7/koSf92NAn3EO3nFP4hpcp33tlBtaAdcXzqAePgMKnwUtvuwYiPk2sNlhXZzU7UnVcS+4qIhM+2loUsC0dA4UOQdafgW0zCX8fCzrx4Bzuuyo62bqouNXh43EjbS90BEFHOWgGAfFOSjBQUlhIOvPgD4a+62MXKRm6tMjRlU84ItnQUsC3IAWwCkOSnNQloNyHJR3DMxFMz0yEDAqI1M/sZv6jO64qkoD3Eg77oHOc5DFQSscVOSgEsdc1LcB52LSFrz4GbkqY6Qu66I6HlaJa3CddsYDXeKgMgdVOGiNg6rCQManAXWr8gXvqow3ddVxE9xMu6SgBfA6B21w0BYHbXNQzTEwu5xu34C+ErYFf8UDLyqju26mLjqeNBI30143oGscdIODbnLQLQ66zSW8fwNW1R/8jHuhyq6bqafVorSagG8b0Lc56A4H/clBdznoXicG1GV8zwXrrU0D3qyMJ/WCWpS6Kib4LQ76Q0H/xUF/c9B9DvqHgx52YEC/JDxlQG6VXnhRm1F333VldNd16mJhVlVVTPC7TtIN6Ecc9O+uOjNQ8BgIqn1e7zauznvg40ZlRNdXVeqbquM3jcTvcdADJ2kT+mAG1COUu/fqJyX3ec+CbQavF6ruupn6HVWV+63BOzYQy1d2OnxBk284+h1HX8b1lVBeTNTRWB/Q5sVfVv1p9XbZXKn2H7Zi1tr5WK6y4/sFLe2Ft/aFn3fB72Ug9eR6NPMqO4x5/Y030UrsqM+FsYtoJXbUZzwwhVZiR2XGg6HHE8EQuqHx4NSjQzfQLfgJpb4BvyM+e9e+QCD00DdAf/rTn/6wozD/A2Tl4NLpFe4KAAAAAElFTkSuQmCC">            
+            </div>
+            <h1>Time to Switch to a Desktop!!</h1>
+            <a href="https://ripenos.github.io/WinRipen/"><button>Desktop UI</button></a>
+            </CENTER>
+        </div>
+    </div>
+    
+    <!-- Desktops -->
+    <div class="bg">
+        <div id="desktop" oncontextmenu="return false, showRecents()">
+            <div class="page 1">
+                <div class="time-widget">
+                    <div id="timeDesktop" style="color: azure; font-weight:900; font-size: 65px; filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
+                    <div id="txtdty" style="color: azure; font-weight:900; font-size: 20px; margin-top: -10px;filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));"></div>
+                    <p 
+                    style="color: azure; font-weight:600; margin-top: 5px;filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));">No events today</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="statusBar" id="statusB">
+        <div id="timeS"></div>
+        <div id="status2"></div> 
+        <div class="battery-wrapper flyout" >
+            <div class="battery-cont">
+                <div class="battery" id="flyWB"></div>
+            </div>
+            <div class="battery-edge"></div>
+        </div>
+    </div>
+
+    <!-- Start -->
+    <div class="start" id="startMenu">
+        <div class="start-header" id="ProfileStartHead">
+            <div class="profile">
+                <img src="../../Ripenos/Assets/UI/icons8-male-user-96.png" id="startPfp">
+                <div><p id="greetings"></p>
+                    <h5 id="UsernameWindowsStart"></h5></div>
+            </div>
+        </div>
+        <div class="Apps">
+            <input type="text" placeholder="Search apps" class="searchT" id="mySearch" onkeyup="FunctionAppS()">
+            <img src="../Assets/AppsIco.png" id="mySearch-img">
+            <h1 style="margin-left: 15px; margin-bottom: 12px; font-size: 23px; color: rgba(255, 255, 255, 0.75);">All Apps</h1>
+
+            <div id="tray-layout">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKklEQVR4nO2XsU7DMBRF0wVaaL+qhRX1h1qBFEbEyAeB+g8lQ1sWmDNkiXRQVA+VRYuTh2pH3DM/Pb0TO7ZvlgkhRLIAV8ADUAA1p6ld3T0wSmX4Fd14iy7B/stbWMYWKIwC77EFaqNA/UPPR6Dq2K8C8jYCZrx+A6A0tiz/QmADTIFrYAZsQwRczzyFFZh6dTehAmeF44y9uknfBGZ9X4GNG3oM3Lb8B0JOoarVXu8gEIzhFCpTvQfyc65AYRRYm4ew4F6VFhZZTICRe1V24RUYRhU4kFg2D7PAPNDULZIYXqQAipQRQZESRUoPRUr/0nr57XJLNVI2PLmaZ06QxYTj7JoYeRAnP/omcOfVzfsk8AlceHWXwFeIgCJlGxQpUaS0oUgphBD/gm8W9xBVo1PxEwAAAABJRU5ErkJggg==" alt=""
+                id="tile-trayBtn"
+                onclick="
+                document.getElementById('tiles').style.display= 'block'; 
+                document.getElementById('grid').style.display= 'none';
+                localStorage.setItem('AppsLayoutMobile', 'A2');
+                document.getElementById('tile-trayBtn').classList.add('trayActive')
+                document.getElementById('grid-trayBtn').classList.remove('trayActive')
+                ">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTUlEQVR4nO2XPU7DQBCFXfEbzuMDJNDCiRLBBdJSBs4SxB0gRYAGOpTa0ocWRsKySDzZ3SEsmq+xIo3e+M3azryqchzH+bMAR8AVsAAaNtNI3SVwaKmlQhreE8ddu3FOLTUyrRQmFlpq5AhTeLTQUqN4TvtoLLTUkAELLTUbtJbAEDgGRsBTaQaGnbrT0gwMOnUnpRkYlX4CS7npAXBW4jugZtcGmtL/BxaJTR8stNTIJpjC2EJLTdgAZROMYQ4cWGhthTSehGVKucOHuvFPDXNqOcWAR8ovPFLikbLMVSIZpdYKmMm1VyuXgTDR677JKrTegVpqavn9KwamUjNNMBAm/nnzrbp63UnkNPAcYmQrTr5EGpit6XtjbeC8U3dR0gm8Anudun3gLcJAYGfvgAql1gq4tfgKeaSsvofhkbKKeIQ8UrbxSOk4zv/kAwWI9yqKJbc6AAAAAElFTkSuQmCC" alt=""
+                id="grid-trayBtn"
+                onclick="
+                document.getElementById('tiles').style.display= 'none'; 
+                document.getElementById('grid').style.display= 'block';
+                localStorage.setItem('AppsLayoutMobile', 'A1');
+                document.getElementById('grid-trayBtn').classList.add('trayActive')
+                document.getElementById('tile-trayBtn').classList.remove('trayActive')
+                
+                ">
+            </div>
+            <hr width="92.5%" style="border-bottom: 1px solid black; border-radius: 5px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);">
+            <div class="startApps">
+                <div class="tab" id="tiles">
+                    <ul id="myMenu" style="margin-left: -15px;">
+                        <!--A-->
+                        <li ><button class="startAppsbuttonH"><b>A</b></a></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton">
+                                <img src="Assets/windows11-logo.png" id="WinRAboutAppStartAppsBtn">
+                                About
+                            </button></li>
+                        </div>
+                        <!--B-->
+                        <li ><button class="startAppsbuttonH"><b>B</b></a></li>
+                            <div style="margin-left: 15px;">
+                                <li ><button class="startAppsbutton">
+                                    <img src="../../Global/Assets/Images/AppsIcons/no-bg/Browser.png">
+                                    Browser
+                                </button></li>
+                            </div>
+                        <!--C-->
+                        <li ><button class="startAppsbuttonH"><b>C</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Calculator.png">
+                                Calculator</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Calender.png">
+                                Calendar</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Camera.png">
+                                Camera</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Clock.png">
+                                Clock</button></li>
+                        </div>
+                        <!--D-->
+                        <li ><button class="startAppsbuttonH"><b>D</b></a></li>
+                            <div style="margin-left: 15px;">
+                                <li ><button class="startAppsbutton">
+                                    <img src="../../Global/Assets/Images/AppsIcons/no-bg/Document.png">
+                                    Document
+                                </button></li>
+                        </div>
+                        <!--I-->
+                        <li ><button class="startAppsbuttonH"><b>I</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li><button class="startAppsbutton" onclick="FileExplr()">
+                                <img  src="../../Global/Assets/Images/AppsIcons/no-bg/IEditor.png">
+                                Image editorr</button></li>
+                        </div>
+                        <!--F-->
+                        <li ><button class="startAppsbuttonH"><b>F</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li><button class="startAppsbutton" onclick="FileExplr()">
+                                <img  src="../../Global/Assets/Images/AppsIcons/no-bg/Files.png">
+                                Files</button></li>
+                        </div>
+                        <!--G-->
+                        <li ><button class="startAppsbuttonH"><b>G</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li><button class="startAppsbutton" onclick="FileExplr()">
+                                <img  src="../../Global/Assets/Images/AppsIcons/no-bg/Gallery.png">
+                                Gallery</button></li>
+                        </div>
+                        <!--N-->
+                        <li ><button class="startAppsbuttonH"><b>N</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Notes.png">
+                                Notes</button></li>
+                        </div>
+                        <!--P-->
+                        <li ><button class="startAppsbuttonH"><b>P</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton" onclick="Paint()">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Paint.png">
+                                Paint</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Player.png">
+                                Player</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="../../Global/Assets/Images/AppsIcons/no-bg/Piano.png">
+                                    Piano</button></li>
+                                    <li ><button class="startAppsbutton">
+                                        <img src="../../Global/Assets/Images/AppsIcons/no-bg/Presentation.png">
+                                        Presentation</button></li>
+                        </div>
+                        <!--S-->
+                        <li ><button class="startAppsbuttonH"><b>S</b></button></li>
+                        <div style="margin-left: 15px;">
+                                    <li ><button class="startAppsbutton">
+                                        <img src="../../Global/Assets/Images/AppsIcons/no-bg/Settings.png">
+                                        Settings</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Spreadsheet.png">
+                                Spreadsheet</button></li>
+                                <li ><button class="startAppsbutton">
+                                    <img src="../../Global/Assets/Images/AppsIcons/no-bg/Snake.png">
+                                    Snake Game</button></li>
+                        </div>
+                        <!--T-->
+                        <li ><button class="startAppsbuttonH"><b>T</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/Tasks.png">
+                                Tasks</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/TicTacToe.png">
+                                TicTacToe</button></li>
+                        </div>
+                        <!--W-->
+                        <li ><button class="startAppsbuttonH"><b>W</b></button></li>
+                        <div style="margin-left: 15px;">
+                            <li ><button class="startAppsbutton">
+                                <img src="../../Global/Assets/Images/AppsIcons/no-bg/weather.png" id="WeatherAppStartAppsBtn">
+                                Weather</button></li>
+                            <li ><button class="startAppsbutton">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACgklEQVR4nO3Vv2sTYRzH8S93yRC06CJ5njR/gEMmsYuK6FB0cfJXnqtUcFDnLrqIa+6Ju2byLg5CoNa/oXcNCIpLFgUdFLHQQmmepCV5nvQrhJBGW+tderk79T7w7O8Xz5MLQLJkyQIbImhymVyWDn2hXNqQDt2UFt1UNm1Ii1alTS/hY9Agjus69JxyyHvlUvzp2L8ci7zrVnNnIC7Dej4jXVKSDu3tid8PYFOUFt2RNq1g7cTRSOOlk7siXfp53/ADALsQ8lVZZD7UaHwLaeXmbiqHrBwY7gGgdp+Vo6zsDaxAOrjQej6D9fx0ZyVbkG72onLJgnLIa+mQdU/hfgD28EbWlEWWlE0W5PPshU41W0ArP421fMZXvHTIF1+RAQHUH56bZ0Bg8QEClE0xAajkBmjyhDwt+RG7yVcI/+/PqHTJdtwA0iJbPgD0e+wANvnm/Qk59E3cAMoidT83UIkbQNr0mWcAcjCQAwZxWoYeyBFMK3oHlOAYcujEBSCY3t24Dcc9Awa3sBQXQItpi77i+4AynI8LoGmkzvoG9BEmuJEDmLY8VvwAcAo59KICCKb32nOpmbEBfQSHSoSAp4eK7wPKcAQ5fAwbIAz909odmDo0YICYQQ7bYQGEoW+1i6nTgcQPERzmwwAIQ98RTJsLNH4E8WjiN8C0hxOJHyJMKE8KIJhuTjR+BPEgaIAw9FIo8SOI+17+IzyEqzbT7oUaP0SU4Bqa0DoEQDSZfjWS+CHiCZxEDo0xAB/ErXQB4jA0YQo51HwAXgb2JxXkkMN15LD+WwDTN9qGdhfiPDQhhya82gNg2mK7CDn4W4YlmEUOq02mr4qiPht1T7Jk/+p+AMi8i4Go3qWBAAAAAElFTkSuQmCC" id="SecAppStartAppsBtn">
+                                Windows Security</button></li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="tab" id="grid">
+                    <ul id="myUL2">
+                        <CENTER id="AllAppsList">
+                            <li onclick="openAbout()">
+                                <div class="Appimg"><img src="Assets/windows11-logo.png">
+                                    <p>About</p>
+                                </div>
+                            </li>
+                            <li onclick="openBwr()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/Browser.jpg">
+                                    <p>Browser</p>
+                                </div>
+                            </li>
+                            <li onclick="openCalc()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Calculator.png">
+                                    <p>Calculator</p>
+                                </div>
+                            </li>
+                            <li onclick="openCal()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Calendar.png">
+                                    <p>Calendar</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg" onclick="openCam()"><img src="../../Global/Assets/Images/AppsIcons/Camera.png">
+                                    <p>Camera</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Clock.png">
+                                    <p>Clock</p>
+                                </div>
+                            </li>
+                            <li onclick="openDoc()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Document.png">
+                                    <p>Document</p>
+                                </div>
+                            </li>
+                            <li onclick="openIed()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/Editor.png">
+                                    <p>Editor</p>
+                                </div>
+                            </li>
+                            <li onclick="openFiles()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Files.png">
+                                    <p>Files</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Gallery.png"">
+                                    <p>Gallery</p>
+                                </div>
+                            </li>
+                            <li onclick="openNotes()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Notes.png">
+                                    <p>Notes</p>
+                                </div>
+                            </li>
+                            <li onclick="openPaint()">
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Paint.png">
+                                    <p>Paint</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/Player.png">
+                                    <p>Player</p>
+                                </div>
+                            </li>
+                            <li onclick="openPiano()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/Piano.png">
+                                    <p>Piano</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Presentation.png">
+                                    <p>Slides</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Settings.png">
+                                    <p>Settings</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Spreadsheet.png">
+                                    <p>Sheets</p>
+                                </div>
+                            </li>
+                            <li onclick="openSnake()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/Snake.png">
+                                    <p>Snake</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="Appimg"><img src="../../Global/Assets/Images/AppsIcons/Tasks.png">
+                                    <p>Tasks</p>
+                                </div>
+                            </li>
+                            <li onclick="openTic()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/TicTacToe.png">
+                                    <p>TicTacToe</p>
+                                </div>
+                            </li>
+                            <li onclick="openWindows()">
+                                <div class="Appimg"><img
+                                        src="../../Global/Assets/Images/AppsIcons/no-bg/weather.png">
+                                        <p>Weather</p>
+                                </div>
+                            </li>
+                        </CENTER>
+                    </ul>
+                </div>
+
+                <script>
+                    function FunctionAppS() {
+                        //Asigning values.
+                        var input, filter, ul, li, a, i, b;
+                        input = document.getElementById("mySearch");
+                        filter = input.value.toUpperCase();
+                        ul = document.getElementById("myMenu");
+                        li = ul.getElementsByTagName("li");
+
+                        //For Loop for app search
+                        for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("button")[0];
+
+                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                        }
+
+                        //Asigning values for grid.
+                        var filter2, ul2, li2, a2, i2, b2;
+                        filter2 = input.value.toUpperCase();
+                        ul2 = document.getElementById("myUL2");
+                        li2 = ul2.getElementsByTagName("li");
+
+                        //For Loop for app search
+                        for (i2 = 0; i2 < li2.length; i2++) {
+                        a2 = li2[i2].getElementsByClassName('Appimg')[0];
+
+                        if (a2.innerHTML.toUpperCase().indexOf(filter2) > -1) {
+                            li2[i2].style.display = "";
+                        } else {
+                            li2[i2].style.display = "none";
+                        }
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar" id="tb" oncontextmenu="return false">
+        <button class="tbButton" id="sb" onclick="showStart()">
+            <img src="Assets/windows11-logo.png" alt="">
+            <p id="startB-label">Start</p>
+        </button>
+        
+        <div class="dockApps" id="dockApps">
+            <button class="dockButton">
+                <img src="../../Global/Assets/Images/AppsIcons/Files.png" alt="">
+            </button>
+            <button class="dockButton">
+                <img src="../../Global/Assets/Images/AppsIcons/Browser.jpg" alt="">
+            </button>
+            <button class="dockButton">
+                <img src="../../Global/Assets/Images/AppsIcons/Paint.png" alt="">
+            </button>
+            <button class="dockButton">
+                <img src="../../Global/Assets/Images/AppsIcons/Player.png" alt="">
+            </button>
+        </div>
+
+        <button class="tbButton" id="noty" onclick="showRecents()">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADtklEQVR4nO2Z11LbQBSGD72FGsDOG4XQAsZgWgokz5VAEkJ6J71gJy+Cud0nsKWT2V3JWq3O0YpiZjLxznx3Pvq/f4/GngGA1mmd1vl/Tu1PbrpWyR3Xf+dQM6mpTCi8yrjB5YCxgNGAEU15OGBIUS8PVmuVwanmFqhMVrXoxClEI1mvPKjwy5cCBhReuf+oqQVo0UC2PJJZ1C/3B/ShfxjSqziTIG7BNG7DMd4BxO04YgPY9SdFCVlL1D/sCegO6FLIHDtboZ2qeBf41wy3oEoObwGKdch2q07RSBYPOwM6EH9J2lWOzFNQLtvAv2aNQQL5YHr9vc5b9QlRTVsANBBrvEOIu8DtJPLBJxdNl0UCVYDIz1aAGrylEatgiNLrP4koW2A1ylQQTnwBc9BCPfgcRTMXuJXEXeBmEl2g+YhVOl/hLGAP3IgQpQsqUIrnUkX4AuaghVi5oAIrgLjJe0jSC2zSNKXAzySNAhTOAvbARoRYPl9RDrEcz1VYXnwBezBkHVAUz18WqQIyR/4acy4brgLrNIkCZxR1FlhnSC1gfnAtjlhqnjSaBZaS2XYJvoA9GLIKKAoXVKCg8xSMD18gHCS4kAI/2uIFKDIXKMURi+cr2uC7pF3zrV3nlAgMN74ANSi/l1cAxcIZZS1RTQfi15BOxC+dOifIJH1KaQXCQQJngditukX9kM9dEZ+6UVznHULcBZaTqAc71q9ETdkvhqwl2uCjpEdz0KNziPxsBahB+b1cBBTzwIvGbtUU7WJF/YNezYeQPvTf9+mcogHhxBcwBy3EHDjXT4v2kKKafvTfBbyVDOicYjrpBZZo5INd6+dF+yJRJTsQ8eaS5rVGFWAc3AXsgUKEmAXn+tNF47Le60HNK8kQei81MsfMpYrwBcxBk0VAMQPO9btF47Lei+GI55IRlSPzWJeCq8AijSrgWD8rmpAd0TyTjGqeahoFKJwFzA8vxBHT4Fw/K0rKjqH3JOQyevsamWNn20X4AvZgyHVAcQ2c62dFTdlAVPF4PGJvAut7EypH5rEuC2kF5CCDKuBYP3er3r4pGsnWH0kmNQ8luagAR+YC83HEFDjXz92qljVFtWz9QUge67samWNn2yX4AnNQTQzL7+U5QHEVMoomb5USVexcSSBzwsyEi/ZJ+ePuDEzhLFQbD5izCjjWz8oSohzCLGAzC0c4C1fhtMe1/vpudlEOaOap7eSqp7nVrNR28s39F1Ptfn6qdj9fbZZ87V7+9K9H67RO68A/ef4CCSkV1hqEVSsAAAAASUVORK5CYII=" id="tabIco">
+        </button>
+    </div>
+
+    <!-- Recents Close  -->
+    <div class="recentsClose" onclick="HideRecents()">
+        <CENTER>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABU0lEQVR4nO3Yv0oDQRDH8YloEATBwsJGGwttRJ8gvZ1iY6WVr+Ar+AoBCztLO8U/nS8gaWzE6rBTEIQkSvzKwYLCcfGy2budI/OBbQKZnd/t3JGciDGmFEALeHarJXUCHAGf/PoCjoGGaAbMAmfkOwfmRCNgFejwv0dgXTQBtoE3insHdjQ03nCzPWB038AJMBWr+XnggvFdAgtVN7/mZjmUJ2Cjqub3gQ/C6wKHZTY+7Wa2bG1gJnTzi8Ad1bkHlkI1vwUkVC9J9x63+c0Rn++hvXrf3G7mH4iv43VPpE8E9DjwCXCNHlc+AV7QI/EJ4PP7piwDnwCqiAWITOwEIhM7gQk6gS5w6v47/F3pZ706BNgdUnOvDgGaQ2o21QeQSHUzLEAOO4GibIRy2AhN0gj1PfbpxaqbAdx6bHQTq24GsJJ+seAV67vXMMux6hpjpJ5+ANIc0C46l76aAAAAAElFTkSuQmCC">
+        <p>Return Home</p>
+        </CENTER>
+    </div>
+
+    <!-- Controls -->
+        <div id="controls" oncontextmenu="return false">
+            <div id="controls-menu">
+                <div style="display: flex;" id="controls-menu1">
+                    <div class="network-menu">
+                        <div class="nt-header">
+                            <span class="material-symbols-rounded">wifi</span>
+                            <p>Wifi</p>
+                            <h3>• Enabled</h3>
+                        </div>
+                        <div class="nt-content">
+                            <div>
+                                <h3>Network 5G</h3>
+                                <p>Connected</p>
+                            </div>
+                            <div>
+                                <h3>Network 4G</h3>
+                                <p>Not Connected</p>
+                            </div>
+                            <div>
+                                <h3>Hotspot 2.0</h3>
+                                <p>Not Connected</p>
+                            </div>
+                        </div>
+                        <button>More</button>
+                    </div>
+                    <div class="network-menu">
+                        <div class="nt-header">
+                            <span class="material-symbols-rounded">bluetooth</span>
+                            <p>Bluetooth</p>
+                            <h3>• Enabled</h3>
+                        </div>
+                        <div class="nt-content">
+                            <div>
+                                <h3>Headphones</h3>
+                                <p>Connected</p>
+                            </div>
+                            <div>
+                                <h3>Admin's Phone</h3>
+                                <p>Connected</p>
+                            </div>
+                            <div>
+                                <h3>Speakers</h3>
+                                <p>Not Connected • paired</p>
+                            </div>
+                        </div>
+                        <button>More</button>
+                    </div>
+                </div>
+                <div style="display: flex;" id="controls-menu2">
+                    <div id="toggles">
+                        <div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">accessibility_new</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">location_on</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">language</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">qr_code_2</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">Blur_On</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">import_contacts</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">dark_mode</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">collections_bookmark</span>
+                            </div>
+                            <div class="toggles-btn">
+                                <span class="material-symbols-rounded">do_not_disturb_on</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sliders">
+                        <div class="range">
+                            <span class="material-symbols-rounded">brightness_high</span>
+                            <input type="range" min="10" max="100" value="100" steps="1" id="range">
+                        </div>
+                        <div class="range">
+                            <span class="material-symbols-rounded">volume_up</span>
+                            <input type="range" min="10" max="100" value="100" steps="1" id="range">
+                        </div>
+                    </div>
+                </div>
+                <div class="Music-controls" id="controls-menu3">
+                    <div class="musicThumbNailD">🎵</div>
+                    <h6 id="Musich6">No Music Playing</h6>
+                    
+                    <h6 id="musicW-start-no">00:00</h6>
+                    <h6 id="musicW-end-no">--:--</h6>
+                    <div id="music-btns-controls">					
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/end--v1.png" 
+                        style="filter: invert(100%); cursor: pointer; float: right; " >
+                        <img src="https://img.icons8.com/fluency-systems-regular/452/play--v1.png"
+                        style="filter: invert(100%); cursor: pointer; float: right; " >							
+                        <img src="https://img.icons8.com/fluency-systems-regular/344/skip-to-start.png" 
+                        style="filter: invert(100%); cursor: pointer; float: right; " >
+                    </div><br>
+                    <input type="range" min="1" max="100" value="0" class="slider">
+                </div>
+            </div>
+        </div>
+
+        <!-- Wifi Connections -->
+        <div class="popup">
+            <div class="icon"><i class=""></i></div>
+            <div class="details">
+              <h2 class="title"></h2>
+              <p class="desc"></p>
+              <button class="reconnect">Check Now</button>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+            <!-- Local -->
+                <script src="index.js"></script>
+                <script src="script.js"></script>
+            <!-- Library -->
+                <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+
+                <script>
+                    const swipeUpElement = document.getElementById("desktop");
+                    const swipeDownElement = document.getElementById("statusB");
+                    const swipeDownStartElement = document.getElementById("ProfileStartHead");
+
+                    let touchStartY = 0;
+                    let touchEndY = 0;
+
+                    // Swipe up
+                    swipeUpElement.addEventListener("touchstart", (event) => {
+                    touchStartY = event.touches[0].clientY;
+                    });
+
+                    swipeUpElement.addEventListener("touchmove", (event) => {
+                    event.preventDefault(); // Prevent scrolling while swiping
+                    });
+
+                    swipeUpElement.addEventListener("touchend", (event) => {
+                    touchEndY = event.changedTouches[0].clientY;
+                    handleSwipeUp();
+                    });
+
+                    // Swipe down
+                    swipeDownElement.addEventListener("touchstart", (event) => {
+                    touchStartY = event.touches[0].clientY;
+                    });
+
+                    swipeDownElement.addEventListener("touchmove", (event) => {
+                    event.preventDefault(); // Prevent scrolling while swiping
+                    });
+
+                    swipeDownElement.addEventListener("touchend", (event) => {
+                    touchEndY = event.changedTouches[0].clientY;
+                    handleSwipeDown();
+                    });
+
+                    // Swipe down 2
+                    swipeDownStartElement.addEventListener("touchstart", (event) => {
+                    touchStartY = event.touches[0].clientY;
+                    });
+
+                    swipeDownStartElement.addEventListener("touchmove", (event) => {
+                    event.preventDefault(); // Prevent scrolling while swiping
+                    });
+
+                    swipeDownStartElement.addEventListener("touchend", (event) => {
+                    touchEndY = event.changedTouches[0].clientY;
+                    handleSwipeDownStart();
+                    });
+
+                    function handleSwipeUp() {
+                    const swipeDistanceY = touchStartY - touchEndY;
+                    if (swipeDistanceY > 0) {
+                        startmenu.style.bottom = "0%";
+                        startbutton.style.width = "140px";
+
+                        taskbar.style.background = 'rgba(0, 0, 0, 0)';
+                        taskbar.style.backdropFilter = 'blur(0px)';
+                        taskbar.style.webkitBackdropFilter = 'blur(0px)';
+                        taskbar.style.border = '0.5px solid #f1f1f100';
+                        taskbar.style.boxShadow = '0px 0px 5px rgba(0, 0, 0, 0)';
+                        taskbar.style.bottom = "1%";
+                        desktop.style.filter = 'blur(15px) brightness(65%)';
+                        desktop.style.scale = '0.95';
+                        dockApps.style.top = "150%";     
+                        let cl = document.getElementsByClassName('recentsClose')[0]
+                        cl.style.bottom = '-72px'       
+                        desktop.style.borderRadius= '0'
+                        desktop.style.transform = 'translateY(0px)'
+                        desktop.style.pointerEvents = "all"                      
+                    }
+                    }
+
+                    function handleSwipeDown() {
+                    const swipeDistanceY = touchEndY - touchStartY;
+                    let cnt = document.getElementById('controls');
+                    let cntM = document.getElementById('controls-menu');
+                    if (swipeDistanceY > 0) {
+                        ShowContrlsPanel()
+                    }
+                    }
+
+                    function handleSwipeDownStart() {
+                    const swipeDistanceY = touchEndY - touchStartY;
+                    if (swipeDistanceY > 0) {
+                        startmenu.style.bottom = "-100%";
+                        startbutton.style.width = "44px";
+
+                        taskbar.style.background = 'rgba(0, 0, 0, 0.65)';
+                        taskbar.style.backdropFilter = 'blur(35px)';
+                        taskbar.style.webkitBackdropFilter = 'blur(35px)';
+                        taskbar.style.border = '0.5px solid #f1f1f123';
+                        taskbar.style.boxShadow = '0px 0px 5px rgba(0, 0, 0, 1)';
+                        taskbar.style.bottom = "1.25%";
+                        desktop.style.filter = 'blur(0px) brightness(100%)';
+                        desktop.style.scale = '1';
+                        dockApps.style.top = "50%";
+                    }
+                    }
+                </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    background:black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-size: 15px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    transition: all 0.5s;
+    justify-content: center;
+    cursor: url(cursor2.svg), auto;
+}
+img{-webkit-user-drag: none;} 
+button{    cursor: url(cursor2.svg), auto;}
+#Boot{display: block;}
+#bootSece{opacity: 0;
+    transition: all 0.3s ease;
+}
+#RGOS-logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+#Lockscreen {
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#welcome{
+    background: url("../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg");
+    -webkit-filter:saturate(200%) blur(75px) brightness(45%);
+    filter:saturate(200%) blur(75px) brightness(45%);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s;
+    text-align: left;
+}
+
+#logo{
+    position: absolute;
+    width: 130px;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+width: 52px;
+height: 52px;
+position: absolute;
+bottom: 10%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
+.double-bounce1, .double-bounce2 {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background-color: rgb(255, 123, 0);
+opacity: 0.6;
+-webkit-backdrop-filter: blur(35px);
+backdrop-filter: blur(35px);
+position: absolute;
+top: 0;
+left: 0;
+-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+    0%, 100% { 
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% { 
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+#loadItems{transition: all 1s; opacity: 0;}
+
+#greetings{
+    z-index: 6; color: white; 
+    left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); font-size: 48px;
+    opacity: 0; transition: opacity 0.5s, top 0.75s ease-out;
+}
+
+@media screen and (max-width: 720px) {
+    .loginBtn {
+        position: absolute;
+        width: calc(100%/1.25);
+        bottom: 1%;
+        padding: 15px;
+    }
+}
+
+
+.button2 {
+    background-color: rgba(181, 181, 181, 0.15); 
+    border-radius: 5px; 
+    color: white; font-weight:normal;transition: all 0.5s;font-size: 13px;
+    padding: 5px; padding-left: 10px; padding-right: 10px;
+    border: 0.25px solid rgba(241, 241, 241, 0.1176470588);
+  }
+
+  .button2:hover{background-color: rgba(255, 255, 255, 0.15); }
+  .button2:active{scale: 0.95;}
+  
+  .searchTA {
+	width: calc(100% - 6.85%);
+	height: 35px;
+	border: 0.25px solid rgba(241, 241, 241, 0.1176470588);
+	border-radius: 5px;
+	background-color: rgba(241, 241, 241, 0.095);
+	padding: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: 13.5px;
+	font-weight: bold;
+	color: white;
+	text-align: left;
+	transition: all 1.3s;
+  }
+  .searchTA:focus-visible{outline: none;}
+  @media screen and (max-width: 1400px) {
+	.searchTA {
+	  width: calc(100% - 7.5%);
+	  margin-left: 2.75rem;
+	}
+  }
+
+  .SignInForRGOS{
+	position: absolute;
+	width: 22.5rem;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	display: none;
+	transform:translateX(-50%) translateY(-10%);
+	z-index: 999999999999;
+	pointer-events: all;
+	color: white;
+  }  
+
+  .ROS-signInInputFlex{
+	display: flex;
+	gap: 5px;
+	margin-top: 5px;
+  }
+  .ROS-signInInputFlex .button2 {
+	font-size: 18px;
+	height: 35px;
+	font-weight: bold;
+	margin-top: 5px;
+  }
