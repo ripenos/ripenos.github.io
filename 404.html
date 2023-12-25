@@ -102,6 +102,10 @@
         text-transform: uppercase;
       }
 
+      @media screen and (max-width: 600px) {
+        .terminal{padding: 2rem;}
+      }
+
       .output {
         color: rgba(255, 192, 128, 0.8);
         text-shadow: 0 0 1px orange,
@@ -136,6 +140,7 @@
         -webkit-transform: translate(-50%, -50%) scale(2);
         opacity: 0.5;
         animation: blink 0.105s infinite;
+        pointer-events: none;
       }
       @keyframes blink {
         0%{
