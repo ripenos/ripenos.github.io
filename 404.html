@@ -101,9 +101,10 @@
         padding: 4rem;
         text-transform: uppercase;
       }
-
+      br{display: none;}
       @media screen and (max-width: 600px) {
         .terminal{padding: 2rem;}
+        br{display: block;}
       }
 
       .output {
@@ -120,7 +121,7 @@
         color: #fff;
         text-decoration: none;
       }
-
+      a:hover{text-decoration: underline;}
       a::before {
         content: "[";
       }
@@ -166,13 +167,20 @@
     <div class="overlay"></div>
     <div class="terminal">
       <h1>Error <span class="errorcode">404</span></h1>
-      <br>
+      <br style="display: block;">
       <p class="output">
         The page you are looking for might have been removed or temporarily unavailable.
-      </p>
+      </p><br>
       <p class="output">
-        Please try to <a href="https://ripenos.github.io">return to the homepage</a>.
-      </p>
+        Try returning to any of these locations:
+        <ol style="padding-left: 50px;">
+          <li><a href="https://ripenos.github.io">Homepage</a></li>
+          <li><a href="https://ripenos.github.io/Ripenos">Ripen OS</a></li>
+          <li><a href="https://ripenos.github.io/WinRipen">Windows Ripen</a></li>
+          <li><a href="http://github.com/ripenos/ripenos.github.io">Repo</a></li>
+          <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Backup</a></li>
+        </ol>
+      </p><br>
       <p class="output">Good luck finding your ripened mango!</p>
       <img src="https://ripenos.github.io/Global/Assets/Images/RGOS-family/rgos-logo-notext.png" alt="">
     </div>
