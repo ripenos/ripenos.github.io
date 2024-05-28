@@ -21,7 +21,7 @@ function Load() {
             load.style.opacity= "0"
             setTimeout(() => {
                 load.style.display= "none"
-                window.location.replace("https://ripenos.webflow.io/")
+                window.location.replace("https://ripenos.github.io/Home")
             }, 1000);
         }, 4500);
     }, 500);
