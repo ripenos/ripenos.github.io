@@ -31,7 +31,7 @@
 ### Windows Ripen
 | Computer | Mobile          |
 | ------- | ------------------ |
-| ![WinRipen](https://github.com/ripenos/ripenos.github.io/assets/120778877/c0eea1d5-aa05-4ccf-9cb9-f24b6a2c5d63) | <img src="https://github.com/ripenos/ripenos.github.io/assets/120778877/a34697a5-4d8e-4837-a634-110f91ff4dd3" width="425" height="auto"> |
+| ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/2d1aae68-3662-4d6f-91b5-6bfe4c2e0878) | <img src="https://github.com/ripenos/ripenos.github.io/assets/120778877/a34697a5-4d8e-4837-a634-110f91ff4dd3" width="425" height="auto"> |
 
 ## ❓ Questions
 
