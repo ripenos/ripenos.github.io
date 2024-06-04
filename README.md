@@ -37,10 +37,10 @@
 
 | Questions | Answers          |
 | ------- | ------------------ |
-| **Does your project contain Full working Operating System?** |No, yet it tries to give you the experience of a desktop!|
+| **Does your project contain Full working Operating System?** |Not yet, but it gives you the experience of a desktop!|
 | **Does it contain any UI library/Framework?** | Yes, library called the [Ripen.css](https://ripenos.github.io/ripen.css/).|
 | **Can I contribute?** |Yes! Send an Issue, Pull a request and fill in the contribution form provided in [CONTRIBUTING.md](CONTRIBUTING.md).|
-| **Are there apps in it?** | Yes! Native apps are present but exclusively only on Ripen OS |
+| **Are there apps in it?** | Yes! Native apps are present to enhance your working experience. |
 
 ## ⚖️ License
 **MIT License** | Licensed as **Copyright (c) 2022 RipenOS**
