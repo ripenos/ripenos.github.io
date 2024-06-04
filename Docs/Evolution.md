@@ -16,3 +16,4 @@
 ![WinRStage3](https://github.com/ripenos/ripenos.github.io/assets/120778877/112d2b45-c031-4814-bd54-c7a8a071cc84)
 ![WinRStage4](https://github.com/ripenos/ripenos.github.io/assets/120778877/75ed4ac3-d219-4620-9360-57cfe46262f0)
 ![WinRStage6](https://github.com/ripenos/ripenos.github.io/assets/120778877/9ecfb7ec-d461-4bca-9b1b-c0922b3e46c0)
+![WinRStage7](https://github.com/ripenos/ripenos.github.io/assets/120778877/9e100f50-c233-4245-bf36-73395d1acb7d)
