@@ -1,13 +1,14 @@
 # 🧬 Evolution of RGOS
 # A quick evolution of [Ripen OS](https://ripenos.github.io/Ripenos).
 
-![stage 1](https://user-images.githubusercontent.com/120778877/216783131-8eec536f-b9d0-4abd-baea-116464e0448b.png)
-![stage 2](https://user-images.githubusercontent.com/120778877/216783133-bbe623ea-83c5-4070-87ba-74b8ef0dcc64.png)
-![stage 3](https://user-images.githubusercontent.com/120778877/216783134-690d68f4-c22c-4dbe-bbb6-a5ec096b4ecd.png)
-![stage 4](https://user-images.githubusercontent.com/120778877/216783128-7128f8e4-879f-41f5-b87c-b2f0ec560cf0.png)
-![stage 5](https://user-images.githubusercontent.com/120778877/216783129-427e8fff-d423-481e-a51e-50789db53178.png)
-![stage 6](https://user-images.githubusercontent.com/120778877/229288812-198b8337-657b-4d48-a63a-9bbb8bd9aeb0.png)
-![stage 7](https://github.com/ripenos/ripenos.github.io/assets/120778877/7336d1bd-23e5-45ee-b11e-b0a59fc98d7d)
+![stage 1](https://github.com/ripenos/ripenos.github.io/assets/120778877/2ca569c7-2a90-4a5d-9e50-d1ea8b8473fb)
+![stage 2](https://user-images.githubusercontent.com/120778877/216783131-8eec536f-b9d0-4abd-baea-116464e0448b.png)
+![stage 3](https://user-images.githubusercontent.com/120778877/216783133-bbe623ea-83c5-4070-87ba-74b8ef0dcc64.png)
+![stage 4](https://user-images.githubusercontent.com/120778877/216783134-690d68f4-c22c-4dbe-bbb6-a5ec096b4ecd.png)
+![stage 5](https://user-images.githubusercontent.com/120778877/216783128-7128f8e4-879f-41f5-b87c-b2f0ec560cf0.png)
+![stage 6](https://user-images.githubusercontent.com/120778877/216783129-427e8fff-d423-481e-a51e-50789db53178.png)
+![stage 7](https://user-images.githubusercontent.com/120778877/229288812-198b8337-657b-4d48-a63a-9bbb8bd9aeb0.png)
+![stage 8](https://github.com/ripenos/ripenos.github.io/assets/120778877/7336d1bd-23e5-45ee-b11e-b0a59fc98d7d)
 
 # A quick evolution of [Windows Ripen](https://ripenos.github.io/WinRipen).
 
