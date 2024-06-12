@@ -73,4 +73,4 @@ RGOS is an open-sourced, web based OS Family concept built with just Vanilla HTM
 
 <h1 align="center">⚖️ License</h1>
 <h3 align="center"><a href="LICENSE">MIT License | Licensed as Copyright (c) 2022 RipenOS</a></h3>
-<p align="center">Developed by <a href="https://github.com/navaneet239">Navaneetk</a> and team. | Maintained by <a href="https://github.com/ripenos">RGOS</a></p>
+<p align="center">Developed by <a href="https://github.com/navaneet239">Navaneet.J</a> and team. | Maintained by <a href="https://github.com/ripenos">RGOS</a></p>
