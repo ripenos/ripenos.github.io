@@ -1,6 +1,6 @@
-<img align="right" width="100" height="100" src="Assets/windows11-logo.png">
+<img align="right" width="100" height="100" src="Assets/WinRipen-logo.png">
 
-# Ripen OS
+# Windows Ripen
 Windows Ripen Official | An open-sourced concept based on the Windows Operating System | An initiative of the RGOS
 
 ### **Check out:** [Windows Ripen v1.3](https://ripenos.github.io/WinRipen/)
