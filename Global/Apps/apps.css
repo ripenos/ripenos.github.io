@@ -1,0 +1,1668 @@
+:root {
+  --accent-color: rgb(255, 123, 0);
+  --primary-bg: rgba(0, 0, 0, 0.5);
+  --primary-border: 1px solid #ffffff35;
+  --primary-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  --secondary-bg: rgba(241, 241, 241, 0.09);
+}
+
+.application {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%) scale(0.75);
+    border-radius: 10px;
+    z-index: 200;
+    border: var(--primary-border);
+    overflow: hidden;
+    background-color: var(--primary-bg);
+    -webkit-backdrop-filter: blur(55px);
+    backdrop-filter: blur(55px);
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s, border-radius 0.3s,
+      width 0.3s, height 0.3s;
+    box-shadow: var(--primary-box-shadow);
+    resize: both;
+    color: white;
+  }
+  .application::-webkit-resizer {
+    opacity: 0;
+  }
+  
+  #files {
+    width: 100%;
+    height: 100%;
+    min-width: 60%;
+    min-height: 70%;
+  }
+
+  #cmd {
+    width: 60%;
+    height: 70%;
+    min-width: 60%;
+    min-height: 70%;
+  }
+  
+  #calculator {
+    width: 25%;
+    height: 81%;
+    min-width: 25%;
+    min-height: 79%;
+  }
+  
+  #Tasks {
+    width: 38%;
+    height: 82.5%;
+    min-width: 38%;
+    min-height: 82.5%;
+  }  
+
+  #Clock {
+    width: 32.5%;
+    height: 85%;
+    min-width: 30%;
+    min-height: 82.5%;
+  }  
+
+  #WinRipenEmu {
+    width: 100%;
+    height: 100%;
+    min-width: 25%;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    min-height: 75%;
+  }
+  
+  #QrApp {
+    width: 32.5%;
+    height: 82.5%;
+    min-width: 32.5%;
+    min-height: 82.5%;
+  }
+  
+  #calendar {
+    width: 60%;
+    height: 80%;
+    min-width: 60%;
+    min-height: 80%;
+  }
+  
+  #paint {
+    width: 80%;
+    height: 80%;
+    min-width: 35%;
+    min-height: 75%;
+  }
+  
+  #notes {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 40%;
+    height: 87.5%;
+    min-width: 26%;
+    min-height: 75%;
+    max-width: 40%;
+    max-height: 87.5%;
+  }
+  
+  #snake {
+    width: 55%;
+    height: 82.5%;
+    resize: none;
+  }
+  
+  #piano {
+    width: 60%;
+    height: 80%;
+    min-width: 50%;
+    min-height: 72.5%;
+  }
+  
+  #pdf {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Camera {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Browser {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+
+  #Spreadsheet {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+
+  #Player {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+
+  .playerCont{
+    width: 100%;
+    height: calc(100% - 57.5px);
+    display: flex;
+  }
+
+  .playerList{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    padding: 12.5px 17.5px;
+    border-radius: 5px;
+  }
+
+  .playerList:nth-of-type(odd){
+    background: var(--secondary-bg);
+  }
+
+  .playerList img{
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .playerList img:hover{background: rgba(14, 14, 14, 0.1);}
+
+  .playerList input[type=checkbox]{
+    accent-color:  var(--accent-color);  
+    width: 20px;
+    height: 20px;
+    }
+
+    #PlayerMusicuploadLabel{
+    color: white;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 7.5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+  }
+
+  #PlayerMusicuploadLabel:hover{background-color: var(--secondary-bg);}
+  
+  .playerListInfo{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .playerToolbar{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 15px;
+    background: var(--primary-bg);
+    border-radius: 8px;
+    border: var(--primary-border);
+  }
+
+  .playerToolbar .toolbarCont{display: flex;gap: 7.5px;align-items: center;}
+  .playerToolbar .toolbarCont span{font-size: 18px;padding: 7.5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .playerToolbar .toolbarCont span:hover{background: var(--secondary-bg);}
+  .playerToolbar .toolbarCont span:active{background: rgba(241, 241, 241, 0.03); border: var(--primary-border);}
+
+  .track-art {
+    background: url('../Assets/Images/AppsIcons/Player.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    transition: all 1s;
+    border: var(--primary-border);
+    border-radius: 10px;
+    transform: rotate(0deg);
+}
+
+.venylWheel-art{
+  border-radius: 50%;
+  transition: all 1s;
+  animation: venylWheel 2s linear infinite;
+}
+
+@keyframes venylWheel {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+#playerMini #playerMiniExpandDD{
+  opacity: 0;
+  transition: all 0.3s;
+padding: 2.5px;backdrop-filter: blur(15px);position: absolute;top: 7.5px;left: 7.5px;background: var(--secondary-bg);z-index: 2;border-radius: 50%;overflow: hidden;border: var(--primary-border);
+}
+#playerMini:hover #playerMiniExpandDD{opacity: 1;}
+#playerMini #playerMiniExpandDD:hover{opacity: 1; scale: 1.15;}
+#playerMini #playerMiniExpandDD:active{opacity: 1; scale: 1;}
+  .playerNav{
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    width: 20%;
+    background: var(--secondary-bg);
+    height: calc(100% - 10px);
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 10px;
+    border: var(--primary-border);
+  }
+  
+  .playerNav ul{
+    list-style: none;
+    padding: 5px;
+    height: 100%;
+  }
+  
+  .playerNav ul li{
+    border-radius: 6px;
+    border: 1px solid transparent;
+    padding: 10px 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .playerNav ul li span{font-size: 20px;}
+  .playerNav ul li:hover{background-color: var(--secondary-bg);}
+  .playerNav ul li:active{border: var(--primary-border);}
+  .playerNav li.active{
+    background-color: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  .playerNav li.active span{color: var(--accent-color);}
+  .playerMini{
+    left: 21%;
+    border-radius: 15px 15px 0px 0px;
+    margin-left: 10px;
+    height: 135px;
+    overflow: hidden;
+    width: calc(100% - 22.5%);
+    transition: all 0.3s;
+    position: fixed;
+    opacity: 1;
+    bottom: 0%;
+  }
+
+  .playerNavBtn{
+    position: fixed;
+    margin: 10px;
+    z-index: 999 ;
+    display: none;
+    background: var(--secondary-bg);
+  }
+
+  .playerNavBtnCLose{display: none;}
+
+  .playlist-contPlayer{
+    overflow: hidden;
+    height: calc(100% - 110px);
+    overflow-y: scroll;
+  }
+
+.playerMain{
+    width: 78.5%;
+    height: calc(100% - 130px);
+    overflow: hidden;
+    transition: all 0.3s;
+    padding: 10px 15px;
+    padding-right: 0;
+  }
+
+  #seek_slider{
+    width: calc(100% - 20px);
+    margin: 5px;
+    margin-left: 10px;
+    transition: all 0.3s;
+  }
+
+  #plyerMiniStats{ 
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: all 0.3s;
+  }
+
+  #playerMiniControls{ 
+    float: right;
+    margin-top: -100px;
+    padding-right: 10px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  #playerMiniContent{display: flex;     transition: all 0.3s;  }
+  #playerMiniContent #txtsPl{margin-top: 22.5px;     transition: all 0.3s;  }
+
+  .playerMiniExpanded{
+    transition: all 0.3s;
+    height: calc(100% - 4.25rem);
+  }
+  
+  .playerMiniExpanded #playerMiniContent{
+    display: grid;
+    justify-items: center;
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s;
+    bottom: 15rem;
+  }
+
+  .playerMiniExpanded .track-art{
+    width: 200px;
+    height: 200px;
+    transition: all 0.3s;
+  }
+
+  .playerMiniExpanded #playerMiniContent #txtsPl{
+    text-align: center;
+    scale: 1.35;
+    transition: all 0.3s;
+  }
+
+  .playerMiniExpanded #playerMiniExpandDD{transform: rotate(180deg);   transition: all 0.3s; margin: 20px; }
+
+  .playerMiniExpanded #seek_slider{
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    transition: all 0.3s;
+    position: absolute;
+    bottom: 3rem;
+  }
+
+  .playerMiniExpanded #plyerMiniStats{
+    transition: all 0.3s;
+    margin-left: 50px;
+    margin-right: 0;
+    position: absolute;
+    bottom: 4.15rem;
+    width: calc(100% - 100px);
+}
+
+.playerMiniExpanded #playerMiniControls{
+  transition: all 0.3s;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  bottom: 9rem;
+  transform: scale(1.3);
+}
+
+  #PlayerHome, #PlayerMusic, #PlayerVideos, #PlayerPlaylists{display: none;}
+  #PlayerHome.active, #PlayerMusic.active, #PlayerVideos.active, #PlayerPlaylists.active{display: block;}
+
+  .playpause-track{transition: all 0.3s;}
+  .playpause-track:hover{border: 1px solid transparent;
+    background: var(--secondary-bg);}
+    .playpause-track:active{border: var(--primary-border);}
+  .playlistDock{
+    height: 125px;
+    width: 320px;
+    display: flex;
+    background-color: var(--secondary-bg);
+    padding: 10px;
+    border: 1px solid transparent;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .playlistDock:hover{
+    background-color:#f1f1f124;
+  }
+  .playlistDock:active{
+    background-color: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  .playlistDock h2{font-size: 1rem;}
+
+  .playlistDockCover{
+    border: var(--primary-border);
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .playlistContPage{display: none; }
+
+  #playlist1 .playlistDockCover{    background-image: url('../Assets/Musics/AlbumArts/musicalMedicine.png');  }
+
+  .playerUserPP {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    right: 17.5px;
+    gap: 10px;
+    top: 70px;
+    z-index: 3;
+  }
+
+  .playerUserPP img{
+    width: 32.5px;
+    border-radius: 6px;
+    border: var(--primary-border);
+    transition: all 0.3s;
+  }
+  .playerUserPP img:hover{scale: 0.95;}
+
+  
+  .AboutWindow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 40%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #221200;
+    display: grid;
+      border-radius: 7px;
+      overflow: hidden;
+      z-index: 999;
+      transition: all 0.3s;
+      border: 1px solid #f1f1f138;
+  }
+
+  .AboutWindow img{
+    width: 85px;
+    margin: 10px;
+    margin-top: 15px;
+    border-radius: 7px;
+  }
+
+  .AboutWindow CENTER{padding: 10px;}
+
+  .AboutWindow h4{opacity: 0.5;  font-weight: normal; margin-bottom: 10px;}
+
+  .AboutWindow .topbar{
+    background-color: #ffffff12;
+    width: 100%;
+    margin-top: -20px;
+    padding: 5px 15px;
+    padding-top: 25px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 650px) {
+    .AboutWindow{
+                width: 95%;
+                height: 65%;
+            }
+          }
+  
+.menuCard{
+  position: absolute;
+  background-color: #221200;
+  padding: 10px;
+    border-radius: 7px;
+    right: 0;
+    top: 45px;
+    overflow: hidden;
+    list-style: none;
+    z-index: 999;
+    border: 1px solid #f1f1f138;
+    gap: 5px;
+    width: 225px;
+    display: none;
+}
+
+.menuCard li{
+  transition: all 0.3s;
+  padding: 7.5px 10px;
+  display: flex;
+  font-size: 15px;
+  gap: 7.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.menuCard li:hover{
+  background-color: #ffffff12;
+}
+.menuCard li:active{
+  border: 1px solid #f1f1f124;
+}
+
+.menuCard hr{width: 90%; opacity: 0.5; margin: auto;}
+
+
+  .playerUserPP span{
+    padding: 7.5px;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    border-radius: 6px;
+  }
+
+  .playerUserPP span:hover{background: var(--secondary-bg);}
+  .playerUserPP span:active{border: var(--primary-border);}
+  #playerInfo{
+    position: fixed;bottom: 10px;left: 17.5px;border: var(--primary-border);background: #b0b0b026;border-radius: 8px;padding: 12.5px;z-index: 999;width: 250px;transition: all 0.3s;
+  }
+  @media screen and (max-width: 900px) {
+    .playerNav{
+      position: absolute;
+      left: -100%;
+      z-index: 999;
+      background-color: #221200;
+      transition: all 0.3s;
+      width: calc(100% - 20px);
+    }
+
+    .playerMini{
+      width: calc(100% - 20px);
+      left: 0;
+    }
+    #playerInfo{background-color: #221200;}
+    .playerMain h1 {margin-left: 50px;}
+    .playerMain{    width: calc(100% - 10px);}
+    .playerNavBtn{display: block;}
+    #playerMusicTitle{width: 90%;}
+    .prev-track, .next-track{display: none;}
+    .playerNavBtnCLose{display: block;}
+  }
+
+  #Store{
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Gallery {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Document {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #IEditor {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+  
+  #Scramble {
+    width: 45%;
+    height: 90%;
+    resize: none;
+  }
+  
+  #games {
+    width: 65%;
+    height: 70%;
+    min-width: 60%;
+    min-height: 50%;
+    background-image: url('https://img.freepik.com/premium-photo/illustration-neon-light-background-with-mountain-moon-generative-ai_961829-7133.jpg');
+    background-size: cover;
+  }
+  
+  #ticTacToe {
+    width: 35%;
+    height: 80%;
+    min-width: 25%;
+    min-height: 72.5%;
+  }
+  .apps {
+    box-shadow: var(--primary-box-shadow);
+  }
+  
+  #AboutApp {
+    width: 40%;
+    height: 75%;
+    min-width: 30%;
+    min-height: 60%;
+  }
+  
+  #AboutApp p {
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 15px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  
+  #AboutApp h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+  }
+  #AboutApp ol {
+    padding: 10px;
+    font-size: 13px;
+    padding-left: 25px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  #AboutApp ol li {
+    margin-bottom: 5px;
+  }
+  #AboutApp ul {
+    padding-left: 35px;
+  }
+  #AboutApp a {
+    transition: all 0.3s;
+    filter: none;
+  }
+  #AboutApp a:hover {
+    color: var(--accent-color);
+  }
+  
+  .About-content {
+    padding: 25px;
+    padding-top: 10px;
+    padding-right: 12.5px;
+    width: 100%;
+    height: calc(100% - 65px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  #UpdateApp {
+    width: 30%;
+    height: 70%;
+    min-width: 20%;
+    min-height: 60%;
+  }
+  
+  #UpdateApp ol {
+    padding: 10px;
+    padding-left: 40px;
+    font-size: 13px;
+    border-radius: 5px;
+    background: var(--secondary-bg);
+    border: var(--primary-border);
+  }
+  
+  #UpdateApp ul {
+    padding-left: 10px;
+  }
+  #UpdateApp h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  #maxApp {
+    display: none;
+  }
+  .application iframe {
+    margin: 0;
+  }
+  
+  @media screen and (max-width: 1150px) {
+    .borderLeft {
+      display: none;
+    }
+    .borderRight {
+      display: none;
+    }
+  
+    #files,
+    #cmd,
+    #AboutApp,
+    #ticTacToe,
+    #UpdateApp,
+    #notes,
+    #games,
+    #calculator,
+    #Tasks,
+    #Clock,
+    #QrApp,
+    #openQr,
+    #calendar,
+    #paint,
+    #pdf,
+    #Gallery,
+    #piano,
+    #Browser,
+    #Spreadsheet,
+    #Store,
+    #Player,
+    #Scramble,
+    #Ieditor,
+    #snake,
+    #Document,
+    #Camera {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 0;
+      border: none;
+    }
+  }
+  
+  #gamestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+  }
+  #gamestopbar img {
+    width: 27.5px;
+    margin: 5px;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #filestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #filestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #filestopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #cmdtopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #cmdtopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #cmdtopbar h3 {
+    margin-top: 0.1rem;
+  }
+  
+  #AboutApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #AboutApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #AboutApptopbar h3 {
+    margin-top: 0.2rem;
+  }
+  #ticTacToetopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #ticTacToetopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #ticTacToetopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #UpdateApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #UpdateApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #UpdateApptopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #notestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #notestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #notestopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #gamestopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #gamestopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #notestogamestopbarpbar h3 {
+    margin-top: 0.25rem;
+  }
+  #calculatortopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #calculatortopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #calculatortopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Taskstopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Taskstopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Taskstopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Clocktopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Clocktopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Clocktopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #WinRipenEmutopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #WinRipenEmutopbar img {
+    width: 1.85rem;
+    height: 1.85rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+  }
+  #WinRipenEmutopbar h3 {
+    margin-top: 0.1rem;
+    padding-right: 10px;
+    border-right: 1px solid #aaaaaa95;
+  }
+  #WinRipenEmutopbar .appControls .close{transform: translateY(12.5px);}
+  #WinEmuframe{max-height: calc(100% - 60px);}
+  .appTopbarBtn{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    padding: 7.5px;
+    margin-top: 2px;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+  }
+  .appTopbarBtn:hover {background-color: rgba(255, 255, 255, 0.2);}
+  .appTopbarBtn:active {background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);}
+  .appTopbarBtn .material-symbols-rounded{transition: all 0.3s;}
+  #WinRipenEmuFull:active .material-symbols-rounded{scale: 0.9;}
+  #QrApptopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #QrApptopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #QrApptopbar h3 {
+    margin-top: 0.25rem;
+  }
+  #QrApptopbar div{transform: translate(3px,6px);}
+  #calendartopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #calendartopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #calendartopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #painttopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #painttopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #painttopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #painttopbar p {
+    margin-left: 0.35rem;
+    padding-right: 10px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-right: 1px solid #aaaaaa95;
+  }
+  #pdftopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #pdftopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #pdftopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #pianotopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #pianotopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #pianotopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Browsertopbar {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #Browsertopbar img {
+    margin-bottom: -7.5px;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Spreadsheettopbar {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    background-color: #f1f1f111;
+    align-items: center;
+  }
+  #Spreadsheettopbar img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Spreadsheettopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Playertopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Playertopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Playertopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Storetopbar {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f111;
+  }
+  #Storetopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Storetopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Gallerytopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Gallerytopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Gallerytopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Scrambletopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Scrambletopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Scrambletopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #IEditortopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #IEditortopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #IEditortopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #snaketopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #snaketopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #snaketopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Documenttopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Documenttopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Documenttopbar h3 {
+    margin-top: 0.1rem;
+  }
+  #Cameratopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #Cameratopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+  }
+  #Cameratopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  /* Purchased Apps */
+
+  #alienRunner {
+    width: 100%;
+    height: 100%;
+  }
+
+  #alienRunnertopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #alienRunnertopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #alienRunnertopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #alenIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #copilot {
+    width: 100%;
+    height: 100%;
+  }
+
+  #copilottopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #copilottopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #copilottopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #coplotIframe{
+    width: 100%; 
+    height: calc(100% - 60px);
+  }
+
+  #flappyBird {
+    width: 100%;
+    height: 100%;
+  }
+
+  #flappyBirdtopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #flappyBirdtopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #flappyBirdtopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #flappyBirdIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #minecraft {
+    width: 100%;
+    height: 100%;
+  }
+
+  #minecrafttopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #minecrafttopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #minecrafttopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #minecraftIframe{
+    width: 100%; 
+    height: calc(100% - 65px);
+  }
+
+  #mario {
+    width: 100%;
+    height: 100%;
+  }
+
+  #mariotopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #mariotopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #mariotopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #marioIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #paperIo {
+    width: 100%;
+    height: 100%;
+  }
+
+  #paperIotopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #paperIotopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #paperIotopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #paperIoIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #photopea {
+    width: 100%;
+    height: 100%;
+  }
+
+  #photopeatopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #photopeatopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 3px;
+  }
+  #photopeatopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #photopeaIframe{
+    width: 100%; 
+    height:calc(100% - 57.5px);
+  }
+
+  #solitaire {
+    width: 100%;
+    height: 100%;
+  }
+
+  #solitairetopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #solitairetopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #solitairetopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #solitaireIframe{
+    width: calc(100% + 15px);
+    margin-top: -45px;
+    height: calc(100% - 10px);
+  }
+
+  #spotify {
+    width: 100%;
+    height: 100%;
+  }
+
+  #spotifytopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #spotifytopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #spotifytopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #spotifyIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #wikipedia {
+    width: 100%;
+    height: 100%;
+  }
+
+  #wikipediatopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #wikipediatopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #wikipediatopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #wikipediaIframe{
+    width: 100%; 
+    height: calc(100% - 45px);
+  }
+
+  #winReplicas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #winReplicastopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #winReplicastopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 2px;
+  }
+  #winReplicastopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #winReplicasIframe{
+    width: 100%; 
+    height: calc(100% - 55px);
+  }
+
+  #evIO {
+    width: 100%;
+    height: 100%;
+  }
+
+  #evIOtopbar {
+    padding: 10px;
+    width: 100%;
+    background-color: #f1f1f111;
+    display: flex;
+    align-items: center;
+  }
+  #evIOtopbar img {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 7.5px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 4px;
+  }
+  #evIOtopbar h3 {
+    margin-top: 0.1rem;
+  }
+
+  #evIOIframe{
+    width: 100%; 
+    height: calc(100% - 55px);
+  }
+  
+  .appControls {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+  }
+  
+.close {
+    background: red;
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  
+  .close:hover {
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .close:active {
+    scale: 1;
+  }
+  
+  .min {
+    background: rgba(135, 135, 135, 0.35);
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-right: 2.5px;
+  }
+  
+  .min:hover {
+    background: greenyellow;
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .min:active {
+    scale: 1;
+  }
+  
+  .max {
+    background: rgba(135, 135, 135, 0.35);
+    height: 8.5px;
+    width: 85px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-right: 2.5px;
+  }
+  
+  .max:hover {
+    background: yellow;
+    height: 13px;
+    -webkit-transform: translateY(2.5px);
+    transform: translateY(2.5px);
+    box-shadow: 0px 0px 2px black;
+  }
+  
+  .max:active {
+    scale: 1;
+  }
+  @media screen and (max-width: 550px) {
+    .max {
+      display: none;
+    }
+    .min {
+      visibility: hidden;
+    }
+  }

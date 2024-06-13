@@ -1,0 +1,89 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    height: 100vh;
+    color: white;
+    align-items: center;
+  justify-content: center;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;}
+.wrapper{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+  height: 98%;
+  width: 98%;
+  padding: 20px 25px 0;
+}
+
+header p{
+  margin-top: 5px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+.wrapper .form{
+  margin: 20px 0 25px;
+}
+.form :where(input, button){
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 7.5px;
+  transition: 0.1s ease;
+}
+.form input{
+  font-size: 18px;
+  padding: 0 17px;
+  background-color: #ffffff25;
+  border: 1px solid #999;
+  color: white;
+}
+.form input::placeholder{color: white;}
+.form input:focus{box-shadow: 0 3px 6px rgba(0,0,0,0.13);}
+.form div{display: flex; gap: 10px;}
+.form div button{
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  border: 1px solid white;
+  font-weight: 800;
+  width: 100%;
+  transition: all 0.3s;
+  background: rgb(255, 123, 0);
+}
+.form div button:hover{  background-color: #ffffff25;}
+.form div a {text-decoration: none;   width: 100%; pointer-events: none;}
+.qr-code{
+  opacity: 0;
+  display: flex;
+  padding: 27.5px 0; 
+  border-radius: 7.5px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ffffff50;
+  background-color: #ffffff05;
+}
+.wrapper.active .qr-code{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+.qr-code img{
+  width: 170px;
+  border-radius: inherit;
+  border: 2.5px solid white;
+}
+
