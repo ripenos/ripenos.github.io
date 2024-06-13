@@ -1,0 +1,22 @@
+{
+    "name": "Ripen OS",
+    "short_name": "Ripen OS", 
+    "description": "RGOS is an open-sourced, web based OS Family built with just Vanilla HTML-CSS-JS.",
+    "start_url": ".",
+    "theme_color": "#ff7b00",
+    "background_color": "#000000",
+    "display": "standalone",
+    "icons":[
+      {
+        "src":"Assets/General/PWA/ripenOs-pwa-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"Assets/General/PWA/ripenOs-pwa-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  
+  }
