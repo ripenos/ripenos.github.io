@@ -1271,6 +1271,7 @@ select .options {
   width: 17px;
   padding-left: 0px;
   padding-bottom: 0px;
+    opacity: 0.65;
 }
 #powerOptions {
   transition: all 0.3s;
@@ -1281,6 +1282,11 @@ select .options {
   padding-bottom: 2.5px;
   margin-bottom: 10px;
   border-bottom: 1px solid #aaaaaa95;
+}
+
+#powerOptions .btn-Stc{
+	    padding-left: 3px;
+    margin-left: -2px;
 }
 
 .btn-Stc {
@@ -1322,6 +1328,7 @@ select .options {
 
 .SettingsIconR img {
   width: 24px;
+    opacity: 0.65;
 }
 
 .folderIconR {
@@ -1344,6 +1351,7 @@ select .options {
 
 .folderIconR img {
   width: 25px;
+    opacity: 0.65;
 }
 
 #greetings {
@@ -2020,7 +2028,11 @@ select .options {
 #PagesBtnDEM p {
   font-size: 1.2em;
   margin-left: 0.35em;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--accent-color);
+}
+
+#PagesBtnDEM span{
+      opacity: 0.75;
 }
 
 .DesktopEdit h1 {
@@ -2174,6 +2186,7 @@ select .options {
 }
 .tools span {
   margin-right: 7.5px;
+  opacity: 0.75;
   transition: all 0.2s;
 }
 .tools p {
@@ -2266,6 +2279,7 @@ select .options {
 .toolsR img {
   margin-right: 7.5px;
   filter: brightness(0) invert(1);
+    opacity: 0.75;
 }
 .toolsR p {
   font-size: 16px;
