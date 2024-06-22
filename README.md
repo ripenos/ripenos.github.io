@@ -1,7 +1,7 @@
 <p align="center">
 <img width="100" height="100" src="Global/Assets/Images/RGOS-family/rgos-logo-notext.png">
 </p>
- <h1 align="center">The Ripen Group of Operating Systems</h1>
+ <h1 align="center">Ripen Group of Operating Systems</h1>
  
 <p align="center">
 <a href="LICENSE">LICENSE</a> • <a href="Docs/Changelog.md">What's Happening</a> • <a href="Docs/Credits.md">credits we are thanking for</a> • <a href="CODE_OF_CONDUCT.md">Code of Conduct</a> • <a href="Docs/Evolution.md">Evolution of RGOS</a>
