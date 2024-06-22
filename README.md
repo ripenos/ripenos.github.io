@@ -14,16 +14,18 @@
 <h2 align="center">ℹ️ About</h2>
 <p align="center">
 RGOS is an open-sourced, web based OS Family concept built with just Vanilla HTML-CSS-JS. RGOS follows a very modern, sleek, and orange themed GUI. Remember, this project and its members are not fully functional operating systems but a concept trying to fulfill the experience of a desktop... Check <a href="[Docs/Evolution.md](https://github.com/ripenos/ripenos.github.io/wiki)">Wiki</a> for more info...
+<h3 align="center">Latest release: <a href="https://ripenos.github.io">v5.0 bundled launch</a></h3>
 </p>
 <br>
 
-<h1 align="center"><a href="https://ripenos.github.io/Ripenos">Ripen OS</a></h1>
+<h1 align="center"><a href="https://ripenos.github.io/Ripenos">Ripen OS</a> v4.0</h1>
+
 <p align="center"><b>Head of the Family</b> • Where triplets and its productivity come in handy!</p>
 <p align="center">
 <img src="Global/Assets/Images/RGOS-family/ripenos-desktop.png" width="400">
 </p>
 
-<h1 align="center"><a href="https://ripenos.github.io/WinRipen">Windows Ripen</a></h1>
+<h1 align="center"><a href="https://ripenos.github.io/WinRipen">Windows Ripen</a> v1.3</h1>
 <p align="center">1st member of the family • A new taste of the Windows Operating system</p>
 <p align="center">
 <img src="Global/Assets/Images/RGOS-family/windowsRipen-desktop.png" width="400">
