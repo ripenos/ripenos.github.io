@@ -1,7 +1,11 @@
 *{margin: 0;padding: 0;}
 :root{
 	--accent-color: rgb(255, 123, 0);
-	--bg-color: rgba(14, 14, 14, 0.65);
+	--primary-bg: rgba(14, 14, 14, 0.65);
+
+	/* tab viewed */
+	--tb-desk-transform: scale(0.7) translateX(12.5rem);
+	
 }
 body {
 	-webkit-user-select: none;
@@ -12,10 +16,11 @@ body {
 	font-size: 15px;
 	cursor: url('cursor2.svg'), auto;
 	background-color: black;
+	transition: all 0.3s;
 }
 
 body img { -webkit-user-drag: none;}
-a { color: white; text-transform: none;cursor: url('cursor.svg'), auto;}
+a { color: white; text-transform: none;cursor: url('cursor2.svg'), auto;}
 ::selection {background: var(--accent-color);}
 h5 {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -123,11 +128,11 @@ h5 {
 }
 
 .tabS {
+	height: 320px;
 	overflow: auto;
 	width: 100%;
 	position: relative;
 	overflow-y: scroll; overflow-x: hidden;
-	height: 320px;
 	padding-top: 5px;
 }
 .tabS::-webkit-scrollbar{display: none;}
@@ -180,15 +185,15 @@ h5 {
   
 .slider2 {
 	position: absolute;
-	cursor: pointer;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background-color: transparent;
-	border: 1px solid #ccc ;
-	-webkit-transition: .4s;
-	transition: .4s;
+	border: 1px solid #ccccccad ;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	border-radius: 7.5px;
 }
   
 .slider2:before {
@@ -196,71 +201,21 @@ h5 {
 	content: "";
 	height: 16px;
 	width: 16px;
-	left: 4px;
+	left: 3px;
 	bottom: 3px;
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
+	border-radius: 5px;
 }
   
-input:checked + .slider2 {background-color: var(--accent-color);border: none;}
+input:checked + .slider2 {background-color: var(--accent-color);border:  1px solid #cccccc23;}
 input:focus + .slider2 {box-shadow: 0 0 1px var(--accent-color);}
 input:checked + .slider2:before {
 	-webkit-transform: translateX(22px);
 	-ms-transform: translateX(22px);
 	transform: translateX(22px);
 	bottom: 4px;
-}
-
-.slider2.round {border-radius: 34px;}
-.slider2.round:before {border-radius: 50%;}
-
-
-#switchP{
-	display: none; pointer-events: all;
-	background: rgba(0, 0, 0, 0.67);
-	-webkit-backdrop-filter: blur(25px) contrast(120%);
-	backdrop-filter: blur(25px) contrast(120%);
-	width: 100%; height: 100%;overflow: hidden;
-}
-
-.Switch_Mobile{
-	position: absolute;
-	left: 50%; top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	color: var(--accent-color);
-}
-.Switch_Mobile {position: relative; padding: 1.5em; margin-bottom: 2em;}
-.Switch_Mobile .img-ph img{width: 7rem; position: relative;}
-.Switch_Mobile button{
-	color: white;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    transition: all 0.5s;
-    -webkit-backdrop-filter: blur(35px) contrast(200%);
-          backdrop-filter: blur(35px) contrast(200%);
-	width: calc(100% /2);
-	margin-top: 1.5em;
-}
-.Switch_Mobile button:hover{
-	-webkit-transform: scale(1.1);
-		   transform: scale(1.1);
-	background-color: rgba(66, 46, 26, 0.75);
-	border: 0.5px solid rgba(241, 241, 241, 0.1647058824);
- }
- .Switch_Mobile button:active{scale: 0.90;}
-
-@media screen and (max-width: 1060px) {
-	#switchP{display: block;}
-	#DesktopVersion{display: none;}
-
-	* {overflow: hidden;}
 }
 
 .popup {
@@ -310,7 +265,6 @@ input:checked + .slider2:before {
 	font-size: 1.04rem;
   }
   .popup .reconnect {
-	cursor: pointer;
 	font-weight: 500;
 	font-size: 0.95rem;
 	padding: 8px 13px;
@@ -330,4 +284,16 @@ input:checked + .slider2:before {
   .popup.online .reconnect {
 	pointer-events: none;
   }
-  
+
+  #runSearch::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    margin-left: .75em;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    -webkit-filter: drop-shadow(0px 0px 0px black);
+    filter: drop-shadow(0px 0px 0px black);
+    transition: all 0.3s;
+}
+#runSearch::-webkit-search-cancel-button:hover{-webkit-filter: drop-shadow(0px 0px 5px black); -webkit-scale: 1.1;filter: drop-shadow(0px 0px 5px black); scale: 1.1;}
+#runSearch::-webkit-search-cancel-button:active{-webkit-filter: drop-shadow(0px 0px 7.5px black); -webkit-scale: 1; filter: drop-shadow(0px 0px 7.5px black); scale: 1;}

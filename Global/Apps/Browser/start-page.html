@@ -1,58 +1,67 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="og:title" property="og:title" content="RGOS Web Start Page" />
-    <meta name="og:description" property="og:description" content="RGOS Web Start Page | An initiative of the RGOS"/>
-    <meta name="description" content="RGOS Web Start Page | An initiative of the RGOS"/>
-    <meta content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg" property="og:image"/>
-    <meta content="RGOS Web Start Page" property="twitter:title"/>
-    <meta content="RGOS Web Start Page | An initiative of the RGOS" property="twitter:description"/>
-    <meta content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg" property="twitter:image"/>
-    <meta property="og:type" content="website"/>
-    <meta content="summary_large_image" name="twitter:card"/>
-    
-    <link rel="shortcut icon" href="../../../Ripenos/Assets/General/ripenOs.png" type="image/x-icon">
+    <meta name="og:description" property="og:description" content="RGOS Web Start Page | An initiative of the RGOS" />
+    <meta name="description" content="RGOS Web Start Page | An initiative of the RGOS" />
+    <meta
+        content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg"
+        property="og:image" />
+    <meta content="RGOS Web Start Page" property="twitter:title" />
+    <meta content="RGOS Web Start Page | An initiative of the RGOS" property="twitter:description" />
+    <meta
+        content="https://user-images.githubusercontent.com/120778877/209983105-1a1e190a-a292-4caf-8c7a-3387c6a66e5e.jpg"
+        property="twitter:image" />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,0" />
+
+    <link rel="shortcut icon" href="../../../Ripenos/Assets/General/ripenOs.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="../../../Ripenos/Assets/General/ripenOs.png" />
     <title>RGOS | Web Start Page</title>
 
     <style>
-        *{
+        * {
             padding: 0;
             box-sizing: border-box;
             margin: 0;
         }
-        body{
+
+        body {
             color: white;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             -moz-user-select: none;
             -ms-user-select: none;
-                user-select: none;
+            user-select: none;
             -webkit-user-select: none;
             background-color: black;
         }
 
-        .SearchCenter{
+        .SearchCenter {
             position: absolute;
-            left: 50%; top: 50%;
+            left: 50%;
+            top: 50%;
             transform: translate(-50%, -60%);
             text-align: center;
             display: grid;
             gap: 1.15rem;
         }
 
-        h1{
+        h1 {
             font-size: 3rem;
             font-family: Arial, Helvetica, sans-serif;
             opacity: 0.5;
         }
-        
-        #logo{
-           width: 10rem;
-           position: absolute;
-           top: 0.5rem;
-           left: 1rem;
+
+        #logo {
+            width: 10rem;
+            position: absolute;
+            left: 10px;
         }
 
         input {
@@ -69,122 +78,333 @@
             transition: all 0.5s;
             margin-bottom: 1px;
         }
-        input:hover{background-color: rgba(255, 255, 255, 0.15);}
-        input:active{background-color: rgba(255, 255, 255, 0.15); border-radius: 5px;}
-        input::placeholder{color: rgba(255, 255, 255, 0.75);}
-        input:focus-visible{outline: transparent; background-color: rgba(255, 255, 255, 0.15);}
 
-        input::-webkit-search-cancel-button{
+        input:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        input:active {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        input:focus-visible {
+            outline: transparent;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        input::-webkit-search-cancel-button {
             -webkit-appearance: none;
             height: 20px;
             width: 20px;
-            margin-left: .4em;
+            margin-left: 0.4em;
             background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
             -webkit-filter: drop-shadow(0px 0px 0px black);
             filter: drop-shadow(0px 0px 0px black);
             transition: all 0.3s;
         }
-        input::-webkit-search-cancel-button:hover{-webkit-filter: drop-shadow(0px 0px 5px black); -webkit-scale: 1.1;filter: drop-shadow(0px 0px 5px black); scale: 1.1;}
-        input::-webkit-search-cancel-button:active{-webkit-filter: drop-shadow(0px 0px 7.5px black); -webkit-scale: 1; filter: drop-shadow(0px 0px 7.5px black); scale: 1;}
 
-        #searchImg{
+        input::-webkit-search-cancel-button:hover {
+            -webkit-filter: drop-shadow(0px 0px 5px black);
+            -webkit-scale: 1.1;
+            filter: drop-shadow(0px 0px 5px black);
+            scale: 1.1;
+        }
+
+        input::-webkit-search-cancel-button:active {
+            -webkit-filter: drop-shadow(0px 0px 7.5px black);
+            -webkit-scale: 1;
+            filter: drop-shadow(0px 0px 7.5px black);
+            scale: 1;
+        }
+
+        #searchImg {
             width: 1rem;
             position: absolute;
-            bottom:0;
+            bottom: 0;
             margin: 0.85rem;
         }
-        
-        @media screen and (max-width: 815px) {
-            input{
-               width: 100%; 
-               font-size: 15px;
-               padding: 15px;
-                padding-left: 2.5rem;
-            }
-            h1{font-size: 2.5rem;width: max-content;}
-            .SearchCenter{transform: translate(-50%, -50%) scale(1.15);}
+
+        #blur {
+            height: 100dvh;
+            width: 100dvw;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            transition: all 1s;
+            -webkit-filter: blur(200px);
+            filter: blur(200px);
+            z-index: 1;
+            background: radial-gradient(#002575, #000000);
         }
 
-        #blur{
-    height: 100dvh;
-    width: 100dvw;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    transition: all 1s;
-    -webkit-filter: blur(200px);
-    filter: blur(200px);
-    z-index: 1;
-    background: radial-gradient(#002575, #000000);
-    }
+        #blob {
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            top: 110%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: linear-gradient(to right, #ff7b00, rgb(255, 81, 0));
+            animation: rotate 5s infinite;
+        }
 
-    #blob{
-    height: 500px;
-    width: 500px;
-    position: absolute;
-    left: 50%;
-    top: 110%; 
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: linear-gradient(
-        to right, #ff7b00, rgb(255, 81, 0)
-    );
-    animation: rotate 5s infinite;
-    }
+        @keyframes rotate {
+            from {
+                -webkit-transform: translate(-50%, -50%), rotate(0deg);
+                transform: translate(-50%, -50%), rotate(0deg);
+            }
 
-    @keyframes rotate {
-    from{-webkit-transform:translate(-50%, -50%), rotate(0deg); transform:translate(-50%, -50%), rotate(0deg);}
-    50%{scale: 1 1.2;}
-    to{-webkit-transform:translate(-50%, -50%), rotate(360deg); transform:translate(-50%, -50%), rotate(360deg);}
-    }
-    #content{
-        position: absolute;
-        z-index: 2;
-        height: 100dvh;
-        width: 100dvw;
-        height: 100vh;
-        width: 100vw;
-    }
+            50% {
+                scale: 1 1.2;
+            }
+
+            to {
+                -webkit-transform: translate(-50%, -50%), rotate(360deg);
+                transform: translate(-50%, -50%), rotate(360deg);
+            }
+        }
+
+        #content {
+            position: absolute;
+            z-index: 999;
+            height: 100dvh;
+            width: 100dvw;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        @media screen and (max-width: 815px) {
+            input {
+                width: 100%;
+                font-size: 15px;
+                padding: 15px;
+                padding-left: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                width: max-content;
+            }
+
+            .SearchCenter {
+                transform: translate(-50%, -50%) scale(1.15);
+            }
+        }
+
+        .star {
+            position: absolute;
+            z-index: 2;
+            color: white;
+            font-size: 1rem;
+            animation-duration: 1500ms;
+            animation-fill-mode: forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall-1 {
+            0% {
+                transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+                opacity: 0;
+            }
+
+            5% {
+                transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fall-2 {
+            0% {
+                transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fall-3 {
+            0% {
+                transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
+
 <body>
-    
     <div id="blur">
         <div id="blob"></div>
-      </div>
+    </div>
 
     <div id="content">
-        <img id="logo" src="../../../Ripenos/Assets/General/rgos-logo.png" alt="">
+        <img id="logo" src="../../../Ripenos/Assets/General/rgos-logo.png" alt="" />
         <div class="SearchCenter">
             <h1>Search the web</h1>
-            <img id="searchImg" src="../../../Ripenos/Assets/UI/windows11-search-button-S.png" alt="">
-            <input type="search" name="webSearch" id="webSearchInput" placeholder="Start typing to search" required>
+            <img id="searchImg" src="../../../Ripenos/Assets/UI/windows11-search-button-S.png" alt="" />
+            <input type="search" name="webSearch" id="webSearchInput" placeholder="Start typing to search" required />
         </div>
     </div>
     <script>
-        function disp_prompt(){
-        var sitename = document.getElementById("webSearchInput")
-        window.location = "https://www.bing.com/search?q=" + sitename.value;
+        var text = "Note: By clicking you are agreeing with Microsoft Bing AI's Terms and Privacy Notice:\nTerms: https://www.bing.com/new/termsofuse\nPrivacy Notice: https://privacy.microsoft.com/en-ca/privacystatement\n\nTo exit, click anywhere outside the catbox.";
+
+        function disp_prompt() {
+            var sitename = document.getElementById("webSearchInput");
+            window.location = "https://www.bing.com/search?q=" + sitename.value;
         }
-        document.getElementById("webSearchInput")
-            .addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                disp_prompt()
-            }
-        });
+        document
+            .getElementById("webSearchInput")
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    disp_prompt();
+                }
+            });
 
         const blob = document.getElementById("blob");
 
-        document.body.onpointermove = event => {
-            const { clientX, clientY } = event; 
+        document.body.onpointermove = (event) => {
+            const { clientX, clientY } = event;
 
-            blob.animate({
-                left: `${clientX}px`,
-                top: `${clientY}px`
-            },{ duration: 3000, fill: "forwards" })
-        }
+            blob.animate(
+                {
+                    left: `${clientX}px`,
+                    top: `${clientY}px`,
+                },
+                { duration: 3000, fill: "forwards" }
+            );
+        };
+
+        const script = document.createElement("script");
+
+        script.src = "https://kit.fontawesome.com/1ee8f271b9.js";
+
+        document.body.appendChild(script);
+        let start = new Date().getTime();
+
+        const originPosition = { x: 0, y: 0 };
+
+        const last = {
+            starTimestamp: start,
+            starPosition: originPosition,
+            mousePosition: originPosition
+        };
+
+
+        const config = {
+            starAnimationDuration: 1500,
+            minimumTimeBetweenStars: 250,
+            minimumDistanceBetweenStars: 75,
+            colors: ["255, 166, 0", "252 254 255"],
+            sizes: ["1.4rem", "1rem", "0.6rem"],
+            icon: ["star fa-solid fa-search", "star fa-solid fa-globe", "star fa-solid fa-browser", "star fa-solid fa-wifi", "star fa-solid fa-cloud"],
+            animations: ["fall-1", "fall-2", "fall-3"]
+        };
+
+
+        let count = 0;
+
+        const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+            selectRandom = items => items[rand(0, items.length - 1)];
+
+        const withUnit = (value, unit) => `${value}${unit}`,
+            px = value => withUnit(value, "px"),
+            ms = value => withUnit(value, "ms");
+
+        const calcDistance = (a, b) => {
+            const diffX = b.x - a.x,
+                diffY = b.y - a.y;
+
+            return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+        };
+
+        const calcElapsedTime = (start, end) => end - start;
+
+        const appendElement = element => document.body.appendChild(element),
+            removeElement = (element, delay) => setTimeout(() => document.body.removeChild(element), delay);
+
+        const createStar = position => {
+            const star = document.createElement("span"),
+                color = selectRandom(config.colors);
+
+            star.className = selectRandom(config.icon);
+
+            star.style.left = px(position.x);
+            star.style.top = px(position.y);
+            star.style.fontSize = selectRandom(config.sizes);
+            star.style.color = `rgb(${color})`;
+            star.style.textShadow = `0px 0px 1.5rem rgb(${color} / 0.5)`;
+            star.style.animationName = config.animations[count++ % 3];
+            star.style.starAnimationDuration = ms(config.starAnimationDuration);
+
+            appendElement(star);
+
+            removeElement(star, config.starAnimationDuration);
+        };
+        const updateLastStar = position => {
+            last.starTimestamp = new Date().getTime();
+
+            last.starPosition = position;
+        };
+
+        const updateLastMousePosition = position => last.mousePosition = position;
+
+        const adjustLastMousePosition = position => {
+            if (last.mousePosition.x === 0 && last.mousePosition.y === 0) {
+                last.mousePosition = position;
+            }
+        };
+
+        window.onpointermove = e => {
+            const mousePosition = { x: e.clientX, y: e.clientY };
+
+            adjustLastMousePosition(mousePosition);
+
+            const now = new Date().getTime(),
+                hasMovedFarEnough = calcDistance(last.starPosition, mousePosition) >= config.minimumDistanceBetweenStars,
+                hasBeenLongEnough = calcElapsedTime(last.starTimestamp, now) > config.minimumTimeBetweenStars;
+
+            if (hasMovedFarEnough || hasBeenLongEnough) {
+                createStar(mousePosition);
+
+                updateLastStar(mousePosition);
+            }
+
+            updateLastMousePosition(mousePosition);
+        };
+
+        document.body.onmouseleave = () => updateLastMousePosition(originPosition);
+        //# sourceURL=pen.js
     </script>
 </body>
+
 </html>

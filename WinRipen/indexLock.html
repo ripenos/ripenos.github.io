@@ -15,8 +15,8 @@
         <meta content="summary_large_image" name="twitter:card"/>
         
         <link rel="manifest" href="manifest.json">
-        <link rel="shortcut icon" href="Assets/windows11-logo.png" type="image/x-icon">
-        <link rel="apple-touch-icon" href="Assets/windows11-logo.png" />
+        <link rel="shortcut icon" href="Assets/WinRipen-logo.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="Assets/WinRipen-logo.png" />
         <link rel="stylesheet" href="Styles/innitial.css">
 
         <title>RGOS | Ripen OS</title>
@@ -29,11 +29,11 @@
                 <img src="../Ripenos/Assets/General/rgos-logo.png" alt="" id="RGOS-logo">
 
                 <span id="bootSece">
-                    <img src="Assets/windows11-logo.png" alt="" id="logo">
+                    <img src="Assets/WinRipen-logo.png" alt="" id="logo">
                 <br>
                 <div class="spinner">
-                    <div class="double-bounce1"></div>
-                    <div class="double-bounce2"></div>
+                    <div class="double-bounce1" id="db1"></div>
+                    <div class="double-bounce2" id="db2"></div>
                 </div>
                 </span>
             </CENTER>
@@ -46,6 +46,12 @@
         </div>
 
         <script>
+            const storedAccentColor = localStorage.getItem("accentColor");
+                if (storedAccentColor) {
+                document.getElementById('db1').style.backgroundColor = storedAccentColor
+                document.getElementById('db2').style.backgroundColor = storedAccentColor
+                }
+
             function onLoad(){
                 document.getElementById("loadItems").style.opacity= "1";
                 document.getElementById("welcome").style.opacity= "1";
@@ -72,15 +78,12 @@
 
                 setTimeout(() => {
                     document.getElementById('greetings').style.opacity = '0';
-                }, 2000);
-
-                setTimeout(() => {
                     document.body.parentNode.style.opacity = "0"
-                }, 2350);
-
+                }, 2000);
+                
                 setTimeout(() => {
                     document.body.parentNode.style.display = "none"
-                }, 2650);
+                }, 2350);
             }, 6000);
             }
 
@@ -103,9 +106,6 @@
             document.getElementById('greetings').innerHTML ='<b>' + greet + ', ' + 'Admin' + '</b>';
             }
             document.getElementById('greetings').style.position = 'Absolute';
-
-            console.log("%cWindows Ripen v1.2, is an opens-sourced project developed by the RGOS team. If you wish to help out with this project, visit https://github.com/ripenos/ripenos.github.io", "color: rgb(255, 123, 0); font-size: x-large")
-
         </script>
         <script src="index.js"></script>
     </body>

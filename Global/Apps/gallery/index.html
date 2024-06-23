@@ -32,16 +32,17 @@
         padding: 10px;
         padding-top: 0;
         border-radius: 8px;
-        background-color: rgba(241, 241, 241, 0.09);
+        background-color: #ffffff15;
         border: 1px solid #f1f1f138;
         border-top: 0.5px solid rgba(241, 241, 241, 0.25);
         font-family: Arial, Helvetica, sans-serif;
         transition: all 0.5s;
-        backdrop-filter: blur(25px);
       }
       .header h1 {
         margin-bottom: 12.5px;
         margin-top: 15px;
+        scale: 0.95;
+
       }
       .header h3 {
         align-items: center;
@@ -81,7 +82,6 @@
         border: 1px solid #ffffff3a;
       }
       .container {
-        backdrop-filter: blur(25px);
         width: calc(100vw - 24%);
         height: 89.5vh;
         border-radius: 8px;
@@ -90,7 +90,7 @@
         border-bottom-right-radius: 0;
         overflow: hidden;
         overflow-y: scroll;
-        background-color: rgba(241, 241, 241, 0.09);
+        background-color: #ffffff15;
         border: 1px solid #f1f1f138;
         border-top: 0.5px solid rgba(241, 241, 241, 0.25);
         display: flex;
@@ -102,34 +102,7 @@
       .container::-webkit-scrollbar {
         display: none;
       }
-      .container::-webkit-scrollbar {
-        width: 7.5px;
-      }
-      .container::-webkit-scrollbar-button {
-        background-color: rgb(22, 14, 7);
-        height: 10px;
-      }
-      .container::-webkit-scrollbar-track {
-        background: rgb(22, 14, 7);
-      }
-      .container::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          180deg,
-          rgb(255, 145, 0) 0%,
-          rgba(255, 102, 0, 0.55) 100%
-        );
-        border-radius: 2px;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-      }
-      .container::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(
-          180deg,
-          orange 0%,
-          rgba(255, 102, 0, 0.75) 100%
-        );
-        border-radius: 50px;
-      }
+
       .image {
         max-width: 385px;
         max-height: 240px;
@@ -155,8 +128,8 @@
         align-items: center;
         position: absolute;
         left: 22%;
-        gap: 10px;
-        transform: translateY(-7.5px);
+        gap: 7.5px;
+        transform: translateY(-11px);
       }
       .containerHeadder span {
         font-size: 30px;
@@ -164,6 +137,7 @@
       .containerHeadder p,
       h3 {
         transform: translateY(2.5px);
+        scale: 0.95;
       }
       @media screen and (max-width: 700px) {
         .image {
@@ -342,8 +316,10 @@
         style="pointer-events: none;"/></div>
     </div>
     <div class="containerHeadder">
-      <span class="material-symbols-rounded">photo_library</span>
-      <h1>All Photos</h1>
+      <div style="display: flex; align-items: center; gap: 7.5px; scale: 0.9; margin-right: -7.5px;">
+        <span class="material-symbols-rounded">photo_library</span>
+      <h1 style="scale: 0.95;">All Photos</h1>
+      </div>
       <h3>•</h3>
       <div>
         <p id="totalCount">Total: 0 photos</p>
@@ -447,7 +423,6 @@
 
         imageFileInput.addEventListener("change", handleImageFileSelect);
         imageFileInput2.addEventListener("change", handleImageFileSelect);
-        videoFileInput.addEventListener("change", handleImageFileSelect);
         closeModal.addEventListener("click", closeModalFunction);
 
         let photoCount = parseInt(localStorage.getItem("photoCount")) || 0;

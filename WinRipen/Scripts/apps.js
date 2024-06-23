@@ -72,6 +72,239 @@ function openFiles() {
   moveToFront(document.getElementById("files"));
 }
 
+// APPS - Clock
+function minClock() {
+  document.getElementById("Clock").style.transition =
+    "transform 0.5s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s, left 0.3s";
+  document.getElementById("Clock").style.transform =
+    "translate(-50%, 100%) scale(0)";
+  document.getElementById("Clock").style.left = "50%";
+
+  setTimeout(() => {
+    document.getElementById("Clock").style.display = "none";
+    document.getElementById("clockDockAppIco").classList.remove('taskbarbuttonActive');
+    document.getElementById("Clock").style.transition =
+      "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s";
+  }, 150);
+}
+
+function closeClock() {
+  document.getElementById("Clock").style.transform =
+    "translate(-50%, -50%) scale(0.75)";
+  document.getElementById("Clock").style.visibility = "hidden";
+  document.getElementById("Clock").style.opacity = "0";
+  document.getElementById("clockDockAppIco").style.transform = "translateY(45px)";
+  setTimeout(() => {
+    document.getElementById("Clock").style.display = "none";
+    document.getElementById("Clock").style.top = "50%";
+    document.getElementById("Clock").style.left = "50%";
+    document.getElementById("clockDockAppIco").style.display = "none";
+    document.getElementById("clockDockAppIco").classList.remove('taskbarbuttonActive');
+  }, 150);
+}
+
+function openClock() {
+  document.getElementById("Clock").style.display = "block";
+  document.getElementById("maxApp").style.display = "block";
+  document.getElementById("clockDockAppIco").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("Clock").style.top = "50%";
+    document.getElementById("Clock").style.left = "50%";
+    document.getElementById("Clock").style.transform =
+      "translate(-50%, -50%) scale(1)";
+    document.getElementById("Clock").style.visibility = "visible";
+    document.getElementById("Clock").style.opacity = "1";
+    document.getElementById("clockDockAppIco").style.opacity = "1";
+
+    document.getElementById("Desktop").style.scale = "1";
+    document.getElementById("Desktop").style.filter = "blur(0px)";
+    document.getElementById("bgM").style.filter = "blur(0px)";
+  }, 1);
+  setTimeout(() => {
+    document.getElementById("clockDockAppIco").style.transform =
+      "translateY(0px)";
+      document.getElementById("clockDockAppIco").classList.add('taskbarbuttonActive');
+  }, 150);
+  document.getElementById("Clock").click();
+  moveToFront(document.getElementById("Clock"));
+}
+
+// APPS - Tasks
+function minTasks() {
+  document.getElementById("Tasks").style.transition =
+    "transform 0.5s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s, left 0.3s";
+  document.getElementById("Tasks").style.transform =
+    "translate(-50%, 100%) scaleX(0)";
+  document.getElementById("Tasks").style.left = "50%";
+
+  setTimeout(() => {
+    document.getElementById("Tasks").style.display = "none";
+    document.getElementById("tasksDockAppIco").classList.remove('taskbarbuttonActive');
+    document.getElementById("Tasks").style.transition =
+      "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s";
+  }, 150);
+}
+
+function closeTasks() {
+  document.getElementById("Tasks").style.transform =
+    "translate(-50%, -50%) scale(0.75)";
+  document.getElementById("Tasks").style.visibility = "hidden";
+  document.getElementById("Tasks").style.opacity = "0";
+  document.getElementById("tasksDockAppIco").style.transform = "translateY(45px)";
+  setTimeout(() => {
+    document.getElementById("Tasks").style.display = "none";
+    document.getElementById("Tasks").style.top = "50%";
+    document.getElementById("Tasks").style.left = "50%";
+    document.getElementById("tasksDockAppIco").classList.remove('taskbarbuttonActive');
+    document.getElementById("tasksDockAppIco").style.display = "none";
+  }, 150);
+}
+
+function openTasks() {
+  document.getElementById("Tasks").style.display = "block";
+  document.getElementById("maxApp").style.display = "block";
+  document.getElementById("tasksDockAppIco").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("Tasks").style.top = "50%";
+    document.getElementById("Tasks").style.left = "50%";
+    document.getElementById("Tasks").style.transform =
+      "translate(-50%, -50%) scale(1)";
+    document.getElementById("Tasks").style.visibility = "visible";
+    document.getElementById("Tasks").style.opacity = "1";
+    document.getElementById("tasksDockAppIco").style.opacity = "1";
+
+    document.getElementById("Desktop").style.scale = "1";
+    document.getElementById("Desktop").style.filter = "blur(0px)";
+    document.getElementById("bgM").style.filter = "blur(0px)";
+  }, 1);
+  setTimeout(() => {
+    document.getElementById("tasksDockAppIco").style.transform =
+      "translateY(0px)";
+      document.getElementById("tasksDockAppIco").classList.add('taskbarbuttonActive');
+  }, 150);
+  document.getElementById("Tasks").click();
+  moveToFront(document.getElementById("Tasks"));
+}
+
+// APPS - Spreadsheet
+function minSpr() {
+  document.getElementById("Spreadsheet").style.transition =
+    "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s, left 0.3s";
+  document.getElementById("Spreadsheet").style.transform =
+    "translate(-50%, 100%) scaleX(0)";
+  document.getElementById("Spreadsheet").style.visibility = "hidden";
+  document.getElementById("Spreadsheet").style.opacity = "0";
+  document.getElementById("Spreadsheet").style.left = "50%";
+
+  setTimeout(() => {
+    document.getElementById("Spreadsheet").style.display = "none"; 
+    document.getElementById("SheetDockAppIco").classList.remove('taskbarbuttonActive');
+    document.getElementById("Spreadsheet").style.transition =
+      "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s";
+  }, 150);
+}
+
+function maxSpr() {
+  if (document.getElementById("Spreadsheet").style.width == "100%") {
+    document.getElementById("Spreadsheet").style.transition =
+      "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s, left 0.3s, top 0.3s";
+    document.getElementById("Spreadsheet").style.width = "95%";
+    document.getElementById("Spreadsheet").style.height = "95%";
+    document.getElementById("Spreadsheet").style.borderRadius = "10px";
+    setTimeout(() => {
+      document.getElementById("Spreadsheet").style.transition =
+        "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s";
+    }, 250);
+  } else {
+    document.getElementById("Spreadsheet").style.transition =
+      "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s,  height 0.3s, left 0.3s, top 0.3s";
+    document.getElementById("Spreadsheet").style.top = "50%";
+    document.getElementById("Spreadsheet").style.left = "50%";
+    document.getElementById("Spreadsheet").style.width = "100%";
+    document.getElementById("Spreadsheet").style.height = "100%";
+    document.getElementById("Spreadsheet").style.borderRadius = "0px";
+    setTimeout(() => {
+      document.getElementById("Spreadsheet").style.transition =
+        "transform 0.3s, opacity 0.3s , visibility 0.3s, border-radius 0.3s,  width 0.3s";
+    }, 250);
+  }
+}
+
+function closeSpr() {
+  document.getElementById("Spreadsheet").style.transform =
+    "translate(-50%, -50%) scale(0.75)";
+  document.getElementById("Spreadsheet").style.visibility = "hidden";
+  document.getElementById("Spreadsheet").style.opacity = "0";
+  document.getElementById("SheetDockAppIco").style.transform = "translateY(45px)";
+  setTimeout(() => {
+    document.getElementById("Spreadsheet").style.display = "none";
+    document.getElementById("Spreadsheet").style.top = "50%";
+    document.getElementById("Spreadsheet").style.left = "50%";
+    document.getElementById("SheetDockAppIco").classList.remove('taskbarbuttonActive');
+    document.getElementById("SheetDockAppIco").style.display = "none";
+  }, 150);
+}
+
+function openSpr() {
+  document.getElementById("Spreadsheet").style.display = "block";
+  document.getElementById("SheetDockAppIco").style.display = "block";
+  document.getElementById("maxApp").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("Spreadsheet").style.top = "50%";
+    document.getElementById("Spreadsheet").style.left = "50%";
+    document.getElementById("Spreadsheet").style.transform =
+      "translate(-50%, -50%) scale(1)";
+    document.getElementById("Spreadsheet").style.visibility = "visible";
+    document.getElementById("Spreadsheet").style.opacity = "1";
+    document.getElementById("SheetDockAppIco").style.opacity = "1";
+
+    document.getElementById("Desktop").style.scale = "1";
+    document.getElementById("Desktop").style.filter = "blur(0px)";
+    document.getElementById("bgM").style.filter = "blur(0px)";
+  }, 1);
+  setTimeout(() => {
+    document.getElementById("SheetDockAppIco").style.transform =
+      "translateY(0px)";
+      document.getElementById("SheetDockAppIco").classList.add('taskbarbuttonActive');
+  }, 150);
+
+  document.getElementById("Spreadsheet").click();
+  moveToFront(document.getElementById("Spreadsheet"));
+}
+
+// APPS - CMD
+
+function openCmd() {
+  document.getElementById("cmd").style.display = "block";
+  document.getElementById("maxApp").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("cmd").style.top = "50%";
+    document.getElementById("cmd").style.left = "50%";
+    document.getElementById("cmd").style.transform =
+      "translate(-50%, -50%) scale(1)";
+    document.getElementById("cmd").style.visibility = "visible";
+    document.getElementById("cmd").style.opacity = "1";
+  }, 1);
+
+  document.getElementById("cmd").click();
+  moveToFront(document.getElementById("cmd"));
+}
+
+function closeCmd() {
+  document.getElementById("cmd").style.transform =
+    "translate(-50%, -50%) scale(0)";
+  document.getElementById("cmd").style.visibility = "hidden";
+  document.getElementById("cmd").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("cmd").style.display = "none";
+    document.getElementById("cmd").style.top = "50%";
+    document.getElementById("cmd").style.left = "50%";
+  }, 150);
+}
+
 // APPS - Tic Tac Toes
 function minTic() {
   document.getElementById("ticTacToe").style.transition =
@@ -465,32 +698,6 @@ function minPiano() {
       "transform 0.2s, opacity 0.2s , visibility 0.2s, border-radius 0.2s,  width 0.2s,  height 0.2s";
   }, 150);
 
-}
-
-function maxPiano() {
-  if (document.getElementById("piano").style.width == "100%") {
-    document.getElementById("piano").style.transition =
-      "transform 0.2s, opacity 0.2s , visibility 0.2s, border-radius 0.2s,  width 0.2s,  height 0.2s, left 0.2s, top 0.2s";
-    document.getElementById("piano").style.width = "60%";
-    document.getElementById("piano").style.height = "80%";
-    document.getElementById("piano").style.borderRadius = "10px";
-    setTimeout(() => {
-      document.getElementById("piano").style.transition =
-        "transform 0.2s, opacity 0.2s , visibility 0.2s, border-radius 0.2s,  width 0.2s";
-    }, 250);
-  } else {
-    document.getElementById("piano").style.transition =
-      "transform 0.2s, opacity 0.2s , visibility 0.2s, border-radius 0.2s,  width 0.2s,  height 0.2s, left 0.2s, top 0.2s";
-    document.getElementById("piano").style.top = "50%";
-    document.getElementById("piano").style.left = "50%";
-    document.getElementById("piano").style.width = "100%";
-    document.getElementById("piano").style.height = "100%";
-    document.getElementById("piano").style.borderRadius = "0px";
-    setTimeout(() => {
-      document.getElementById("piano").style.transition =
-        "transform 0.2s, opacity 0.2s , visibility 0.2s, border-radius 0.2s,  width 0.2s";
-    }, 250);
-  }
 }
 
 function closePiano() {

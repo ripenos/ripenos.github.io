@@ -28,46 +28,67 @@
         overflow: hidden;
       }
 
-      /* scrollbar */
       ::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      /* Track */
-      ::-webkit-scrollbar-track {
-        border-radius: 5px;
-        background: transparent;
-      }
-
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 140, 0, 0.55) 0%,
-          rgba(133, 53, 0, 0.55) 100%
-        );
-        border-radius: 2px;
-        -webkit-transition: all 0.3s;
+        --scroll: rgb(255 255 255 / 80%);
+        --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
         transition: all 0.3s;
       }
-
-      /* Handle on hover */
+      ::-webkit-scrollbar:vertical:hover {
+        background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px) / contain
+            no-repeat,
+          var(--scrollbar-top-btn) 0% calc(0% + 3px) / contain no-repeat,
+          var(--scroll);
+      }
+      ::-webkit-scrollbar:horizontal:hover {
+        background: var(--scrollbar-right-btn) calc(100% - 3px) 0% / contain
+            no-repeat,
+          var(--scrollbar-left-btn) calc(0% + 3px) 0% / contain no-repeat,
+          var(--scroll);
+      }
+      ::-webkit-scrollbar-thumb {
+        display: none;
+        background: rgba(0, 0, 0, 0.5);
+        background-clip: padding-box;
+        border: 6px solid transparent;
+        border-radius: 14px;
+        transition: all 0.3s;
+      }
       ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 140, 0, 0.75) 0%,
-          rgba(133, 53, 0, 0.75) 100%
-        );
-        border-radius: 50px;
+        border: 4px solid transparent;
+      }
+      ::-webkit-scrollbar-button:single-button {
+        height: 14px;
+      }
+      :hover::-webkit-scrollbar-thumb {
+        display: block;
+      }
+      ::-webkit-scrollbar,
+      ::-webkit-scrollbar {
+        --scroll: rgb(44 44 44 / 25%);
+        --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+        --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+      }
+      ::-webkit-scrollbar-thumb,
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        background-clip: padding-box;
       }
 
       /* Import Google font - Poppins */
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-      .calendarMain{
-        width: calc(100%/2);
+      .calendarMain {
+        width: calc(100% / 2);
       }
-      
+
       header {
         display: flex;
         align-items: center;
@@ -190,31 +211,45 @@
       }
 
       .Events {
-        width: calc(100%/2);
+        width: calc(100% / 2);
       }
-      .EventContainer{
+      .EventContainer {
         padding-bottom: 10px;
         margin-top: -2.5px;
         height: calc(100% - 90px);
         overflow: hidden;
         overflow-y: scroll;
       }
-      .Events-cont {
+
+      .calendar-Today {
+        font-weight: 650;
+        color: white;
         margin: 15px;
         margin-top: 10px;
+        font-size: 18px;
         margin-left: 25px;
         background-color: rgba(241, 241, 241, 0.09);
         border-radius: 5px;
-        padding: 10px;
+        padding: 15px;
+        width: 90%;
         border: 1px solid #ffffff50;
+      }
+      .calendar-Today:focus-visible {
+        outline: none;
       }
 
       @media screen and (max-width: 700px) {
-        body{display: block; overflow: auto;}
-        .calendarMain, .Events{width: 100%;}
-        .EventContainer{
-        padding-bottom: 0px;
-        height: calc(100% - 60px);
+        body {
+          display: block;
+          overflow: auto;
+        }
+        .calendarMain,
+        .Events {
+          width: 100%;
+        }
+        .EventContainer {
+          padding-bottom: 0px;
+          height: calc(100% - 60px);
         }
       }
     </style>
@@ -246,19 +281,23 @@
     <div class="Events">
       <header>
         <p class="current-date">Events</p>
-        <div class="icons">
-          <span class="material-symbols-rounded">add</span>
+        <div class="icons" id="AddEventsBtn">
+          <span class="material-symbols-rounded" onclick="addNewEvent()">add</span>
         </div>
       </header>
       <div class="EventContainer">
-        <div class="Events-cont">
-          <h3>Meeting at 4:30pm</h3>
-          <p>Scheduled for Tomorrow</p>
-        </div>
-        <div class="Events-cont">
-          <h3>Family trip to Disneyland</h3>
-          <p>Scheduled for Next week</p>
-        </div>
+        <input
+          type="text"
+          class="calendar-Today"
+          placeholder="Add your event"
+          id="event1M"
+        />
+        <input
+          type="text"
+          class="calendar-Today"
+          placeholder="Add your event"
+          id="event2M"
+        />
       </div>
     </div>
 
@@ -384,6 +423,98 @@
           renderCalendar(); // calling renderCalendar function
         });
       });
+
+      var event1 = document.getElementById("event1M");
+      var event2 = document.getElementById("event2M");
+      var events = [];
+
+      // Function to set events in local storage
+      function setEvents(eventsArray) {
+        localStorage.setItem("events", JSON.stringify(eventsArray));
+      }
+
+      // Function to get events from local storage
+      function getEvents() {
+        const storedEvents = localStorage.getItem("events");
+        return storedEvents ? JSON.parse(storedEvents) : [];
+      }
+
+      // Initialize events array from local storage
+      events = getEvents();
+
+      // Function to update events array and local storage for event1
+      function setEvent1(event1Value) {
+        events[0] = event1Value;
+        setEvents(events);
+        event1.value = event1Value;
+      }
+
+      // Function to update events array and local storage for event2
+      function setEvent2(event2Value) {
+        events[1] = event2Value;
+        setEvents(events);
+        event2.value = event2Value;
+      }
+
+      // Load saved values from local storage
+      const savedEvent1 = events[0];
+      const savedEvent2 = events[1];
+
+      if (savedEvent1) {
+        event1.value = savedEvent1;
+      }
+
+      if (savedEvent2) {
+        event2.value = savedEvent2;
+      }
+
+      // Event listeners for input changes
+      event1.addEventListener("input", function () {
+        setEvent1(event1.value);
+      });
+
+      event2.addEventListener("input", function () {
+        setEvent2(event2.value);
+      });
+
+      function addNewEvent() {
+    // Check if there are already maximum allowed events
+    if (events.length >= 5) {
+      alert("You can't add more than 5 events.");
+      return;
+    }
+
+    const newEventId = events.length + 1;
+
+    // Create a new input element
+    const newEventInput = document.createElement("input");
+    newEventInput.type = "text";
+    newEventInput.classList.add("calendar-Today");
+    newEventInput.placeholder = `Add your event ${newEventId}`;
+    newEventInput.id = `event${newEventId}M`;
+    newEventInput.addEventListener("input", function () {
+      updateEvent(newEventId, newEventInput.value);
+    });
+
+    // Append the new event input to the EventContainer
+    document.querySelector(".EventContainer").appendChild(newEventInput);
+
+    // Initialize the new event in the events array
+    events.push("");
+
+    // Set focus on the newly added input
+    newEventInput.focus();
+
+    // Save the updated events array to local storage
+    setEvents(events);
+  }
+
+    // Function to update events array and local storage for a specific event
+    function updateEvent(eventId, eventValue) {
+        events[eventId - 1] = eventValue;
+        setEvents(events);
+    }
+
     </script>
   </body>
 </html>

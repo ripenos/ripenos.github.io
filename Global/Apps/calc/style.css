@@ -21,25 +21,24 @@ body{
   padding: 10px;
 }
 input[type="text"]{
-  height: 50px;
-  width: 100%;
+  width: calc(100% - 6px);
+  margin: 0px 2.5px 0px 3.5px;
+  height: 60px;
   color: beige;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   text-align: right;
   padding-right: 20px;
   border: none;
   border-radius: 8px;
+  border:1px solid rgba(241, 241, 241, 0.1176470588);
   background: rgba(241, 241, 241, 0.095);
-  border: 1px solid #ffffff45;
 }
 form .buttons{
   margin: 10px;
   margin-left: 0px;
   width: 100%;
-  padding-top: 10px;
   height: 100vh;
-  border-top: 1px solid #ffffff45;
 }
 input[type="button"]{
   width: 24.25%;
@@ -58,17 +57,14 @@ input#clear{
   color: white;
 }
 input#equal{
-  width: 100%;
+  width: calc(100% - 6px);
+  margin: 0px 2.5px 10px 3.5px;
+  margin-top: 5px;
   height: 10vh;
-  margin: 5px 0 10px 0;
-  font-size: 30px;
+  font-size: 37.5px;
   color: white;
-  background: rgba(255, 98, 0, 0.5);
-  border: 1px solid #b32a00;
-}
-
-input#equal:hover{
-  background: rgba(145, 55, 0, 0.5);
+  background: rgb(255, 123, 0);
+  border: 1.5px solid white;
 }
 
 input[type="button"]:hover, input#clear:hover, input#equal:hover{

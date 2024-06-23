@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,0" />
+  <style>
+    /* Dark theme */
+    body {
+      background: transparent;
+      color: white;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      user-select: none;
+    }
+
+
+    ::-webkit-scrollbar {
+      --scroll: rgb(255 255 255 / 80%);
+      --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+      transition: all 0.3s;
+    }
+
+    ::-webkit-scrollbar:vertical:hover {
+      background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px) / contain no-repeat,
+        var(--scrollbar-top-btn) 0% calc(0% + 3px) / contain no-repeat,
+        var(--scroll);
+    }
+
+    ::-webkit-scrollbar:horizontal:hover {
+      background: var(--scrollbar-right-btn) calc(100% - 3px) 0% / contain no-repeat,
+        var(--scrollbar-left-btn) calc(0% + 3px) 0% / contain no-repeat,
+        var(--scroll);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      display: none;
+      background: rgba(0, 0, 0, 0.5);
+      background-clip: padding-box;
+      border: 6px solid transparent;
+      border-radius: 14px;
+      transition: all 0.3s;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      border: 4px solid transparent;
+    }
+
+    ::-webkit-scrollbar-button:single-button {
+      height: 14px;
+    }
+
+    :hover::-webkit-scrollbar-thumb {
+      display: block;
+    }
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar {
+      --scroll: rgb(44 44 44 / 25%);
+      --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+      --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+    }
+
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.5);
+      background-clip: padding-box;
+    }
+
+    .header {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      height: calc(100% - 10px);
+      overflow: hidden;
+      overflow-y: scroll;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding-top: 5px;
+    }
+
+    .image {
+      max-width: 385px;
+      max-height: 240px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: block;
+      background-color: #cccccc20;
+      border-radius: 10px;
+      transition: all 0.3s;
+      display: inline-table;
+      border: 1px solid #cccccc00;
+    }
+
+    .image:hover {
+      transform: scale(0.975);
+      border: 1px solid #cccccc70;
+      filter: drop-shadow(0px 0px 10px #0000006f);
+    }
+
+    .image:active {
+      transform: scale(1);
+    }
+
+    @media screen and (max-width: 700px) {
+      .image {
+        width: 100%;
+        height: auto;
+        max-width: 94%;
+        max-height: 100%;
+      }
+    }
+
+    /* Modal styles (for image preview) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s;
+      opacity: 0;
+    }
+
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+      margin: auto;
+      position: relative;
+      display: block;
+      align-items: center;
+      top: 50%;
+      filter: drop-shadow(0px 0px 5px #ffffff);
+      transform: translateY(-50%);
+    }
+
+    .modal .close {
+      display: block !important;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 2;
+      padding: 3.5px 12.5px;
+      border-radius: 5px;
+      transition: all 0.3s;
+      background-color: rgba(241, 241, 241, 0.09);
+      border: 1px solid #dfdfdf00;
+    }
+
+    .modal .close:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #dfdfdf3a;
+    }
+
+    .modal .close:active {
+      background-color: rgba(255, 255, 255, 0.035);
+      border: 1px solid #ffffff3a;
+    }
+
+    .modal .toolbar {
+      display: block !important;
+      position: absolute;
+      right: 0;
+      padding: 10px;
+      top: 50%;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 8.5px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: 1px solid #cccc;
+      border-right: 0;
+      transform: translateY(-50%);
+      gap: 5px;
+    }
+
+    .toolbar button {
+      font-size: 30px;
+      color: white;
+      align-items: center;
+      display: flex;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      transition: all 0.3s;
+      background-color: rgba(241, 241, 241, 0.09);
+      border: 1px solid #dfdfdf00;
+    }
+
+    .toolbar button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #dfdfdf3a;
+    }
+
+    .toolbar button:active {
+      background-color: rgba(255, 255, 255, 0.035);
+      border: 1px solid #ffffff3a;
+    }
+
+    @media screen and (max-width: 950px) {
+      .modal .toolbar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        top: auto;
+        width: fit-content;
+        bottom: 1.5%;
+        border-top-right-radius: 8.5px;
+        border-top-left-radius: 8.5px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border: 1px solid #cccc;
+        border-bottom: 0;
+        display: flex !important;
+        height: 45px;
+      }
+
+      .toolbar button {
+        margin-top: 0px;
+      }
+    }
+
+    #totalCount{
+      position: absolute;
+      right: 0px;
+      bottom: -15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <input type="file" accept="image/*" id="imageFileInput2" />
+  </div>
+  <div class="container" id="imageContainer">
+    <!-- Images will be displayed here -->
+  </div>
+  <p id="totalCount">Total: 0 photos</p>
+  <div id="imageModal" class="modal">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage" />
+    <div class="toolbar">
+      <button id="deleteButton" style="display: none;">
+        <span class="material-symbols-rounded">delete</span>
+      </button>
+      <button id="DownloadButton" title="Download">
+        <span class="material-symbols-rounded">download</span>
+      </button>
+      <button id="fullScreenButton" title="Open image in fullscreen">
+        <span class="material-symbols-rounded">open_in_full</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const imageFileInput2 = document.getElementById("imageFileInput2");
+    const totalCount = document.getElementById("totalCount");
+    const imageContainer = document.getElementById("imageContainer");
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+    let photoCount = 0;
+    // Create or open the IndexedDB database
+    const request = indexedDB.open("ImageGalleryDB", 1);
+
+    // Define the database schema
+    request.onupgradeneeded = function (event) {
+      const db = event.target.result;
+      db.createObjectStore("images", { keyPath: "id", autoIncrement: true });
+    };
+
+    // Handle database errors
+    request.onerror = function (event) {
+      console.error("IndexedDB error:", event.target.error);
+    };
+
+    // Handle successful database creation/opening
+    request.onsuccess = function (event) {
+      const db = event.target.result;
+
+      // Function to save an image to IndexedDB
+      function saveImageToIndexedDB(imageData) {
+        const transaction = db.transaction(["images"], "readwrite");
+        const objectStore = transaction.objectStore("images");
+        const request = objectStore.add({ imageData });
+
+        request.onsuccess = function () {
+          console.log("Image saved to IndexedDB");
+        };
+
+        request.onerror = function (event) {
+          console.error(
+            "Error saving image to IndexedDB:",
+            event.target.error
+          );
+        };
+      }
+
+      // Function to load images from IndexedDB
+      function loadImagesFromIndexedDB() {
+        const transaction = db.transaction(["images"], "readonly");
+        const objectStore = transaction.objectStore("images");
+        const cursorRequest = objectStore.openCursor();
+
+        cursorRequest.onsuccess = function (event) {
+          const cursor = event.target.result;
+          if (cursor) {
+            const imageData = cursor.value.imageData;
+            displayImage(imageData, cursor.key);
+            cursor.continue();
+          }
+        };
+
+        cursorRequest.onerror = function (event) {
+          console.error(
+            "Error loading images from IndexedDB:",
+            event.target.error
+          );
+        };
+      }
+
+      // Initial load of images
+      loadImagesFromIndexedDB();
+
+      imageFileInput2.addEventListener("change", handleImageFileSelect);
+      closeModal.addEventListener("click", closeModalFunction);
+
+      let photoCount = parseInt(localStorage.getItem("photoCount")) || 0;
+      updatePhotoCount(); // Update the initial display4
+
+      function updatePhotoCount() {
+        totalCount.textContent = `Total: ${photoCount} photos`;
+      }
+
+      function handleImageFileSelect(event) {
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          if (file.type.match("image.*")) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const img = document.createElement("img");
+              img.src = e.target.result;
+              img.classList.add("image");
+              saveImageToIndexedDB(e.target.result);
+              displayImage(e.target.result);
+              photoCount++; // Increment the photo count
+              updatePhotoCount(); // Update the display
+              // Save the updated count to localStorage
+              localStorage.setItem("photoCount", photoCount);
+            };
+            reader.readAsDataURL(file);
+          }
+        }
+      }
+
+      function openModal(event) {
+        if (event.target.classList.contains("image")) {
+          modalImage.src = event.target.src;
+          imageModal.style.display = "block";
+          setTimeout(() => {
+            imageModal.style.opacity = "1";
+          }, 1);
+        }
+        var elem = modalImage;
+        var OnFullScrn = document.getElementById("fullScreenButton");
+
+        OnFullScrn.addEventListener("click", () => {
+          if (document.exitFullscreen()) {
+            elem.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        });
+
+        var dwl = document.getElementById('DownloadButton');
+        dwl.addEventListener("click", () => {
+          var gh = elem.src;
+
+          var a = document.createElement('a');
+          a.href = gh;
+          a.download = 'Gallery-image-rgos.png';
+
+          a.click()
+        })
+      }
+
+      function closeModalFunction() {
+        imageModal.style.opacity = "0";
+        setTimeout(() => {
+          imageModal.style.display = "none";
+        }, 150);
+      }
+
+      const imageArray = [];
+      // Inside the displayImage function
+      function displayImage(imageData, imageId) {
+        imageArray.push({ id: imageId, data: imageData }); // Store the image data and ID
+        const img = document.createElement("img");
+        img.src = imageData;
+        img.alt = imageId; // Set the image's ID as the alt attribute
+        img.classList.add("image");
+        img.addEventListener("click", openModal);
+        img.id = imageId; // Set a unique ID for the image element
+        imageContainer.appendChild(img);
+      }
+    };
+  </script>
+</body>
+
+</html>

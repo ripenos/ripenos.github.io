@@ -76,20 +76,24 @@ let taskbar = document.getElementById('tb');
 let dockApps = document.getElementById('dockApps')
 let desktop = document.getElementById('desktop')
 
+function closeStart(){
+    startmenu.style.bottom = "-100%";
+    startbutton.style.width = "44px";
+  
+    taskbar.style.background = 'rgba(0, 0, 0, 0.65)';
+    taskbar.style.backdropFilter = 'blur(35px)';
+    taskbar.style.webkitBackdropFilter = 'blur(35px)';
+    taskbar.style.border = '0.5px solid #f1f1f123';
+    taskbar.style.boxShadow = '0px 0px 5px rgba(0, 0, 0, 1)';
+    taskbar.style.bottom = "1.25%";
+    desktop.style.filter = 'blur(0px) brightness(100%)';
+    desktop.style.scale = '1';
+    dockApps.style.top = "50%";
+  }
+
 function showStart(){
 	if(startmenu.style.bottom == "0%"){
-        startmenu.style.bottom = "-100%";
-        startbutton.style.width = "44px";
-
-        taskbar.style.background = 'rgba(0, 0, 0, 0.65)';
-        taskbar.style.backdropFilter = 'blur(35px)';
-        taskbar.style.webkitBackdropFilter = 'blur(35px)';
-        taskbar.style.border = '0.5px solid #f1f1f123';
-        taskbar.style.boxShadow = '0px 0px 5px rgba(0, 0, 0, 1)';
-        taskbar.style.bottom = "1.25%";
-        desktop.style.filter = 'blur(0px) brightness(100%)';
-        desktop.style.scale = '1';
-        dockApps.style.top = "50%";
+        closeStart()
 	}
 	else{
         startmenu.style.bottom = "0%";
@@ -186,26 +190,28 @@ function checkTimeS(i) {
     return i;
 }
 
-var div2 = document.getElementById("status2");
-if (navigator.getBattery) {
-    navigator.getBattery().then(function(battery) {
-      display2(battery);
-    });
-} 
-else if (navigator.battery) {
-    display2(navigator.battery);
-} 
-else {
-    div2.innerHTML = "70%";
-}
+                // Battery status
+                initBattery();
 
-function display2(battery) {
-    var status2 = "";
-    status2 += (battery.level * 100).toFixed(0) + "%";
-    let batteryLevel = `${parseInt(battery.level * 100)}%`;
-    div2.innerHTML = status2;
-    document.getElementById('flyWB').style.width = batteryLevel;
-}
+                function initBattery() {
+                const batteryLiquid1 = document.querySelector("#flyWB"),
+                    batteryPercentage = document.querySelector("#status2");
+    
+                navigator.getBattery().then((batt) => {
+                    updateBattery = () => {
+                    let level = Math.floor(batt.level * 100);
+                    batteryPercentage.innerHTML = level + "%";
+                    batteryLiquid1.style.width = `${parseInt(batt.level * 100)}%`;
+    
+                    };
+                    updateBattery();
+    
+                    batt.addEventListener("chargingchange", () => {updateBattery();});
+                    batt.addEventListener("levelchange", () => {updateBattery();});
+                });
+                }    
+
+
 document.getElementById('grid-trayBtn').classList.add('trayActive');
 
 var GreetDate = new Date();

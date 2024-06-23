@@ -5,16 +5,15 @@
 	background-image: url("../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg");
 	background-size: cover;
   	height: 100vh;
-	box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0px 0px 100px rgba(0, 0, 0, 0) inset;
 	background-position: center;
 	overflow: hidden;
 	transition: all 0.5s;
 }
 
 .DesktopShow {display: block;}
-
 .darktheme {
-	background-color: var(--bg-color);
+	background-color: var(--primary-bg);
 	-webkit-backdrop-filter: blur(25px) saturate(112.5%);
 	backdrop-filter: blur(25px) saturate(112.5%);
 	  color: white;
@@ -82,6 +81,15 @@
 	top: 0; 
 	height: calc(100vh - 56px); 
 	height: calc(100dvh - 56px); 
+	background-image: url("../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg");
+	background-size: cover;
+	transition: all 0.3s;
+}
+.taskViewed{
+	transform: var(--tb-desk-transform);
+	border-radius: 18px;
+	border: var(--primary-border);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 #DeskIcons{
 	position: absolute;
@@ -196,8 +204,8 @@
 	display: none;
 	position: absolute;
 	top: 45px;
-	width: 85%;
-	margin-left: 10px; padding-top: 5px;
+	width: 88%;
+	padding-top: 5px;
 	border: none;
 	border-top: 1px solid rgba(221, 221, 221, 0.15);
 	transition: all 0.3s;
@@ -309,19 +317,27 @@
 
 #tbStyleCT{
 	position: absolute;
-	top: 80px; left: 195px;
+	top: 0px; left: 195px;
 	transition: all 0.4s;
 	pointer-events: none;
 	opacity: 0;
 	z-index: 100;
 }
+#TimeWidget{
+	position: absolute;
+	top: 0;
+	right: 200px;
+	width: 100%;
+}
+
 .desk-widget-info{
 	padding: 5px; padding-top: 7.5px;padding-bottom: 7.5px;	padding-left: 12.5px; padding-right: 15px;
 	border-radius: 8px ;
-	background-color: var(--bg-color);
+	background-color: var(--primary-bg);
 	-webkit-backdrop-filter: blur(25px) saturate(112.5%);
 	backdrop-filter: blur(25px) saturate(112.5%);
-	border: 1px solid #ffffff40;transition: all 0.3s;
+	border: 1px solid #ffffff40;
+	transition: transform 0.2s, opacity 0.2s, visibility 0.2s, border-radius 0.2s;
 	display: flex;
 	position: absolute; width: max-content;
 	right: 10px; top: 120px;
@@ -420,7 +436,7 @@
 #RGOS-cont p{border: none;}
 #RGOS-cont h4{font-size: 1.25rem; text-align: center; border-bottom: 1px solid #ffffff35; margin-bottom: 10px; font-weight: 775;}
   .welcome-content a{transition: all 0.3s;}
-  .welcome-content a:hover{color: var(--accent-color); cursor: pointer;}
+  .welcome-content a:hover{color: var(--accent-color);}
   
   .welcome-content p{
 	  padding: 12.5px;
@@ -508,7 +524,7 @@
 		height: 47px;
 		left: 50%;
 		z-index: 101;
-		background-color: var(--bg-color);
+		background-color: var(--primary-bg);
 		-webkit-backdrop-filter: blur(25px) saturate(112.5%);
 		backdrop-filter: blur(25px) saturate(112.5%);
 		  color: white;
@@ -518,7 +534,7 @@
 		transition: all 0.45s;
 		transform: translateX(-50%) translateY(55px);
 	  }
-		#tbItems{transition: opacity 0.3s;}
+		#tbItems{transition: opacity 0.3s; height: 100%;}
 	  #mytaskbar{display: block;}
 	  #mytaskbar-mobile{display: none;}
 		.taskbar a {
@@ -562,11 +578,11 @@
 			min-width: calc(100% - 24.5rem);
 			max-width: calc(100% - 31rem);
 			overflow: hidden;
+			overflow-x: scroll;
+			scroll-behavior: smooth;
 			gap: 2.5px;
 			padding-right: 2.5px;
 			border-radius: 7.5px;
-			overflow-x: scroll;
-			scroll-behavior: smooth;
 		}
 		#DockAppsIco::-webkit-scrollbar{display: none;}
 		.appInactive{
@@ -619,7 +635,7 @@
 	#SearchInput{
 		margin-right: 2.5px;
 		padding-left: 35px; 
-		padding-right: 10px;  
+		padding-right: 10px;
 		font-size: 13px;
 		margin-left: 3.5px;
 	}
@@ -661,9 +677,9 @@
 		display: none;
 		position: absolute;
 		left: 5px;
-		bottom: 22.5%;
 		transform: translateY(19.5%);
 		transition: all 0.3s;
+		margin-top: -3.75px;
 	}
 	#classicTBICo-Lefticons{display: flex; transition: all 0.3s;}
 	#centeredTBICo-Lefticons .calbutton{text-align: left; margin-left: 2px;}
@@ -688,7 +704,7 @@
 	  border: 1px solid #ffffff25;
 	  background-color: #ffffff28;
 	}
-
+	
 		.startmenu{
 			justify-self: flex-end;
 			left: 0.95%;
@@ -705,6 +721,199 @@
 			display: none;
 			margin-bottom: 10px;
 		}
+
+		.startmenuSimple{width: 237px;}
+		.startmenuSimple #startMenuProductivitySide{display: none;}
+		.startmenuSimple .StartPinnedA {
+			display: flex;
+			height: 35px; width: 215px;
+			right: 15.5px;
+			padding: 2.5px;
+			align-items: center;
+		}
+		.startmenuSimple .btn-Stc{height: 22px; margin-top: 0;}
+		.startmenuSimple .btn-Stc:first-child{margin-top: 2px;}
+		.startmenuSimple #mySearch{width: 185px; margin-left: -20px;}
+		.startmenuSimple .startApps {height: 325px; width: 90%;}
+		.startmenuSimple #themeSA{width: 210px; margin-left: -40px;}
+		.startmenuSimple #searchAppsStartIco{left: 0.95rem;top: 78.5px;}
+		.startmenuSimple .tabS {height: 305px;}
+		.startmenuSimple #PowerOptStart{left: 250px;}
+		.startmenuSimple .StartMenuPfp CENTER{
+			min-width: 170px;
+			max-width: 170px;
+			height: 30px;
+			transform: translateY(-7.5px);
+		}
+		.startmenuSimple .StartMenuPfp CENTER #greetings{text-align: left;}
+		.startmenuLauncher{
+			margin-bottom: -65px;
+			width: 100%;
+			height: calc(100% - 20px);
+		}
+		.startmenuLauncher #themeS{display: none;}
+		.startmenuLauncher .startLauncher{display: block;}
+		.startLauncher{
+			display: none;
+			position: absolute;
+			width: 99%;
+			height: 100%;
+			left: -0.95%; top: 0;
+			color: white;
+			background: var(--primary-bg);
+			backdrop-filter: blur(10px);
+			opacity: 0;
+			transition: all 0.3s ease-out;
+		}
+
+		.startLauncher .StartMenuPfp, .startmenuSimple .StartMenuPfp{
+			width: max-content;
+			border-radius: 8px;
+			padding: 5px;
+			margin-left: 0.5%;
+			margin-top: 0.5%; display: flex; align-items: center; border: 0.5px solid #f1f1f100; transition: all 0.3s;
+		}.startmenuSimple .StartMenuPfp{margin: 0; margin-left: -5px; padding: 4px;}
+		.startLauncher .StartMenuPfp:hover{
+			border: 0.5px solid #f1f1f12a;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		.startLauncher .StartMenuPfp:active{background-color: rgba(29, 29, 29, 0.3);}
+		.startLauncher .StartMenuPfp CENTER, .startmenuSimple .StartMenuPfp CENTER{
+			padding: 5px;
+			width: auto;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin:0;
+			border-radius: 0px;
+			text-align: left;
+			pointer-events:none;
+		}
+		.startLauncher .StartMenuPfp CENTER #greetings2{margin-top: 3.5px;}
+		.startLauncher .ProfilePicCont-Start, .startmenuSimple .ProfilePicCont-Start{
+			border: var(--primary-border);
+			border-radius: 8px;
+			width: 42px;
+			height: 42px;
+			padding: 0px;
+			margin: 0px;
+			pointer-events: none;
+		}
+		.startLauncher .StartMenuLR{
+			position: absolute;
+			right: 20px;
+			top: 15px;
+		}
+		.startLauncher .btn-Stc{
+			margin-top: 0px;
+			  border-radius: 5px;
+			  transition: all 0.3s; margin-bottom: 0px;
+			  padding: 5px 12.5px ;
+			  padding-left: 7.5px;
+			  color: white;
+			  display:flex;
+			  align-items: center;
+			  width: auto;
+			  height: 25px;
+			  border:  0.5px solid #f1f1f100;
+		  }
+		  .startLauncher .StartPinnedWF span .btn-Stc img{
+			filter: invert(0);
+			padding: 4px;
+			height: auto;
+		  }
+		.startLauncher .StartPinnedWF{
+			position: static;
+			bottom: auto;
+			margin-top: -5px;
+			margin-right: 32.5px;
+			float: right;
+			background-color: rgba(0, 0, 0, 0.0);
+			border-radius: 0px;
+			border:  0px solid #f1f1f12a;
+			scale: 1.1;
+		  }
+		#startPfp2{
+			width: inherit;
+			height: inherit;
+			margin: 0;
+			padding: 0;
+		}
+
+		.startLauncher h3{
+			font-size: 36px;
+			font-weight: 800;
+			color: rgba(255, 255, 255, 0.35);
+			margin: auto;
+			text-align: center;
+			margin-top: 2rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.startLauncher #LauncherAppS{
+			width: max-content;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0.85rem;
+		}
+		.startLauncher .searchT{
+			width: 400px;
+			border-radius: 6.5px;
+			padding-left: 34.5px;
+			padding-right: 34.5px;
+		}
+		.startLauncher #LauncherAppS img{
+			width: 21px;
+			margin-right: -42.5px;
+			margin-bottom: -8px;
+		}
+		
+		.startLauncher #apps-cont{
+			width: 98%;
+			height: calc(100dvh - 235px);
+			height: calc(100vh - 235px);
+			text-align: center;
+			overflow: hidden;
+			overflow-y: scroll;
+			margin-left: 1.5%;
+		}
+		
+		.startLauncher #apps-cont li{display: inline-table; }
+		.startLauncher #apps-cont.w .Appimg{width: 175px;}
+		.Appimg {
+			padding: 12.5px 17.5px 12.5px 17.5px;  
+			padding-right: 37.5px;
+			background-color:transparent; 
+			border-radius: 10px; 
+			margin-bottom: 10px; transition: all 0.2s ease;
+			border: 1px solid #77777730;
+			display: flex; margin-right: 5px;
+			background-color: var(--primary-bg);
+			align-items: center;
+		  }
+
+		  
+		  
+		   .Appimg:hover{ scale: 0.95;}
+		   .Appimg:active {border: var(--primary-border); background-color: #0000001f;}
+		   .Appimg img {border-radius: 8px; width: 52.5px;transition: all 0.3s;}
+		   .Appimg p{opacity: 0.75; transition: all 0.3s; text-align: center;font-weight: 550;}
+		   .Appimg:hover p{opacity: 1;}
+
+		   #STMLAL, #STMLALD{
+			position: relative;
+			margin-top: 2.5px;
+			float: right;
+			scale: 0.9;
+			margin-right: 5px;
+			margin-left: -50px;
+			transition: all 0.3s;
+			display: block;
+		   }
+		   #STMLALD{transform: rotate(90deg); display: none;}
+		   #STMLAL:hover, #STMLALD:hover{scale: 0.8 ;}
+		   #STMLAL:active, #STMLALD:active{scale: 0.9 ;}
+
 		.startmenu img{
 			padding-right: 9px;
 			padding-left: 8px;
@@ -773,8 +982,9 @@
 		}
 		.Start-moreMenu:hover{background-color: rgba(110, 110, 110, 0.3);}
 		.Start-moreMenu:active{background-color: rgba(110, 110, 110, 0.2); border:  0.5px solid #f1f1f12a;}
-		
-		.Start-moreMenu img{width: 20px; transform: translateY(2.75px);}
+		#SmMP{display: none; padding: 5px 7.5px; gap: 10px; align-items: center; justify-content: center;
+		}
+		.Start-moreMenu img{width: 20px; transform: translateY(2.75px); display: block;}
 	  
 	  .StartPinned {
 		  position: relative;
@@ -810,7 +1020,7 @@
 	  .StartPinned::-webkit-scrollbar{display: none;}
 	  .StartPinned:hover::-webkit-scrollbar{display: block;}
 	  
-	  #Recommended{height: 70px; padding-bottom: 0;}
+	  #Recommended{height: 67.5px; padding-bottom: 0; margin-bottom: 10px;overflow: hidden;overflow-x: scroll;}
 	  .StartPinnedA {
 		  position: absolute;
 		  bottom: 10px; right: 21px;
@@ -820,23 +1030,24 @@
 		  font-family: Arial, Helvetica, sans-serif;
 		  border:  0.5px solid hsla(0, 0%, 95%, 0.165);
 		  overflow: hidden;
-
 	  }
 	  
 	  .btn-Stc{
+		margin-top: 5px;
 		  border-radius: 5px;
 		  transition: all 0.3s; margin-bottom: 3px;
 		  padding: 3px;
 		  color: white;
-		  margin-top: 5px;
 		  display:flex;
+		  align-items: center;
 		  width: 110px;
+		  height: 20px;
 		  border:  0.5px solid #f1f1f100;
 	  }
 	  
 	  .btn-Stc img{filter: invert(100%); margin-left: -5px;}
-	  .StartPinnedA .btn-Stc p{font-size: 12.5px; margin-top: 2.75px; margin-left: -2px;}
-	  .StartPinnedA .btn-Stc i{scale: 0.8; position: absolute ; right: 12px; bottom: 12px;}
+	  .StartPinnedA .btn-Stc p{font-size: 12.5px; margin-left: -2px;}
+	  .StartPinnedA .btn-Stc i{scale: 0.8; position: absolute ; right: 12px; bottom: 12.5px;}
 
 	  .btn-Stc:hover{background-color: rgba(255, 255, 255, 0.1);}
 	  .btn-Stc:active{ background-color: rgba(255, 255, 255, 0.05);  border:  0.5px solid #f1f1f12a;}
@@ -1329,93 +1540,137 @@
 	.tabmenu{
 		justify-self: flex-end;
 		position: absolute;
-		bottom: -655px;
-		left: 29%;
-		width: auto;
+		width: 100%;
+		height: 100%;
 		text-align: center;
 		transition: all 0.3s;
-		border-radius: 9px;
 		overflow: hidden;
-		z-index: 100;	
+		opacity: 0;
 		display: none;
+		background-color: var((--primary-bg));
+		backdrop-filter: blur(50px) saturate(125%);
+		box-shadow: 0px 0px 0px black inset;
 	}
 	
 	.tabmenu img{border-radius: 9px;}
-	
-	.tabview {
-	  position: fixed;
-	  z-index: 99;
-	  left: 0;
-	  top: 0;
-	  width: 100%;
-	  height: 100%;
-	  overflow: auto;
-	  opacity: 0;
-	  transition: all 0.35s;
-	  background-color: rgba(0, 0, 0, 0.5);
-	  -webkit-backdrop-filter: blur(50px) ;
-	  backdrop-filter: blur(50px);
-  }
-  
+	#tabmenuSpan{
+		scale: 0.85;
+		justify-content: center;
+		display: flex;
+		padding: 7.5px;
+		position: absolute;
+		top: 7.5px;
+		right: 10px;
+		border-radius: 50%;
+		width: 20px;
+		align-items: center;
+		height: 20px;
+		color: white;
+		background: var(--secondary-bg);
+		transition: all 0.2s;
+	}
+	#tabmenuSpan:hover{scale: 0.925;}
   .desktops{
-	  position: fixed;
+	  position: absolute;
 	  z-index: 110005;
-	  padding-top: 110px;
 	  left: 1%;
 	  overflow: hidden;
 	  top: 10px;
 	  width: 260px;
-	  height: calc(100% - 188px);
+	  height: calc(100% - 78px);
 	  overflow-y: scroll;
-
-	  background-color: rgba(0, 0, 0, 0.35);
-	  border-radius: 17px;
-	  border: 0.5px solid rgba(158, 158, 158, 0.25);
-	  transition: all 0.35s;
-	   opacity: 0;
+	  background-color: var(--primary-bg);
+	  border-radius: 10px;
+	  border: var(--primary-border);
+	  transition: all 0.3s;
+	   transform: translateY(135%);
+	   display: block;
   }
 
-  .desktop{
-	position:absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-	z-index: 100;
-	bottom: 0;
-	width: 225px;
-	height: 145px;
-	overflow: hidden;
-	background-color: rgba(83, 83, 83, 0.1);
-	border-radius: 17px;
-	padding-bottom: 10px;
-	border: 1px solid rgba(182, 182, 182, 0.2);
+  .desktopsActive{
 	transition: all 0.3s;
+	transform: translateY(0%);
   }
-  .desktop.desktop1{bottom: 20px;}
-  .desktop.New{bottom: calc(145px + 50px)}
-  .desktop:hover{background-color: rgba(135, 135, 135, 0.1);}
-  .desktop:active{background-color: rgba(158, 158, 158, 0.15);}
-  .desktop p {
-	  text-decoration: none;
-	  font-size: 13px;
-	  font-weight: 500;
-	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	  color: white;
-	  padding-top:8px;
-	  padding-left: 15px;
-	  text-align: left;
+
+  .desktop {
+	background-color: var(--primary-bg);
+	border-radius: 10px;
+	width: 85%;
+	border: var(--primary-border);
+	transition: all 0.3s;	padding: 12.5px;
+	margin: 10px;
+	text-align: left;
   }
   .desktop img {
-	  padding: 10px;
-	  border-radius: 22px;
-	  width: 90%;
+	border-radius: 7.5px; width: 100%; height: auto;
+	height: 122.5px;
+    border: var(--primary-border);
+	transition: all 0.3s;
   }
-  .desktop span {
-	  position: relative;
-	  top: 40%;
-	  color: rgb(255, 232, 197);
-	  font-size: 32.5px;
+  .desktop input {
+	margin: 0;
+    margin-top: 2.5px;
+    font-weight: 550;
+    color: white;
+    padding: 2.5px 0px 2.5px 0px;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    background: transparent;
+    border: 1px solid transparent;
   }
+  .desktop input:hover{background:var(--secondary-bg);}
+  .desktop input:focus-visible{background:var(--secondary-bg); border: var(--primary-border);}
+  #DesktopNew {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 22px;
+	font-weight: 850;
+	color: white;
+  }
+
+  .tabviewCentered .desktop{width: 220px;}
+  .tabviewCentered #DesktopNew{width: 50px;}
+
+  .taskbarStylesPWindow .desktop{
+	position: relative;
+	left: 0;
+	transform: translateX(0%);
+	bottom: auto;
+	margin: 0px;
+	padding: 0;
+	border: 2px solid #ffffff25;
+	border-radius: 10px;
+	height: 160px;
+	padding-bottom: 5px;
+	background-color: rgba(255, 255, 255, 0.075);
+  }
+  .taskbarStylesPWindow .desktop:hover{background-color: rgba(59, 59, 59, 0.15);}
+  .taskbarStylesPWindow .desktop:active{border: 2px solid #cccccc15}
+  .taskbarStylesPWindow .desktop:active img{-webkit-transform: scale(0.875); transform: scale(0.875)}
+  .taskbarStylesPWindow .desktop.active{border: 2px solid var(--accent-color)}
+  #StartMLDIV{
+	display: flex; overflow: hidden;
+	width: 100%;
+    overflow: hidden;
+    gap: 22.5px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+  }
+  .taskbarStylesPWindow .desktop img{transition: all 0.2s;border-radius: 7.5px; border: 1px solid #b6b6b628;-webkit-transform: scale(0.9); transform: scale(0.9); margin-top: 5px; margin-bottom: 5px;}
+  .taskbarStylesPWindow .desktop input{ 
+	padding: 0; margin: 0; 
+	text-align: center;
+	margin-top: -8.5px;
+	font-size: 16px;
+	opacity: 0.85;
+	font-weight: 700;
+	}
+
+  .desktop:hover{background-color: rgba(21, 21, 21, 0.35);}
+  .desktop:hover img{scale:  0.97;}
+  .desktop:active{background-color: var(--primary-bg); }
 
   .actionmenu,.actionmenu2,.actionmenu3,.actionmenu4,.wrapper,.notymenu{
 	bottom: -665px;
@@ -2111,34 +2366,42 @@
 .window{
 	position: absolute;
 	top: 50%; left: 50%;
-	transform: translate(-50%, -53%) scale(0);
+	transform: translate(-50%, -52.5%) scale(0);
 	transition: transform 0.3s ;
 	pointer-events: none;
+	z-index: 3;
 }
 .window.windowActive{
-	transform: translate(-50%, -53%) scale(1);
+	transition: transform 0.3s ;
+	transform: translate(-50%, -52.5%) scale(1);
 	pointer-events: all;
+}
+.window.windowMinimized{
+	transition: transform 0.3s ;
+	transform: translate(-50%, 125%) scale(0);
+	pointer-events: none;
 }
 .window .close{margin-top: 10px;}
 #personalizeWindow {
-	width: calc(100% - 52.5%); height: 29.75rem;
+	width: calc(100% - 35%); height: 37.25rem;
 }
 .window .darktheme{width: 100%; height: 100%; overflow: hidden;}
 .windowTopbar{
 	display: flex;
 	gap: 0.5rem;
+	padding: 10px;
 	background-color: #ffffff16;
-	padding: 12.5px;
 }
+.windowTopbar img{scale: 1.75;}
 
 .WindowContent{
-	width: 97.5%;
+	width: 99.25%;
 	height: calc(100% - 55px);
-	padding: 10px;
-	padding-top: 0px;
-	padding-left: 7.5px;
 	overflow: hidden;
-	overflow-y: scroll;
+	display: flex;
+	padding-left: 6.5px;
+	padding-right: 3.5px;
+	gap: 5px;
 }
 .WindowContent::-webkit-scrollbar{display: none;}
 .WindowContent:hover::-webkit-scrollbar{display: block;}
@@ -2147,51 +2410,81 @@
     width: 65%;
     padding: 5px;
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 24px;
 	padding-left: 7.5px;
 }
-.WindowContent h3:first-child{padding-top: 0;}
-.WindowSection{
-	padding: 10px;
-	height: 100%;
+.WindowContent hr{
+	opacity: 0.1;
+	margin: 6.5px;
+}
+.settingsNav{
+	padding: 5px;
+	padding-left: 0;
+	width: 22.5%;
+}
+.settingsNav .startAppsbutton {
+	font-size: 16px;
+	padding: 5px;
+	margin: 0;
+	margin-bottom: 5px;
+	gap: 5px;
+}
+.settingsNav .startAppsbutton.active{
+	background-color:rgba(255, 255, 255, 0.1);
+	border: 1px solid #ffffff25; 
 }
 
-.Walls{
-	display: flex;
-	gap: 10px;
-	padding: 10px;
-	background-color: #ffffff25;
-	margin: 5px;
+#allappsListSettings .startAppsbutton {    font-size: 18px;
+    gap: 10px;}
+#allappsListSettings .startAppsbutton img {width: 50px;}
+
+.WindowSection{
+	height: 100%;
 	overflow: hidden;
-	overflow-x: scroll;
-	border-radius: 7.5px;
-	margin-left: 0; margin-right: 0;
+	overflow-y: scroll;
+	padding-top: 5px;
+	width: calc(100% - 22.5%);
+	display: none;
 }
-.Walls::-webkit-scrollbar{display: none;}
-.Walls:hover::-webkit-scrollbar{display: block;}
+#GeneralSection{display: block;}
+
+.Walls{
+	margin: 5px;
+	margin-right: 0;
+	background-color: rgba(160, 160, 160, 0.1);
+	padding: 5px;
+	border-radius: 5px;
+}
 .Walls img{
-	width: 127.5px;
+	width: 8.45rem;
 	border-radius: 7.5px;
 	transition: all 0.3s;
-	height: 70px;
+	height: 80px;
+	margin: 2.5px;
+	border: 1px solid #aaaaaa65;
 }
 .Walls img:hover{scale: 1.05;}
 .Walls img:active{scale: 1;}
 
-#RipenosUploadedWall{border: 2px solid #aaa;}
+#RipenosUploadedWall{border: 1px solid #aaa;}
 .theme{
-	background-color: #ffffff25;
 	padding: 10px;
+	padding-left: 12.5px;
+	padding-right: 12.5px;
+	padding-bottom: 1px;
+	margin-top: 5px;
+	background-color: rgba(160, 160, 160, 0.1);
 	border-radius: 7.5px;
-	padding-bottom: 5px;
 	margin-bottom: 5px;
 }
 .AccentColorPicker{
 	vertical-align: middle; align-items: center; display: flex;
 	position: relative;
 	float: right;
-	margin-top: -5px;
 }
+.AccentColorPicker .switch{margin-right: -2.5px;}
+.AccentColorPicker .switch::before{content: 'Hide:'; margin-left: -50px; font-size: 17px;}
+
 input[type="color"] {
 	background-color: transparent;
 	border: none;
@@ -2209,13 +2502,13 @@ input[type="color"]::-webkit-color-swatch {
 	width: 100%;
 	padding: 10px;
 	padding-left: 0; padding-right: 0;
+	margin-bottom: 10px;
 }
 
 .ColorTheme button{
 	color: white;
     border-radius: 8px;
     padding: 10px;
-    cursor: pointer;
 	background-color: rgba(124, 124, 124, 0.25); 
 	border: 1px solid #cccccc6e;
     font-size: 16px;
@@ -2233,20 +2526,18 @@ input[type="color"]::-webkit-color-swatch {
 }
 .ColorTheme button:active{scale: 0.90;}
 
-.taskbarStylesPWindow{
-	display: flex;
-	gap: 10px;
-}
+.taskbarStylesPWindow{display: flex;}
 #TaskBarStylePW  {
-	background-color: #ffffff25;
 	margin: 5px;
-	border-radius: 7.5px;
 	margin-left: 0; margin-right: 0;
+	background-color: rgba(124, 124, 124, 0.25);
 	padding: 12.5px;
+	border-radius: 8.5px;
+	margin: 2.5px;
 	padding-bottom: 15px;
 	width: calc(100%/2);
 }
-#TaskBarStylePW h4{border-bottom: 1px solid rgba(255, 255, 255, 0.25); padding-bottom: 5px;}
+#TaskBarStylePW:last-child{margin-left: 5px;}
 #TaskBarStylePW button {
 	background-color: rgba(124, 124, 124, 0.25); 
     border-radius: 5px; 
@@ -2361,10 +2652,19 @@ input[type="color"]::-webkit-color-swatch {
 	margin-top: 10px;
 	overflow: hidden;
 	overflow-y: scroll;
+	padding-bottom: 15px;
 	height: calc(100% - 185px);
   }
   .AboutContent h4{opacity: 0.75;}
   .AboutContent h5{margin-top: -5px;}
+
+  .AoutCP{
+	padding-right: 10px;
+	font-size: 13.5px;
+    line-height: 1.25rem;
+    font-weight: 520;
+  }
+
   #AboutApp .welcome-btn{float: none; width: 100%; margin-top: 10px;}
   .AboutBanner{
 	margin-bottom: 6.5px;
@@ -2400,4 +2700,164 @@ input[type="color"]::-webkit-color-swatch {
   #RipenGamingNotyImg{
 	filter: drop-shadow(0px 0px 10px var(--accent-color));
 	animation: shadows 1.5s infinite;
+  }
+  #dateWidget{
+	position: absolute;
+	top: 90px;
+	right: 20px;
+  }
+  #txtdtyH{
+	color: rgba(255, 255, 255, 0.85); 
+	font-weight:900; font-size: 20px; 
+	margin-top: -10px;
+	filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+	 width: max-content;
+  }
+  #txtdtyH:hover{cursor:move; filter: drop-shadow(0px 0px 2.5px black);}
+  .txtH{
+	color: rgba(255, 255, 255, 0.75); 
+	font-weight:900; 
+	font-size: 65px; 
+	filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+	display: flex;
+	transition: all 0.3s;
+	border-radius: 7.5px;
+	width: max-content;
+  }
+  .txtH:hover{filter: drop-shadow(0px 0px 2.5px black);}
+  #TimeWidget:hover{cursor:move; }
+  .txtH span{
+	transition: all 0.3s;
+	-webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0);
+}
+
+  .TimeTextBold{
+	display:block;
+	}
+  .TimeTextBold #txtHc{display: none;}
+  .TimeTextBold span{
+	display: block;
+	color: rgba(255, 255, 255, 0.05);
+	-webkit-text-stroke-width: 3px;
+	height: 62.5px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .TimeTextCozy{
+	display:block;
+	}
+  .TimeTextCozy #txtHc{display: none;}
+  .TimeTextCozy span{
+	display: block;
+	height: 65px;
+  }
+
+  .TimeTextCozy #txtHh{transform: translateX(-20px);}
+  .TimeTextCozy #txtHm{transform: translateX(20px);}
+
+#WallUploadDiv{margin-top: -2.5px; margin-right: -2.5px;}
+
+#WinWallUpload{
+	color: transparent;
+	width: 100px;
+  }
+  
+  #WinWallUpload::-webkit-file-upload-button {
+	-webkit-user-select: none;
+	user-select: none;
+	margin: 7.5px;
+	margin-left: 0;
+	background-color: rgba(181, 181, 181, 0.15); 
+    border-radius: 5px; 
+    color: white;transition: all 0.5s;
+    padding: 5px; padding-left: 10px; padding-right: 10px;
+    border: var(--primary-border);
+	margin-left: 5px;
+  }
+
+  #WinWallUpload::-webkit-file-upload-button:hover{background-color: rgba(255, 255, 255, 0.15); }
+  #WinWallUpload::-webkit-file-upload-button:active{scale: 0.95;}
+
+  #SearchInput2Mic {
+	width: 17.75px;
+	position: absolute;
+	left: 214px;
+	top: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	filter: none;
+	-webkit-filter: none;
+	transition: all 0.5s;
+	border: 1px solid #00000000;
+  }
+  #SearchInput2Mic:hover{background-color:  var(--secondary-bg)}
+  #SearchInput2Mic:active{background-color: #ffffff0c; border: var(--primary-border);}
+  #SearchInput2Mic.inactiveMic{filter: brightness(1) invert(0);}
+  #SearchInput2Mic.activeMic{filter: brightness(0) invert(1);}
+
+  .TimeWidgetCard{
+	text-align: center;
+	font-weight: 650;
+  }
+
+  .TimeWidgetCard img{
+	width: 125px;
+	height: 125px;
+	border-radius: 10px;
+	transition: all 0.3s;
+	border: 3px solid transparent;
+	margin-bottom: 2.5px;
+	background: #cccccc10;
+  }
+  .TimeWidgetCard img:hover{border: 3px solid var(--secondary-bg)}
+  .TimeWidgetCard img:active{scale:0.975}
+  .TimeWidgetCard.active img{border: 3px solid var(--accent-color)} 
+
+  .src-preview {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	opacity: 0;
+	z-index: 20;
+	pointer-events: none;
+	background: var(--primary-bg);
+	backdrop-filter: blur(45px);
+	border-radius: 8px;
+	border: var(--primary-border);
+	transition: all 0.3s ease;
+	color: #ffffff9d;
+	padding-bottom: 20px;
+	box-shadow: 0px 0px 10px black;
+  }
+  .src-preview.show {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+	pointer-events: auto;
+  }
+  .src-preview button{width: 95%; float: none; position: relative; display: block; margin: auto;}
+  .src-preview h1{padding: 10px 15px}
+  .src-preview .screenshot {
+	opacity: 0;
+	pointer-events: none;
+	transition: transform 0.15s ease;
+	margin-bottom: 15px;
+  }
+  .src-preview.show .screenshot{
+	opacity: 1;
+	pointer-events: auto;
+  }
+  .screenshot #close-btn {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	color: #fff;
+	font-size: 1.1rem;
+  }
+  .screenshot img {
+	width: 100%;
+	border: var(--primary-border);
+	border-left: none;
+	border-right: none;
   }

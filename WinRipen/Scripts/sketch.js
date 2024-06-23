@@ -1,9 +1,10 @@
+console.log("%cWindows Ripen v1.3, is an opens-sourced project developed by the RGOS team. If you wish to help out with this project, visit https://github.com/ripenos/ripenos.github.io", "color: rgb(255, 123, 0); font-size: x-large")
+
 let startbutton = document.getElementsByClassName("startbutton")[0]
 let startmenu = document.getElementsByClassName("startmenu")[0]
 
 let tabb = document.getElementsByClassName("tabbutton")[0]
 let tabmenu = document.getElementsByClassName("tabmenu")[0]
-let tabview = document.getElementsByClassName("tabview")[0]
 let desktops = document.getElementsByClassName("desktops")[0]
 
 let action = document.getElementsByClassName("actionbutton")[0]
@@ -24,6 +25,9 @@ let widgetB = document.getElementsByClassName("widgetbutton")[0]
 let widgetM = document.getElementsByClassName("widgets")[0]
 var choice = localStorage.getItem("BackgroundAppsLayout");
 var choice2 = localStorage.getItem("TaskbarIconArrangement");
+var choice3 = localStorage.getItem("StartmenuLayout");
+var choice4 = localStorage.getItem("WinTimeWLayout");
+var choice5 = localStorage.getItem("StartLauncherAppStyle");
 
 const savedPw = localStorage.getItem('pw');
 
@@ -48,6 +52,39 @@ function ShowDs(){
           } else {
             TBClassicIco()
           }
+
+          if (choice3 === "S1") {
+            startLauncher()
+          }
+          else if(choice3 === "S2"){
+            startSimple()
+          }
+          else {
+            startPro()
+          }
+
+          if (choice4 === "T1") {
+            document.getElementById('txtH').classList.add('TimeTextBold');
+            document.getElementById('txtH').classList.remove('TimeTextCozy');
+            this.classList.add('active');
+            document.getElementById('twPC').classList.remove('active')
+            document.getElementById('twPZ').classList.remove('active')
+          }
+          else if(choice4 === "T2"){
+            document.getElementById('txtH').classList.remove('TimeTextBold');
+            document.getElementById('txtH').classList.add('TimeTextCozy');
+            this.classList.add('active');
+            document.getElementById('twPC').classList.remove('active')
+            document.getElementById('twPB').classList.remove('active')
+          }
+          else {
+            document.getElementById('txtH').classList.remove('TimeTextBold');
+            document.getElementById('txtH').classList.remove('TimeTextCozy');
+            this.classList.add('active');
+            document.getElementById('twPB').classList.remove('active')
+            document.getElementById('twPZ').classList.remove('active')
+            localStorage.setItem('WinTimeWLayout', 'T3');          
+          }
         }, 750);
   
         setTimeout(() => {document.getElementById('mytaskbar').style.transform = "translateX(-50%), translateY(-85px)";}, 1500);
@@ -70,6 +107,16 @@ function ShowDs(){
             document.getElementById('med-icon-tray').style.display= 'none';
             document.getElementById('tile-trayBtn').classList.add('imgActive');
             document.getElementById('grid-trayBtn').classList.remove('imgActive');
+          }
+
+          if (choice5 === "L1") {
+            document.getElementById('apps-cont').classList.remove('w'); 
+            document.getElementById('STMLALD').style.display = 'none'
+            document.getElementById('STMLAL').style.display = 'block'
+          } else {
+            document.getElementById('apps-cont').classList.add('w'); 
+            document.getElementById('STMLALD').style.display = 'block'
+            document.getElementById('STMLAL').style.display = 'none'
           }
         }, 1750);
         
@@ -96,6 +143,39 @@ function LoginWR(){
       } else {
         TBClassicIco()
       }
+
+      if (choice3 === "S1") {
+        startLauncher()
+      }
+      else if(choice3 === "S2"){
+        startSimple()
+      }
+      else {
+        startPro()
+      }
+
+      if (choice4 === "T1") {
+        document.getElementById('txtH').classList.add('TimeTextBold');
+        document.getElementById('txtH').classList.remove('TimeTextCozy');
+        document.getElementById('twPB').classList.add('active');
+        document.getElementById('twPC').classList.remove('active')
+        document.getElementById('twPZ').classList.remove('active')
+      }
+      else if(choice4 === "T2"){
+        document.getElementById('txtH').classList.remove('TimeTextBold');
+        document.getElementById('txtH').classList.add('TimeTextCozy');
+        document.getElementById('twPZ').classList.add('active');
+        document.getElementById('twPC').classList.remove('active')
+        document.getElementById('twPB').classList.remove('active')
+      }
+      else {
+        document.getElementById('txtH').classList.remove('TimeTextBold');
+        document.getElementById('txtH').classList.remove('TimeTextCozy');
+        document.getElementById('twPC').classList.add('active');
+        document.getElementById('twPB').classList.remove('active')
+        document.getElementById('twPZ').classList.remove('active')
+        localStorage.setItem('WinTimeWLayout', 'T3');          
+      }
     }, 750);
 
     setTimeout(() => {document.getElementById('mytaskbar').style.transform = "translateX(-50%), translateY(-85px)";}, 1500);
@@ -119,12 +199,22 @@ function LoginWR(){
         document.getElementById('tile-trayBtn').classList.add('imgActive');
         document.getElementById('grid-trayBtn').classList.remove('imgActive');
       }
+          
+      if (choice5 === "L1") {
+        document.getElementById('apps-cont').classList.remove('w'); 
+        document.getElementById('STMLALD').style.display = 'none'
+        document.getElementById('STMLAL').style.display = 'block'
+      } else {
+        document.getElementById('apps-cont').classList.add('w'); 
+        document.getElementById('STMLALD').style.display = 'block'
+        document.getElementById('STMLAL').style.display = 'none'
+      }
     }, 1750);
     
     setTimeout(() => {document.getElementById('mytaskbar').style.transition = "all 0.3s";}, 2250);
     }
   else{
-    document.getElementById('passkeyLParaR1').innerHTML = "not verified..try again:"
+    document.getElementById('passkeyLParaR1').innerHTML = "Incorrect password. Try again:"
     document.getElementById('pwInLR1').value = ""
   }
 }
@@ -202,7 +292,8 @@ const today2 = new Date();
 let h2 = today2.getHours();
 let m2 = today2.getMinutes();
 m2 = checkTime2(m2);
-document.getElementById('txtH').innerHTML =  h2 + ":" + m2;
+document.getElementById('txtHh').innerHTML =  h2;
+document.getElementById('txtHm').innerHTML =  m2;
 setTimeout(startTimeH, 1000);
 }
 
@@ -221,8 +312,8 @@ var myDay2 = myDate2.getDay();
 var myMonth2 = myDate2M.getMonth();
 var myYear2 = myDate2MF.getFullYear();
 
-var weekday2 = ['Sun', 'Mon', 'Tues',
-'Wed', 'Thu', 'Fri', 'Sat'
+var weekday2 = ['Sunday', 'Monday', 'Tuesday',
+'Wednesday', 'Thursday', 'Friday', 'Saturday'
 ];
 
 var Months2 = ['January', 'February', 'March',
@@ -230,7 +321,7 @@ var Months2 = ['January', 'February', 'March',
 ];
 
 document.getElementById("txtdtyH").innerHTML =
-weekday2[myDay2] + ", " + Months2[myMonth2] + " " + dt2;
+weekday2[myDay2] + ", " + dt2 + " " + Months2[myMonth2];
 setTimeout(startTimeH, 1000);
 }
 
@@ -244,32 +335,70 @@ setTimeout(startTimeH, 1000);
   else if (hrs >= 17 && hrs <= 24)
   greet = 'Good Evening';
   const savedTextValue = localStorage.getItem('UserPreviewName');
-
-if (savedTextValue) {document.getElementById('greetings').innerHTML ='<b>' + greet + ', ' + savedTextValue + '</b>';}
-else{document.getElementById('greetings').innerHTML ='<b>' + greet + ', ' + 'Admin' + '</b>';}
+if (savedTextValue) {
+  document.getElementById('greetings').innerHTML ='<b>' + greet + ', ' + savedTextValue + '</b>';
+  document.getElementById('greetings2').innerHTML ='<b>' + greet + ', ' + savedTextValue + '</b>';
+  document.getElementById('settingsGeneralName').innerHTML = savedTextValue + "'s Desktop";
+}
+else{
+  document.getElementById('greetings').innerHTML ='<b>' + greet + ', ' + 'Admin' + '</b>';
+  document.getElementById('greetings2').innerHTML ='<b>' + greet + ', ' + 'Admin' + '</b>';
+  document.getElementById('settingsGeneralName').innerHTML = "Admin's Desktop";
+}
 
 const savedTextValue2 = localStorage.getItem('UserName');
 if (savedTextValue2) {
   document.getElementById('UsernameWindowsStart').innerHTML = savedTextValue2;
+  document.getElementById('UsernameWindowsStart2').innerHTML = savedTextValue2;
 }
 else{
   document.getElementById('UsernameWindowsStart').innerHTML = 'Admin6901';
+  document.getElementById('UsernameWindowsStart2').innerHTML = 'Admin6901';
 }
 
 const userPfpWin = localStorage.getItem('UserPfp');
 if (userPfpWin) {
   document.getElementById('startPfp').src = userPfpWin;
+  document.getElementById('startPfp2').src = userPfpWin;
   document.getElementById('TempLockPfp').src = userPfpWin;
 }
 else{
   document.getElementById('startPfp').src = '../Ripenos/Assets/UI/icons8-male-user-96.png';
+  document.getElementById('startPfp2').src = '../Ripenos/Assets/UI/icons8-male-user-96.png';
   document.getElementById('TempLockPfp').src = '../Ripenos/Assets/UI/icons8-male-user-96.png';
+}
+
+function generateRandomDesktopID() {
+  // Check if the random text is already generated and stored
+  let storedText = localStorage.getItem('WinRipenId');
+
+  if (!storedText) {
+    let randomText = '';
+
+    // Generate 3 random characters from a-z
+    for (let i = 0; i < 3; i++) {
+      randomText += String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    }
+
+    // Generate 2 random characters from 0-9
+    for (let i = 0; i < 2; i++) {
+      randomText += Math.floor(Math.random() * 10);
+    }
+
+    // Store the generated text in local storage
+    localStorage.setItem('WinRipenId', randomText);
+document.getElementById('WinId').innerHTML = randomText;
+  } else {
+    // Use the stored text
+document.getElementById('WinId').innerHTML = storedText;
+  }
 }
 
 // Startmenu
   startbutton.addEventListener("click", ()=>{
 	if(startmenu.style.bottom == "65px"){
       startmenu.style.bottom = "-665px";
+      document.getElementsByClassName('startLauncher')[0].style.opacity = "0"
       startbutton.classList.remove('taskbarbuttonActive');
       setTimeout(() => {startmenu.style.display = "none";}, 500);
 	}
@@ -277,12 +406,14 @@ else{
     startmenu.style.display = "block";
     setTimeout(() => {
       startmenu.style.bottom = "65px";
+      document.getElementsByClassName('startLauncher')[0].style.opacity = "1"
       startbutton.classList.add('taskbarbuttonActive')
       tabb.classList.remove('taskbarbuttonActive')
       document.getElementById('widgetbtn').classList.remove('taskbarbuttonActive')
       widgetM.style.bottom = "-1665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
     }, 350);
     setTimeout(() => {
       tabmenu.style.display = "none";
@@ -315,20 +446,22 @@ function validate(e) {window.open("https://www.google.com/search?q=" + SearchVal
 //tab menu
 tabb.addEventListener("click", ()=>{
 	if(tabmenu.style.display == "block"){
-    tabview.style.opacity = "0"
-    desktops.style.opacity = "0"
+    desktops.classList.remove('desktopsActive')
+    tabmenu.style.opacity = "0";
     setTimeout(() => {tabmenu.style.display = "none";}, 450);
     tabb.classList.remove('taskbarbuttonActive')
+    document.getElementById('Desktop').classList.remove('taskViewed');
 	}
 	else{
     tabmenu.style.display = "block";
     setTimeout(() => {
-      tabview.style.opacity = "1"
-      desktops.style.opacity = "1"
+      tabmenu.style.opacity = "1";
       tabb.classList.add('taskbarbuttonActive')
       startbutton.classList.remove('taskbarbuttonActive')
       document.getElementById('widgetbtn').classList.remove('taskbarbuttonActive')
       startmenu.style.bottom = "-665px";
+      document.getElementById('Desktop').classList.add('taskViewed')
+      desktops.classList.add('desktopsActive')
     }, 350);
     setTimeout(() => {
       startmenu.style.display = "none";
@@ -353,8 +486,9 @@ action.addEventListener("click", ()=>{
       actionmenu4.style.bottom = "-665px";
       actionmenu5.style.bottom = "-665px";
       actionmenu6.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.add('taskbarbuttonActive')
       action2.classList.remove('taskbarbuttonActive')
       action3.classList.remove('taskbarbuttonActive')
@@ -392,8 +526,9 @@ action2.addEventListener("click", ()=>{
       actionmenu4.style.bottom = "-665px";
       actionmenu5.style.bottom = "-665px";
       actionmenu6.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.remove('taskbarbuttonActive')
       action2.classList.add('taskbarbuttonActive')
       action3.classList.remove('taskbarbuttonActive')
@@ -431,8 +566,9 @@ action3.addEventListener("click", ()=>{
       actionmenu4.style.bottom = "-665px";
       actionmenu5.style.bottom = "-665px";
       actionmenu6.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.remove('taskbarbuttonActive')
       action2.classList.remove('taskbarbuttonActive')
       action3.classList.add('taskbarbuttonActive')
@@ -471,8 +607,9 @@ action4.addEventListener("click", ()=>{
       actionmenu.style.bottom = "-665px";
       actionmenu5.style.bottom = "-665px";
       actionmenu6.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.remove('taskbarbuttonActive')
       action2.classList.remove('taskbarbuttonActive')
       action3.classList.remove('taskbarbuttonActive')
@@ -511,8 +648,9 @@ function calendarSH(){
       actionmenu2.style.bottom = "-665px";
       actionmenu.style.bottom = "-665px";
       actionmenu4.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.remove('taskbarbuttonActive')
       action2.classList.remove('taskbarbuttonActive')
       action3.classList.remove('taskbarbuttonActive')
@@ -551,8 +689,9 @@ function NotyPanel(){
       actionmenu2.style.bottom = "-665px";
       actionmenu.style.bottom = "-665px";
       actionmenu4.style.bottom = "-665px";
-      tabview.style.opacity = "0"
-      desktops.style.opacity = "0"
+      desktops.classList.remove('desktopsActive')
+      document.getElementById('Desktop').classList.remove('taskViewed');
+      tabmenu.style.opacity = "0";  
       action.classList.remove('taskbarbuttonActive')
       action2.classList.remove('taskbarbuttonActive')
       action3.classList.remove('taskbarbuttonActive')
@@ -594,8 +733,9 @@ function widgetShow(){
           tabb.classList.remove('taskbarbuttonActive')
           startbutton.classList.remove('taskbarbuttonActive')
           startmenu.style.bottom = "-665px";
-          tabview.style.opacity = "0"
-          desktops.style.opacity = "0"
+          desktops.classList.remove('desktopsActive')
+          document.getElementById('Desktop').classList.remove('taskViewed');
+          tabmenu.style.opacity = "0";      
           }, 450);
 
         setTimeout(() => {
@@ -627,8 +767,9 @@ function widgetSearchShow(){
     tabb.classList.remove('taskbarbuttonActive')
     startbutton.classList.remove('taskbarbuttonActive')
     startmenu.style.bottom = "-665px";
-    tabview.style.opacity = "0"
-    desktops.style.opacity = "0"
+    desktops.classList.remove('desktopsActive')
+    document.getElementById('Desktop').classList.remove('taskViewed');
+    tabmenu.style.opacity = "0";
   }, 450);
 
   setTimeout(() => {
@@ -682,12 +823,38 @@ document.getElementById('mytaskbar').oncontextmenu = function(e) {
   document.getElementById('context-menuTB').style.left = x + 'px';
   document.getElementById('context-menuTB').classList.add('visible');
   
-  tabview.style.opacity = "0"
-  desktops.style.opacity = "0"
+  desktops.classList.remove('desktopsActive')
+  document.getElementById('Desktop').classList.remove('taskViewed');
+  tabmenu.style.opacity = "0";
   setTimeout(() => {tabmenu.style.display = "none"}, 450);
   tabb.classList.remove('taskbarbuttonActive')
 
   return false;
+}
+
+function startPro(){
+  document.getElementById('myStartmenu').classList.remove('startmenuSimple')
+  document.getElementById('myStartmenu').classList.remove('startmenuLauncher')
+  document.getElementById('SimL').classList.remove('active')
+  document.getElementById('SimS').classList.remove('active')
+  document.getElementById('SimP').classList.add('active')
+  localStorage.setItem('StartmenuLayout', 'S3');
+}
+function startSimple(){
+  document.getElementById('myStartmenu').classList.add('startmenuSimple')
+  document.getElementById('myStartmenu').classList.remove('startmenuLauncher')
+  document.getElementById('SimL').classList.remove('active')
+  document.getElementById('SimS').classList.add('active')
+  document.getElementById('SimP').classList.remove('active')
+  localStorage.setItem('StartmenuLayout', 'S2');
+}
+function startLauncher(){
+  document.getElementById('myStartmenu').classList.remove('startmenuSimple')
+  document.getElementById('myStartmenu').classList.add('startmenuLauncher')
+  document.getElementById('SimL').classList.add('active')
+  document.getElementById('SimS').classList.remove('active')
+  document.getElementById('SimP').classList.remove('active')
+  localStorage.setItem('StartmenuLayout', 'S1');
 }
 
 function tbStyleCTH(){
@@ -869,8 +1036,9 @@ function activateButton(buttonId) {
           actionmenu2.style.bottom = "-665px";
           actionmenu.style.bottom = "-665px";
           actionmenu4.style.bottom = "-665px";
-          tabview.style.opacity = "0"
-          desktops.style.opacity = "0"
+          desktops.classList.remove('desktopsActive')
+          document.getElementById('Desktop').classList.remove('taskViewed');
+          tabmenu.style.opacity = "0";      
           action.classList.remove('taskbarbuttonActive')
           action2.classList.remove('taskbarbuttonActive')
           action3.classList.remove('taskbarbuttonActive')
@@ -928,64 +1096,7 @@ function activateButton(buttonId) {
         document.getElementById('tbStyleCT').style.pointerEvents = 'none';
     }
 
-        var div = document.getElementById("status");
-        if (navigator.getBattery) {
-            navigator.getBattery().then(function(battery) {
-              display(battery);
-            });
-        } 
-        else if (navigator.battery) {display(navigator.battery);} 
-        else {div.innerHTML = "70%";}
-
-        function display(battery) {
-            var status = "";
-            status += (battery.level * 100).toFixed(0) + "%";
-            div.innerHTML = status;
-            let batteryLevel = `${parseInt(battery.level * 100)}%`;
-            document.getElementById('deskWB').style.width = batteryLevel;
-            document.getElementById('tbWB').style.width = batteryLevel;
-            document.getElementById('flyWB').style.width = batteryLevel;
-            if (battery.charging) {
-              document.getElementById('tbWB').classList.add('batteryChargingAni')
-              document.getElementById('flyWB').classList.add('batteryChargingAni')
-              document.getElementById('deskWB').classList.add('batteryChargingAni')
-            }
-            else{
-              document.getElementById('tbWB').classList.remove('batteryChargingAni')
-              document.getElementById('flyWB').classList.remove('batteryChargingAni')
-              document.getElementById('deskWB').classList.remove('batteryChargingAni')
-            }
-        }
-                
-        const chargingTimeRef = document.getElementById("charging-time");
-
-        navigator.getBattery().then((battery) => {
-          function updateAllBatteryInfo() {updateChargingInfo();}
-          updateAllBatteryInfo();
-          battery.addEventListener("levelchange", () => {updateAllBatteryInfo();});
-          function updateChargingInfo() {
-            if (battery.charging) {chargingTimeRef.innerText = "Charging";}
-            else {
-              if (parseInt(battery.dischargingTime)) {
-                let hr = parseInt(battery.dischargingTime / 3600);
-                let min = parseInt(battery.dischargingTime / 60 - hr * 60);
-                chargingTimeRef.innerText = `${hr}hr ${min}mins remaining`;
-              }
-            }
-          }
-        })
-        var div2 = document.getElementById("status2");
-        if (navigator.getBattery) {navigator.getBattery().then(function(battery) {display2(battery);});} 
-        else if (navigator.battery) {display2(navigator.battery);} 
-        else {div2.innerHTML = "70%";}
-        
-        function display2(battery) {
-            var status2 = "";
-            status2 += (battery.level * 100).toFixed(0) + "%";
-            div2.innerHTML = status2;
-        }
-
-function closeWelcome(){
+    function closeWelcome(){
     document.getElementById("welcome-page").style.webkitTransform = "translate(-50%, -50%) scale(0)";
     document.getElementById("welcome-page").style.transform = "translate(-50%, -50%) scale(0)";
     setTimeout(() => {document.getElementById("welcome-page").style.display = "none";}, 750);
@@ -1162,7 +1273,7 @@ function ExpandContextView(){
   let sort = document.getElementById('sort-contx');
   let New = document.getElementById('new-contx');
 
-  if(view.style.paddingBottom == '255px'){
+  if(view.style.paddingBottom == '220px'){
     view.style.paddingBottom= '5px';
     document.getElementById('view-optionsCt').style.opacity= '0'
 
@@ -1182,7 +1293,7 @@ function ExpandContextView(){
     document.getElementById('view-optionsCt').style.display= 'grid'
     document.getElementById('sort-more-img').style.transform= 'rotate(0deg)'
     document.getElementById('new-more-img').style.transform= 'rotate(0deg)'
-    view.style.paddingBottom= '255px';
+    view.style.paddingBottom= '220px';
     view.classList.add('activeCnt');
     sort.classList.remove('activeCnt');
     New.classList.remove('activeCnt');
@@ -1231,49 +1342,134 @@ function ExpandContextNew(){
   }
 }
 
-function ShowDeskIcoCtx(){
-  if(document.getElementById('deskIcons').style.display == 'none'){
-    document.getElementById('deskIcons').style.display = 'block';
-    document.getElementById('HideDSK').style.display = 'none';
-  }
-  else{
-    document.getElementById('deskIcons').style.display = 'none';
-    document.getElementById('HideDSK').style.display = 'inline-block';
-  }
-}
-
-function ShowDeskWidgetCtx(){
-  if(document.getElementById('desk-widget').style.display == 'none'){
-    document.getElementById('desk-widget').style.display = 'block';
-    document.getElementById('HideDSKW').style.display = 'none';
-  }
-  else{
-    document.getElementById('desk-widget').style.display = 'none';
-    document.getElementById('HideDSKW').style.display = 'inline-block';
+function toggleVisibilityAndSaveState(elementId) {
+  var element = document.getElementById(elementId);
+  if (element.style.visibility === 'hidden') {
+      element.style.visibility = 'visible';
+      element.style.pointerEvents = 'all';
+      updateLocalStorage(elementId, 'visible');
+  } else {
+      element.style.visibility = 'hidden';
+      element.style.pointerEvents = 'none';
+      updateLocalStorage(elementId, 'hidden');
   }
 }
 
-    dragElementD(document.getElementById("bin"));
-    dragElementD(document.getElementById("myPc"));
-    dragElementD(document.getElementById("files"));
-    dragElementD(document.getElementById("Gallery"));
-    dragElementD(document.getElementById("calculator"));
-    dragElementD(document.getElementById("calendar"));
-    dragElementD(document.getElementById("paint"));
-    dragElementD(document.getElementById("notes"));
-    dragElementD(document.getElementById("snake"));
-    dragElementD(document.getElementById("piano"));
-    dragElementD(document.getElementById("IEditor"));
-    dragElementD(document.getElementById("Browser"));
-    dragElementD(document.getElementById("Camera"));
-    dragElementD(document.getElementById("Document"));
-    dragElementD(document.getElementById("ticTacToe"));
-    dragElementD(document.getElementById("personalizeWindow"));
+// Function to update localStorage array
+function updateLocalStorage(elementId, state) {
+  var displayState = JSON.parse(localStorage.getItem('winR-displayState')) || {};
+  displayState[elementId] = state;
+  localStorage.setItem('winR-displayState', JSON.stringify(displayState));
+}
+
+// Function to restore display states from localStorage on page load
+function restoreDisplayStates() {
+  var displayState = JSON.parse(localStorage.getItem('winR-displayState')) || {};
+  Object.keys(displayState).forEach(function (elementId) {
+      var state = displayState[elementId];
+      var element = document.getElementById(elementId);
+      if (element) {
+          element.style.visibility = state === 'visible' ? 'visible' : 'hidden';
+          element.style.pointerEvents = state === 'visible' ? 'all' : 'none';
+      }
+  });
+}
+
+// Call restoreDisplayStates on page load
+restoreDisplayStates();
+
+// Your existing functions modified to include local storage
+function ShowDeskIcoCtx() {
+  toggleVisibilityAndSaveState('deskIcons');
+}
+
+function TimeWidgetDisplay() {
+  toggleVisibilityAndSaveState('txtH');
+}
+
+function InfoWidgetDisplay() {
+  toggleVisibilityAndSaveState('DeskWidgetInfo');
+}
+
+    dragElement(document.getElementById("files"));
+    dragElement(document.getElementById("Gallery"));
+    dragElement(document.getElementById("calculator"));
+    dragElement(document.getElementById("calendar"));
+    dragElement(document.getElementById("paint"));
+    dragElement(document.getElementById("notes"));
+    dragElement(document.getElementById("snake"));
+    dragElement(document.getElementById("piano"));
+    dragElement(document.getElementById("IEditor"));
+    dragElement(document.getElementById("Browser"));
+    dragElement(document.getElementById("Clock"));
+    dragElement(document.getElementById("Tasks"));
+    dragElement(document.getElementById("Spreadsheet"));
+    dragElement(document.getElementById("Camera"));
+    dragElement(document.getElementById("Document"));
+    dragElement(document.getElementById("cmd"));
+    dragElement(document.getElementById("ticTacToe"));
+    dragElement(document.getElementById("personalizeWindow"));
+    dragElement(document.getElementById("WeatherWindow"));
 
 function dragElementD(elmnt) {
+  // Check if there's a saved position in localStorage
+  if (localStorage.getItem("desktopIconPositions")) {
+    var desktopIconPositions = JSON.parse(localStorage.getItem("desktopIconPositions"));
+    if (desktopIconPositions[elmnt.id]) {
+      elmnt.style.top = desktopIconPositions[elmnt.id].top + "px";
+      elmnt.style.left = desktopIconPositions[elmnt.id].left + "px";
+    }
+  }
+
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;}
-  else {elmnt.onmousedown = dragMouseDown;}
+  elmnt.onmousedown = dragMouseDown
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+    isSelecting = false;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+    // Save the new position in localStorage
+    var desktopIconPositions = JSON.parse(localStorage.getItem("desktopIconPositions")) || {};
+    desktopIconPositions[elmnt.id] = { top: elmnt.offsetTop, left: elmnt.offsetLeft };
+    localStorage.setItem("desktopIconPositions", JSON.stringify(desktopIconPositions));
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+dragElementD(document.getElementById("bin"));
+dragElementD(document.getElementById("myPc"));
+dragElementD(document.getElementById("DeskWidgetInfo"));
+dragElementD(document.getElementById("TimeWidget"));
+dragElementD(document.getElementById("dateWidget"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  }
+  else {
+    elmnt.onmousedown = dragMouseDown;
+  }
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -1306,6 +1502,7 @@ let myDockApps = document.getElementById('myDockApps')
 function TBClassicIco(){
   myDockApps.style.left = "10px";
   startmenu.style.left = "0.95%";
+  document.getElementById('launcherS').style.left = "-0.95%"
   startmenu.style.marginLeft = "0%";
   startmenu.style.transition = "all 1s ease-in-out";
   widgetM.style.left = "2%";
@@ -1330,15 +1527,17 @@ function TBClassicIco(){
 
   desktops.style.top = "10px"
   desktops.style.width = "260px"
-  desktops.style.height = "calc(100% - 188px)"
+  desktops.style.height = "calc(100% - 78px)"
+  desktops.style.display = "block"
+  desktops.classList.remove('tabviewCentered')
   desktops.style.overflowY = "scroll"
-  document.getElementsByClassName('desktop1')[0].style.transform = "translateX(-50%)"
-  document.getElementsByClassName('New')[0].style.transform = 'translateX(-50%)';
-  document.getElementsByClassName('New')[0].style.bottom = 'calc(145px + 50px)';
+  var tbD = "scale(0.7) translateX(12.5rem) translateY(0rem)";
+  document.documentElement.style.setProperty("--tb-desk-transform", tbD);
 }
 function TBCenteredIco(){
   myDockApps.style.left = "50%";
   startmenu.style.left = "50%";
+  document.getElementById('launcherS').style.left = "2.5%"
   startmenu.style.marginLeft = "-2%";
   startmenu.style.transition = "all 1s ease-in-out";
   widgetM.style.left = "50%";
@@ -1363,12 +1562,15 @@ function TBCenteredIco(){
   document.getElementById('checkCenteredIco').classList.add('active')
 
   desktops.style.top = "calc(100% - 262.5px)"
-  desktops.style.width = "97.5%"
-  desktops.style.height = "85px"
+  desktops.style.width = "96.85%"
+  desktops.style.left = "1.5%"
+  desktops.style.height = "192.5px"
+  desktops.style.display = "flex"
+  desktops.style.justifyContent = "center"
+  desktops.classList.add('tabviewCentered')
   desktops.style.overflowY = "hidden"
-  document.getElementsByClassName('desktop1')[0].style.transform = "translateX(-103%)"
-  document.getElementsByClassName('New')[0].style.transform = 'translateX(3%)';
-  document.getElementsByClassName('New')[0].style.bottom = '20px';
+  var tbD = "scale(0.55) translateX(0rem) translateY(-11.5rem)";
+  document.documentElement.style.setProperty("--tb-desk-transform", tbD);
 }
 
 function fun(e){
@@ -1453,10 +1655,10 @@ function tempLockHide(){
     colorPicker.addEventListener("change", function(event) {
       const selectedColor = event.target.value;
       document.documentElement.style.setProperty("--accent-color", selectedColor);
-      localStorage.setItem("accentColor", selectedColor);
+      localStorage.setItem("accentColorWin", selectedColor);
     });
 
-    const storedAccentColor = localStorage.getItem("accentColor");
+    const storedAccentColor = localStorage.getItem("accentColorWin");
     if (storedAccentColor) {
       document.documentElement.style.setProperty("--accent-color", storedAccentColor);
       colorPicker.value = storedAccentColor;
@@ -1467,20 +1669,28 @@ function tempLockHide(){
 document.getElementById("RipenWaves").addEventListener("click", ()=>{
   document.body.style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/RipenWaves2.png')";
   document.getElementById('dstp1Img').src= "../../Global/Assets/Images/backgrounds/RipenWaves2.png";
+  document.getElementById('Desktop').style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/RipenWaves2.png')";
+  document.getElementById('settingsGeneralImg').src= "../../Global/Assets/Images/backgrounds/RipenWaves2.png";
 })
 
 document.getElementById("dream").addEventListener("click", ()=>{
   document.body.style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/dream.jpg')"
   document.getElementById('dstp1Img').src= "../../Global/Assets/Images/backgrounds/dream.jpg";
+  document.getElementById('Desktop').style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/RipenWaves2.png')";
+  document.getElementById('settingsGeneralImg').src= "../../Global/Assets/Images/backgrounds/dream.jpg";
 })
 
 document.getElementById("dreamDark").addEventListener("click", ()=>{
   document.body.style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/dream-dark.jpg')"
   document.getElementById('dstp1Img').src= "../../Global/Assets/Images/backgrounds/dream-dark.jpg";
+  document.getElementById('Desktop').style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/RipenWaves2.png')";
+  document.getElementById('settingsGeneralImg').src= "../../Global/Assets/Images/backgrounds/dream-dark.jpg";
 })
 document.getElementById("dreamDarkAlt").addEventListener("click", ()=>{
 document.body.style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg')"
 document.getElementById('dstp1Img').src= "../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg";
+document.getElementById('Desktop').style.backgroundImage= "url('../../Global/Assets/Images/backgrounds/RipenWaves2.png')";
+document.getElementById('settingsGeneralImg').src= "../../Global/Assets/Images/backgrounds/dream-dark-alt.jpg";
 })
 
 let RGOSUploadedBg = localStorage.getItem('backgroundImage');
@@ -1494,20 +1704,41 @@ else{
   document.getElementById('RipenosUploadedWall').title = "Emperor meme of the entire internet!!!!";
 }
 
+const imageUpload = document.getElementById('WinWallUpload');
+    imageUpload.addEventListener('change', function() {
+      const file = imageUpload.files[0];
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imageUrl = event.target.result;
+        document.body.style.backgroundImage= imageUrl
+        document.getElementById('dstp1Img').src= imageUrl;
+        document.getElementById('Desktop').style.backgroundImage= imageUrl;
+        document.getElementById('settingsGeneralImg').src = imageUrl
+        setBackgroundImageWin(imageUrl);
+      };
+      reader.readAsDataURL(file);
+    });
+
 document.getElementById("RipenosUploadedWall").addEventListener("click", ()=>{
   if(RGOSUploadedBg){
     document.body.style.backgroundImage= `url(${RGOSUploadedBg})`;
     document.getElementById('dstp1Img').src= RGOSUploadedBg;
+    document.getElementById('Desktop').style.backgroundImage= `url(${RGOSUploadedBg})`;
+    document.getElementById('settingsGeneralImg').src= RGOSUploadedBg;
   }
   else{
     document.body.style.backgroundImage= "url('https://cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg')";
     document.getElementById('dstp1Img').src= 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg';
+    document.getElementById('settingsGeneralImg').src = 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg';
+    document.getElementById('Desktop').style.backgroundImage= "url('https://cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg')";
   }
   })
 
 function setBackgroundImageWin(imageUrl) {
-  document.getElementById('desktop1').style.backgroundImage = `url('${imageUrl}')`;
+  document.getElementById('bgM').style.backgroundImage = `url('${imageUrl}')`;
   document.getElementById('dstp1Img').src = `${imageUrl}`;
+  document.getElementById('settingsGeneralImg').src = `${imageUrl}`;
+  document.getElementById('Desktop').style.backgroundImage = `url('${imageUrl}')`;
 
   localStorage.setItem('backgroundImageWin', imageUrl);
 }
@@ -1545,19 +1776,19 @@ imageElement4.addEventListener('click', function() {
 
 function applyTheme(theme) {
   if (theme === "dark") {
-    document.documentElement.style.setProperty("--bg-color", "rgba(14, 14, 14, 0.65)");
+    document.documentElement.style.setProperty("--primary-bg", "rgba(14, 14, 14, 0.5)");
     document.getElementById("glassytheme").classList.remove('active');
     document.getElementById("darktheme").classList.add('active');
     document.getElementById("lighttheme").classList.remove('active');
   }
   else if (theme == "glassy"){
-    document.documentElement.style.setProperty("--bg-color", "rgba(0, 0, 0, 0.3)");
+    document.documentElement.style.setProperty("--primary-bg", "rgba(0, 0, 0, 0.3)");
     document.getElementById("glassytheme").classList.add('active');
     document.getElementById("darktheme").classList.remove('active');
     document.getElementById("lighttheme").classList.remove('active');
   }
    else {
-    document.documentElement.style.setProperty("--bg-color", "rgba(130, 130, 130, 0.25)");
+    document.documentElement.style.setProperty("--primary-bg", "rgba(130, 130, 130, 0.25)");
     document.getElementById("glassytheme").classList.remove('active');
     document.getElementById("darktheme").classList.remove('active');
     document.getElementById("lighttheme").classList.add('active');
@@ -1572,3 +1803,33 @@ function applyTheme(theme) {
   if (selectedTheme) {
     applyTheme(selectedTheme);
   }
+
+  
+  const txtH = document.getElementById('txtH');
+  const slider = document.getElementById('sliderTimeSize');
+
+  function updateTransform() {
+      const value = slider.value;
+      const scale = value / 61
+      txtH.style.transform = `scale(${scale})`;
+
+      localStorage.setItem('WinRipenTimeWidgetSize', JSON.stringify({ sliderValue: value, scale: scale }));
+  }
+
+  const storedData = localStorage.getItem('WinRipenTimeWidgetSize');
+  if (storedData) {
+      const { sliderValue, scale } = JSON.parse(storedData);
+      slider.value = sliderValue;
+      txtH.style.transform = `scale(${scale})`;
+  } else {
+      updateTransform();
+  }
+  
+  slider.addEventListener('input', updateTransform);
+
+  function WinRipenMobileSwitch() {
+    const mobileQuery = window.matchMedia('(max-width: 1060px)');
+    if (mobileQuery.matches) {
+        location.replace("mobile/index.html");
+    }
+}

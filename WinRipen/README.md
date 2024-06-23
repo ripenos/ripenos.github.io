@@ -1,11 +1,12 @@
-<img align="right" width="100" height="100" src="https://github.com/ripenos/ripenos.github.io/assets/120778877/3b6defd5-47b3-4551-83c0-23f29fd12117">
+<img align="right" width="100" height="100" src="Assets/WinRipen-logo.png">
 
 # Windows Ripen
 Windows Ripen Official | An open-sourced concept based on the Windows Operating System | An initiative of the RGOS
 
-### **Check out:** [Windows Ripen](https://ripenos.github.io/WinRipen/)
+### **Check out:** [Windows Ripen v1.3](https://ripenos.github.io/WinRipen/)
 
-![Banner](https://github.com/ripenos/ripenos.github.io/assets/120778877/8c8dfb08-ee00-4abd-a5d6-bd549055d0c7)
+
+ ![22-12-29_21-08-33-554-2](Assets/Banner.png)
 
 ## ⚖️ License
 **MIT License** | Licensed as **Copyright (c) 2022 RipenOS**

@@ -1,214 +1,654 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <title>Files | RGOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>Global Files | RGOS</title>
+    <link rel="stylesheet" href="stylesGlobal.css">
+    <link rel="shortcut icon" href="../../Assets/Images/AppsIcons/Files.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#specialFolders-home").sortable();
+            $("#specialFolders").sortable();
+        })
+    </script>
 </head>
+
 <body>
-    <main>
-        <div class="FileNav" id="FileNavId">
-            <button id="FilesNavBtnClose" 
-            onclick="
-            document.getElementById('Files-body').style.display = 'block';
-            document.getElementById('FilesNavBtn').style.display = 'block';
-            document.getElementById('FileNavId').style.left = '100%';
+    <ul class="menuCard" id="mymenuCard"
+        onmouseleave="setTimeout(() => {document.getElementById('mymenuCard').style.display = 'none'}, 300);">
+        <li onclick="document.getElementById('mymenuCard').style.display = 'none', selectAllMed()">Select All</li>
+        <li onclick="document.getElementById('mymenuCard').style.display = 'none'">Options</li>
+        <hr>
+        <li
+            onclick="document.getElementById('mymenuCard').style.display = 'none', document.getElementById('myAboutWindow').style.transform = 'translate(-50%, -50%) scale(1)'">
+            About</li>
+    </ul>
+
+    <div class="AboutWindow" id="myAboutWindow">
+        <div class="topbar">
+            <h3>About</h3>
+            <div class="closeAbt"
+                onclick="document.getElementById('myAboutWindow').style.transform = 'translate(-50%, -50%) scale(0)'">
+            </div>
+        </div>
+        <CENTER>
+            <img src="../../Assets/Images/AppsIcons/Files.png" alt="">
+            <div>
+                <h3 style="font-size: 25px; margin-top: 5px;">RGOS | Files</h3>
+                <h4>v2.0</h4>
+                <p style="font-size: 20px; margin-bottom: 5px;"><b>What's new:</b></p>
+                <p
+                    style="line-height: 1.75; font-weight: normal; opacity: 0.65; font-size: 15px; padding-bottom: 10px;">
+                    User profile integration,<br> refreshed user interface
+                </p>
+            </div>
+        </CENTER>
+    </div>
+
+    <div class="AboutWindow" id="myTrashWindow">
+        <div class="topbar">
+            <h3>Recycle Bin</h3>
+            <div class="closeAbt"
+                onclick="document.getElementById('myTrashWindow').style.transform = 'translate(-50%, -50%) scale(0)'">
+            </div>
+        </div>
+        <ul id="deletedItems"></ul>
+    </div>
+
+    <div class="AboutWindow" id="myInfoWindow">
+        <div class="topbar">
+            <h3>Properties</h3>
+            <div class="closeAbt"
+                onclick="document.getElementById('myInfoWindow').style.transform = 'translate(-50%, -50%) scale(0)'">
+            </div>
+        </div>
+        <ul id="deletedItems"></ul>
+    </div>
+
+    <nav id="nav">
+        <div id="div1Nav">
+            <h1 id="h1Files" style="display: flex; align-items: center; gap: 2.5px;"><img
+                    src="../../Assets/Images/AppsIcons/no-bg/Files.png" style="width: 35px;">Branches</h1>
+            <span class="material-symbols-rounded" title="Collapse" id="NavBtn" onclick="
+                if(document.getElementById('nav').style.width == '71.5px'){
+                    document.getElementById('nav').style.width = '18.95%'
+                    document.getElementById('h1Files').style.opacity = '1'
+                    this.classList.remove('spanMenubarActive')
+                    this.title = 'Collapse'
+                    document.getElementById('main').style.left = '20%'
+                    document.getElementById('main').style.width = ' calc(100% - 20.85%)'
+                    document.getElementById('storage-stats').style.display = 'block'
+                    document.getElementById('storeageH').style.display = 'block'
+                    document.getElementById('storeico').style.fontSize = '24px';
+                    document.getElementById('storeico').style.marginRight = '0px';
+                    document.getElementById('storageH').style.justifyContent = 'left'
+                }else{
+                    document.getElementById('nav').style.width = '71.5px'
+                    document.getElementById('h1Files').style.opacity = '0'
+                    this.classList.add('spanMenubarActive')
+                    this.title = 'Expand'
+                    document.getElementById('storage-stats').style.display = 'none'
+                    document.getElementById('storeageH').style.display = 'none'
+                    document.getElementById('storageH').style.justifyContent = 'center'
+                    document.getElementById('main').style.left = '100px'
+                    document.getElementById('storeico').style.fontSize = '26px';
+                    document.getElementById('storeico').style.marginRight = '-2.5px';
+                    document.getElementById('main').style.width = ' calc(100% - 113px)'
+                }
             ">
-                <span class="material-symbols-rounded">close</span>
-            </button>
-            <h3 style="margin-left: 10px; margin-bottom: 0px;">Your Files</h3><br>	
-            <div class="tab">
-                <button class="tablinks2" onclick="openCity2(event, 'Recents')" id="defaultOpen2">
-                    <span class="material-symbols-rounded">history</span>
-                    Recent</button>
+                menu
+            </span>
+            <img src="../../Assets/Images/AppsIcons/no-bg/Files.png" style="width: 40px;" id="mobImg">
+            <span class="material-symbols-rounded" id="NavBtnClose" onclick="document.getElementById('nav').style.left = '-100%'">close</span>
+        </div>
+        <ul id="ul">
+            <li id="HomeLi" class="active" onclick="
+            document.getElementById('homePage').style.display = 'block';
+            document.getElementById('galIframe').style.display = 'none';
+            document.getElementById('DesktopPage').style.display = 'none';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'none';
+            document.getElementById('DocPage').style.display = 'none';
+            document.getElementById('MiscPage').style.display = 'none';
+            document.getElementById('homeSearch').placeholder = 'Search all files and folders'
+            document.getElementById('contH1').innerText = 'Home';
+            document.getElementById('HomeLi').classList.add('active');
+            document.getElementById('GalLi').classList.remove('active');
+            document.getElementById('DocLi').classList.remove('active');
+            document.getElementById('DeskLi').classList.remove('active');
+            document.getElementById('ImageLi').classList.remove('active');
+            document.getElementById('VidLi').classList.remove('active');
+            document.getElementById('MusLi').classList.remove('active');
+            document.getElementById('CodesLi').classList.remove('active');
+            ">
+                <span class="material-symbols-rounded">
+                    home
+                </span>
+                <p id="navP">Home</p>
+            </li>
+            <li id="GalLi" onclick="
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('galIframe').style.display = 'block';
+            document.getElementById('DesktopPage').style.display = 'none';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'none';
+            document.getElementById('DocPage').style.display = 'none';
+            document.getElementById('MiscPage').style.display = 'none';
+            document.getElementById('homeSearch').placeholder = 'Search you Gallery'
+            document.getElementById('contH1').innerText = 'Gallery';
+            document.getElementById('HomeLi').classList.remove('active');
+            document.getElementById('GalLi').classList.add('active');
+            document.getElementById('DocLi').classList.remove('active');
+            document.getElementById('ImageLi').classList.remove('active');
+            document.getElementById('DeskLi').classList.remove('active');
+            document.getElementById('VidLi').classList.remove('active');
+            document.getElementById('MusLi').classList.remove('active');
+            document.getElementById('CodesLi').classList.remove('active');
+            "><span class="material-symbols-rounded">
+                    gallery_thumbnail
+                </span>
+                <p id="navP">Gallery</p>
+            </li>
+            <hr>
+            <div id="ulM" style="display: block; margin: 0;">
+                <li id="DeskLi" onclick="
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('galIframe').style.display = 'none';
+            document.getElementById('DesktopPage').style.display = 'block';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'none';
+            document.getElementById('DocPage').style.display = 'none';
+            document.getElementById('MiscPage').style.display = 'none';
+            document.getElementById('homeSearch').placeholder = 'Search your Desktop'
+            document.getElementById('contH1').innerText = 'Desktop';
+            document.getElementById('DesktopPage-WR').classList.remove('active')
+            document.getElementById('DesktopPage-ROS').classList.remove('active')
+            document.getElementById('desktopList').style.display = 'inline-table'
+            document.getElementById('HomeLi').classList.remove('active');
+            document.getElementById('GalLi').classList.remove('active');
+            document.getElementById('DeskLi').classList.add('active');
+            document.getElementById('DocLi').classList.remove('active');
+            document.getElementById('ImageLi').classList.remove('active');
+            document.getElementById('VidLi').classList.remove('active');
+            document.getElementById('MusLi').classList.remove('active');
+            document.getElementById('CodesLi').classList.remove('active');
+            "><span class="material-symbols-rounded">
+                        computer
+                    </span>
+                    <p id="navP">Desktop</p>
+                </li>
 
-                <button class="tablinks2" onclick="openCity2(event, 'Docs')">
-                    <span class="material-symbols-rounded" >description</span>
-                    Documents</button>
+                <li id="ImageLi" onclick="
+                    document.getElementById('homePage').style.display = 'none';
+                    document.getElementById('galIframe').style.display = 'none';
+                    document.getElementById('homeSearch').placeholder = 'Search all Pictures'
+                    document.getElementById('DesktopPage').style.display = 'none';
+                    document.getElementById('PicPage').style.display = 'block';
+                    document.getElementById('VidPage').style.display = 'none';
+                    document.getElementById('AudPage').style.display = 'none';
+                    document.getElementById('DocPage').style.display = 'none';
+                    document.getElementById('MiscPage').style.display = 'none';
 
-                <button class="tablinks2" onclick="openCity2(event, 'Pics')">
-                    <span class="material-symbols-rounded">
+                    document.getElementById('contH1').innerText = 'Pictures';
+
+                    document.getElementById('HomeLi').classList.remove('active');
+                    document.getElementById('GalLi').classList.remove('active');
+                    document.getElementById('DocLi').classList.remove('active');
+                    document.getElementById('ImageLi').classList.add('active');
+                    document.getElementById('DeskLi').classList.remove('active');
+                    document.getElementById('VidLi').classList.remove('active');
+                    document.getElementById('MusLi').classList.remove('active');
+                    document.getElementById('CodesLi').classList.remove('active');
+                    "><span class="material-symbols-rounded">
                         image
                     </span>
-                    Pictures</button>
+                    <p id="navP">Pictures</p>
+                </li>
+                <li id="VidLi" onclick="
+                    document.getElementById('homePage').style.display = 'none';
+                    document.getElementById('galIframe').style.display = 'none';
+                    document.getElementById('homeSearch').placeholder = 'Search all Videos'     
+                    document.getElementById('DesktopPage').style.display = 'none';
+                    document.getElementById('PicPage').style.display = 'none';
+                    document.getElementById('VidPage').style.display = 'block';
+                    document.getElementById('AudPage').style.display = 'none';
+                    document.getElementById('DocPage').style.display = 'none';
+                    document.getElementById('MiscPage').style.display = 'none';
 
-                <button class="tablinks2" onclick="openCity2(event, 'Downloads')">
-                    <span class="material-symbols-rounded">download</span>
-                    Downloads</button>
+                    document.getElementById('contH1').innerText = 'Videos';
 
-                <button class="tablinks2" onclick="openCity2(event, 'Bin')">
-                    <span class="material-symbols-rounded">delete</span>
-                    Recycle Bin</button>
+                    document.getElementById('HomeLi').classList.remove('active');
+                    document.getElementById('GalLi').classList.remove('active');
+                    document.getElementById('DocLi').classList.remove('active');
+                    document.getElementById('ImageLi').classList.remove('active');
+                    document.getElementById('DeskLi').classList.remove('active');
+                    document.getElementById('VidLi').classList.add('active');
+                    document.getElementById('MusLi').classList.remove('active');
+                    document.getElementById('CodesLi').classList.remove('active');
+                    "><span class="material-symbols-rounded">
+                        movie
+                    </span>
+                    <p id="navP">Videos</p>
+                </li>
+                <li id="MusLi" onclick="
+                    document.getElementById('homePage').style.display = 'none';
+                    document.getElementById('galIframe').style.display = 'none';
+                    document.getElementById('homeSearch').placeholder = 'Search all Audios' 
+            document.getElementById('DesktopPage').style.display = 'none';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'block';
+            document.getElementById('DocPage').style.display = 'none';
+            document.getElementById('MiscPage').style.display = 'none';
 
-                <center><hr style="width: 90%; border-bottom: 0.5px solid rgba(83, 83, 83, 0.25); margin-top: 10px ;margin-bottom: 10px"></center>
+                    document.getElementById('contH1').innerText = 'Audios';
 
-                <button class="tablinks2" onclick="openCity2(event, 'ThisPC')">
-                    <span class="material-symbols-rounded" >storage</span>
-                    Storage</button>
+                    document.getElementById('HomeLi').classList.remove('active');
+                    document.getElementById('GalLi').classList.remove('active');
+                    document.getElementById('DocLi').classList.remove('active');
+                    document.getElementById('DeskLi').classList.remove('active');
+                    document.getElementById('ImageLi').classList.remove('active');
+                    document.getElementById('VidLi').classList.remove('active');
+                    document.getElementById('MusLi').classList.add('active');
+                    document.getElementById('CodesLi').classList.remove('active');
+                    "><span class="material-symbols-rounded">
+                        music_note
+                    </span>
+                    <p id="navP">Audios</p>
+                </li>
+                <li id="DocLi" onclick="
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('galIframe').style.display = 'none';
+            document.getElementById('homeSearch').placeholder = 'Search all Documents' 
+            document.getElementById('DesktopPage').style.display = 'none';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'none';
+            document.getElementById('DocPage').style.display = 'block';
+            document.getElementById('MiscPage').style.display = 'none';
+
+            document.getElementById('contH1').innerText = 'Documents';
+
+            document.getElementById('HomeLi').classList.remove('active');
+            document.getElementById('GalLi').classList.remove('active');
+            document.getElementById('DocLi').classList.add('active');
+            document.getElementById('ImageLi').classList.remove('active');
+            document.getElementById('VidLi').classList.remove('active');
+            document.getElementById('MusLi').classList.remove('active');
+            document.getElementById('DeskLi').classList.remove('active');
+            document.getElementById('CodesLi').classList.remove('active');
+            "><span class="material-symbols-rounded">
+                        description
+                    </span>
+                    <p id="navP">Documents</p>
+                </li>
+                <li id="CodesLi" onclick="
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('galIframe').style.display = 'none';
+            document.getElementById('homeSearch').placeholder = 'Search all miscellaneous files' 
+            document.getElementById('DesktopPage').style.display = 'none';
+            document.getElementById('PicPage').style.display = 'none';
+            document.getElementById('VidPage').style.display = 'none';
+            document.getElementById('AudPage').style.display = 'none';
+            document.getElementById('DocPage').style.display = 'none';
+            document.getElementById('MiscPage').style.display = 'block';
+
+            document.getElementById('contH1').innerText = 'Miscellaneous';
+
+            document.getElementById('HomeLi').classList.remove('active');
+            document.getElementById('GalLi').classList.remove('active');
+            document.getElementById('DocLi').classList.remove('active');
+            document.getElementById('ImageLi').classList.remove('active');
+            document.getElementById('DeskLi').classList.remove('active');
+            document.getElementById('VidLi').classList.remove('active');
+            document.getElementById('MusLi').classList.remove('active');
+            document.getElementById('CodesLi').classList.add('active');
+            "><span class="material-symbols-rounded">
+                        inventory_2
+                    </span>
+                    <p id="navP">Miscellaneous</p>
+                </li>
+            </div>
+            <hr>
+            <li onclick="document.getElementById('myTrashWindow').style.transform = 'translate(-50%, -50%) scale(1)'">
+                <span class="material-symbols-rounded">
+                    delete
+                </span>
+                <p id="navP">Recycle Bin</p>
+            </li>
+        </ul>
+
+        <div class="Storage">
+            <div id="storageH">
+                <span class="material-symbols-rounded" id="storeico" style="transition: all 0.3s;">storage</span>
+                <h3 style="font-weight: 500;" id="storeageH">Storage</h3>
+            </div>
+            <p id="storage-stats">12GB out of 100GB</p>
+            <div id="storageFull">
+                <div id="storageUsed"></div>
             </div>
         </div>
-        <button id="FilesNavBtn" 
-        onclick="
-        document.getElementById('Files-body').style.display = 'none';
-        document.getElementById('FileNavId').style.left = '0%';
-        document.getElementById('FilesNavBtn').style.display = 'none';
-        ">
-            <span class="material-symbols-rounded">menu</span>
-        </button>
-        <div id="Files-body">
-            <div id="Toolbar">
-                <span id="tools" style="padding: 10px 2.5px 5px 10px;">
-                    <span class="material-symbols-rounded" style="font-size: 20px;">add_circle</span>
+    </nav>
+
+    <main id="main">
+        <div style="display: flex; gap: 5px; align-items: center; width: 100%; overflow: visible;">
+            <h1 style="opacity: 0.5; font-size: 27.5px;" id="contH1">Home</h1>
+            <span class="material-symbols-rounded tools" id="tools-ref" onclick="refreshPage('Pages');
+            this.classList.add('rotateClass');
+            setTimeout(() => {
+                this.classList.remove('rotateClass');
+            }, 500);
+            " style="font-size: 22.5px;">refresh</span>
+            <div style="display: flex; width: 100%; align-items: center;">
+                <img class="searchIco"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHklEQVR4nO2YS0sDMRSFU7upz24U3Kl7a1EpxT+ggqu6Fx8bXVlxUSviCykudFOd//tJMOJ4zWBtb9oO5EAonTbnnjvJfSTGREREROQWwDRQB06AFtABuu6z5Z7b36fMOAFYcOLegKSHYf93DMyPWngR2HdvOelj2HkNyzOq7XLep3A5LoHZYYqfAe4zxFwB28ASUHarVHbfd4B2xjzLNzMM8VbQhUfALVDpkaMC3Hk4msG3k9vz0vApUPonTwk483A1Qmebrkd8oU++gseJbrDs5FKl3DalATlLnng60lP9M+vIPL+qxL3mqRPTGtxpI3WZbZT5ZXaqhd4+28r8NsWm+U+MsoGWMLCkzL8s48soG+gIA6qV0xW7JDVejbIBmT6LAQpkkg7k0CtQDrwCz3mPgZvQWWhHmX9X8B/mpg64luJa8G9p8X8ZmfJU4ooSd9XTD81pcP+1je4UeqFJ4EHwHuip/mlsXrkbnXDz5dtf1Ff/bbTh6eHP+jgPTHrEJ8BeMPGpgtPMOBKu9RiwVc+2+Rr1oA70cCZuu8ZsWZyJV9xzmW3keAM283Yr4XOiNgwnii4mBrkX2nM1Rqbo4axEKjsd/eNmzgo/SGcbK5ZROpEqdjVXL+x5+QV4t42Z7W1se2ArbFaRYhycGBTAeoYT4WNCC0QnxgRkx8SfBXNsAGx4nHgyeQK/neiYvIHP27tH+/a1ziERERERRh0fvlFh9WEx84cAAAAASUVORK5CYII=">
+                <input type="search" name="home-search" id="homeSearch" class="search"
+                    placeholder="Search all files and folders">
+            </div>
+            <img src="../../../Ripenos/Assets/UI/icons8-male-user-96.png" id="userImg">
+            <span class="material-symbols-rounded tools" id="tools-menu" style="font-size: 22.5px;"
+                onclick="document.getElementById('mymenuCard').style.display = 'grid'">menu</span>
+        </div>
+        <div id="Cont">
+            <div class="toolBar" id="ToolbarHome">
+                <span class="material-symbols-rounded tools "
+                onclick="document.getElementById('nav').style.left = '7.5px'" style="font-size: 20px;"
+                    id="tools-back">menu_open</span>
+                <div id="dived1" class="devider-toolbar"></div>
+                <span id="tools-ne" class=" tools disabled" style="padding: 4px 7.5px 4px 7.5px;">
+                    <span class="material-symbols-rounded" style="font-size: 18px;">add_circle</span>
                     <p>New</p>
-                    <span class="material-symbols-rounded" id="arrow">arrow_drop_down</span>
+                    <span class="material-symbols-rounded" id="arrow">expand_more</span>
                 </span>
                 <div class="devider-toolbar"></div>
-        
-                <span class="material-symbols-rounded" style="font-size: 19px; margin-left: 15px;" id="tools">content_cut</span>
-                <span class="material-symbols-rounded" style="font-size: 19px; " id="tools">content_copy</span>
-                <span class="material-symbols-rounded" style="font-size: 19px;" id="tools">content_paste</span>
-                <span id="tools"><img src="Assets/rename.png" width="21px" style="padding: 0;"></span>
-                <span id="tools"><img src="Assets/share.png" width="19px" style="padding: 0;"></span>
-                <span class="material-symbols-rounded" style="font-size: 20px; margin-top: 5px;" id="tools">delete</span>
-                <span class="material-symbols-rounded" style="font-size: 21px;" id="tools">info</span>
 
-                <div class="devider-toolbar" style="margin-right: 20px;"></div>
+                <span class="material-symbols-rounded tools  disabled" id="tools-cut">content_cut</span>
+                <span class="material-symbols-rounded tools  disabled" id="tools-copy">content_copy</span>
+                <span class="material-symbols-rounded tools  disabled" id="tools-paste">content_paste</span>
+                <span class="material-symbols-rounded tools " id="tools-share">share</span>
+                <span class="material-symbols-rounded tools  disabled" style="font-size: 20px;"
+                    id="tools-del">delete</span>
+                <span class="material-symbols-rounded tools" id="tools-prop"
+                    onclick="document.getElementById('myInfoWindow').style.transform = 'translate(-50%, -50%) scale(1)'">info</span>
 
-                <span id="tools" style="padding: 10px 2.5px 5px 10px;">
-                    <span class="material-symbols-rounded" style="font-size: 20px;">sort</span>
-                    <p>Sort</p>
-                    <span class="material-symbols-rounded"class="google-fonts-icon" id="arrow">arrow_drop_down</span>
-                </span>
-                <div class="devider-toolbar"  style="margin-right: 20px;"></div>
+                <div class="devider-toolbar"></div>
 
-                <span id="tools" style="padding: 10px 2.5px 5px 10px;">
-                    <span class="material-symbols-rounded" style="font-size: 20px;">grid_view</span>
+                <span id="tools-view" class=" tools" style="padding: 4px 7.5px 4px 7.5px;">
+                    <span class="material-symbols-rounded" style="font-size: 18px;">grid_view</span>
                     <p>View</p>
-                    <span class="material-symbols-rounded"class="google-fonts-icon" id="arrow">arrow_drop_down</span>
+                    <span class="material-symbols-rounded" id="arrow">expand_more</span>
                 </span>
             </div>
-            
-            <!--Content-->
-            <div class="folders">
-                <div id="Recents" class="tabcontent2">
-                    <div>
-                        <h4 style="margin-bottom: 10px;">Folders</h4>
-                        <CENTER>
-                            <div style="float: left;"><div class="FIleFolders">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACwklEQVR4nO2VX0hTURzH70MP1nP0Yiwo9yftn4mYZRGR+dBLJCkF/WGxIlgESVRIURBk25qpRf4ZudAX26zMTQ2jVfvrVSlCwZaVSRaRoyyil9g37sLBtnu7d9jZvdT5wvfhHM49v+/n3N89l2GoqKioqKiShDZmMVoZB+zMV9gZSHIrc45RTHg7E5EcXGkQ+H3y6YdXCgTSaRslQoAL0D4PeJANhDQAq5PXIU0UHtUU3ItKpQFw4YNq+YOzSQ6qo3AtLBAH4E5e7rCsgD2qSXEAJbQNK/QWNFFxALlDsn82BcC/9AaanWeQbx3FMtNbbK4PwdpxEZ98xbxrf7J5GOjfhdNtjdhwZQhLL00i//IIWpzV8gA0Oc9CVTOV4iU177DS8iLFatMb3vWqminYOqszC/A5UAit+bVgoHStM7/CTKAgcwDXHOcTAjwdG49ZauBh1zoMuYoT5rh2zBjA1gb/nAAedZXC01WWMFfW4M0MwLS/ONbnfMHFQKrcRhzvORof+3buhbd8X/zbifiLyAP0uA4JBhYDMHafgPHeyfi4r+IweiuPxMe9bgN5AO6qTA6Wbgtl6R3I0jtT5utuXSAPYGxtnzPAfMNdLDB0pcwfs9vJA+y43v/Xrk9Vkssb+8gDlNQNEgPYVD9IHoD7qwoF4G6SPc3dONXWxOuqmzdQVPtM8PlVljHyADmmCd7iKyxh+O7vFg3wPbgG+213ePfIMU2QB1hufplSeK11BKMPt4sWn/WP0GpUNrpT9uH2Jg5woOV2QtHC2ucY92yTHH7W3wIFKLv6JGEvvc1JHuC9d2OsUK4lHLs1Jh5vSTv8rD9616OiqQd5ljAO2hz44C0hDyC3GQkAM3KHhJAHdF/EAQa0nQoGcEgA0GnAaqdlD8smWxvBcG6OKEAMIqDOBqvrUEg7zXAnLzk8FRUVFdV/pV8TUApDE2zjygAAAABJRU5ErkJggg=="><br>Games
-                            </div>
-                            <div class="FIleFolders">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABM0lEQVR4nO2WvUoDQRSFb+EjSJpIquwPtr6CvonPoK1vkgUFkWDnYgohnZtcSG0jQgI2YsAIprDYI6sIsrDMJAPOhJwPTrucb+buzIgQQgghNXAue+hJH5m8IxNYpSdnEkz5TObWxUOTwM/Kr14+FAmsMjYhSqAqcLED3LWBUQxo6jejuMSw84y8dWQnUJUvIv/FtZYiKnGze2AWqFbed1ltyLAzMwuEMDbatAtxaRZY48PH+dIqJ4MnvBSHThLiU+Dy4dNZQnwKTD9KZwnxLeAqISEIuEhIKAK/Eqe3j5sj0BRQ4A/cgZwjBP7E4Cm05DEKXmTKmxh8SuiWPuYW60j8S8bpm1lgnFwHLNC3EEhjaPLqvazWk8wx2e8aBb4l7qM2NL0KZJwW1cpblyeEELJVfAExoZxfe8Ba7gAAAABJRU5ErkJggg=="><br>Documents
-                            </div>
-                            <div class="FIleFolders">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACNklEQVR4nO2WT0sbQRyGJ5pW9FAFWxVso7Zmd+nVz9BvU609tCi1/mk9tj30UkXEtPaioVBQQcEiSDHJQr9EwVsl2egmasy+ZaaJrbuJO/FPZpbOCy+EgYHnmf3NbghRUVFRUVFxBYvkLhZIHDGSRYyAqwtkkkgDHyN73OCySeDPydcOL4sEahkbGSVAAT6Hgc1uIKkBpiG2Sc3BVmQXax2P+AQofCIqHtx0NRF1sHp7wF+AnrxoWLNKtyI//QVkGBuz2lPQHH8B0ZDm+ZVHIKnjONaO3HSYlf6ma4ERoMD2GDlTJhEUAXrqtksg9zoccIFp0QKpUi86Qh8Fj9Dhp04cLnYG8xIXvz1A5mkDMsMNKG7ev7bRI9cikDKw/6oF6ceEdX+qmXuUIINAfv7OKXy5dC0QAicbfUgPhTwCdO1kvVdygYSO7MsmL3yp2RdNcBKVL6az3c8qVCD3ob0qfLm5mQqvxqSO/LsW5N82s0MQIlBY60F68Hx41kGCwkrkzN6jubbTd//RbGv9BZwdDdboTX/4Uq2RG2wPE1/u8nzACvGu+grY79u44cule4obPbAnQh4BezyE4nqkPgKFr/f4RsfVzBMCe6rRCz/2948cz6W+lIDzPQrrebhmePZxG6kMbv9Tnkt9KYGDN7cuBv/MH97mvNRXcgdElnAIWKIhUa0pI+MvkNK/SCwQ5xAwNJj6L+Gwprv6Hn487PcVYBI70W6YxpIk42TRk+eGV1FRUVH5r/Ibt/8InnYucwYAAAAASUVORK5CYII="><br>Pictures
-                            </div>
-                            <div class="FIleFolders">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABk0lEQVR4nO2Wv0vDQBiGv8E/QUWpdBCTHsVJO7iJg6sI+i+0FV0ExU2og5vgKogmoEspxcUfiKVVEdseuDs4CW4GrZsIfSUqUlNCUojNlX4PvOvlfe6+u5aIYRiGYRzggIZgUA4mvcEk+IpBGVKmvEmW7+KqSeB751svr4oEWhkbFSVgFzjsAQoRoKIDUoSbil5HKfqEk/5pfwJ2+bIWfnHpSFmr47h33FvA3vmwy0qXlKKP3gIqjI10OwW97i0Q0Mf6kpd/EtS6xAIy3DEiPgHZJXcAPEKC7wD4dyDZQZf44WIS2tJp0+vjzPDiGe7Pp9QTgBS4OprFYKroWn4gVUQhP6/mCeAne8aCq8C+mVZ3hNCQte2NpvLLW5tq3wE05KMax1xm57f8zPou3sujnSMAKfByM4aJ1SwSKzlY14lA1kS7/0rYL5OdINekdgr8RyhIAa8332/AAg1AilrYYwK3VMUreYFqLK+wQM6HgNAhY8+hl5XOxCzcxUc8Bb4kbrUIpMgqMk41e+d9l2cYhmG6ik8TmyQ3YnksdwAAAABJRU5ErkJggg=="  ><br>Downloads
-                            </div>
+            <div id="Pages">
+                <div class="page active" id="homePage">
+                    <div class="cont" id="HomeCont">
+                        <div class="PinnedSectionHome">
+                            <span class=" tools" style="padding: 4px 7.5px 4px 7.5px; width: fit-content;" onclick="
+                                if(document.getElementById('specialFolders-home').style.height == '0px'){
+                                    document.getElementById('specialFolders-home').style.height = 'auto'
+                                    document.getElementById('arrow-specialFolders-home').style.transform = 'rotate(0deg)'
+                                }else{
+                                    document.getElementById('specialFolders-home').style.height = '0px'
+                                    document.getElementById('arrow-specialFolders-home').style.transform = 'rotate(180deg)'
+                                }
+                            ">
+                                <span class="material-symbols-rounded"
+                                    style="font-size: 23.5px; margin-right: 5px; color: rgb(255, 136, 0);">history</span>
+                                <h4 style="opacity: 0.5;">Recent branches</h4>
+                                <span class="material-symbols-rounded" id="arrow-specialFolders-home">expand_more</span>
+                            </span>
+                            <ul id="specialFolders-home">
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-1">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Saved Photos</h5>
+                                    <p>Node: Pictues</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-2">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Camera roll</h5>
+                                    <p>Node: Videos</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-3">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Gaming</h5>
+                                    <p class="nodeMiscHomeTab">Node: Miscellaneous</p>
+                                    <p class="nodeMiscHomeTab2">Node: Misc</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-4">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Screenshots</h5>
+                                    <p>Node: Pictues</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-5">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Downloads</h5>
+                                    <p class="nodeMiscHomeTab">Node: Miscellaneous</p>
+                                    <p class="nodeMiscHomeTab2">Node: Misc</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-6">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Libraries</h5>
+                                    <p>Node: Music</p>
+                                </li>
+                            </ul>
                         </div>
-                        </CENTER>
+                        <br>
+                        <div class="FavSectionHome">
+                            <span class=" tools" style="padding: 4px 7.5px 4px 7.5px; width: fit-content;" onclick="
+                                if(document.getElementById('specialFolders').style.height == '0px'){
+                                    document.getElementById('specialFolders').style.height = 'auto'
+                                    document.getElementById('arrow-favFolders-home').style.transform = 'rotate(0deg)'
+                                }else{
+                                    document.getElementById('specialFolders').style.height = '0px'
+                                    document.getElementById('arrow-favFolders-home').style.transform = 'rotate(180deg)'
+                                }
+                            ">
+                                <span class="material-symbols-rounded"
+                                    style="font-size: 23.5px; margin-right: 5px; color: rgb(255, 136, 0);">kid_star</span>
+                                <h4 style="opacity: 0.5;">Favorite branches</h4>
+                                <span class="material-symbols-rounded" id="arrow-favFolders-home">expand_more</span>
+                            </span>
+                            <ul id="specialFolders">
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-7">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Wallpapers</h5>
+                                    <p>Node: Pictues</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-8">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Movies</h5>
+                                    <p>Node: Videos</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-9">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>Quick Notes</h5>
+                                    <p>Node: Documents</p>
+                                </li>
+                                <li class="itemCont inTbl">
+                                    <input type="checkbox" name="" class="checkbox" id="itemContCBox-10">
+                                    <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                                    <h5>User assets</h5>
+                                    <p>Node: Pictues</p>
+                                </li>
+                            </ul>
+                        </div><br>
                     </div>
-                    <div id="DrivesRecent">
-                        <h4 style="margin-bottom: 10px;">Drives</h4>
-                        <CENTER>
-                            <div style="float: left;">
-                                <div class="FIleFolders" style="width: 225px;" id="drives">
-                                    <img src="https://img.icons8.com/color/48/null/ssd.png" alt="C:">
-                                    <div class="DriveDetails">
-                                        <div>RipeDisk (System)</div>
-                                        <div class="DriveSpace"><div class="Occupied"></div></div>
-                                        <p style="font-size: 11px;">437 GB free of 512 GB</p>
-                                    </div>
-                                </div>
-                                <div class="FIleFolders" style="width: 225px;" id="drives">
-                                    <img src="https://img.icons8.com/color/48/null/ssd.png" alt="C:">
-                                    <div class="DriveDetails">
-                                        <div>RipeDisk (Personal)</div>
-                                        <div class="DriveSpace"><div class="Occupied" id="PersonalD"></div></div>
-                                        <p style="font-size: 11px;">292 GB free of 512 GB</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </CENTER>
+                </div>
+                <div class="page" id="DesktopPage" style="margin-top: 15px;">
+                    <div style="display: inline-table;" id="desktopList">
+                        <ul>
+                            <li class="itemCont inTbl"
+                                onclick="document.getElementById('DesktopPage-ROS').classList.add('active'), document.getElementById('desktopList').style.display = 'none'">
+                                <img src="../../Assets/Images/RGOS-family/ripenos-desktop.png" alt="">
+                                <h5>Ripen OS</h5>
+                                <p>Desktop</p>
+                            </li>
+                            <li class="itemCont inTbl"
+                                onclick="document.getElementById('DesktopPage-WR').classList.add('active'), document.getElementById('desktopList').style.display = 'none'">
+                                <img src="../../Assets/Images/RGOS-family/windowsRipen-desktop.png" alt="">
+                                <h5>Windows Ripen</h5>
+                                <p>Desktop</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="desktopPages" id="DesktopPage-ROS">
+                        <p id="desktopBrnchNoItmsP">No items are uploaded on the Desktop.</p>
+                    </div>
+                    <div class="desktopPages" id="DesktopPage-WR">
+                        <p id="desktopBrnchNoItmsP">No items are uploaded on the Desktop.</p>
                     </div>
                 </div>
+                <div class="page" id="PicPage" style="margin-top: 15px;">
+                    <ul>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-1">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Saved Photos</h5>
+                            <p>Items: 4</p>
+                        </li>
 
-                <div id="Docs" class="tabcontent2">
-                    <CENTER>
-                        <div style="float: left; margin-top: 10px;"><div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Adobe
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Attachments
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Codes
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>FeedbackHub
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Office Docs
-                        </div>
-                    </div>
-                    </CENTER>
-                </div>
-                  
-                <div id="Pics" class="tabcontent2">
-                    <CENTER style="margin-top: 10px;">
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Camera Roll
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Saved Pics
-                        </div>
-                        <div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>Screenshots
-                        </div>
-                </div>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-4">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Screenshots</h5>
+                            <p>Items: 1</p>
+                        </li>
 
-                <div id="Downloads" class="tabcontent2">
-                    <CENTER>
-                        <div style="float: left; margin-top: 10px;"><div class="FIleFolders">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVR4nO2VMWrDQBBFp8gRQhoFV5a0pM0Zci/fRAK7CcJd0gXcRfKALxFIZ4OdA+gbxZ1A3nU1A/4Pfv/f7OyuCCGEEDICS3lGJQ1q+UMtSEolC3FTvpZDcnFvErhM/vbyXiRwy9p4lMBQYPUAfGVAVwAabNMVPTazX3w+vaUJDOXb3L64jtLmPT4eX+MCw+Sty+pENrOfuICHtdGpUyj6uIB1Sb0eCoAnELhCV7FeEfASq/2UwWdU7ScNfmTqMxLDuiAooPZTBldI7ScNXmL1GbmHZ/RkXRJT2YZjXGBbrh0LNAkCoYCWe/OyOk55wO5lHhX4l/jOM2h4d7JOp2HyyeUJIYTcFWcLXG7i+rfwxwAAAABJRU5ErkJggg==" width="45px"><br>GTA5 Bundle
-                        </div>
-                    </div>
-                    </CENTER>
-                </div>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-7">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Wallpapers</h5>
+                            <p>Items: 5</p>
+                        </li>
 
-                <div id="Bin" class="tabcontent2">
-                    <center style="margin-top: 10px;"><p>This Folder is Empty.</p></center>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-10">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>User assets</h5>
+                            <p>Items: 1</p>
+                        </li>
+                    </ul>
                 </div>
+                <div class="page" id="VidPage" style="margin-top: 15px;">
+                    <ul>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-2">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Camera roll</h5>
+                            <p>Items: 0</p>
+                        </li>
 
-                <div id="ThisPC" class="tabcontent2">
-                        <h4 style="margin-bottom: 10px;">Drives</h4>
-                        <CENTER>
-                            <div style="float: left;">
-                                <div class="FIleFolders" style="width: 225px;" id="drives">
-                                    <img src="https://img.icons8.com/color/48/null/ssd.png" alt="C:">
-                                    <div class="DriveDetails">
-                                        <div>RipeDisk (System)</div>
-                                        <div class="DriveSpace"><div class="Occupied"></div></div>
-                                        <p style="font-size: 11px;">437 GB free of 512 GB</p>
-                                    </div>
-                                </div>
-                                <div class="FIleFolders" style="width: 225px;" id="drives">
-                                    <img src="https://img.icons8.com/color/48/null/ssd.png" alt="C:">
-                                    <div class="DriveDetails">
-                                        <div>RipeDisk (Personal)</div>
-                                        <div class="DriveSpace"><div class="Occupied" id="PersonalD"></div></div>
-                                        <p style="font-size: 11px;">292 GB free of 512 GB</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </CENTER>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-8">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Movies</h5>
+                            <p>Items: 1</p>
+                        </li>
+                    </ul>
                 </div>
+                <div class="page" id="AudPage" style="margin-top: 15px;">
+                    <ul>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-6">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Libraries</h5>
+                            <p>Items: 6</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page" id="DocPage" style="margin-top: 15px;">
+                    <ul>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-9">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Quick Notes</h5>
+                            <p>Items: 0</p>
+                        </li>
+
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-9">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>PDFs</h5>
+                            <p>Items: 1</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page" id="MiscPage" style="margin-top: 15px;">
+                    <ul>
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-3">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Gaming</h5>
+                            <p>Items: 0</p>
+                        </li>
+
+                        <li class="itemCont inTbl">
+                            <input type="checkbox" name="" class="checkbox" id="itemContCBox-5">
+                            <img src="../../Assets/Images/RGOS-family/rgos-branches.png" alt="">
+                            <h5>Downloads</h5>
+                            <p>Items: 0</p>
+                        </li>
+                    </ul>
+                </div>
+                <iframe id="galIframe" src="gallery.html" frameborder="0"></iframe>
             </div>
         </div>
+        <script>
+
+            const userPfpWin = localStorage.getItem('UserPfp');
+            if (userPfpWin) {
+                document.getElementById('userImg').src = userPfpWin;
+            }
+            else {
+                document.getElementById('userImg').src = '../../../Ripenos/Assets/UI/icons8-male-user-96.png';
+            }
+
+            const savedTextValue = localStorage.getItem('UserPreviewName');
+            if (savedTextValue) {
+                document.getElementById('userImg').title = savedTextValue
+            }
+            else {
+                document.getElementById('userImg').title = "Admin"
+            }
+
+            function refreshPage(page) {
+                const cont = document.getElementById(page);
+                cont.style.opacity = "0"
+                cont.style.scale = "0.97"
+                setTimeout(() => {
+                    cont.style.opacity = "1"
+                    cont.style.scale = "1"
+                }, 750);
+            }
+
+            function selectAllMed() {
+                const checkboxes = document.querySelectorAll('#HomeCont .checkbox');
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = true;
+                });
+            }
+
+        </script>
     </main>
-    <script src="sketch.js"></script>
 </body>
+
 </html>

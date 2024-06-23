@@ -1,0 +1,1279 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>RGOS | Store</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+
+        ::-webkit-scrollbar {
+            --scroll: rgb(255 255 255 / 80%);
+            --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(0 0 0 / 50%)'/%3E%3C/svg%3E");
+            width: 14px;
+            height: 14px;
+            border-radius: 7px;
+            transition: all 0.3s;
+        }
+
+        ::-webkit-scrollbar:vertical:hover {
+            background: var(--scrollbar-bottom-btn) 0% calc(100% - 3px) / contain no-repeat,
+                var(--scrollbar-top-btn) 0% calc(0% + 3px) / contain no-repeat,
+                var(--scroll);
+        }
+
+        ::-webkit-scrollbar:horizontal:hover {
+            background: var(--scrollbar-right-btn) calc(100% - 3px) 0% / contain no-repeat,
+                var(--scrollbar-left-btn) calc(0% + 3px) 0% / contain no-repeat,
+                var(--scroll);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+            background-clip: padding-box;
+            border: 6px solid transparent;
+            border-radius: 14px;
+            transition: all 0.3s;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            border: 4px solid transparent;
+        }
+
+        ::-webkit-scrollbar-button:single-button {
+            height: 14px;
+        }
+
+        :hover::-webkit-scrollbar-thumb {
+            display: block;
+        }
+
+        ::-webkit-scrollbar,
+        ::-webkit-scrollbar {
+            --scroll: rgb(44 44 44 / 25%);
+            --scrollbar-top-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 16.981c-1.074 0-1.648-1.265-.941-2.073l5.522-6.311a1.75 1.75 0 0 1 2.634 0l5.522 6.311c.707.808.133 2.073-.941 2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-right-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.898c0 1.074 1.265 1.648 2.073.941l6.311-5.522a1.75 1.75 0 0 0 0-2.634l-6.311-5.522C10.265 4.454 9 5.028 9 6.102v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-bottom-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.102 8c-1.074 0-1.648 1.265-.941 2.073l5.522 6.311a1.75 1.75 0 0 0 2.634 0l5.522-6.311c.707-.808.133-2.073-.941-2.073H6.102z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+            --scrollbar-left-btn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.898c0 1.074-1.265 1.648-2.073.941l-6.311-5.522a1.75 1.75 0 0 1 0-2.634l6.311-5.522c.808-.707 2.073-.133 2.073.941v11.796z' fill='rgb(255 255 255 / 50%)'/%3E%3C/svg%3E");
+        }
+
+        ::-webkit-scrollbar-thumb,
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            background-clip: padding-box;
+        }
+
+        .navs {
+            display: block;
+            padding: 10px;
+            background-color: rgba(181, 181, 181, 0.1);
+            border-radius: 10px 10px 0px 0px;
+            border: 1px solid #ffffff35;
+            border-bottom: 0px;
+            margin-left: 10px;
+            width: 15rem;
+        }
+
+        .navs button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+            padding: 15px 20px;
+            padding-left: 10px;
+            transition: all 0.3s;
+            background-color: rgba(181, 181, 181, 0);
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .navs button:hover {
+            background-color: rgba(181, 181, 181, 0.15);
+        }
+
+        .navs button.active {
+            color: orange;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff35;
+            padding-left: 15px;
+        }
+
+        .navs button:active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff35;
+        }
+
+        main {
+            padding-top: 15px;
+            height: calc(100% - 15px);
+            overflow: hidden;
+            display: flex;
+        }
+
+        main h1 {
+            opacity: 0.75;
+        }
+
+        .banner {
+            width: 100%;
+            height: 25rem;
+            overflow: hidden;
+        }
+
+        .banner iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .applistCont {
+            display: inline-table;
+            width: 100%;
+            margin-top: 10px;
+            margin-left: -5px;
+        }
+
+        .appimg {
+            display: inline-table;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff35;
+            padding: 10px;
+            padding-bottom: 15px;
+            margin: 5px;
+            border-radius: 10px;
+            width: 12.5rem;
+            height: 12.5rem;
+            transition: all 0.3s;
+        }
+
+        .appimg:hover {
+            transform: translateY(5px);
+        }
+
+        .appimg img {
+            width: 100%;
+            border-radius: 8.5px;
+            height: 11rem;
+            margin-bottom: 5px;
+            border: 1px solid #ffffff1b;
+        }
+
+        .appimg p {
+            font-size: 13px;
+            opacity: 0.75;
+        }
+
+        footer {
+            opacity: 0.75;
+            padding-bottom: 10px;
+            padding-top: 20px;
+        }
+
+        .Installer {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ffffff35;
+            border-radius: 10px;
+            width: 67.5%;
+            height: fit-content;
+            display: none;
+            transition: all 0.5s;
+            transform: scale(0);
+        }
+
+        .Installer div img {
+            display: block;
+            position: relative;
+            margin-right: auto;
+            width: 10em;
+            border-radius: 10px;
+            border: 1px solid #ffffff35;
+            margin-left: auto;
+            margin-bottom: 15px;
+        }
+
+        .Installer div a {
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .Installer div button {
+            color: white;
+            padding: 7.5px;
+            width: 100%;
+            background: orange;
+            border: 1px solid #ffffff35;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            margin: auto;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+
+        .Installer div button.install {
+            width: 47.5px;
+            transition: all 0.3s;
+            background: rgba(241, 241, 241, 0.09);
+            pointer-events: none;
+        }
+
+        .Installer div button:hover {
+            background-color: rgba(241, 241, 241, 0.09);
+        }
+
+        .Installer div h3 {
+            background-color: rgba(241, 241, 241, 0.09);
+            border: 1px solid #ffffff35;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: justify;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .Installer div h3 a {
+            font-size: 15px;
+        }
+
+        .Installer div p {
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .Installer div ol {
+            font-size: 13px;
+            margin-left: 20px;
+        }
+
+        .StoreInstallerCont {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #closeInstaller {
+            position: absolute;
+            font-size: 30px;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .Installer div:first-child {
+            min-width: 30%;
+        }
+
+        .Installer span{
+            display: flex;
+            gap: 20px;
+        }
+
+        #content {
+            width: 100%;
+            height: calc(100% - 12.5px);
+            overflow: hidden;
+            padding-left: 15px;
+            overflow-y: scroll;
+            display: flex;
+        }
+
+        .discover,
+        .Apps,
+        .Games {
+            width: 100%;
+            transition: all 0.5s;
+            display: none;
+        }
+
+        .contentActive{
+            display: block;
+        }
+
+        
+        #winRepLogoAppimg{background-color: white; padding: 35px;}
+
+        
+
+.menuCard{
+  position: absolute;
+  background-color: #221200;
+  padding: 10px;
+    border-radius: 7px;
+    left: 15px;
+    bottom: 70px;
+    overflow: hidden;
+    list-style: none;
+    border: 1px solid #f1f1f138;
+    gap: 5px;
+    width: 200px;
+    z-index: 9999;
+    display: none;
+}
+
+.menuCard li{
+  transition: all 0.3s;
+  padding: 7.5px 10px;
+  display: flex;
+  gap: 7.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.menuCard li:hover{
+  background-color: #ffffff12;
+}
+.menuCard li:active{
+  border: 1px solid #f1f1f124;
+}
+
+.menuCard hr{width: 90%; opacity: 0.5;}
+
+.AboutWindow{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 40%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #221200;
+  display: grid;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 9999;
+    transition: all 0.3s;
+    border: 1px solid #f1f1f138;
+}
+
+.AboutWindow img{
+  width: 85px;
+  margin: 10px;
+  margin-top: 15px;
+  border-radius: 7px;
+}
+
+.AboutWindow a{color: orange}
+
+.AboutWindow CENTER{padding: 10px;}
+
+.AboutWindow h4{opacity: 0.5; margin-top: 15px; font-weight: normal;}
+
+.AboutWindow .topbar{
+    background-color: #ffffff12;
+    width: 100%;
+    padding: 10px 15px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.AboutWindow .topbar .closeAbt{
+  height: 7.5px;
+  width: 75px;
+  margin-top: -12.5px;
+  transition: all 0.3s;
+  background: red;
+  border-radius: 8px;
+}
+
+.AboutWindow .topbar .closeAbt:hover{height: 12.5px; box-shadow: 0px 0px 5px black;}
+
+.button-container {
+    position: fixed;
+    display: flex;
+    bottom: 1.5rem;
+    flex-direction: row-reverse;
+    left: 0.75rem;
+    align-items: center;
+    z-index: 9999;
+    width: 11.75rem;
+    gap: 5px;
+    margin-left: 8px;
+  }
+
+  .button-container #menuBtn{
+    margin-right: -50px;
+    transition: all 0.3s;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .button-container:hover #menuBtn{
+    margin-right: 0px;
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .button {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    gap: 10px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  .button:hover {background-color: rgba(255, 255, 255, 0.1);}
+  .button img{margin-left: 2.5px;}
+  .button:hover img{scale: 0.95;}
+  .button:active img{scale: 1;}
+  .button:active {background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);}
+  .tab--selected{background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);}
+  .button .material-symbols-rounded{
+    font-size: 16px;
+    scale: 1.5;
+  }
+  #pfbtn{padding: 0px;}
+  #pfbtn img{
+    width: 30px;
+    border: 1px solid #ffffff33;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+        @media screen and (max-width: 875px) {
+
+            .button-container {
+                bottom: auto;
+                top: 10px;
+                flex-direction: row;
+                left: auto;
+                right: 10px;
+                width: fit-content;
+                margin-left: 0px;
+            }
+
+            .AboutWindow{
+                width: 95%;
+                height: 65%;
+            }
+
+            .button p{display: none;}
+            #pfbtn img{width: 35px; margin: 0;}
+            
+        .button-container #menuBtn, .button-container:hover #menuBtn{
+            margin-right: 0px;
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .menuCard{
+            bottom: auto;
+            left: auto;
+            top: 50px;
+            right: 10px;
+        }
+
+            .banner { height: 12.5rem; margin-bottom: -1rem; margin-top: 40px;}
+            #winRepLogoAppimg{padding: 15px;}
+            main h1{font-size: 27.5px;}
+            .navs {
+                position: fixed;
+            display: flex;
+            bottom: 0;
+            padding: 7.5px;
+            padding-bottom: 20px;
+            width: calc(100% - 20px);
+            }
+
+            .navs button {
+            padding: 10px 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: grid;
+            margin-bottom: 0px;
+            }
+        .navs button.active {padding-left: 10px;}
+
+            #content {
+            height: calc(100% - 5.75rem);
+            }
+
+            .Installer{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                overflow-y: scroll;
+                border-radius: 0px;
+                border: 0px;
+            }
+
+            .Installer span{display: grid;}
+            .Installer span div:last-child{padding-bottom: 20px;}
+
+            .applistCont {
+            display: inline-table;
+            }
+            .appimg{
+                background-color: rgba(255, 255, 255, 0);
+        border: 0px solid #ffffff35;
+        padding: 0px;
+        padding-bottom: 15px;
+        text-align: center;
+        gap: 10px;
+        width: calc(100% / 4.85);
+        height: 7rem;
+            }
+            .appimg h3 {font-size: 12.5px; opacity: 0.75;}
+            .appimg img{height: auto; scale: 0.9;}
+            
+
+        .appimg p {display: none};
+        }
+
+        .purAppsList{
+    display: none;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    padding: 0px 5px;
+    border-radius: 5px;
+  }
+
+  .purAppsList img{
+    padding: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .purAppsList:nth-of-type(odd){
+    background: rgba(255, 255, 255, 0.058);
+  }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="button-container">
+            <button class="button" id="pfbtn">
+              <img src="../../../Ripenos/Assets/UI/icons8-male-user-96.png" id="startPfp">
+              <p id="userN">Admin</p>
+            </button>
+            <button class="button" onclick="document.getElementById('mymenuCard').style.display = 'grid'" style="width: fit-content;" id="menuBtn"> 
+              <span class="material-symbols-rounded">
+                menu
+                </span>
+            </button>
+        </div>
+        <ul class="menuCard" id="mymenuCard" onmouseleave="setTimeout(() => {document.getElementById('mymenuCard').style.display = 'none'}, 300);">
+            <li onclick="document.getElementById('mymenuCard').style.display = 'none', document.getElementById('creditsWindow').style.transform = 'translate(-50%, -50%) scale(1)'">Credits</li>
+            <li onclick="document.getElementById('mymenuCard').style.display = 'none', document.getElementById('PurchasedAppsWindow').style.transform = 'translate(-50%, -50%) scale(1)'">Purchased apps</li>
+            <hr>
+            <li onclick="document.getElementById('mymenuCard').style.display = 'none', document.getElementById('myAboutWindow').style.transform = 'translate(-50%, -50%) scale(1)'">About</li>
+          </ul>
+      
+          <div class="AboutWindow" id="myAboutWindow">
+            <div class="topbar">
+              <h3 style="transform: scale(1.1);">About</h3>
+              <div class="closeAbt" onclick="document.getElementById('myAboutWindow').style.transform = 'translate(-50%, -50%) scale(0)'"></div>
+            </div>
+            <CENTER>
+              <img src="../../Assets/Images/AppsIcons/RGOSstore.jpg" >
+              <div>
+                <h3 style="font-size: 25px; margin-top: 5px;">RGOS | Store</h3>
+                <h4>v1.0</h4>
+                <p style="margin-bottom: 5px; font-size: 20px;"><b>What's new:</b></p>
+                <p style="line-height: 1.75; font-weight: normal; opacity: 0.65; padding-bottom: 10px;">
+                  User profile integration,<br> Installable web applications
+                </p>
+              </div>
+            </CENTER>
+          </div>
+          <div class="AboutWindow" id="PurchasedAppsWindow">
+            <div class="topbar">
+                <h3 style="transform: scale(1.1);">Purchased Apps</h3>
+                <div class="closeAbt" onclick="document.getElementById('PurchasedAppsWindow').style.transform = 'translate(-50%, -50%) scale(0)'"></div>
+            </div>
+            <CENTER>
+                <div style="padding: 5px; overflow: hidden; overflow-y: scroll; height: 400px;">
+                    <div class="purAppsList" id="photpeaapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/photpea.png" >
+                        <p>Photopea</p>
+                    </div>
+                    <div class="purAppsList" id="copilotapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/copilot.png" >
+                        <p>Copilot</p>
+                    </div>
+                    <div class="purAppsList" id="spotifyapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/spotify.png" >
+                        <p>Spotify</p>
+                    </div>
+                    <div class="purAppsList" id="wikipediaapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/wikipedia.png" >
+                        <p>Wikimedia</p>
+                    </div>
+                    <div class="purAppsList" id="winReplicasapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/winReplicas.webp" >
+                        <p>WinReplicas</p>
+                    </div>
+                    <div class="purAppsList" id="evIoapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/evIo.png" >
+                        <p>EV.io</p>
+                    </div>
+                    <div class="purAppsList" id="flappyBirdapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/flappyBird.png" >
+                        <p>Flappy Bird</p>
+                    </div>
+                    <div class="purAppsList" id="marioapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/mario.png" >
+                        <p>Mario</p>
+                    </div>
+                    <div class="purAppsList" id="Minecraftapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/Minecraft.png" >
+                        <p>Minecraft</p>
+                    </div>
+                    <div class="purAppsList" id="solitaireapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/solitaire.png" >
+                        <p>Solitaire</p>
+                    </div>
+                    <div class="purAppsList" id="paperIoapp">
+                        <img src="../../Assets/Images/AppsIcons/purchasedAppIcons/paperIo.png" >
+                        <p>Paper.io</p>
+                    </div>
+                </div>
+            </CENTER>
+          </div>
+          <div class="AboutWindow" id="creditsWindow">
+            <div class="topbar">
+              <h3 style="transform: scale(1.1);">Credits</h3>
+              <div class="closeAbt" onclick="document.getElementById('creditsWindow').style.transform = 'translate(-50%, -50%) scale(0)'"></div>
+            </div>
+            <div style="padding: 10px 15px;">
+                <h4 style="opacity: 0.5; margin: 0;">The mentioned Links below are the providers of all the web apps listed under the RGOS app store.</h4>
+                <ol style="padding: 10px;padding-left: 30px;">
+                    <li><a href="https://www.photopea.com" target="_blank">photopea.com</a></li>
+                    <li><a href="https://copilot.microsoft.com/" target="_blank">copilot.microsoft.com</a></li>
+                    <li><a href="https://next13-spotify.vercel.app/" target="_blank">next13-spotify.vercel.app</a> , <a href="https://developer.spotify.com/documentation/web-api">Spotfy's API</a></li>
+                    <li><a href="https://www.wikipedia.org/" target="_blank">wikipedia.org</a></li>
+                    <li><a href="https://navaneet239.github.io/Windows-replica/" target="_blank">navaneet239.github.io</a></li>
+                    <li><a href="https://paper.io/" target="_blank">paper.io</a></li>
+                    <li><a href="https://ev.io/" target="_blank">ev.io</a></li>
+                    <li><a href="https://flappybird.io/" target="_blank">flappybird.io</a></li>
+                    <li><a href="https://supermario-game.com/" target="_blank">supermario-game.com</a></li>
+                    <li><a href="https://eaglercraft.com/" target="_blank">eaglercraft.com</a></li>
+                    <li><a href="https://solitaire.online/" target="_blank">solitaire.online</a></li>
+                </ol>
+            </div>
+          </div>
+        <div class="navs" id="navs">
+            <button id="disa" class="active" onclick="
+                    document.getElementById('discover').classList.add('contentActive')
+                    document.getElementById('Apps').classList.remove('contentActive')
+                    document.getElementById('Games').classList.remove('contentActive')
+
+                    document.getElementById('disa').classList.add('active')
+                    document.getElementById('appa').classList.remove('active')
+                    document.getElementById('gama').classList.remove('active')
+                "> <span class="material-symbols-rounded">dashboard</span> Discover</button>
+            <button id="appa" onclick="
+                document.getElementById('discover').classList.remove('contentActive')
+                document.getElementById('Apps').classList.add('contentActive')
+                document.getElementById('Games').classList.remove('contentActive')
+                
+                document.getElementById('disa').classList.remove('active')
+                    document.getElementById('appa').classList.add('active')
+                    document.getElementById('gama').classList.remove('active')
+            "><span class="material-symbols-rounded">apps</span> Apps</button>
+            <button id="gama" onclick="
+                document.getElementById('discover').classList.remove('contentActive')
+                document.getElementById('Apps').classList.remove('contentActive')
+                document.getElementById('Games').classList.add('contentActive')
+                
+                document.getElementById('disa').classList.remove('active')
+                    document.getElementById('appa').classList.remove('active')
+                    document.getElementById('gama').classList.add('active')
+            "><span class="material-symbols-rounded">stadia_controller</span> Games</button>
+        </div>
+        <span id="content">
+            <div id="discover" class="discover contentActive">
+                <div class="banner">
+                    <iframe src="banner.html" frameborder="0"></iframe>
+                </div>
+                <br>
+                <div class="AppList">
+                    <h1>Top online games</h1>
+                    <div class="applistCont">
+                        <div class="appimg" onclick="OpenInstaller('Minecraft')">
+                            <img src="https://thumbs.dreamstime.com/b/minecraft-logo-online-game-dirt-block-illustrations-concept-design-isolated-186775550.jpg">
+                            <h3>Minecraft</h3>
+                            <p>Sandbox</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('EvIo')">
+                            <img src="https://play-lh.googleusercontent.com/YhkggWhlGqBZVBqP-ytWMyHpk1jq1Q5PXqzXmfW0070PD0SXdP-h9f2ZCRwFA84O8A=w240-h480-rw"
+                                >
+                            <h3>Ev.io</h3>
+                            <p>Shooting</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('FlappyBird')">
+                            <img src="data:image/jpeg;base64,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"
+                                >
+                            <h3>Flappy Bird</h3>
+                            <p>Infinite Runner</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('Mario')">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OqCkXCJCiTTnFnMp055Ezd_8pw-QyflDVQ&usqp=CAU"
+                                >
+                            <h3>Super Mario</h3>
+                            <p>Infinite Runner</p>
+                        </div>
+                    </div>
+                    <br>
+                    <h1>Casual Entertainment</h1>
+                    <div class="applistCont">
+                        <div class="appimg" onclick="OpenInstaller('WinReplicas')">
+                            <img src="https://qph.cf2.quoracdn.net/main-qimg-01e7b6400981899b80055f9ad51454ea"  id="winRepLogoAppimg">
+                            <h3>Win Replicas</h3>
+                            <p>Windows Time capsule</p>
+                        </div>
+                    </div>
+                    <br>
+                    <h1>Utilities</h1>
+                    <div class="applistCont">
+                        <div class="appimg" onclick="OpenInstaller('Photopea')">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi8-utsYJvQOn4tTJQVGvlXLDnFvTflePA6cpahyE1bo38g3eKp-ClydRw9l5B4-Ii8Kc&usqp=CAU"
+                                >
+                            <h3>Photopea</h3>
+                            <p>Editor</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('Copilot')">
+                            <img src="https://media.licdn.com/dms/image/D5612AQF5A1Rn3_bJ7A/article-cover_image-shrink_600_2000/0/1707467579292?e=2147483647&v=beta&t=gJnnSsgaykZhGWwXDvgIt66ghzLeURyF8YT9yaKNv90"
+                                >
+                            <h3>MS Copilot</h3>
+                            <p>Chat bot</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('Spotify')">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/1200px-Spotify_App_Logo.svg.png"
+                                >
+                            <h3>Spotify</h3>
+                            <p>Music</p>
+                        </div>
+                        <div class="appimg" onclick="OpenInstaller('Wikipedia')">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-NZcs88XzS1SqYOiOumnXmwoFRZaGXpoafw&usqp=CAU"
+                                >
+                            <h3>Wikipedia</h3>
+                            <p>Encyclopedia</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <footer style="text-align: center;">
+                    <img src="../../Assets/Images/RGOS-family/rgos-logo.png"  width="175px">
+                    <p>RGOS Store is an online app store to install web apps into your RGOS family.</p>
+                    <p>We do not own the listed apps • We provide their services through our medium.</p>
+                </footer>
+            </div>
+            <div id="Apps" class="Apps">
+                <h1>Apps</h1>
+                <div class="applistCont">
+                    <div class="appimg" onclick="OpenInstaller('Photopea')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi8-utsYJvQOn4tTJQVGvlXLDnFvTflePA6cpahyE1bo38g3eKp-ClydRw9l5B4-Ii8Kc&usqp=CAU"
+                            >
+                        <h3>Photopea</h3>
+                        <p>Editor</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Copilot')">
+                        <img src="https://media.licdn.com/dms/image/D5612AQF5A1Rn3_bJ7A/article-cover_image-shrink_600_2000/0/1707467579292?e=2147483647&v=beta&t=gJnnSsgaykZhGWwXDvgIt66ghzLeURyF8YT9yaKNv90"
+                            >
+                        <h3>MS Copilot</h3>
+                        <p>Chat bot</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Spotify')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/1200px-Spotify_App_Logo.svg.png"
+                            >
+                        <h3>Spotify</h3>
+                        <p>Music</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Wikipedia')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-NZcs88XzS1SqYOiOumnXmwoFRZaGXpoafw&usqp=CAU"
+                            >
+                        <h3>Wikipedia</h3>
+                        <p>Encyclopedia</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('WinReplicas')">
+                        <img src="https://qph.cf2.quoracdn.net/main-qimg-01e7b6400981899b80055f9ad51454ea"   id="winRepLogoAppimg">
+                        <h3>Win Replicas</h3>
+                        <p>Time capsule</p>
+                    </div>
+                </div>
+                <br>
+                <footer style="text-align: center;">
+                    <img src="../../Assets/Images/RGOS-family/rgos-logo.png"  width="175px">
+                    <p>RGOS Store is an online app store to install web apps into your RGOS family.</p>
+                    <p>We do not own the listed apps • We provide their services through our medium.</p>
+                </footer>
+            </div>
+            <div id="Games" class="Games">
+                <h1>Games</h1>
+                <div class="applistCont">
+                    <div class="appimg" onclick="OpenInstaller('PaperIo')">
+                        <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684971-52.jpg" >
+                        <h3>Paper.io</h3>
+                        <p>Arcade</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('EvIo')">
+                        <img src="https://play-lh.googleusercontent.com/YhkggWhlGqBZVBqP-ytWMyHpk1jq1Q5PXqzXmfW0070PD0SXdP-h9f2ZCRwFA84O8A=w240-h480-rw"
+                            >
+                        <h3>Ev.io</h3>
+                        <p>Shooting</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('FlappyBird')">
+                        <img src="data:image/jpeg;base64,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"
+                            >
+                        <h3>Flappy Bird</h3>
+                        <p>Infinite Runner</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Mario')">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OqCkXCJCiTTnFnMp055Ezd_8pw-QyflDVQ&usqp=CAU"
+                            >
+                        <h3>Super Mario</h3>
+                        <p>Infinite Runner</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Minecraft')">
+                        <img src="https://thumbs.dreamstime.com/b/minecraft-logo-online-game-dirt-block-illustrations-concept-design-isolated-186775550.jpg"
+                            >
+                        <h3>Minecraft</h3>
+                        <p>Sandbox</p>
+                    </div>
+                    <div class="appimg" onclick="OpenInstaller('Solitaire')">
+                        <img src="https://avatars.yandex.net/get-games/3006389/2a0000017cd4a9f37029ba06e5388cea9a81/pjpg160x160"
+                            >
+                        <h3>Solitaire</h3>
+                        <p>Casual</p>
+                    </div>
+                </div>
+                <br>
+                <footer style="text-align: center;">
+                    <img src="../../Assets/Images/RGOS-family/rgos-logo.png"  width="175px">
+                    <p>RGOS Store is an online app store to install web apps into your RGOS family.</p>
+                    <p>We do not own the listed apps • We provide their services through our medium.</p>
+                </footer>
+            </div>
+        </span>
+        <div class="StoreInstallerCont" id="StoreInstallerCont">
+            <span id="closeInstaller" class="material-symbols-rounded">close</span>
+            <div class="Installer" id="PhotopeaInstaller"><span>
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi8-utsYJvQOn4tTJQVGvlXLDnFvTflePA6cpahyE1bo38g3eKp-ClydRw9l5B4-Ii8Kc&amp;usqp=CAU"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Photopea</h1>
+                        <a href="https://www.photopea.com" target="_blank">photopea.com</a>
+                    </div>
+                    <button onclick="appInstall('photopea')" id="appInstallBtnPhotopea">install</button>
+                    <p style="text-align: center;" id="appInstallStatusPhotopea">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Photopea is a web-based photo and graphics editor. It is used for image editing, making
+                        illustrations, web design or converting between different image formats. It is an online web
+                        based alternative Photoshop.</h3>
+                    <b>
+                        <p>By installing, you're accepting to their <a href="https://www.photopea.com/privacy.html" target="_blank">Terms and Privacy</a>.</p>
+                        
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="CopilotInstaller"><span>
+                <div>
+                    <img src="https://media.licdn.com/dms/image/D5612AQF5A1Rn3_bJ7A/article-cover_image-shrink_600_2000/0/1707467579292?e=2147483647&v=beta&t=gJnnSsgaykZhGWwXDvgIt66ghzLeURyF8YT9yaKNv90"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Copilot</h1>
+                        <a href="https://copilot.microsoft.com/" target="_blank">copilot.microsoft.com</a>
+                    </div>
+                    <button onclick="appInstall('copilot')" id="appInstallBtnCop">install</button>
+                    <p style="text-align: center;" id="appInstallStatusCop">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Microsoft Copilot is a chatbot developed by Microsoft which is based on a large language model
+                        which can create poems, write songs, answer questions, Generate images, program codes, etc. It
+                        is Built upon GPT.</h3>
+                    <b>
+                        <p>By installing, you're accepting to their <a href="https://www.bing.com/new/termsofuse"
+                                target="_blank">Terms</a> and <a
+                                href="https://privacy.microsoft.com/en-ca/privacystatement"
+                                target="_blank">Privacy</a></a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="SpotifyInstaller"><span>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/1200px-Spotify_App_Logo.svg.png"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Spotify</h1>
+                        <a href="https://next13-spotify.vercel.app/" target="_blank">next13-spotify.vercel.app</a>
+                    </div>
+                    <button onclick="appInstall('spotify')" id="appInstallBtnSpot">install</button>
+                    <p style="text-align: center;" id="appInstallStatusSpot">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Spotfy is a music streaming service with millions of musics, podcasts, and creator artists for
+                        you to listen and vibe. This version of the product is a cloned package of Spotify app powered
+                        by the <a href="https://developer.spotify.com/documentation/web-api">Spotfy's API</a>.</h3>
+                    <b>
+                        <p>By installing, you're accepting to their <a
+                                href="https://www.spotify.com/in-en/legal/end-user-agreement/" target="_blank">Terms</a>
+                            and <a href="https://www.spotify.com/in-en/legal/privacy-policy/"
+                                target="_blank">Privacy</a></a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="WikipediaInstaller"><span>
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-NZcs88XzS1SqYOiOumnXmwoFRZaGXpoafw&usqp=CAU"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Wikipedia</h1>
+                        <a href="https://www.wikipedia.org/" target="_blank">wikipedia.org</a>
+                    </div>
+                    <button onclick="appInstall('wiki')" id="appInstallBtnWiki">install</button>
+                    <p style="text-align: center;" id="appInstallStatusWiki">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and
+                        hosted by the Wikimedia Foundation. It has over 6,751,000 articles in English. It's purpose is
+                        to benefit readers by presenting information on all branches of knowledge.</h3>
+                    <b>
+                        <p>By installing, you're accepting to their <a href="https://foundation.wikimedia.org/wiki/Home"
+                                target="_blank">Terms</a> and <a
+                                href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy"
+                                target="_blank">Privacy</a></a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="WinReplicasInstaller"><span>
+                <div>
+                    <img src="https://qph.cf2.quoracdn.net/main-qimg-01e7b6400981899b80055f9ad51454ea" 
+                        style="background-color: white; padding: 35px;">
+                    <div style="text-align: center;">
+                        <h1>Win Replicas</h1>
+                        <a href="https://navaneet239.github.io/Windows-replica/" target="_blank">navaneet239.github.io</a>
+                    </div>
+                    <button onclick="appInstall('WinR')" id="appInstallBtnWinR">install</button>
+                    <p style="text-align: center;" id="appInstallStatusWinR">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Win Replicas is like a time machine which takes you back to the 1st release of Windows to the
+                        latest version. It mimics them, giving you a nostalgic trip through the evolution of Windows and
+                        its familiar dialog boxes.</h3>
+                    <b>
+                        <p>By installing, you're accepting the <a
+                                href="https://github.com/navaneet239/Windows-replica/blob/main/LICENSE">MIT license</a>
+                            of this open-sourced project.</p>
+                            
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="PaperIoInstaller"><span>
+                <div>
+                    <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-684971-52.jpg" >
+                    <div style="text-align: center;">
+                        <h1>Paper.io</h1>
+                        <a href="https://paper.io/" target="_blank">paper.io</a>
+                    </div>
+                    <button onclick="appInstall('PaperIo')" id="appInstallBtnPaperIo">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Paper.io is a conquest game developed by Voodoo where the players would paint the map to capture
+                        territory and become the champion of Township.</h3>
+                    <b>
+                        <p>By installing, you're accepting their terms and privacy.</p>
+                        
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="EvIoInstaller"><span>
+                <div>
+                    <img src="https://play-lh.googleusercontent.com/YhkggWhlGqBZVBqP-ytWMyHpk1jq1Q5PXqzXmfW0070PD0SXdP-h9f2ZCRwFA84O8A=w240-h480-rw"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Ev.io</h1>
+                        <a href="https://ev.io/" target="_blank">ev.io</a>
+                    </div>
+                    <button onclick="appInstall('evIo')" id="appInstallBtnevIo">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Ev.io is a free-to-play, first-person shooter (FPS) game that can be played on desktop, mobile,
+                        and tablet browsers. The game features science-fiction-inspired levels, a variety of weapons,
+                        and an abilities tree that covers jump height, ammo, teleport, stamina, and reload speed.</h3>
+                    <b>
+                        <p>By installing, you're accepting their <a href="https://ev.io/terms-of-use"
+                                target="_blank">terms</a> and <a href="https://ev.io/privacy-policy"
+                                target="_blank">privacy</a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="FlappyBirdInstaller"><span>
+                <div>
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxANEBQNDRAQDw8PEA0QDRAQDxANEA8QFxIXGRgSFBYZHykhGRsmHhYWIzIuJiotLy88GCFBOjUtRSkuLywBCgoKDg0OGxAQHCwnICYuLi4wMC4uLi4uLC4uLi4sLCwuLiwsLC4uLi4sLC4sLi4sLi4sLi4uLiwuLi4uLC4uLv/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAQUBAAAAAAAAAAAAAAAAAwIBBAUGBwj/xABREAABAwICBAcMBQkFBwUAAAABAAIDBBEFEgYTITEHFBZRU2GRFTVBUlSBkpShs9HSFzJVcnQiNHFzk6OxsrQIdcHC0yMzQmJlpOMYJCVDRP/EABsBAAIDAQEBAAAAAAAAAAAAAAADAQIFBAYH/8QANxEAAgECAwQHBgUFAQAAAAAAAAECAxEEEiExQVGhBRMUUmFx0RUiMrHB4RYzgZHwI0JyotIG/9oADAMBAAIRAxEAPwDIoQqr1h8vKKoVQFUBQWSKBSVQFKyhkpFFVVsp2ChsYkUCApgKoaFVsvlIhVCmGhVDQq3LKDIITMoVco5kZicotCblCplHMozE5WKQU3KFUtCnMRlYkqKcWhRyhTcq4i1Ap+UKBaFNyriKKiU0tCiWqyZRxFlRKY4KBClFWiCopWVLKxRoohVshBAKoCMqqAouWSABSaEBqkxqhsskAClZVa1TDFS4xRKWUsqlq+tT1fWqtjFFlA1VDVIR9akI+v2KlxiiyDWqYaFJsfX7FIRdfsUORdQYvKFXKm6rr9iNV1+xRmL5GLyhUyhP1XX7FTVdfsRmDIxOUKhanmLr9iiYuv2IzBkYktVMqcYuv2Kmr61OYo4MTlUC1XGr60sx9fsU3KODEOaokJ7mdaWWdaYmLlES4KJCc9igWqbi3EVZQTcqjlV7i2iCFPIhTcLEbKQCophQCQNapsahqmxUYxIq1qmGlDRtTAFRsdFFMpTMhVE5UbGxiiLWFSDCptCk0KjY5RRBrCphhU2hSAVWxigiGrKNWU2yrZVzMvkQrVlGrKdZVsi5ORFuYyqGMq4sokIUiHBFuWFRyFXDgo2VkyjihGQpZjKubKBVkxbii1cwqJaU942qBCumJlFCHtKWWlXD0t25XTFSihGVUypllRXEtEMqFNUU3IsKU27kKbVLYJFQpRqTUyNLbHRRFm9MCqzenBLbHxiLT1ROVGx8YkGqbU1u5SalOQ5QFsTAmMWn8Lnemb79L71qpKVk2dFKlmko32m22PMVLKeZeTELk7V4c/saXsx9/l9z1rlPMo2PMV5MQjtXhz+wezX3+X3PWeU8yo5p5l5NQjtXhz+wezH3+X3PV7goLhfA/wB9Y/1VR/Iu+LopVc8b2ODE4bqp5b304fctUoq8SinKRyyiWz0pyun70tyYmIlAtZNyW5Xcm5JduTExEoluoJ6WmJiGiCFNCm5WwmyY0bFGyY0bEMiKJNCZEFFoTYhv8yWx8VqTjAumhoUI27U8NSmzpitAyhOyhLsn2S2zohEq1osuZcLWktZh9RAyjndC18DnPAax13ZyL/lA+BGlfCbUYfWTUbKeB7YXNDXOMgcbta7bY9aZg+FRaXxGtrS6mfTOdTsZTublc3K1+Z2cE3u89iz8VioU4NtvabOCwU5TTaVreBoA4QsW8sf6EPyrZuD/AB2pxitFDicvGqV8cr3wvYxrXOYLtJygHYdq2X6FqDyis9KH5FlNHeDylwecVtPLUSSNa9gbKYywhwsfqtBWTW6Qi6ctXsNmng0pp5VyMpyCwnyGDsd8UcgsJ8hg7HfFZXjzub+KOPO5v4rF7ZHvPmaXZ3wXIxXILCfIYOx3xXCOEWhipcTqIKdjY4mOiDGN+q28TCbeclbzi/C9U09RNTilp3CGaaIOLpASGPLQTt37FsWH8G1JpDDHjNVLUwz1rGySRwui1TCBkAbmYTuaN5Wxg4VF78tjWmvHYcNaUXotpjeAzRWgxChmlraWKeRlU5jXPBJDNVGcuw85Pauk/Rvg32fT9jvinaD6HwYJA+mppJZGSymVxmLC4OytbYZQNlmhbKu85zl3CLo9R4Nh02IYZTx0lXEYGxzRtu5ofKxrh+VcbWkjd4VyXA9OsUlqoIpKt5ZJUU7HtyRC7XSNBGxvMV6S0s0fixWkkoZ3yMjlMZc6MtDxkeHi2YEb2jwLnruBihogayOoq3PpgaiNrnQ5XPj/ACwHWZe12jcrRk1sYudKM1qlfyNvLQkloXHvpmqvJKb0pfiur4LVmppoKlwDXT09PM5o3NL42uIHVtWhCrGWwwauHnTSzIdI0XS3NCe9u1Le1OTOOSESNFvOkvGxXEo2edJcNibFiJrUt7KFk6yhZNucrRGyop2QpuRYtrJrW7FCya0bFLKRRJrU2Ju/zKDRsTYhv8yXI6ILUZG3aqVs2pikmtm1cckmW9s2VpNr+DcrfFMUhoYjU1LiyJpaHODXPILjYbBt3la/Lpxh9Y11HTyudNUsdTwNMMrA6WQZGAkiw2uG0rnqVEtrO6hQnPWMW9dyNc+mIeQH1sf6Sn9Mzfs8+tj/AElivoVxno4PWGI+hXGejg9YYs3tFTj8j0KwGHX9vN+pqGk+L90KuWsEeq1xacmbWZbNa361hfdzLZ9AeEMYNTyU5pTUayYy5hPqbXY1uW2R1/q+1XH0K4z0cHrDEfQrjPRwesMXPUgqitI7Ie5bLuOjaE6fDF9balMGo1P/AN+uzZ8//ILWye1bLPV525ctt229/wDBcv0cw9+ius7slsPHdXxbV5qjNqc2e+Qfk/71m/ffqWz4NpjQ10op6aVz5CHOAMUjBYC52kWXm8fTrQqTUIvJpuurWV9fM1sNKDim2r+fiZ9VVFVZR2Hm3Sj8/qvxdX75y9K8F9bkwejblvaDnt/xu6l5q0o/P6r8XV++cvRfBp3opP1P+dy9nRbVCHkvkjz9b435s3uln1gJtaxtvunqzw36p+9/gFeJ8dhRbDX9N9Iu5FDJX6rX6owjV6zVZs8jWfWym1s193gXM4OGwYg9tAMPMXG3NptZxvPq9acmfLqhmtmva4vbeFt/Dj3jqfvUn9RGvOGiPfCk/G0fvmqSTrX/AKe/+qf9j/5lYTcJQwpxwvihm7n3otdxgRa7UHVazJkOXNkva5tfed69Arxzp331r/7wr/6h6tGco7BdSjCp8av+/wBDvmiWPd1aVtYItTmfIzJn1tsptfNYfwWWexahwPD/AOKZ+tqP5luTwtKnJuKZ56vBRqSSW9iJW7POkvbsVxKNnnSXjYU6LOOa1LbKoWTbKFk5HLJELIUrKqLlbFqmt3Jaa3crsXFDWbkyHw+ZLZuTYfD5kuR0w2o1XhV72S/fp/ehcf0M75UX46i9+xdh4Ve9cv36f3rVx7QzvlRfjqL37FlYv4/0PS9Ffkv/ACfyR7KQhC5TTBCEIA41/aHwuoqhQ8Vp558hrs+phkmyX1Ns2UG17HsK0Tg4wipo69s9ZTz00IimaZZ4ZIIwS2wBe8AAkr1AtB4cu8dR9+k9+xLrUutpyg96sWhPJJS4Fs3E6ckATwkkgACaMkk+AbVeLzVo3+e034ql961elV5TG4Ts01G97q+y3qbOHrdam7WPPukmDVb62peylqHNdVVTmubBK5rgZXEEEDaF3PQCthgwymhnlihlZFaSOWRkUjDncbOa4gg/pV+vP3CT31qfvRe5Ytbo/GSry6ppaLb5WRwYvDKCz32s9UYNWRSMcY5Y5AHWJZI14BsNhsVkmvB3EH9BuuLcAX5hUfiz7mNdZw765+6f4haqdnY4b20Na4ZKWSfB6iKCN8sjnUuVkbHSPNp2E2a3adgK4Boto3Xsr6V76Gsa1tXSOc51LM1rWiZpJJLdgXrZCYWBeOdO++tf/eFf/UPXsZeOdO++tf8A3hX/ANQ9AHZOB7vVH+tqP5lub1p3A73pj/XVH8y3N60aXwryPP4n8yXmxEu7zpL9xVxLu86Q/cuiJxT2lulpyUmo5ZFEIQpKFsms3JSazcmMVEazcnQ+HzJLNyfD4fMkyOiG41ThX71y/fpvetXHNEzavpLeWUfvmr0XW4fDVsMFTGJYnWLmOvYkG43dawtdolh9NFJUQUkMc0EUssLxmuyRjS5rhc2uCAVwYqg6l7PcbeBxcaMMrT233evgb4ah/ju9IrPLyT9JOMeWu/ZQfIvTnHJPGPYFgwk8N+Zrfh4eduJ6WVqvw7jNIWE45J4x7AjjknjHsCv26HB8vUjs8uKLrFHluXKSPrXsSOZc94YZXHB5wXEjPS7C4kf75ixnDPpTXUApDSVDotYavWWZG7Nl1NvrNO7Me1abobpHV4xVChxObjNK+OV74nsja1zmDM0ktAOwgHek1HLXEp+6tbb9NPLcWil+Vv2fvzNH0b/Pab8VS+9avSqwUOh2HRubIykia9jmuY4Z7tcDcEbecLOrFx+KjiZqUU1ZW1saGGoulFplFYz4NSSuMklLTyPdYue+CJ7nG1tpIudgHYr5ce040wxClr56enqXMiY6MMaGRG142k7S2+8lKwuGniJuEGr2vr9vMvWqxpxvJF1woVUuHTQxYfI6iZJE58jKV7qRj35rZnNjsCbAC55lpQ0txMbRiNcP0VlQP8y2bCJzisZmxD/3EkbzGxzgG5WWBtZtvCSr7uDSdAztf8VtUsVHDQVGabcdG19y8OhKuJiq0JRSlrbX6I0zljin2liHrtR8yOWOKfaWIeu1HzLc+4NJ0DO1/wAUdwaToGdr/im+1KfdfL1Lfhuv348/Q0zljin2liHrtR8yxVRM+V7pJHOfI9znve9xc973G5c5x2kkkm5XSO4NJ0DO1/xR3BpOgZ2v+KPalPuvl6h+G6/fjz9DQ6THKuBmrgq6mGMEnJFUSxsBO82abLsfA5Xz1NJM+pmlnc2qytdLI+Zwbq2bAXE2G1ax3BpPJ2dr/isbjONVGEFsOGycWjka6SRrQ14c/YL/AJQPgAXVhOkoTqqNnv8A5tMzpT/z1Wlh5VM0Nq48fI7tLu86Q/cVzHgt0qrsQrJIayoMsbaWSRrSyNtniWIA3a0HcT2rp79xW/SkpK6PEYim6c3FiEpNSl0I4ZAhCFJUlxMc59iS9uU2HgWV4o7nHtSpMMe4k3bt6ylqst7HTw0re7Et4Ig5t/0p8UA27T4FcQULmtsSPD4T8E2Okdzt9vwS5VFxH08PKyvEthHbal1cAmjfE4kCRj4yRvAc0gkde1ZDijj4W+34KnEXc47T8FTPHex3UzWxHM/ocofKKvth+RYX6a6nyOn9ORdqbRuvvHt+C8gLOxVClPLpx+hs4GrW97M3u+p1X6a6nyOn9ORH011PkdP6ci1XDdBqmphZURyQBkjczQ50gcBfwgNKuPo4rOlpvSl+RZUpYJOz+psqhimrpfI2ulqRpfcVjTTcRtq+Luvn1982bODu1ItbnKzmjmgNNhtQKqGWd7w17cshjy2cLHc0FWXBjo7Lh3GNc+J+t4tl1ZebZdZe+Zo8YLeljYzEy6yVOnJ5OG7Ym9vjc7KNBJJzXvfzh4Aqqiqs86TlmLcKM9PUTQNpoXCGaaIOLnguDHloJ69ixdThceKuOITF8clRZzmRkFjbDLYXF9zQr3GeDGtqKmeoZLShs088rQ582YNfIXAGzN9irOTE48KPEKgSOmpwGyGIB0ZJs67S4g7nDwBblPqlCPZfjss1r3tv2+NiuAVN1Zdstl3Ztl7/ADsWNXU9x7QQt1rZRrCZDYg7rC3g2K35bS9DF6TlcYhSnGMs1MQxkQMbtd+SSdh2Zb7NqsuRdR0sHpP+VPh2bL/X+Pftvf8AQ6KvtBTfY79V/bbLa1t19bXuN5bS9DF6Tkctpehi9JyVyLqOlg9J/wAqORdR0sHpP+VXtgP5mF36a8f9BvLaXoYvScjltL0MXpOSuRdR0sHpP+VHIuo6WD0n/Ki2A/mYL9NeP+g3ltL0MXpOWJxzGHVjmucxrMgIGW5vc38KVi2GPpJNVI5rnZQ67L5bG/OBzLO6I6BVWMRPnp5aeNscmrcJnSNcXZQ64ysOzau2hhqN1OkvmZWNx+LSlSxE9E9U7bdu71MrwI98JfwUvv4V2yNmYhp8OxaJwd8HdXhlU+onlp3sfTviAhfKXBxkjdc5mAWsw+xdGio3NcHEjYev4LYoyyws9p5LFQdSu5R1Tt9CncxvjH2KHctvjH2LIqKlVJ8SHh6XdRYdy2+MfYhX6FPWT4kdnpd1CVIKKkFUuiQU2pYTGqrGIk1TS2qaqxiJBec/oexjoofWI16MTEuUUx1ObjexwunxenwljcOrpNXU0zQyZjWPlaHEZhZzRY7HBT5cYf0x/Yy/BYHhPwSsmxeqkhpamSNz4sr2QSvY7/YsGwgWK1Xk3X+Q1nqs3yrIn0bScm7vl6G5T6SqqKVo7Fx9Ts+i+kdLVazUSF2TVZv9m9tr5rbx1FZ7uhF4x9ErlvB3Ry0fGOORvptZqNXxhjoM+XWZsue17Zhe3OFuPHoemi/aM+KxMXhYwrSir7vkvI1cPPrqanLa/o2vobD3Qi8Y+iUd0IvGPola9x6Hpov2jPijj0PTRftGfFc/UrxHZI8eZsPdCLxj6JXJ9M9Faurrp6mBjDFI5hYTI1pNo2g7Du2grd+PQ9NF+0Z8Uceh6aL9oz4row05YeTlDba2oqrh6dRWk+aNCw22EMMNe4RPkcZGBt5QW2A3t3bQrrlRRdN+7l+CXwg4fNWSxPo4ZalrI3Ne6CN87WuzXyksBANlqXJnEPIaz1Wb5VrU8HHERVWbd3q9n1T+Yp9MV8L/AEKai4x0V07/AK2klyNx5UUXTfu5fgjlRRdN+7l+C03k1X+Q1nqs3yo5NV/kNZ6rN8qt7KpcXy9A/EeK4Q/aX/RuXKii6b93L8EcqKLpv3cvwWncm6/yGs9Vm+VHJyv8iq/VZvlR7KpcZcvQj8R4rhD9n/0bfUaGVuN2rsPEckBGrDnyCElzL3/Jdt8K6RwV6K1eFU0sNW1jXvn1jcsjZAW6to3jrBVzwOUskGFRxzxvieJqglkjHRuAL9hsdq3UrWw9KNKKUdyPN47EzxFScp73fT+Mt2Rkb0wqblEtPMV0XuZ+WwtUup6t3insKjqneKfRKm6IafApdCrqneKfRKqpuiLPgIUgs7qGeK30Qqahnit9EJXXrgdCwUlvRhApNWa1LfFb6IUXRNH/AAjsCjrlwJ7I1vMW1SV1VMAbcADaNwAVorJ31FzjkdiamlKSGiyGgqQKWCqgqpdM43/aO+rQfpr/AOFOuJr2LiGE01Xl43TQVOTNq9fDHPkzWvlzg2vYXtzBW0OiGGE7cNoPD/8AipvlS5R3j4TVkrHkNC9icjsL+zMP9SpvlUuRuFfZmH+pU3ypY/Q8coXsbkbhX2Zh/qVN8qidDsL+zMP9SpvlQGhz7+zt3vn/ABrvcxrqpKTQ4XT0jSykghp2OOZzYIo4Guda2YhoAJsB2J0m5MiJmiJKjdTi3p4aOYdiluxVRzalrdQJV/kHMOxGrbzDsCjOS6De8xzlArIujbfcOwK2naLjYN3MrxncTOlbeIYnQfWH6VOlaC7aBuPg6wrrVjmHYolPcXp0m1e5NCEJJ1ghCEACEIQAKhF1VCALWuFmH9I/isY07fOFmJog9uU7N25W/EG+MfYnQmkrM469GUpXRb6sK94ozr7UcWHOfYrhVlO+wbTopXuhHFW9fareoYGEAcyv1bzxBxvfwKIy11JqU1l0QinbmvfwWVxHGAVSGEC+0+BODbIlK4U4aK5WyqhCoOBUsqoQBEsCi6IFMQpuRZC2xAbdqnZVQi4JJbAQhCgkoRdLdCDvumoU3IaT2i2QhpuExCFDdwSS2AhCEEghCEACEIQAIQhAAhCEACEIQAKLm3UkIBkWtspIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgAQhCABCEIAEIQgD//Z"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Flappy Bird</h1>
+                        <a href="https://flappybird.io/" target="_blank">flappybird.io</a>
+                    </div>
+                    <button onclick="appInstall('bird')" id="appInstallBtnbird">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Flappy Bird is a casual side-scrolling game where players control a bird that flies between
+                        green pipes without touching them. Flappy Bird was part of a revolution in hypercasual mobile
+                        games, and has inspired many remakes, clones, and parodies.</h3>
+                    <b>
+                        <p>By installing, you're accepting their terms and <a
+                                href="https://www.iubenda.com/privacy-policy/807148/full-legal"
+                                target="_blank">privacy</a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="MarioInstaller"><span>
+                <div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OqCkXCJCiTTnFnMp055Ezd_8pw-QyflDVQ&usqp=CAU"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Super Mario</h1>
+                        <a href="https://supermario-game.com/" target="_blank">supermario-game.com</a>
+                    </div>
+                    <button onclick="appInstall('Mario')" id="appInstallBtnMario">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Super Mario is a platform game series created by Nintendo starring their mascot, Mario. It is
+                        the central series of the greater Mario franchise. It is a video game series developed and
+                        published by Nintendo.</h3>
+                    <b>
+                        <p>By installing, you're accepting their <a
+                                href="https://en-americas-support.nintendo.com/app/answers/detail/a_id/56521/~/end-user-license-agreement---game-%26-watch%3A-super-mario-bros."
+                                target="_blank">terms</a> and privacy.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="MinecraftInstaller"><span>
+                <div>
+                    <img src="https://thumbs.dreamstime.com/b/minecraft-logo-online-game-dirt-block-illustrations-concept-design-isolated-186775550.jpg"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Minecraft</h1>
+                        <a href="https://eaglercraft.com/" target="_blank">eaglercraft.com</a>
+                    </div>
+                    <button onclick="appInstall('MC')" id="appInstallBtnMC">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Minecraft is a 3-D blocky sandbox video game where players can build, explore, and battle. They
+                        can use blocks to create structures, craft items, and build mechanical devices. The game has no
+                        set goal, and players can explore the world, battle creatures, or befriend them.</h3>
+                    <b>
+                        <p>By installing, you're accepting their <a href="https://eaglercraft.com/p/legal/"
+                                target="_blank">terms and privacy</a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+            <div class="Installer" id="SolitaireInstaller"><span>
+                <div>
+                    <img src="https://avatars.yandex.net/get-games/3006389/2a0000017cd4a9f37029ba06e5388cea9a81/pjpg160x160"
+                        >
+                    <div style="text-align: center;">
+                        <h1>Solitaire</h1>
+                        <a href="https://solitaire.online/" target="_blank">solitaire.online</a>
+                    </div>
+                    <button onclick="appInstall('Solt')" id="appInstallBtnSolt">install</button>
+                    <p style="text-align: center;">3rd party application*</p>
+                </div>
+                <div>
+                    <h1 style="margin: 0; margin-bottom: 10px; font-size: 25px; margin-top: -5px;">About</h1>
+                    <h3>Solitaire, a pastime enjoyed for centuries, offers a relaxing challenge for one. Played with a
+                        standard deck of cards, the goal is to strategically order them all by suit and rank onto four
+                        foundations.</h3>
+                    <b>
+                        <p>By installing, you're accepting their terms and <a
+                                href="https://solitaire.online/privacy-policy" target="_blank">privacy</a>.</p>
+                                
+                    </b>
+
+                    <p><b>Note:</b>
+                    <ol>
+                        <li>This App would be installed on all OSs</li>
+                        <li>It is recommeded to reboot the OS to make application changes.</li>
+                    </ol>
+                    </p>
+                </div></span>
+            </div>
+        </div>
+    </main>
+    <script>
+
+const userPfpWin = localStorage.getItem('UserPfp');
+  if (userPfpWin) {
+    document.getElementById('startPfp').src = userPfpWin;
+  }
+  else{
+    document.getElementById('startPfp').src = '../../../Ripenos/Assets/UI/icons8-male-user-96.png';
+  }
+
+  const savedTextValue = localStorage.getItem('UserPreviewName');
+  if (savedTextValue) {
+    document.getElementById('startPfp').title = savedTextValue
+    document.getElementById('userN').innerText = savedTextValue
+  }
+  else{
+    document.getElementById('startPfp').title = "Admin"
+    document.getElementById('userN').innerText = "Admin"
+  }
+
+        function OpenInstaller(app) {
+            document.getElementById('StoreInstallerCont').style.display = 'flex'
+
+            let int = app + 'Installer'
+            document.getElementById(int).style.display = 'flex'
+
+            setTimeout(() => {
+                document.getElementById('content').style.filter = 'blur(45px)'
+                document.getElementById('navs').style.filter = 'blur(45px)'
+                document.getElementById(int).style.transform = 'scale(1)'
+            }, 100);
+
+            let close = document.getElementById('closeInstaller')
+
+
+            close.addEventListener("click", () => {
+                document.getElementById(int).style.transform = 'scale(0)'
+
+                setTimeout(() => {
+                    document.getElementById('StoreInstallerCont').style.display = 'none'
+                    document.getElementById(int).style.display = 'none'
+                document.getElementById('content').style.filter = 'blur(0px)'
+                document.getElementById('navs').style.filter = 'blur(0px)'
+                }, 150);
+            })
+        }
+    </script>
+    <script src="rgosInstaller.js"></script>
+</body>
+
+</html>
