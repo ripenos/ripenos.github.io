@@ -9,6 +9,7 @@
 ![stage 6](https://user-images.githubusercontent.com/120778877/216783129-427e8fff-d423-481e-a51e-50789db53178.png)
 ![stage 7](https://user-images.githubusercontent.com/120778877/229288812-198b8337-657b-4d48-a63a-9bbb8bd9aeb0.png)
 ![stage 8](https://github.com/ripenos/ripenos.github.io/assets/120778877/7336d1bd-23e5-45ee-b11e-b0a59fc98d7d)
+![stage 9](https://github.com/ripenos/ripenos.github.io/assets/120778877/bc0161ad-d53c-4a0f-ac22-0019792508a8)
 
 # A quick evolution of [Windows Ripen](https://ripenos.github.io/WinRipen).
 
@@ -17,4 +18,4 @@
 ![WinRStage3](https://github.com/ripenos/ripenos.github.io/assets/120778877/112d2b45-c031-4814-bd54-c7a8a071cc84)
 ![WinRStage4](https://github.com/ripenos/ripenos.github.io/assets/120778877/75ed4ac3-d219-4620-9360-57cfe46262f0)
 ![WinRStage6](https://github.com/ripenos/ripenos.github.io/assets/120778877/9ecfb7ec-d461-4bca-9b1b-c0922b3e46c0)
-![WinRStage7](https://github.com/ripenos/ripenos.github.io/assets/120778877/9e100f50-c233-4245-bf36-73395d1acb7d)
+![WinRStage7](https://github.com/ripenos/ripenos.github.io/assets/120778877/69aa56b8-24a4-4373-8b48-276864cb7610)

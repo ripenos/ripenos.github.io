@@ -1965,7 +1965,7 @@ if (webAppStr) {
    }
    if (webApps.MC) {
     document.getElementById('minecraftAppListM').style.display = 'block'
-    document.getElementById("minecraftIframe").src = "../Global/Apps/Minecraft/EaglercraftX_1.8_u32_Offline_Signed.html"
+    document.getElementById("minecraftIframe").src = "https://eaglercraft.com/mc/1.8.8/"
    } else {
      document.getElementById('minecraftAppListM').style.display = 'none'
      document.getElementById("minecraftIframe").src = null

@@ -440,32 +440,6 @@ function noty_Panel() {
   }
 }
 
-document.getElementById("blurBtn").addEventListener("click", () => {
-  if (document.getElementById("blur-backup").style.height == "20px") {
-    document.getElementById("blur-backup").style.height = "10px";
-    document.getElementById("feedbar").style.backgroundColor = "var(--primary-bg)";
-    document.getElementById("dock").style.backgroundColor = "var(--primary-bg)";
-    document.getElementById("myripebar").style.backgroundColor = "var(--primary-bg)";
-    document.getElementById("feedbar").style.backdropFilter =
-      "blur(55px) contrast(100%)";
-    document.getElementById("dock").style.backdropFilter =
-      "blur(55px) contrast(100%)";
-    document.getElementById("myripebar").style.backdropFilter =
-      "blur(55px) contrast(100%)";
-  } else {
-    document.getElementById("blur-backup").style.height = "20px";
-    document.getElementById("feedbar").style.backgroundColor = "#1c1c1c";
-    document.getElementById("dock").style.backgroundColor = "#1c1c1c";
-    document.getElementById("myripebar").style.backgroundColor = "#1c1c1c";
-    document.getElementById("feedbar").style.backdropFilter =
-      "blur(0) contrast(0%)";
-    document.getElementById("dock").style.backdropFilter =
-      "blur(0) contrast(0%)";
-    document.getElementById("myripebar").style.backdropFilter =
-      "blur(0) contrast(0%)";
-  }
-});
-
 function startTimeH() {
   const today2 = new Date();
   let h2 = today2.getHours();
@@ -623,38 +597,10 @@ function fun(e) {
   container.setAttribute("style", "opacity: " + val + "%;");
 }
 
-document.getElementById("RGOSUpdatesNotyC").addEventListener("click", () => {
-  document.getElementById("RGOSUpdatesNoty").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("brForNoty1").style.display = "none";
-    document.getElementById("RGOSUpdatesNoty").style.display = "none";
-  }, 300);
-});
-
-document.getElementById("TipsNotyC").addEventListener("click", () => {
-  document.getElementById("TipsNoty").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("brForNoty1").style.display = "none";
-    document.getElementById("TipsNotyC").style.display = "none";
-  }, 300);
-
-  if (
-    document.getElementById("RGOSUpdatesNoty").style.display == "none" &&
-    document.getElementById("TipsNotyC").style.display == "none"
-  ) {
-    document.getElementById("noNoties").style.display = "none";
-  } else {
-    document.getElementById("noNoties").style.display = "block";
-  }
-});
-
 document.getElementById("clearNoties").addEventListener("click", () => {
-  document.getElementById("TipsNoty").style.opacity = "0";
-  document.getElementById("RGOSUpdatesNoty").style.opacity = "0";
+  document.getElementById("NotificationCont").style.opacity = "0";
   setTimeout(() => {
-    document.getElementById("brForNoty1").style.display = "none";
-    document.getElementById("TipsNotyC").style.display = "none";
-    document.getElementById("RGOSUpdatesNoty").style.display = "none";
+    document.getElementById("NotificationCont").style.innerHTML = " ";
     document.getElementById("noNoties").style.display = "block";
     document.getElementById("clearNoties").style.opacity = "0";
   }, 300);

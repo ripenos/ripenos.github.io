@@ -794,36 +794,50 @@
                         Clear All
                     </button>
                     <div id="Notys">
-                        <span id="RGOSUpdatesNoty">
-                            <img src="Assets/General/ripenOs.jpg" style="margin: 5px; margin-left: 10px; width: 18px; border-radius:3px; display: inline-block; margin-bottom: -5px">
-                            <p style="display: inline-block;">Updates</p>
-                            <p id="RGOSUpdatesNotyC">
-                                <span class="material-symbols-rounded NotyClose" style=" font-size: 15px;">close</span>
-                            </p>
-                            <div class="Notifications" id="RipenDynamicaNoty">
-                                <img src="../Global/Assets/Images/RGOS-family/ripenOsD.png" style="border-radius: 25%; width: 45px; display:flex; margin-bottom: -50px; transform: translateY(-5px);">
-                                <div style="margin-left: 60px; margin-right: 5px;">
-                                    <h3>Ripen OS Dynamica</h3>
-                                    <p>A Dynamic Scenery which satisfies your lively wonders! Is launching soon! </p>
+                        <div id="NotificationCont">
+                            <span id="RGOSUpdatesNoty">
+                                <img src="Assets/General/ripenOs.jpg" style="margin: 5px; margin-left: 10px; width: 18px; border-radius:3px; display: inline-block; margin-bottom: -5px">
+                                <p style="display: inline-block;">Updates</p>
+                                <p onclick="document.getElementById('RGOSUpdatesNoty').style.display = 'none'">
+                                    <span class="material-symbols-rounded NotyClose" style=" font-size: 15px;">close</span>
+                                </p>
+                                <div class="Notifications" id="RipenDynamicaNoty">
+                                    <img src="../Global/Assets/Images/RGOS-family/ripenOsD.png" style="border-radius: 25%; width: 45px; display:flex; margin-bottom: -50px; transform: translateY(-5px);">
+                                    <div style="margin-left: 60px; margin-right: 5px;">
+                                        <h3>Ripen OS Dynamica</h3>
+                                        <p>A Dynamic Scenery which satisfies your lively wonders! Is launching soon! </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </span>
-                        <br id="brForNoty1">
-                        <span id="TipsNoty">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFFElEQVR4nNWZ/U9bVRjH+w+5FyXGbDPZDyZqYnxJjD/NwIyLgpkQMGzKGOhSB5sOhmwKY8DGomB0Rt0PiFNpYRQE5BYYFMaLMN50gIyWUnrvuV9zzr1rgZ5z297bMnqSJ71t7z3n+7nneZ7zZkOKFxtSvNiQ4sWGFC+2pNSqbgBkCSD/6LYEqMHdDCAD8hgQ+APwfwOsXeWbvxHYaNXupc88dgDVDwS7AP91sWghzHXtWVrHzgOogDxoTjgPRL6r1bkjAOo6EGi2Lny7BZoBNZBkANULrH+XePFrutG6aRtJAaBvPh7xvmpg9bJm9Dpml/o2rriIEYAA6z9HbVxd+gzEcxRK93OQHfsgtz6hmWMf+4140tk90XviltZmwgCC3cYN/ncRSv/rYcGGtgeK+1X2DIzqDPYmCIAsA2t14rc+Xwy5LS1G8Zus/WmoswUGEHUAWUkAQOC2WPxsAWTH3vjFh1xrL9S5QoPM9LtFAHUFWKvli188B9n5lHnxj6ztSaiLpQKIWkB9aAEg2COouAZK7wvWxbdqpvQ+z+o0EwvGAOvf89/+zEcJEy/rRuvkZ6SbJgFoLhb4piK9YpxlXIcif3cdNIwXxf2aOBboGBQ3gDIjHKC25PjNIlyHoM5/HA7wO8+wDEX+zmEuQuOGjRE8COd+YPUrfpvKnAkAeZjvPg/OcgWQ4TcBb5V238NK/fPSpmv903cFZPQY340elPABZI8JgKA7dv937AlNF8i9Y+w78WRoQL4akHvvsF4jQ0dCSYCOA/J2gNlTgkDuNwPQxweYPiHogQy9h0qYO7DfOw5A6Xw2BKkuFGuQ45n8HrifLwCQTADQ+T4PYO60MBDJVK52z/38yP8mjusjdxGD4QLMCQY1tl6IF0AZ51e2XCbOQM79UP+1a2/ZkxEO7oE3NPFLnxtOO9TlMkEQT5gAoAtxQVpjKVEE0XEAWPmC+T69lp1pWix4v4TSeVicRjsPi9Mo1RI3AJ3OCpaMZOQtw0GJjGdp4wVNma6Deux8YPzM2Lt88f4Gw+WmzdREbqUiHKhcgMwIADKVZ+B6aaxObluB3wwlGgNQ3xN0K5nIShgAmcwWu48yaQGAuVGjoPIaNvxbBVCkl8UTOX9T1JVZ9PUATWGit+Ot4kLECqD0vQR4DdbLdDZgfUlJ18M/iBvx1URM7mIBUP56MTz1EM5CSYLWxCyl1osbW720ZWoQFcAoaNeo1QNkMcHbKvKIQYNbB65oAOE50VWB64wmaWNLMMGj5h2zQ7p1mpm7vRb97hZILecgNdvZtbujIfS/d+yMWHzQneStRXmIu0sxP3EDdY2jXKtqGEZ51SA+vSihsKQHAz1NHPF1MQWtdQBayIKW4jYJmJ64iQtVg7CXSygo6UFuURcy8+8gPduBI++1brH29p8i0yVZ2OntdVnf8LrGRFBR24VmZDuRdbIDeUWd7M3THiirHmSwmvhr2saBhbMC6wccdL0alDDQ34LC0l6crZBQXj2I6gYP151qvx7BzFSzNsdXxWvdnQPQi9cXDIm8csODipq7KK10o+h8L/LP/In3C1x4O7eN9czY5OruPCOzl0s4muOMcKVHRgE+tHdDNXeWkXyA6Rkf8oq7kHPKhZP2bnxyoQ/nL/ejsm6Iuc6Pv0yxntrVp5SEqPjVMcvc5oRu9Pq2c5b9lxLHrKoKFgvpxx3M6ptGE+o2O3bQvbFBmCWz2JDixYYUL7bHLcBq+R+iPRdE2jcPsQAAAABJRU5ErkJggg==" style="margin: 5px; margin-left: 10px; width: 18px; border-radius:3px; display: inline-block; margin-bottom: -5px">
-                            <p style="display: inline-block;">Tips</p>
-                            <p id="TipsNotyC">
-                                <span class="material-symbols-rounded NotyClose" style=" font-size: 15px;">close</span>
-                            </p>
-                            <div class="Notifications" id="RipenDynamicaNoty" onclick="actionbarDown(); document.getElementById('TipsNotyC').click()">
-                                <img src="data:image/png;base64,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" style="border-radius: 25%; width: 45px; display:flex; margin-bottom: -50px; transform: translateY(-5px);">
-                                <div style="margin-left: 60px; margin-right: 5px;">
-                                    <h3>Your profile, your RGOS</h3>
-                                    <p>RGOS user Portal has been introduced to keep a universal profile with your name, profile picture, a bio and authentication.</p>
+                            </span>
+                            <span id="TipsNoty">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFFElEQVR4nNWZ/U9bVRjH+w+5FyXGbDPZDyZqYnxJjD/NwIyLgpkQMGzKGOhSB5sOhmwKY8DGomB0Rt0PiFNpYRQE5BYYFMaLMN50gIyWUnrvuV9zzr1rgZ5z297bMnqSJ71t7z3n+7nneZ7zZkOKFxtSvNiQ4sWGFC+2pNSqbgBkCSD/6LYEqMHdDCAD8hgQ+APwfwOsXeWbvxHYaNXupc88dgDVDwS7AP91sWghzHXtWVrHzgOogDxoTjgPRL6r1bkjAOo6EGi2Lny7BZoBNZBkANULrH+XePFrutG6aRtJAaBvPh7xvmpg9bJm9Dpml/o2rriIEYAA6z9HbVxd+gzEcxRK93OQHfsgtz6hmWMf+4140tk90XviltZmwgCC3cYN/ncRSv/rYcGGtgeK+1X2DIzqDPYmCIAsA2t14rc+Xwy5LS1G8Zus/WmoswUGEHUAWUkAQOC2WPxsAWTH3vjFh1xrL9S5QoPM9LtFAHUFWKvli188B9n5lHnxj6ztSaiLpQKIWkB9aAEg2COouAZK7wvWxbdqpvQ+z+o0EwvGAOvf89/+zEcJEy/rRuvkZ6SbJgFoLhb4piK9YpxlXIcif3cdNIwXxf2aOBboGBQ3gDIjHKC25PjNIlyHoM5/HA7wO8+wDEX+zmEuQuOGjRE8COd+YPUrfpvKnAkAeZjvPg/OcgWQ4TcBb5V238NK/fPSpmv903cFZPQY340elPABZI8JgKA7dv937AlNF8i9Y+w78WRoQL4akHvvsF4jQ0dCSYCOA/J2gNlTgkDuNwPQxweYPiHogQy9h0qYO7DfOw5A6Xw2BKkuFGuQ45n8HrifLwCQTADQ+T4PYO60MBDJVK52z/38yP8mjusjdxGD4QLMCQY1tl6IF0AZ51e2XCbOQM79UP+1a2/ZkxEO7oE3NPFLnxtOO9TlMkEQT5gAoAtxQVpjKVEE0XEAWPmC+T69lp1pWix4v4TSeVicRjsPi9Mo1RI3AJ3OCpaMZOQtw0GJjGdp4wVNma6Deux8YPzM2Lt88f4Gw+WmzdREbqUiHKhcgMwIADKVZ+B6aaxObluB3wwlGgNQ3xN0K5nIShgAmcwWu48yaQGAuVGjoPIaNvxbBVCkl8UTOX9T1JVZ9PUATWGit+Ot4kLECqD0vQR4DdbLdDZgfUlJ18M/iBvx1URM7mIBUP56MTz1EM5CSYLWxCyl1osbW720ZWoQFcAoaNeo1QNkMcHbKvKIQYNbB65oAOE50VWB64wmaWNLMMGj5h2zQ7p1mpm7vRb97hZILecgNdvZtbujIfS/d+yMWHzQneStRXmIu0sxP3EDdY2jXKtqGEZ51SA+vSihsKQHAz1NHPF1MQWtdQBayIKW4jYJmJ64iQtVg7CXSygo6UFuURcy8+8gPduBI++1brH29p8i0yVZ2OntdVnf8LrGRFBR24VmZDuRdbIDeUWd7M3THiirHmSwmvhr2saBhbMC6wccdL0alDDQ34LC0l6crZBQXj2I6gYP151qvx7BzFSzNsdXxWvdnQPQi9cXDIm8csODipq7KK10o+h8L/LP/In3C1x4O7eN9czY5OruPCOzl0s4muOMcKVHRgE+tHdDNXeWkXyA6Rkf8oq7kHPKhZP2bnxyoQ/nL/ejsm6Iuc6Pv0yxntrVp5SEqPjVMcvc5oRu9Pq2c5b9lxLHrKoKFgvpxx3M6ptGE+o2O3bQvbFBmCWz2JDixYYUL7bHLcBq+R+iPRdE2jcPsQAAAABJRU5ErkJggg==" style="margin: 5px; margin-left: 10px; width: 18px; border-radius:3px; display: inline-block; margin-bottom: -5px">
+                                <p style="display: inline-block;">Tips</p>
+                                <p onclick="document.getElementById('TipsNoty').style.display = 'none'">
+                                    <span class="material-symbols-rounded NotyClose" style=" font-size: 15px;">close</span>
+                                </p>
+                                <div class="Notifications" id="RipenDynamicaNoty" onclick="actionbarDown(); document.getElementById('TipsNotyC').click()">
+                                    <img src="data:image/png;base64,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" style="border-radius: 25%; width: 45px; display:flex; margin-bottom: -50px; transform: translateY(-5px);">
+                                    <div style="margin-left: 60px; margin-right: 5px;">
+                                        <h3>Your profile, your RGOS</h3>
+                                        <p>RGOS user Portal has been introduced to keep a universal profile with your name, profile picture, a bio and authentication.</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </span>
-
+                            </span>
+                            <span id="batteryNoty"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAt0lEQVR4nO2SwQnCQBBFtwntSTvQWkwDe0sb2ojYwPy9xnsKCIEVEfGmgckYkffgX3f/Z15KADAbZnaRVN/FzM7pV9GH8s8sWrKUsjWz69SyU2OPNzfhAyLK6zWiCx8QVV7f0osB4gI+UEgo5AOFhEI+UEgo5AOFhEI+UEgo5AOFhEI+UEgo5KPmVCOTomFA5gI+UCijkA8UygsrNLSrMeoKQ7sewwf0p11z/yiifH/cH8IHAPwZN0+QzvO38yhKAAAAAElFTkSuQmCC" style="margin: 5px;margin-left: 10px;width: 18px;border-radius:3px;display: inline-block;margin-bottom: -5px;background: white;padding: 2px;">
+                                <p style="display: inline-block;">Battery Status</p>
+                                <p onclick="document.getElementById('batteryNoty').style.display = 'none'"><span class="material-symbols-rounded NotyClose" style=" font-size: 15px;">close</span></p>
+                                <div class="Notifications" id="BatteryStatusLowNoty"><img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAt0lEQVR4nO2SwQnCQBBFtwntSTvQWkwDe0sb2ojYwPy9xnsKCIEVEfGmgckYkffgX3f/Z15KADAbZnaRVN/FzM7pV9GH8s8sWrKUsjWz69SyU2OPNzfhAyLK6zWiCx8QVV7f0osB4gI+UEgo5AOFhEI+UEgo5AOFhEI+UEgo5AOFhEI+UEgo5KPmVCOTomFA5gI+UCijkA8UygsrNLSrMeoKQ7sewwf0p11z/yiifH/cH8IHAPwZN0+QzvO38yhKAAAAAElFTkSuQmCC"
+                                        style="border-radius: 25%;width: 45px;display:flex;margin-bottom: -50px;transform: translateY(-5px);"><img
+                                        src="https://img.icons8.com/fluency/48/error.png" alt="error" id="btnPopStat"
+                                        style="position: relative;width: 32.5px;height: auto;margin-bottom: -40px;left: 17.5px;top: 20px;">
+                                    <div style="margin-left: 60px; margin-right: 5px;">
+                                        <h3>Your Battery level is low</h3>
+                                        <p>Charge your device to continue working efficiently.</p>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
                         <h1 id="noNoties">No new Notifications</h1>
                     </div>
                 </div>
@@ -3170,6 +3184,10 @@
                     batteryStatus.innerHTML = `Battery <span style="font-size: 15px;font-weight: normal;opacity: 0.9;margin-right: 10px;"> Low battery</span>`;
                     batteryPercentageTitle.title = "Battery status: " + level + "%" + ", Charging required"
                     document.getElementById('batteryPopup').classList.add('show');
+
+                    document.getElementById('batteryNoty').style.display = "block"
+                    document.getElementById("clearNoties").style.opacity = "1";
+                    
                     batteryLiquid1.classList.remove('batteryChargingAni')
                     batteryLiquid2.classList.remove('batteryChargingAni')
                     batteryLiquid3.classList.remove('batteryChargingAni')
@@ -3180,9 +3198,10 @@
                     batteryLiquid1.classList.add('batteryChargingAni')
                     batteryLiquid2.classList.add('batteryChargingAni')
                     batteryLiquid3.classList.add('batteryChargingAni')
+
                 } else {
                     batteryStatus.innerHTML = "Battery";
-                batteryPercentageTitle.title = "Battery status: " + level + "%" + ""
+                batteryPercentageTitle.title = "Battery status: " + level + "%"
                     batteryLiquid1.classList.remove('batteryChargingAni')
                     batteryLiquid2.classList.remove('batteryChargingAni')
                     batteryLiquid3.classList.remove('batteryChargingAni')

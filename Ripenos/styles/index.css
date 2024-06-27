@@ -2814,6 +2814,7 @@ header .current-date {
   width: 10px;
   height: 10px;
   position: absolute;
+  pointer-events: none;
 }
 
 @keyframes rotate {
@@ -3175,15 +3176,18 @@ header .current-date {
   overflow: hidden;
   overflow-y: scroll;
 }
-#Notys::-webkit-scrollbar {
-  display: none;
-}
-#Notys:hover::-webkit-scrollbar {
+#Notys::-webkit-scrollbar-thumb {
   display: block;
 }
-#Notys span {
+#Notys #NotificationCont {
   transition: all 0.3s;
+  width: 100%;
+  display: grid;
+  gap: 10px;
 }
+
+#Notys span{transition: all 0.3s;}
+
 .Notifications {
   padding: 15px;
   background-color: var(--secondary-bg);
@@ -3202,9 +3206,10 @@ header .current-date {
 }
 
 .NotyClose {
+  transition: all 0.3s;
   padding: 5px;
   border-radius: 3.5px;
-  margin-top: -35px;
+  margin-top: -20px;
   float: right;
 }
 .NotyClose:hover {
@@ -3212,11 +3217,15 @@ header .current-date {
 }
 #noNoties {
   display: none;
-  text-align: center;
+  position: absolute;
   font-size: large;
-  margin-top: 0.5rem;
+  left: 50%;
   opacity: 0.65;
+  top: 50%;
+  transform: translate(-50%, 50%);
 }
+
+#batteryNoty {display: none;}
 
 .optionsCt {
   opacity: 0;
