@@ -47,12 +47,12 @@ RGOS is an open-sourced, web based OS Family concept built with just Vanilla HTM
 
 | Computer | Mobile          |
 | ------- | ------------------ |
-| ![Ripenos](https://github.com/ripenos/ripenos.github.io/assets/120778877/2e31ae25-66e4-49bd-9eaa-add28b925472)| <img src="https://github.com/ripenos/ripenos.github.io/assets/120778877/f136cf34-0fe0-462d-9bcc-efbcd459aa5d" width="425" height="auto"> |
+| ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/bc0161ad-d53c-4a0f-ac22-0019792508a8) | ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/3188dae6-5c3a-4a0f-8ff3-f051152df852) |
 <h3 align="center">Windows Ripen</h3>
 
 | Computer | Mobile          |
 | ------- | ------------------ |
-| ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/2d1aae68-3662-4d6f-91b5-6bfe4c2e0878) | <img src="https://github.com/ripenos/ripenos.github.io/assets/120778877/a34697a5-4d8e-4837-a634-110f91ff4dd3" width="425" height="auto"> |
+| ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/69aa56b8-24a4-4373-8b48-276864cb7610) | ![image](https://github.com/ripenos/ripenos.github.io/assets/120778877/121a9f1b-b4f5-4776-91a1-8b05dd422999) |
 
 <br>
 
