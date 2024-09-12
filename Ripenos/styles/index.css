@@ -1949,7 +1949,7 @@ select .options {
 }
 
 .bgMain {
-  background-image: url("../../Global/Assets/Images/backgrounds/RipenWaves2.png");
+  background-image: url("https://raw.githubusercontent.com/navaneet239/temp-files/main/RipenWaves.jpg");
   background-size: cover;
   position: relative;
   width: inherit;
@@ -1965,7 +1965,7 @@ select .options {
   height: calc(100vh - 45px);
   height: calc(100dvh - 45px);
   transition: all 0.4s ease;
-  background-image: url("../../Global/Assets/Images/backgrounds/RipenWaves2.png");
+  background-image: url("https://raw.githubusercontent.com/navaneet239/temp-files/main/RipenWaves.jpg");
   background-size: cover;
   border: 0px solid #777777;
   overflow: hidden;
