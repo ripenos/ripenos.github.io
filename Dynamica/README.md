@@ -3,7 +3,7 @@
 # Ripen OS Dynamica
 **RipenOS Dynamica** , a member of the [RGOS](https://ripenos.github.io/) family, is an open source concept Operating System which inherits an advance fluid GUI and filled with dynamic functionalities.
 
-## **Coming soon ✨✨**
+## Check Now ✨: [live](https://ripenos.web.app/Dynamica)
 
 ![Banner](Assets/General/Social-banner.png)
 
